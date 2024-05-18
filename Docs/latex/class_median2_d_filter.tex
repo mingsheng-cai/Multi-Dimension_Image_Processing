@@ -1,0 +1,116 @@
+\doxysection{Median2\+DFilter Class Reference}
+\hypertarget{class_median2_d_filter}{}\label{class_median2_d_filter}\index{Median2DFilter@{Median2DFilter}}
+
+
+{\ttfamily \#include $<$Median2\+DFilter.\+h$>$}
+
+
+
+Collaboration diagram for Median2\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_median2_d_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_median2_d_filter_a37b01a13175a27008b279cf8e958da80}{Median2\+DFilter}} (int \mbox{\hyperlink{class_median2_d_filter_ad76b3ac82c79aaa8de4f42b6f813e670}{kernel\+Size}}, \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} \mbox{\hyperlink{class_median2_d_filter_a81e9ab6a528462d90150a0b4b47bb56c}{padding\+Type}}=\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{Padding\+Type\+::\+Zero\+Padding}})
+\item 
+void \mbox{\hyperlink{class_median2_d_filter_a2d4771fa683ab5a53bca43d3ca25cae5}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&image) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned char \mbox{\hyperlink{class_median2_d_filter_ab2ee79ab139bc8f7ed49b842a1af5361}{median}} (std\+::vector$<$ unsigned char $>$ \&window)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_median2_d_filter_ad76b3ac82c79aaa8de4f42b6f813e670}{kernel\+Size}}
+\item 
+\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} \mbox{\hyperlink{class_median2_d_filter_a81e9ab6a528462d90150a0b4b47bb56c}{padding\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_median2_d_filter_a37b01a13175a27008b279cf8e958da80}\label{class_median2_d_filter_a37b01a13175a27008b279cf8e958da80} 
+\index{Median2DFilter@{Median2DFilter}!Median2DFilter@{Median2DFilter}}
+\index{Median2DFilter@{Median2DFilter}!Median2DFilter@{Median2DFilter}}
+\doxysubsubsection{\texorpdfstring{Median2DFilter()}{Median2DFilter()}}
+{\footnotesize\ttfamily Median2\+DFilter\+::\+Median2\+DFilter (\begin{DoxyParamCaption}\item[{int}]{kernel\+Size,  }\item[{\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}}}]{padding\+Type = {\ttfamily \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{Padding\+Type\+::\+Zero\+Padding}}} }\end{DoxyParamCaption})}
+
+Constructor for the \doxylink{class_median2_d_filter}{Median2\+DFilter} class.
+
+Initializes a \doxylink{class_median2_d_filter}{Median2\+DFilter} object with a specified kernel size and padding type. Ensures that the kernel size is odd, which is necessary for symmetrically surrounding each pixel with neighbors. This requirement is crucial for the correct application of the median filter. If an even kernel size is provided, an exception is thrown. The padding type determines the strategy for handling pixels at the borders of the image, ensuring consistent filtering across the entire image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kernel\+Size} & The size of the kernel, must be an odd number for symmetric application. \\
+\hline
+{\em padding\+Type} & The type of padding to use at the image borders, determining how edge pixels are treated. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the kernel\+Size is not an odd number. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_median2_d_filter_a2d4771fa683ab5a53bca43d3ca25cae5}\label{class_median2_d_filter_a2d4771fa683ab5a53bca43d3ca25cae5} 
+\index{Median2DFilter@{Median2DFilter}!apply@{apply}}
+\index{apply@{apply}!Median2DFilter@{Median2DFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Median2\+DFilter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption}) const}
+
+Applies median filtering to an image.
+
+This method processes the provided \doxylink{class_image}{Image} object, applying median filtering to reduce noise while preserving edges. It operates by sliding a window, defined by the kernel size, across the image and replacing each pixel\textquotesingle{}s value with the median value of its neighborhood. This approach is effective at removing salt-\/and-\/pepper noise. The method handles different channels of the image separately, maintaining the color integrity of the original image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to the \doxylink{class_image}{Image} object to be filtered. The image is modified in place, receiving the filtered output. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_median2_d_filter_ab2ee79ab139bc8f7ed49b842a1af5361}\label{class_median2_d_filter_ab2ee79ab139bc8f7ed49b842a1af5361} 
+\index{Median2DFilter@{Median2DFilter}!median@{median}}
+\index{median@{median}!Median2DFilter@{Median2DFilter}}
+\doxysubsubsection{\texorpdfstring{median()}{median()}}
+{\footnotesize\ttfamily unsigned char Median2\+DFilter\+::median (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Calculates the median value of a pixel window.
+
+This helper function determines the median value within a given window of pixel values. It employs the quick select algorithm to efficiently find the median, which is particularly effective for non-\/linear filtering operations like median filtering. The function handles both odd and even-\/sized windows, returning the middle value for odd-\/sized windows or the average of the two middle values for even-\/sized windows. This method ensures that the median filter can be applied consistently across the entire image, including edge pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & A vector of unsigned char representing the intensity values of pixels within the kernel window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The median intensity value as an unsigned char. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_median2_d_filter_ad76b3ac82c79aaa8de4f42b6f813e670}\label{class_median2_d_filter_ad76b3ac82c79aaa8de4f42b6f813e670} 
+\index{Median2DFilter@{Median2DFilter}!kernelSize@{kernelSize}}
+\index{kernelSize@{kernelSize}!Median2DFilter@{Median2DFilter}}
+\doxysubsubsection{\texorpdfstring{kernelSize}{kernelSize}}
+{\footnotesize\ttfamily int Median2\+DFilter\+::kernel\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_median2_d_filter_a81e9ab6a528462d90150a0b4b47bb56c}\label{class_median2_d_filter_a81e9ab6a528462d90150a0b4b47bb56c} 
+\index{Median2DFilter@{Median2DFilter}!paddingType@{paddingType}}
+\index{paddingType@{paddingType}!Median2DFilter@{Median2DFilter}}
+\doxysubsubsection{\texorpdfstring{paddingType}{paddingType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} Median2\+DFilter\+::padding\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\+Filters/\mbox{\hyperlink{_median2_d_filter_8h}{Median2\+DFilter.\+h}}\item 
+Source/\+Filters/\mbox{\hyperlink{_median2_d_filter_8cpp}{Median2\+DFilter.\+cpp}}\end{DoxyCompactItemize}

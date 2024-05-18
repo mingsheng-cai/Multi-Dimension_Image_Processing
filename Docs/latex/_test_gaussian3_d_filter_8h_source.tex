@@ -1,0 +1,155 @@
+\doxysection{Test\+Gaussian3\+DFilter.\+h}
+\hypertarget{_test_gaussian3_d_filter_8h_source}{}\label{_test_gaussian3_d_filter_8h_source}\index{Tests/TestGaussian3DFilter.h@{Tests/TestGaussian3DFilter.h}}
+\mbox{\hyperlink{_test_gaussian3_d_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_gaussian3_d_filter_8h}{Filters/Gaussian3DFilter.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_gaussian3_d_filter}{TestGaussian3DFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_test_gaussian3_d_filter_a09dc573920af70b5f849d479fdb18900}{generateGaussianKernel}}(\textcolor{keywordtype}{double}\ sigma,\ \textcolor{keywordtype}{int}\ kernelSize)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::vector<double>\ kernel(kernelSize);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0.0;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ radius\ =\ kernelSize\ /\ 2;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sigmaSquare2\ =\ 2\ *\ sigma\ *\ sigma;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ kernel\ values\ based\ on\ Gaussian\ function}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ -\/radius;\ i\ <=\ radius;\ ++i)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ (std::exp(-\/(i\ *\ i)\ /\ sigmaSquare2))\ /\ (std::sqrt(M\_PI\ *\ sigmaSquare2));}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ kernel[i\ +\ radius]\ =\ value;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ value;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Normalize\ kernel\ values}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ \&value\ :\ kernel)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ value\ /=\ sum;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ kernel;}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_volume}{Volume}}\ \mbox{\hyperlink{class_test_gaussian3_d_filter_aed31540e27413eb2dbc5cf123c70a8a1}{generateTestVolume}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ depth)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ data(width\ *\ height\ *\ depth);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ depth;\ ++z)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ height;\ ++y)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ width;\ ++x)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[index++]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}((x\ +\ y\ +\ z)\ \%\ 256);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_volume}{Volume}}(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00110\ \ \ \ \ std::unique\_ptr<Volume>\ \mbox{\hyperlink{class_test_gaussian3_d_filter_ae81b91b0f956508ba9c4df21eab4b2c9}{initializeSimpleVolume}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ depth)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ data\ =\ std::make\_unique<unsigned\ char[]>(width\ *\ height\ *\ depth);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ center[3]\ =\ \{width\ /\ 2,\ height\ /\ 2,\ depth\ /\ 2\};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ z\ =\ 0;\ z\ <\ depth;\ ++z)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ height;\ ++y)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ width;\ ++x)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ distance\ from\ center}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =\ sqrt(pow(x\ -\/\ center[0],\ 2)\ +\ pow(y\ -\/\ center[1],\ 2)\ +\ pow(z\ -\/\ center[2],\ 2));}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ value\ inversely\ proportional\ to\ distance}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[z\ *\ width\ *\ height\ +\ y\ *\ width\ +\ x]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(std::max(0.0,\ 255\ -\/\ distance));}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<Volume>(width,\ height,\ depth,\ data.get());}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian3_d_filter_a5bea478060dd9c6242652a373f1c364b}{testGaussianKernelGeneration}}()\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sigma\ =\ 1.0;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kernelSize\ =\ 3;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ kernel\ =\ \mbox{\hyperlink{class_test_gaussian3_d_filter_a09dc573920af70b5f849d479fdb18900}{generateGaussianKernel}}(sigma,\ kernelSize);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ sure\ the\ kernel\ size\ is\ correct}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ kernelSum\ =\ std::accumulate(kernel.begin(),\ kernel.end(),\ 0.0);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ assert(std::fabs(kernelSum\ -\/\ 1.0)\ <\ 1e-\/5\ \&\&\ \textcolor{stringliteral}{"{}Kernel\ sum\ is\ not\ 1.0,\ normalization\ failed."{}});}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Print\ the\ kernel\ values\ for\ manual\ inspection}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Gaussian\ kernel\ values:\ "{}};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ value\ :\ kernel)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ value\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Gaussian\ kernel\ generation\ test\ passed."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian3_d_filter_ad55b5289ccc4fc6bc5471a57156897be}{testApplyGaussianFilter}}()\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ volume\ =\ \mbox{\hyperlink{class_test_gaussian3_d_filter_ae81b91b0f956508ba9c4df21eab4b2c9}{initializeSimpleVolume}}(5,\ 5,\ 5);\ \textcolor{comment}{//\ 初始化简单的体积数据}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sigma\ =\ 1.0;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kernelSize\ =\ 3;\ \textcolor{comment}{//\ Must\ be\ odd}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gaussian3_d_filter}{Gaussian3DFilter}}\ gaussianFilter(sigma,\ kernelSize);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ gaussianFilter.\mbox{\hyperlink{class_gaussian3_d_filter_ad63630e41c38ae71dbdbba2a5828bf22}{apply}}(*volume);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data\ =\ volume-\/>getData();}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ that\ the\ center\ point\ is\ smoother\ than\ the\ original\ data}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ compare\ the\ center\ point\ with\ a\ neighboring\ point\ to\ ensure\ smoothing}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ centerValue\ =\ data[62];}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ neighborValue\ =\ data[37];\ \textcolor{comment}{//\ Select\ a\ neighboring\ point's\ value\ for\ comparison}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Simple\ check\ to\ ensure\ the\ center\ point\ is\ smoother\ than\ a\ neighboring\ point}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ assert(abs(centerValue\ -\/\ neighborValue)\ <\ 20\ \&\&\ \textcolor{stringliteral}{"{}Gaussian\ filter\ did\ not\ smooth\ the\ volume\ data\ as\ expected."{}});}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Gaussian3DFilter\ application\ test\ passed."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian3_d_filter_a28b4a00b9caa84ab1644aa2e5eb02955}{analyzeVolumeSmoothing}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_volume}{Volume}}\&\ volume,\ \textcolor{keyword}{const}\ std::vector<unsigned\ char>\&\ originalData)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ filteredData\ =\ volume.\mbox{\hyperlink{class_volume_a1651a671bbe729dc690093d2e399a07b}{getData}}();}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ volume.\mbox{\hyperlink{class_volume_a6421ea4fb9b499e51499531dbc6999d5}{getWidth}}();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height\ =\ volume.\mbox{\hyperlink{class_volume_a33c75b641d988efed2ce4d2568e7269e}{getHeight}}();}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ depth\ =\ volume.\mbox{\hyperlink{class_volume_ab082670ea100c39d94fefc77ac83c4d8}{getDepth}}();}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ dataSize\ =\ width\ *\ height\ *\ depth;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ mean\ and\ variance\ for\ original\ and\ filtered\ data}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ meanOriginal\ =\ std::accumulate(originalData.begin(),\ originalData.end(),\ 0.0)\ /\ dataSize;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ meanFiltered\ =\ std::accumulate(filteredData,\ filteredData\ +\ dataSize,\ 0.0)\ /\ dataSize;}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ varianceOriginal\ =\ 0.0,\ varianceFiltered\ =\ 0.0;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ dataSize;\ ++i)\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ varianceOriginal\ +=\ (originalData[i]\ -\/\ meanOriginal)\ *\ (originalData[i]\ -\/\ meanOriginal);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ varianceFiltered\ +=\ (filteredData[i]\ -\/\ meanFiltered)\ *\ (filteredData[i]\ -\/\ meanFiltered);}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ varianceOriginal\ /=\ dataSize;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ varianceFiltered\ /=\ dataSize;}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ that\ the\ filtered\ data\ has\ lower\ variance\ than\ the\ original\ data}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ assert(varianceFiltered\ <\ varianceOriginal\ \&\&\ \textcolor{stringliteral}{"{}Filtered\ data\ should\ have\ lower\ variance\ than\ original."{}});}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ that\ the\ filtered\ data\ is\ within\ the\ valid\ intensity\ range}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ dataSize;\ ++i)\ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ assert(filteredData[i]\ <=\ 255\ \&\&\ \textcolor{stringliteral}{"{}Filtered\ data\ contains\ values\ out\ of\ range."{}});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Gaussian3DFilter\ variance\ analysis\ passed:\ Original\ variance\ =\ "{}}\ <<\ varianceOriginal}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Filtered\ variance\ =\ "{}}\ <<\ varianceFiltered\ <<\ std::endl;}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian3_d_filter_ac3bc25b5ccc0d815f30d079ed61aedbe}{testGaussianFilterSmoothness}}()\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ 10,\ height\ =\ 10,\ depth\ =\ 10;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ testVolume\ =\ \mbox{\hyperlink{class_test_gaussian3_d_filter_aed31540e27413eb2dbc5cf123c70a8a1}{generateTestVolume}}(width,\ height,\ depth);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ originalData(testVolume.getData(),\ testVolume.getData()\ +\ width\ *\ height\ *\ depth);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gaussian3_d_filter}{Gaussian3DFilter}}\ gaussianFilter(1.0,\ 3);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ gaussianFilter.\mbox{\hyperlink{class_gaussian3_d_filter_ad63630e41c38ae71dbdbba2a5828bf22}{apply}}(testVolume);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_test_gaussian3_d_filter_a28b4a00b9caa84ab1644aa2e5eb02955}{analyzeVolumeSmoothing}}(testVolume,\ originalData);}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian3_d_filter_aa705a86f85958f5079a20be0a94989f3}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ runTest<TestGaussian3DFilter>(\&\mbox{\hyperlink{class_test_gaussian3_d_filter_a5bea478060dd9c6242652a373f1c364b}{TestGaussian3DFilter::testGaussianKernelGeneration}},\ \textcolor{stringliteral}{"{}Gaussian\ Kernel\ Generation"{}});}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ runTest<TestGaussian3DFilter>(\&\mbox{\hyperlink{class_test_gaussian3_d_filter_ad55b5289ccc4fc6bc5471a57156897be}{TestGaussian3DFilter::testApplyGaussianFilter}},\ \textcolor{stringliteral}{"{}Apply\ Gaussian3DFilter"{}});}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ runTest<TestGaussian3DFilter>(\&\mbox{\hyperlink{class_test_gaussian3_d_filter_ac3bc25b5ccc0d815f30d079ed61aedbe}{TestGaussian3DFilter::testGaussianFilterSmoothness}},\ \textcolor{stringliteral}{"{}Gaussian3DFilter\ Smoothness"{}});}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00248\ \};}
+\DoxyCodeLine{00249\ }
+
+\end{DoxyCode}

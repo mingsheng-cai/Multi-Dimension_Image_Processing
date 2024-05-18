@@ -1,0 +1,53 @@
+\doxysection{Tests/\+Test\+Median2\+DFilter.h File Reference}
+\hypertarget{_test_median2_d_filter_8h}{}\label{_test_median2_d_filter_8h}\index{Tests/TestMedian2DFilter.h@{Tests/TestMedian2DFilter.h}}
+
+
+Unit Tests for the \doxylink{class_median2_d_filter}{Median2\+DFilter} Class.  
+
+
+{\ttfamily \#include "{}Test.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Median2\+DFilter.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+Include dependency graph for Test\+Median2\+DFilter.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_test_median2_d_filter_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{_test_median2_d_filter_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_test_median2_d_filter}{Test\+Median2\+DFilter}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit Tests for the \doxylink{class_median2_d_filter}{Median2\+DFilter} Class. 
+
+This header file defines the \doxylink{class_test_median2_d_filter}{Test\+Median2\+DFilter} class, which is responsible for conducting unit tests on the \doxylink{class_median2_d_filter}{Median2\+DFilter} class within the image processing library. The tests aim to assess the filter\textquotesingle{}s efficacy in noise reduction, edge handling, and detail preservation in 2D images. By applying the median filter with different padding strategies and kernel sizes, these tests evaluate the filter\textquotesingle{}s performance across a variety of scenarios, ensuring its reliability in enhancing image quality. Specific tests include verifying the application of the filter on images with distinct patterns, analyzing the filter\textquotesingle{}s noise reduction capabilities on images with salt-\/and-\/pepper noise, examining the preservation of fine details, and assessing the handling of image edges through different padding methods.
+
+Usage\+: Derived from the \doxylink{class_test}{Test} base class, the \doxylink{class_test_median2_d_filter}{Test\+Median2\+DFilter} class implements the run\+Tests method to execute all defined test cases, utilizing the \doxylink{class_test}{Test} class\textquotesingle{}s run\+Test template method for each specific test function. This methodological approach guarantees a thorough evaluation of the \doxylink{class_median2_d_filter}{Median2\+DFilter}\textquotesingle{}s functionality, making it an essential part of ensuring the quality and effectiveness of the image processing operations.
+
+\begin{DoxyDate}{Date}
+Created on March 22, 2024.
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

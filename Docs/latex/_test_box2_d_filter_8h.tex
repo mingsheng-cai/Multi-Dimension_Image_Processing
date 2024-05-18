@@ -1,0 +1,56 @@
+\doxysection{Tests/\+Test\+Box2\+DFilter.h File Reference}
+\hypertarget{_test_box2_d_filter_8h}{}\label{_test_box2_d_filter_8h}\index{Tests/TestBox2DFilter.h@{Tests/TestBox2DFilter.h}}
+
+
+Unit Tests for the \doxylink{class_box2_d_filter}{Box2\+DFilter} Class.  
+
+
+{\ttfamily \#include "{}Filters/\+Box2\+DFilter.\+h"{}}\newline
+{\ttfamily \#include "{}Test.\+h"{}}\newline
+{\ttfamily \#include "{}Image.\+h"{}}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Test\+Box2\+DFilter.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_test_box2_d_filter_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{_test_box2_d_filter_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_test_box2_d_filter}{Test\+Box2\+DFilter}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit Tests for the \doxylink{class_box2_d_filter}{Box2\+DFilter} Class. 
+
+This header file declares the \doxylink{class_test_box2_d_filter}{Test\+Box2\+DFilter} class, designed to conduct unit tests specifically on the \doxylink{class_box2_d_filter}{Box2\+DFilter} class, a component of the image processing library that applies a 2D box filter to images. The tests aim to verify the filter\textquotesingle{}s behavior under various conditions, including its application to uniform images, images with gradients, and images requiring different padding strategies at the edges. Key aspects such as the preservation of uniformity, the smoothing effect on gradients, and the effectiveness of edge handling with different padding methods (zero padding and reflect padding) are evaluated. Additionally, the impact of filter kernel size on image smoothing is assessed through variance calculations, ensuring the filter\textquotesingle{}s effectiveness across a range of scenarios.
+
+Usage\+: Derived from the \doxylink{class_test}{Test} base class, the \doxylink{class_test_box2_d_filter}{Test\+Box2\+DFilter} class implements the run\+Tests method to execute all defined test cases using the \doxylink{class_test}{Test} class\textquotesingle{}s run\+Test template method. This enables comprehensive testing of the \doxylink{class_box2_d_filter}{Box2\+DFilter} class\textquotesingle{}s functionalities within the broader image processing framework.
+
+\begin{DoxyDate}{Date}
+Created on March 22, 2024.
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

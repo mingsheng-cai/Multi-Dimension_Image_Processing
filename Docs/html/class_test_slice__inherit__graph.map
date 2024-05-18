@@ -1,0 +1,5 @@
+<map id="TestSlice" name="TestSlice">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,239,199,464"/>
+<area shape="rect" id="Node000002" href="$class_test.html" title=" " alt="" coords="40,5,164,191"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,206,105,239,99,239,99,206"/>
+</map>

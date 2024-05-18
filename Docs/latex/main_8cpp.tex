@@ -1,0 +1,86 @@
+\doxysection{Source/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{Source/main.cpp@{Source/main.cpp}}
+
+
+Main entry point for the Data Processing Program.  
+
+
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}Volume.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Gaussian3\+DFilter.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Median3\+DFilter.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Pixel\+Filter.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Median2\+DFilter.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Box2\+DFilter.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Gaussian2\+DFilter.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Edge\+Filter.\+h"{}}\newline
+{\ttfamily \#include "{}stb\+\_\+image\+\_\+write.\+h"{}}\newline
+{\ttfamily \#include "{}stb\+\_\+image.\+h"{}}\newline
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_aefe397a94e8feddc652f92ef40ce9597}{STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main entry point for the Data Processing Program. 
+
+This program provides an interface for processing both 2D and 3D image data through a variety of filters. Users can choose to process 2D images with operations such as brightness adjustment, grayscale conversion, histogram equalization, thresholding, and adding salt-\/and-\/pepper noise. For 3D volume data, the program offers Gaussian and Median filtering to enhance or manipulate the data. The program leverages libraries such as STB for image reading and writing, and utilizes the filesystem library for directory operations. Users interact with the program via the console, selecting options to load, process, and save image data in various formats. This main file orchestrates the flow of operations based on user input, leveraging classes designed for specific image processing tasks.
+
+\begin{DoxyDate}{Date}
+Created on 20/03/2024.
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\label{main_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\index{main.cpp@{main.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+
+\Hypertarget{main_8cpp_aefe397a94e8feddc652f92ef40ce9597}\label{main_8cpp_aefe397a94e8feddc652f92ef40ce9597} 
+\index{main.cpp@{main.cpp}!STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_WRITE\_IMPLEMENTATION}{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

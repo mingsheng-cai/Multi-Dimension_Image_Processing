@@ -1,0 +1,136 @@
+\doxysection{Test\+Median3\+DFilter Class Reference}
+\hypertarget{class_test_median3_d_filter}{}\label{class_test_median3_d_filter}\index{TestMedian3DFilter@{TestMedian3DFilter}}
+
+
+{\ttfamily \#include $<$Test\+Median3\+DFilter.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Median3\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_test_median3_d_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Median3\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_test_median3_d_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_median3_d_filter_a2c0d144fea53cd76b6650bcac1268f9a}{test\+Apply\+Median\+Filter}} ()
+\item 
+void \mbox{\hyperlink{class_test_median3_d_filter_a260ce0d583a93f10a7169efc0cc924ea}{test\+Median\+Filter\+Effectiveness}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_median3_d_filter_a591813b1cc90b45d46a6c8001de0376f}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_test_median3_d_filter_af31119538103aee53b9eae8b6ca34270}{calculate\+Standard\+Deviation}} (const std\+::vector$<$ unsigned char $>$ \&data)
+\item 
+double \mbox{\hyperlink{class_test_median3_d_filter_ae7abeb1b72c4276dd396a23f8f69ec4e}{calculate\+Edge\+Strength}} (const \mbox{\hyperlink{class_volume}{Volume}} \&volume)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_median3_d_filter_ae7abeb1b72c4276dd396a23f8f69ec4e}\label{class_test_median3_d_filter_ae7abeb1b72c4276dd396a23f8f69ec4e} 
+\index{TestMedian3DFilter@{TestMedian3DFilter}!calculateEdgeStrength@{calculateEdgeStrength}}
+\index{calculateEdgeStrength@{calculateEdgeStrength}!TestMedian3DFilter@{TestMedian3DFilter}}
+\doxysubsubsection{\texorpdfstring{calculateEdgeStrength()}{calculateEdgeStrength()}}
+{\footnotesize\ttfamily double Test\+Median3\+DFilter\+::calculate\+Edge\+Strength (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_volume}{Volume}} \&}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Estimates Edge Strength in \doxylink{class_volume}{Volume} Data
+
+Utilizes Sobel operators to calculate the edge strength across the volume data. This method is pivotal in assessing the \doxylink{class_median3_d_filter}{Median3\+DFilter}\textquotesingle{}s ability to preserve edges while reducing noise. Edge strength, represented as the gradient magnitude, provides insight into the filter\textquotesingle{}s performance in maintaining critical structural details within the volume data, which is especially crucial for applications like medical imaging.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The 3D volume data to evaluate for edge strength.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The average edge strength across the volume data as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_test_median3_d_filter_af31119538103aee53b9eae8b6ca34270}\label{class_test_median3_d_filter_af31119538103aee53b9eae8b6ca34270} 
+\index{TestMedian3DFilter@{TestMedian3DFilter}!calculateStandardDeviation@{calculateStandardDeviation}}
+\index{calculateStandardDeviation@{calculateStandardDeviation}!TestMedian3DFilter@{TestMedian3DFilter}}
+\doxysubsubsection{\texorpdfstring{calculateStandardDeviation()}{calculateStandardDeviation()}}
+{\footnotesize\ttfamily double Test\+Median3\+DFilter\+::calculate\+Standard\+Deviation (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned char $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Calculates the Standard Deviation of \doxylink{class_volume}{Volume} Data for Noise Level Assessment
+
+Determines the standard deviation of the provided 3D volume data, serving as a metric to evaluate the noise level within the data. This calculation is fundamental in assessing the effectiveness of noise reduction techniques applied to the volume data. A lower standard deviation post-\/filter application indicates a reduction in noise, thereby enhancing the data quality for subsequent processing or analysis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A vector of unsigned chars representing the intensity values of voxels in the volume data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The standard deviation of the volume data as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_test_median3_d_filter_a591813b1cc90b45d46a6c8001de0376f}\label{class_test_median3_d_filter_a591813b1cc90b45d46a6c8001de0376f} 
+\index{TestMedian3DFilter@{TestMedian3DFilter}!runTests@{runTests}}
+\index{runTests@{runTests}!TestMedian3DFilter@{TestMedian3DFilter}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Median3\+DFilter\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes All Defined \doxylink{class_test}{Test} Cases for the \doxylink{class_median3_d_filter}{Median3\+DFilter} Class
+
+Coordinates the execution of all unit tests related to the \doxylink{class_median3_d_filter}{Median3\+DFilter} class\textquotesingle{}s functionalities, focusing on noise reduction and edge preservation in 3D volume data. This comprehensive test suite verifies the filter\textquotesingle{}s effectiveness and reliability, ensuring its suitability for enhancing volume data quality in various processing tasks and applications. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_median3_d_filter_a2c0d144fea53cd76b6650bcac1268f9a}\label{class_test_median3_d_filter_a2c0d144fea53cd76b6650bcac1268f9a} 
+\index{TestMedian3DFilter@{TestMedian3DFilter}!testApplyMedianFilter@{testApplyMedianFilter}}
+\index{testApplyMedianFilter@{testApplyMedianFilter}!TestMedian3DFilter@{TestMedian3DFilter}}
+\doxysubsubsection{\texorpdfstring{testApplyMedianFilter()}{testApplyMedianFilter()}}
+{\footnotesize\ttfamily void Test\+Median3\+DFilter\+::test\+Apply\+Median\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Median Filtering on \doxylink{class_volume}{Volume} Data
+
+Examines the \doxylink{class_median3_d_filter}{Median3\+DFilter}\textquotesingle{}s performance in reducing noise within 3D volume data while preserving essential edges. This test involves creating volume data with known noise patterns, applying median filtering, and manually inspecting specific regions to confirm noise reduction and edge preservation. It validates the filter\textquotesingle{}s core functionality and its suitability for processing volume data in various applications. \Hypertarget{class_test_median3_d_filter_a260ce0d583a93f10a7169efc0cc924ea}\label{class_test_median3_d_filter_a260ce0d583a93f10a7169efc0cc924ea} 
+\index{TestMedian3DFilter@{TestMedian3DFilter}!testMedianFilterEffectiveness@{testMedianFilterEffectiveness}}
+\index{testMedianFilterEffectiveness@{testMedianFilterEffectiveness}!TestMedian3DFilter@{TestMedian3DFilter}}
+\doxysubsubsection{\texorpdfstring{testMedianFilterEffectiveness()}{testMedianFilterEffectiveness()}}
+{\footnotesize\ttfamily void Test\+Median3\+DFilter\+::test\+Median\+Filter\+Effectiveness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Evaluates the Effectiveness of Median Filtering
+
+Conducts a quantitative analysis on the impact of median filtering on 3D volume data. By comparing standard deviations and edge strengths before and after filtering, this test assesses the filter\textquotesingle{}s effectiveness in noise reduction and edge preservation. The results confirm the \doxylink{class_median3_d_filter}{Median3\+DFilter}\textquotesingle{}s capability in enhancing volume data quality, which is essential for accurate image analysis and interpretation. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_median3_d_filter_8h}{Test\+Median3\+DFilter.\+h}}\end{DoxyCompactItemize}

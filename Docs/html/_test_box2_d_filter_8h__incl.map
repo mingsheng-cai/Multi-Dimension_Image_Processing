@@ -1,0 +1,31 @@
+<map id="Tests/TestBox2DFilter.h" name="Tests/TestBox2DFilter.h">
+<area shape="rect" id="Node000001" title="Unit Tests for the Box2DFilter Class." alt="" coords="271,5,432,31"/>
+<area shape="rect" id="Node000002" href="$_box2_d_filter_8h.html" title="Implements a 2D box filter for image processing." alt="" coords="5,79,146,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,34,138,77,136,72,304,29"/>
+<area shape="rect" id="Node000003" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="129,226,198,252"/>
+<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="308,34,266,52,246,65,228,81,205,112,189,147,170,212,165,210,184,145,201,109,224,77,243,61,264,48,306,29"/>
+<area shape="rect" id="Node000007" href="$_test_8h.html" title="Test Base Class for Unit Testing Framework." alt="" coords="238,79,295,105"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="339,34,294,71,290,67,335,29"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="319,79,384,105"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="354,31,354,63,349,63,349,31"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="408,79,482,105"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="369,29,419,67,416,72,366,34"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="506,79,573,105"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="384,29,494,70,492,75,382,34"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="598,79,655,105"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="401,29,583,76,582,81,400,34"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,104,119,151,153,211,148,214,115,154,82,107"/>
+<area shape="rect" id="Node000005" href="$_padding_8h.html" title=" " alt="" coords="25,153,105,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="76,105,72,138,66,137,71,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="15,226,72,252"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="58,107,34,127,15,154,12,168,14,184,27,213,23,215,9,185,7,168,10,152,30,123,54,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="286,300,340,326"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="190,250,275,291,273,295,188,255"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="83,177,136,215,133,219,80,181"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="64,179,54,212,49,211,59,178"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="296,100,369,127,401,140,418,151,426,171,427,191,421,211,410,230,379,265,345,293,342,288,375,261,405,227,416,209,421,190,421,172,413,154,398,145,367,132,294,105"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="231,153,302,178"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="269,105,269,137,264,137,264,105"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="326,153,404,178"/>
+<area shape="poly" id="edge11_Node000007_Node000009" title=" " alt="" coords="284,103,338,141,335,146,281,107"/>
+</map>

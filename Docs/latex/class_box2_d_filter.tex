@@ -1,0 +1,93 @@
+\doxysection{Box2\+DFilter Class Reference}
+\hypertarget{class_box2_d_filter}{}\label{class_box2_d_filter}\index{Box2DFilter@{Box2DFilter}}
+
+
+{\ttfamily \#include $<$Box2\+DFilter.\+h$>$}
+
+
+
+Collaboration diagram for Box2\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_box2_d_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_box2_d_filter_a51e4ef32d79487e8fb4c8021171a48c2}{Box2\+DFilter}} (int \mbox{\hyperlink{class_box2_d_filter_a75944dd19c872d5e675c56d350819580}{kernel\+Size}}, \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} \mbox{\hyperlink{class_box2_d_filter_a5b32e6c42003a158e6eee29e4c8b3cfd}{padding\+Type}}=\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{Padding\+Type\+::\+Zero\+Padding}})
+\item 
+void \mbox{\hyperlink{class_box2_d_filter_a51383ee4ce8b8c3f75d955d936b871a6}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&image) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_box2_d_filter_a75944dd19c872d5e675c56d350819580}{kernel\+Size}}
+\item 
+\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} \mbox{\hyperlink{class_box2_d_filter_a5b32e6c42003a158e6eee29e4c8b3cfd}{padding\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_box2_d_filter_a51e4ef32d79487e8fb4c8021171a48c2}\label{class_box2_d_filter_a51e4ef32d79487e8fb4c8021171a48c2} 
+\index{Box2DFilter@{Box2DFilter}!Box2DFilter@{Box2DFilter}}
+\index{Box2DFilter@{Box2DFilter}!Box2DFilter@{Box2DFilter}}
+\doxysubsubsection{\texorpdfstring{Box2DFilter()}{Box2DFilter()}}
+{\footnotesize\ttfamily Box2\+DFilter\+::\+Box2\+DFilter (\begin{DoxyParamCaption}\item[{int}]{kernel\+Size,  }\item[{\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}}}]{padding\+Type = {\ttfamily \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{Padding\+Type\+::\+Zero\+Padding}}} }\end{DoxyParamCaption})}
+
+Constructor for the \doxylink{class_box2_d_filter}{Box2\+DFilter} class.
+
+Initializes a \doxylink{class_box2_d_filter}{Box2\+DFilter} object with a specified kernel size and padding type. The constructor checks that the kernel size is an odd number, ensuring a symmetric area around each pixel for the filter application. This symmetry is critical for the uniform application of the filter across the image. If the kernel size is not odd, an exception is thrown, as the filter operation requires a central pixel. The padding type determines how the filter handles pixels at the image boundaries, allowing for flexible handling of edge cases.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kernel\+Size} & The size of the kernel, which must be an odd number to ensure symmetry around each pixel. \\
+\hline
+{\em padding\+Type} & The padding strategy to use when the filter kernel overlaps the image boundaries. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the kernel\+Size is not an odd number, ensuring proper filter application. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_box2_d_filter_a51383ee4ce8b8c3f75d955d936b871a6}\label{class_box2_d_filter_a51383ee4ce8b8c3f75d955d936b871a6} 
+\index{Box2DFilter@{Box2DFilter}!apply@{apply}}
+\index{apply@{apply}!Box2DFilter@{Box2DFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Box2\+DFilter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption}) const}
+
+Applies a 2D box filter to an image.
+
+This method implements the spatial averaging of pixel values across a specified neighborhood around each pixel in the image, based on the kernel size and padding type provided during the object\textquotesingle{}s construction. The process involves iterating over each pixel in the image, collecting pixel values from its neighborhood as defined by the kernel size, and then calculating the average of these values. The result is a blurred or smoothed version of the original image, with the degree of blurring dependent on the size of the kernel. Edge pixels are handled according to the specified padding strategy, which determines how pixels outside the image boundaries are treated for the purposes of the filter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to an \doxylink{class_image}{Image} object representing the image to be processed. The \doxylink{class_image}{Image} object must be initialized and loaded with data prior to calling this method. The method modifies the \doxylink{class_image}{Image} object in place, replacing its pixel data with the filtered results. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_box2_d_filter_a75944dd19c872d5e675c56d350819580}\label{class_box2_d_filter_a75944dd19c872d5e675c56d350819580} 
+\index{Box2DFilter@{Box2DFilter}!kernelSize@{kernelSize}}
+\index{kernelSize@{kernelSize}!Box2DFilter@{Box2DFilter}}
+\doxysubsubsection{\texorpdfstring{kernelSize}{kernelSize}}
+{\footnotesize\ttfamily int Box2\+DFilter\+::kernel\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_box2_d_filter_a5b32e6c42003a158e6eee29e4c8b3cfd}\label{class_box2_d_filter_a5b32e6c42003a158e6eee29e4c8b3cfd} 
+\index{Box2DFilter@{Box2DFilter}!paddingType@{paddingType}}
+\index{paddingType@{paddingType}!Box2DFilter@{Box2DFilter}}
+\doxysubsubsection{\texorpdfstring{paddingType}{paddingType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} Box2\+DFilter\+::padding\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\+Filters/\mbox{\hyperlink{_box2_d_filter_8h}{Box2\+DFilter.\+h}}\item 
+Source/\+Filters/\mbox{\hyperlink{_box2_d_filter_8cpp}{Box2\+DFilter.\+cpp}}\end{DoxyCompactItemize}

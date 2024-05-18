@@ -1,0 +1,13 @@
+<map id="Include/Filters/Gaussian2DFilter.h" name="Include/Filters/Gaussian2DFilter.h">
+<area shape="rect" id="Node000001" title="Implements a Gaussian 2D filter for image blurring." alt="" coords="5,5,175,46"/>
+<area shape="rect" id="Node000002" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="12,168,80,193"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,48,54,70,41,95,37,124,41,152,35,153,31,124,35,93,49,67,67,45"/>
+<area shape="rect" id="Node000004" href="$_padding_8h.html" title=" " alt="" coords="50,94,130,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="93,46,93,78,87,78,87,46"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="121,168,179,193"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="112,45,130,67,144,93,152,123,154,152,149,152,147,124,140,95,125,70,108,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="19,241,73,267"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="49,194,49,226,43,226,43,194"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="85,121,64,156,59,153,80,118"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="102,118,132,154,128,157,98,122"/>
+</map>

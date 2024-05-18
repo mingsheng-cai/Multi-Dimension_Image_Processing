@@ -1,0 +1,62 @@
+\doxysection{Padding Class Reference}
+\hypertarget{class_padding}{}\label{class_padding}\index{Padding@{Padding}}
+
+
+{\ttfamily \#include $<$Padding.\+h$>$}
+
+
+
+Collaboration diagram for Padding\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_padding__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{class_padding_a70cfd2cda2f036c353c4d9f590727369}{get\+Pixel\+Window}} (const \mbox{\hyperlink{class_image}{Image}} \&image, int x, int y, int c, int kernel\+Size, \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} padding\+Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_padding_a70cfd2cda2f036c353c4d9f590727369}\label{class_padding_a70cfd2cda2f036c353c4d9f590727369} 
+\index{Padding@{Padding}!getPixelWindow@{getPixelWindow}}
+\index{getPixelWindow@{getPixelWindow}!Padding@{Padding}}
+\doxysubsubsection{\texorpdfstring{getPixelWindow()}{getPixelWindow()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned char $>$ Padding\+::get\+Pixel\+Window (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{image,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{c,  }\item[{int}]{kernel\+Size,  }\item[{\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}}}]{padding\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Retrieves a pixel window around a specified location in an image, applying the selected padding strategy.
+
+This function extracts a window of pixel values centered around a specified pixel location (x, y) in the provided image. The size of the window is determined by the kernel\+Size parameter. The function supports various padding strategies to handle pixels near the image borders effectively. These strategies include zero padding (padding with zeros), edge replication (replicating the edge pixels), and reflect padding (mirroring the pixels near the edge). This functionality is crucial for filter operations that require contextual information about a pixel\textquotesingle{}s neighborhood, ensuring consistent processing across the entire image, including its edges.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A constant reference to the \doxylink{class_image}{Image} object from which the pixel window will be extracted. \\
+\hline
+{\em x} & The x-\/coordinate of the central pixel in the window. \\
+\hline
+{\em y} & The y-\/coordinate of the central pixel in the window. \\
+\hline
+{\em c} & The channel of the image to be processed. \\
+\hline
+{\em kernel\+Size} & The size of the window to be extracted, which determines how far from the central pixel the window extends. \\
+\hline
+{\em padding\+Type} & The padding strategy to be applied when the window extends beyond the image boundaries. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of unsigned char values representing the pixel intensities within the window. The vector size corresponds to the total number of pixels within the window, adjusted for the selected padding strategy as necessary. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if an unsupported padding type is specified. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\+Filters/\mbox{\hyperlink{_padding_8h}{Padding.\+h}}\item 
+Source/\+Filters/\mbox{\hyperlink{_padding_8cpp}{Padding.\+cpp}}\end{DoxyCompactItemize}

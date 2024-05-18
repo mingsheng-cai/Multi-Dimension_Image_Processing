@@ -1,0 +1,39 @@
+\doxysection{Source/\+Filters/\+Padding.cpp File Reference}
+\hypertarget{_padding_8cpp}{}\label{_padding_8cpp}\index{Source/Filters/Padding.cpp@{Source/Filters/Padding.cpp}}
+
+
+Implementation of padding strategies for image processing.  
+
+
+{\ttfamily \#include "{}Filters/\+Padding.\+h"{}}\newline
+{\ttfamily \#include "{}Image.\+h"{}}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Padding.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_padding_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementation of padding strategies for image processing. 
+
+This file contains the implementation of various padding strategies used in image processing operations, particularly in the context of applying filters such as median, Gaussian, and edge detection filters. The {\ttfamily get\+Pixel\+Window} function provided in this file facilitates the retrieval of pixel values from a specified window around a target pixel, applying padding as necessary according to the chosen padding strategy. Supported padding types include zero padding, edge replication, and reflect padding, each suitable for different image processing needs. This functionality is essential for handling image borders when applying filters that require neighborhood information. Part of the tools developed by the Advanced Programming Group, this implementation aims to enhance the flexibility and effectiveness of image manipulation tasks.
+
+\begin{DoxyDate}{Date}
+Created on March 21, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

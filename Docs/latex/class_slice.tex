@@ -1,0 +1,83 @@
+\doxysection{Slice Class Reference}
+\hypertarget{class_slice}{}\label{class_slice}\index{Slice@{Slice}}
+
+
+{\ttfamily \#include $<$Slice.\+h$>$}
+
+
+
+Collaboration diagram for Slice\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_slice__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{get\+Plane\+Slice}} (int width, int height, int depth, const unsigned char \texorpdfstring{$\ast$}{*}data, const std\+::string \&plane, int slice\+Index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_slice_acb7ec04a38ed727e2c9e73b7f34d71d0}{Slice}} ()=delete
+\item 
+\mbox{\hyperlink{class_slice_a6948812d709c830d3f3f7484a6a0f064}{\texorpdfstring{$\sim$}{\string~}\+Slice}} ()=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_slice_acb7ec04a38ed727e2c9e73b7f34d71d0}\label{class_slice_acb7ec04a38ed727e2c9e73b7f34d71d0} 
+\index{Slice@{Slice}!Slice@{Slice}}
+\index{Slice@{Slice}!Slice@{Slice}}
+\doxysubsubsection{\texorpdfstring{Slice()}{Slice()}}
+{\footnotesize\ttfamily Slice\+::\+Slice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+Default constructor for the \doxylink{class_slice}{Slice} class.
+
+The default constructor of the \doxylink{class_slice}{Slice} class is private and deleted to prevent the creation of \doxylink{class_slice}{Slice} objects. The \doxylink{class_slice}{Slice} class provides a static member function for extracting slices from 3D volumes and does not require instantiation. By making the constructor private and deleted, the class enforces this design pattern and ensures that no \doxylink{class_slice}{Slice} objects can be created. \Hypertarget{class_slice_a6948812d709c830d3f3f7484a6a0f064}\label{class_slice_a6948812d709c830d3f3f7484a6a0f064} 
+\index{Slice@{Slice}!````~Slice@{\texorpdfstring{$\sim$}{\string~}Slice}}
+\index{````~Slice@{\texorpdfstring{$\sim$}{\string~}Slice}!Slice@{Slice}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Slice()}{\string~Slice()}}
+{\footnotesize\ttfamily Slice\+::\texorpdfstring{$\sim$}{\string~}\+Slice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+Destructor for the \doxylink{class_slice}{Slice} class.
+
+The destructor of the \doxylink{class_slice}{Slice} class is private and deleted to prevent the destruction of \doxylink{class_slice}{Slice} objects. Since the \doxylink{class_slice}{Slice} class does not have any member variables or instance-\/specific functionality, there is no need to create or destroy \doxylink{class_slice}{Slice} objects. By making the destructor private and deleted, the class enforces this design pattern and ensures that no \doxylink{class_slice}{Slice} objects can be destroyed, maintaining the static nature of the \doxylink{class_slice}{Slice} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}\label{class_slice_ac23f28ad971283b2f607d2aaa0edbd40} 
+\index{Slice@{Slice}!getPlaneSlice@{getPlaneSlice}}
+\index{getPlaneSlice@{getPlaneSlice}!Slice@{Slice}}
+\doxysubsubsection{\texorpdfstring{getPlaneSlice()}{getPlaneSlice()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned char $>$ Slice\+::get\+Plane\+Slice (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{data,  }\item[{const std\+::string \&}]{plane,  }\item[{int}]{slice\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Retrieves a specific slice from a 3D volume
+
+This static member function of the \doxylink{class_slice}{Slice} class extracts and returns a specific slice from a 3D volume, given the volume\textquotesingle{}s dimensions, the raw data, the desired plane for slicing (\textquotesingle{}x-\/y\textquotesingle{}, \textquotesingle{}x-\/z\textquotesingle{}, \textquotesingle{}y-\/z\textquotesingle{}), and the slice index. The function first checks the validity of the slice index and the specified plane. Depending on the plane, it computes the starting position of the slice in the volume\textquotesingle{}s data array and copies the relevant data into a vector of unsigned char, which it then returns. If the slice index is out of range for the specified plane or if an invalid plane is specified, the function will print an error message and return an empty vector. This function allows for flexible access to different orientations of slices within the volume, facilitating various analyses and visualizations of 3D data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+{\em data} & A pointer to the volume\textquotesingle{}s raw data. \\
+\hline
+{\em plane} & A string specifying the plane of the slice (\textquotesingle{}x-\/y\textquotesingle{}, \textquotesingle{}x-\/z\textquotesingle{}, \textquotesingle{}y-\/z\textquotesingle{}). \\
+\hline
+{\em slice\+Index} & An integer indicating the index of the slice to retrieve, starting from 1.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A vector of unsigned char containing the data of the requested slice. Returns an empty vector if an error occurs. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{_slice_8h}{Slice.\+h}}\item 
+Source/\mbox{\hyperlink{_slice_8cpp}{Slice.\+cpp}}\end{DoxyCompactItemize}

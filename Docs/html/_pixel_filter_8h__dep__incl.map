@@ -1,0 +1,7 @@
+<map id="Include/Filters/PixelFilter.h" name="Include/Filters/PixelFilter.h">
+<area shape="rect" id="Node000001" title="Defines the PixelFilter class for pixel&#45;level image processing operations." alt="" coords="100,5,275,31"/>
+<area shape="rect" id="Node000002" href="$_pixel_filter_8cpp.html" title="Implementation of the PixelFilter class for various pixel&#45;level image filtering operations." alt="" coords="5,79,194,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,43,116,81,113,77,159,39"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Main entry point for the Data Processing Program." alt="" coords="217,79,337,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="216,39,264,77,260,81,213,43"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Include/Slice.h" name="Include/Slice.h">
+<area shape="rect" id="Node000001" title="Facilitates extraction of 2D slices from 3D volume data." alt="" coords="88,5,195,31"/>
+<area shape="rect" id="Node000002" href="$_slice_8cpp.html" title="Implements functionality to extract 2D slices from a 3D volume." alt="" coords="5,79,126,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,44,80,81,76,77,116,40"/>
+<area shape="rect" id="Node000003" href="$_volume_8cpp.html" title="Manages and manipulates 3D volumetric data." alt="" coords="150,79,285,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,40,207,77,203,81,164,44"/>
+</map>

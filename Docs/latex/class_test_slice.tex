@@ -1,0 +1,153 @@
+\doxysection{Test\+Slice Class Reference}
+\hypertarget{class_test_slice}{}\label{class_test_slice}\index{TestSlice@{TestSlice}}
+
+
+{\ttfamily \#include $<$Test\+Slice.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Slice\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_test_slice__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Slice\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_test_slice__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_slice_ad30e5e3fb3216b895b3a6cc261791321}{test\+Valid\+Slice}} ()
+\item 
+void \mbox{\hyperlink{class_test_slice_af0a26ff8c6ec31a747ee86dd4011867b}{test\+Invalid\+Slice\+Index}} ()
+\item 
+void \mbox{\hyperlink{class_test_slice_a7c67111090e218cbe2d0e092bb4f8457}{test\+Invalid\+Plane}} ()
+\item 
+void \mbox{\hyperlink{class_test_slice_a60497f2be11bdad13fc1e89c1d5cc03f}{test\+XYPlane\+Slice}} ()
+\item 
+void \mbox{\hyperlink{class_test_slice_a33e7c9a04382f55934e7a55c3c1682c8}{test\+XZPlane\+Slice}} ()
+\item 
+void \mbox{\hyperlink{class_test_slice_a42853ee9f586eb1f78e8b981573b8df6}{test\+YZPlane\+Slice}} ()
+\item 
+void \mbox{\hyperlink{class_test_slice_aff0bccbc27b089d52cc62c2110750e2f}{test\+Out\+Of\+Bounds\+Slice\+Index}} ()
+\item 
+void \mbox{\hyperlink{class_test_slice_ac4b874f23aa22ba3db9a69e78a516435}{test\+Negative\+Slice\+Index}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_slice_a65a9a9559bc66bd0b7132bc9b899d70f}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_slice_a65a9a9559bc66bd0b7132bc9b899d70f}\label{class_test_slice_a65a9a9559bc66bd0b7132bc9b899d70f} 
+\index{TestSlice@{TestSlice}!runTests@{runTests}}
+\index{runTests@{runTests}!TestSlice@{TestSlice}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Slice\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes the \doxylink{class_test}{Test} Cases for the \doxylink{class_slice}{Slice} Class
+
+Runs all the test cases defined for the \doxylink{class_slice}{Slice} class to validate its functionality in extracting specific slices from 3D volume data. The test cases cover a range of scenarios, including valid slices across different planes (x-\/y, x-\/z, y-\/z), handling of invalid slice indices, out-\/of-\/bounds requests, and negative indices. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_slice_a7c67111090e218cbe2d0e092bb4f8457}\label{class_test_slice_a7c67111090e218cbe2d0e092bb4f8457} 
+\index{TestSlice@{TestSlice}!testInvalidPlane@{testInvalidPlane}}
+\index{testInvalidPlane@{testInvalidPlane}!TestSlice@{TestSlice}}
+\doxysubsubsection{\texorpdfstring{testInvalidPlane()}{testInvalidPlane()}}
+{\footnotesize\ttfamily void Test\+Slice\+::test\+Invalid\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Handling of an Invalid Plane
+
+Verifies that the get\+Plane\+Slice method correctly handles an invalid plane request by returning an empty slice. This test ensures that the \doxylink{class_slice}{Slice} class can detect and respond to unsupported plane types, preventing potential data extraction errors or misinterpretation of the volume data. \Hypertarget{class_test_slice_af0a26ff8c6ec31a747ee86dd4011867b}\label{class_test_slice_af0a26ff8c6ec31a747ee86dd4011867b} 
+\index{TestSlice@{TestSlice}!testInvalidSliceIndex@{testInvalidSliceIndex}}
+\index{testInvalidSliceIndex@{testInvalidSliceIndex}!TestSlice@{TestSlice}}
+\doxysubsubsection{\texorpdfstring{testInvalidSliceIndex()}{testInvalidSliceIndex()}}
+{\footnotesize\ttfamily void Test\+Slice\+::test\+Invalid\+Slice\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Handling of an Invalid \doxylink{class_slice}{Slice} Index
+
+Verifies that the get\+Plane\+Slice method correctly handles an invalid slice index by returning an empty slice. This test ensures that the \doxylink{class_slice}{Slice} class can detect and respond to out-\/of-\/bounds slice requests, preventing potential memory access violations or incorrect data extraction. \Hypertarget{class_test_slice_ac4b874f23aa22ba3db9a69e78a516435}\label{class_test_slice_ac4b874f23aa22ba3db9a69e78a516435} 
+\index{TestSlice@{TestSlice}!testNegativeSliceIndex@{testNegativeSliceIndex}}
+\index{testNegativeSliceIndex@{testNegativeSliceIndex}!TestSlice@{TestSlice}}
+\doxysubsubsection{\texorpdfstring{testNegativeSliceIndex()}{testNegativeSliceIndex()}}
+{\footnotesize\ttfamily void Test\+Slice\+::test\+Negative\+Slice\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Handling of a Negative \doxylink{class_slice}{Slice} Index
+
+Verifies that the get\+Plane\+Slice method correctly handles a negative slice index request by returning an empty slice. This test ensures that the \doxylink{class_slice}{Slice} class can detect and respond to negative slice indices, preventing potential data extraction errors or misinterpretation of the volume data. \Hypertarget{class_test_slice_aff0bccbc27b089d52cc62c2110750e2f}\label{class_test_slice_aff0bccbc27b089d52cc62c2110750e2f} 
+\index{TestSlice@{TestSlice}!testOutOfBoundsSliceIndex@{testOutOfBoundsSliceIndex}}
+\index{testOutOfBoundsSliceIndex@{testOutOfBoundsSliceIndex}!TestSlice@{TestSlice}}
+\doxysubsubsection{\texorpdfstring{testOutOfBoundsSliceIndex()}{testOutOfBoundsSliceIndex()}}
+{\footnotesize\ttfamily void Test\+Slice\+::test\+Out\+Of\+Bounds\+Slice\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Handling of an Out-\/of-\/\+Bounds \doxylink{class_slice}{Slice} Index
+
+Verifies that the get\+Plane\+Slice method correctly handles an out-\/of-\/bounds slice index request by returning an empty slice. This test ensures that the \doxylink{class_slice}{Slice} class can detect and respond to invalid slice indices that exceed the volume\textquotesingle{}s dimensions, preventing potential memory access violations or incorrect data extraction. \Hypertarget{class_test_slice_ad30e5e3fb3216b895b3a6cc261791321}\label{class_test_slice_ad30e5e3fb3216b895b3a6cc261791321} 
+\index{TestSlice@{TestSlice}!testValidSlice@{testValidSlice}}
+\index{testValidSlice@{testValidSlice}!TestSlice@{TestSlice}}
+\doxysubsubsection{\texorpdfstring{testValidSlice()}{testValidSlice()}}
+{\footnotesize\ttfamily void Test\+Slice\+::test\+Valid\+Slice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Extraction of a Valid \doxylink{class_slice}{Slice}
+
+Verifies that the get\+Plane\+Slice method correctly extracts a valid slice from the 3D volume data. This test ensures that the extracted slice matches the expected data and size, validating the \doxylink{class_slice}{Slice} class\textquotesingle{}s ability to navigate and retrieve specific 2D planes from the 3D volume. \Hypertarget{class_test_slice_a60497f2be11bdad13fc1e89c1d5cc03f}\label{class_test_slice_a60497f2be11bdad13fc1e89c1d5cc03f} 
+\index{TestSlice@{TestSlice}!testXYPlaneSlice@{testXYPlaneSlice}}
+\index{testXYPlaneSlice@{testXYPlaneSlice}!TestSlice@{TestSlice}}
+\doxysubsubsection{\texorpdfstring{testXYPlaneSlice()}{testXYPlaneSlice()}}
+{\footnotesize\ttfamily void Test\+Slice\+::test\+XYPlane\+Slice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Extraction of an XY Plane \doxylink{class_slice}{Slice}
+
+Verifies the get\+Plane\+Slice method\textquotesingle{}s ability to extract a specific XY plane slice from the 3D volume data. This test focuses on the correct retrieval of the XY plane slice at a given depth, ensuring that the extracted slice matches the expected data and dimensions for further analysis or visualization. \Hypertarget{class_test_slice_a33e7c9a04382f55934e7a55c3c1682c8}\label{class_test_slice_a33e7c9a04382f55934e7a55c3c1682c8} 
+\index{TestSlice@{TestSlice}!testXZPlaneSlice@{testXZPlaneSlice}}
+\index{testXZPlaneSlice@{testXZPlaneSlice}!TestSlice@{TestSlice}}
+\doxysubsubsection{\texorpdfstring{testXZPlaneSlice()}{testXZPlaneSlice()}}
+{\footnotesize\ttfamily void Test\+Slice\+::test\+XZPlane\+Slice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Extraction of an XZ Plane \doxylink{class_slice}{Slice}
+
+Verifies the get\+Plane\+Slice method\textquotesingle{}s ability to extract a specific XZ plane slice from the 3D volume data. This test focuses on the correct retrieval of the XZ plane slice at a given height, ensuring that the extracted slice matches the expected data and dimensions for further analysis or visualization. \Hypertarget{class_test_slice_a42853ee9f586eb1f78e8b981573b8df6}\label{class_test_slice_a42853ee9f586eb1f78e8b981573b8df6} 
+\index{TestSlice@{TestSlice}!testYZPlaneSlice@{testYZPlaneSlice}}
+\index{testYZPlaneSlice@{testYZPlaneSlice}!TestSlice@{TestSlice}}
+\doxysubsubsection{\texorpdfstring{testYZPlaneSlice()}{testYZPlaneSlice()}}
+{\footnotesize\ttfamily void Test\+Slice\+::test\+YZPlane\+Slice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Extraction of a YZ Plane \doxylink{class_slice}{Slice}
+
+Verifies the get\+Plane\+Slice method\textquotesingle{}s ability to extract a specific YZ plane slice from the 3D volume data. This test focuses on the correct retrieval of the YZ plane slice at a given width, ensuring that the extracted slice matches the expected data and dimensions for further analysis or visualization. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_slice_8h}{Test\+Slice.\+h}}\end{DoxyCompactItemize}

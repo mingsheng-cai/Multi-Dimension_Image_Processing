@@ -1,0 +1,139 @@
+\doxysection{Gaussian2\+DFilter Class Reference}
+\hypertarget{class_gaussian2_d_filter}{}\label{class_gaussian2_d_filter}\index{Gaussian2DFilter@{Gaussian2DFilter}}
+
+
+{\ttfamily \#include $<$Gaussian2\+DFilter.\+h$>$}
+
+
+
+Collaboration diagram for Gaussian2\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{class_gaussian2_d_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gaussian2_d_filter_af338e4f4abf52033dd0c04edf973a67b}{Gaussian2\+DFilter}} (int \mbox{\hyperlink{class_gaussian2_d_filter_ac0ccfd77cb39766a5c4cd6c0e12be2e1}{kernel\+Size}}, double \mbox{\hyperlink{class_gaussian2_d_filter_a50869eeb9aab50b1cb52d72ab1c1c75a}{sigma}}=1.\+0, \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} \mbox{\hyperlink{class_gaussian2_d_filter_ae8205d3d7edd450de77de60df99b2652}{padding\+Type}}=\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{Padding\+Type\+::\+Zero\+Padding}})
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{class_gaussian2_d_filter_a0aba447a49c10fd291e893d2d6b87e52}{get\+Kernel}} () const
+\item 
+void \mbox{\hyperlink{class_gaussian2_d_filter_a7d636ff0d4cb84c394847f259d4fcbda}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&image) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gaussian2_d_filter_acf8f63c4d8f378258257fd7489016759}{generate\+Kernel}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{class_gaussian2_d_filter_a404fd6b1492b45a27ef8bd95aa7d92c2}{kernel}}
+\item 
+double \mbox{\hyperlink{class_gaussian2_d_filter_a50869eeb9aab50b1cb52d72ab1c1c75a}{sigma}}
+\item 
+int \mbox{\hyperlink{class_gaussian2_d_filter_ac0ccfd77cb39766a5c4cd6c0e12be2e1}{kernel\+Size}}
+\item 
+\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} \mbox{\hyperlink{class_gaussian2_d_filter_ae8205d3d7edd450de77de60df99b2652}{padding\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gaussian2_d_filter_af338e4f4abf52033dd0c04edf973a67b}\label{class_gaussian2_d_filter_af338e4f4abf52033dd0c04edf973a67b} 
+\index{Gaussian2DFilter@{Gaussian2DFilter}!Gaussian2DFilter@{Gaussian2DFilter}}
+\index{Gaussian2DFilter@{Gaussian2DFilter}!Gaussian2DFilter@{Gaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{Gaussian2DFilter()}{Gaussian2DFilter()}}
+{\footnotesize\ttfamily Gaussian2\+DFilter\+::\+Gaussian2\+DFilter (\begin{DoxyParamCaption}\item[{int}]{kernel\+Size,  }\item[{double}]{sigma = {\ttfamily 1.0},  }\item[{\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}}}]{padding\+Type = {\ttfamily \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{Padding\+Type\+::\+Zero\+Padding}}} }\end{DoxyParamCaption})}
+
+Constructor for the \doxylink{class_gaussian2_d_filter}{Gaussian2\+DFilter} class.
+
+Initializes a \doxylink{class_gaussian2_d_filter}{Gaussian2\+DFilter} object with specified parameters for the Gaussian blur. The kernel size affects the blur extent by determining the size of the area around each pixel to consider in the blur calculation. The sigma value controls the spread of the blur. An odd kernel size ensures a symmetric area around each pixel. The constructor validates the kernel size to ensure it is odd, throwing an exception if it is not. This setup enables precise control over the blur effect applied to images.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kernel\+Size} & The size of the kernel for the Gaussian blur, which must be an odd number. \\
+\hline
+{\em sigma} & The standard deviation of the Gaussian distribution, determining the blur\textquotesingle{}s spread. \\
+\hline
+{\em padding\+Type} & The type of padding to use when processing edges of the image. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if kernel\+Size is not an odd number. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gaussian2_d_filter_a7d636ff0d4cb84c394847f259d4fcbda}\label{class_gaussian2_d_filter_a7d636ff0d4cb84c394847f259d4fcbda} 
+\index{Gaussian2DFilter@{Gaussian2DFilter}!apply@{apply}}
+\index{apply@{apply}!Gaussian2DFilter@{Gaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Gaussian2\+DFilter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption}) const}
+
+Applies the Gaussian blur to an image using the generated Gaussian kernel.
+
+This method blurs the provided \doxylink{class_image}{Image} object by convolving it with the Gaussian kernel generated by {\ttfamily generate\+Kernel}. It applies the blur separately to each channel of the image, accommodating images with multiple color channels. The method handles edge pixels according to the specified padding type, ensuring the blur extends to the edges of the image without artifacts. The blurred image replaces the original image data, resulting in a smoothly blurred version of the original image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to an \doxylink{class_image}{Image} object representing the image to be blurred. The \doxylink{class_image}{Image} object must be initialized and loaded with data prior to calling this method. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gaussian2_d_filter_acf8f63c4d8f378258257fd7489016759}\label{class_gaussian2_d_filter_acf8f63c4d8f378258257fd7489016759} 
+\index{Gaussian2DFilter@{Gaussian2DFilter}!generateKernel@{generateKernel}}
+\index{generateKernel@{generateKernel}!Gaussian2DFilter@{Gaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{generateKernel()}{generateKernel()}}
+{\footnotesize\ttfamily void Gaussian2\+DFilter\+::generate\+Kernel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Generates the Gaussian kernel based on the specified sigma and kernel size.
+
+This method constructs the Gaussian kernel used for blurring the image. It calculates the value of each element in the kernel matrix based on the Gaussian function, ensuring the kernel is normalized so that its sum equals 1. This normalization is crucial for maintaining the original image\textquotesingle{}s brightness level after the application of the blur. The kernel is stored internally within the \doxylink{class_gaussian2_d_filter}{Gaussian2\+DFilter} object and used in the {\ttfamily apply} method to blur images. \Hypertarget{class_gaussian2_d_filter_a0aba447a49c10fd291e893d2d6b87e52}\label{class_gaussian2_d_filter_a0aba447a49c10fd291e893d2d6b87e52} 
+\index{Gaussian2DFilter@{Gaussian2DFilter}!getKernel@{getKernel}}
+\index{getKernel@{getKernel}!Gaussian2DFilter@{Gaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{getKernel()}{getKernel()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ Gaussian2\+DFilter\+::get\+Kernel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the Gaussian kernel used for blurring images.
+
+This method provides access to the Gaussian kernel generated by the \doxylink{class_gaussian2_d_filter}{Gaussian2\+DFilter} object. The kernel is a 2D matrix of double values representing the weights used in the convolution operation to apply the Gaussian blur. The kernel is normalized to ensure that the sum of its elements equals 1, preserving the image\textquotesingle{}s brightness level during the blur.
+
+\begin{DoxyReturn}{Returns}
+A 2D vector of double values representing the Gaussian kernel. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_gaussian2_d_filter_a404fd6b1492b45a27ef8bd95aa7d92c2}\label{class_gaussian2_d_filter_a404fd6b1492b45a27ef8bd95aa7d92c2} 
+\index{Gaussian2DFilter@{Gaussian2DFilter}!kernel@{kernel}}
+\index{kernel@{kernel}!Gaussian2DFilter@{Gaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{kernel}{kernel}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$double$>$ $>$ Gaussian2\+DFilter\+::kernel\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_gaussian2_d_filter_ac0ccfd77cb39766a5c4cd6c0e12be2e1}\label{class_gaussian2_d_filter_ac0ccfd77cb39766a5c4cd6c0e12be2e1} 
+\index{Gaussian2DFilter@{Gaussian2DFilter}!kernelSize@{kernelSize}}
+\index{kernelSize@{kernelSize}!Gaussian2DFilter@{Gaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{kernelSize}{kernelSize}}
+{\footnotesize\ttfamily int Gaussian2\+DFilter\+::kernel\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_gaussian2_d_filter_ae8205d3d7edd450de77de60df99b2652}\label{class_gaussian2_d_filter_ae8205d3d7edd450de77de60df99b2652} 
+\index{Gaussian2DFilter@{Gaussian2DFilter}!paddingType@{paddingType}}
+\index{paddingType@{paddingType}!Gaussian2DFilter@{Gaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{paddingType}{paddingType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} Gaussian2\+DFilter\+::padding\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_gaussian2_d_filter_a50869eeb9aab50b1cb52d72ab1c1c75a}\label{class_gaussian2_d_filter_a50869eeb9aab50b1cb52d72ab1c1c75a} 
+\index{Gaussian2DFilter@{Gaussian2DFilter}!sigma@{sigma}}
+\index{sigma@{sigma}!Gaussian2DFilter@{Gaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{sigma}{sigma}}
+{\footnotesize\ttfamily double Gaussian2\+DFilter\+::sigma\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\+Filters/\mbox{\hyperlink{_gaussian2_d_filter_8h}{Gaussian2\+DFilter.\+h}}\item 
+Source/\+Filters/\mbox{\hyperlink{_gaussian2_d_filter_8cpp}{Gaussian2\+DFilter.\+cpp}}\end{DoxyCompactItemize}

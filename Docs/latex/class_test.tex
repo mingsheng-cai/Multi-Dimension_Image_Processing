@@ -1,0 +1,142 @@
+\doxysection{Test Class Reference}
+\hypertarget{class_test}{}\label{class_test}\index{Test@{Test}}
+
+
+{\ttfamily \#include $<$Test.\+h$>$}
+
+
+
+Inheritance diagram for Test\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_test__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_test__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\item 
+virtual void \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{run\+Tests}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_test_a99f2bbfac6c95612322b0f10e607ebe5}\label{class_test_a99f2bbfac6c95612322b0f10e607ebe5} 
+\index{Test@{Test}!Test@{Test}}
+\index{Test@{Test}!Test@{Test}}
+\doxysubsubsection{\texorpdfstring{Test()}{Test()}}
+{\footnotesize\ttfamily Test\+::\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor
+
+Initializes a \doxylink{class_test}{Test} object. This constructor is primarily used for setting up initial conditions for unit tests. \Hypertarget{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}\label{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c} 
+\index{Test@{Test}!````~Test@{\texorpdfstring{$\sim$}{\string~}Test}}
+\index{````~Test@{\texorpdfstring{$\sim$}{\string~}Test}!Test@{Test}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Test()}{\string~Test()}}
+{\footnotesize\ttfamily virtual Test\+::\texorpdfstring{$\sim$}{\string~}\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Virtual Destructor
+
+Cleans up resources used by the \doxylink{class_test}{Test} object. Being virtual ensures that destructors in derived classes are called, allowing for proper cleanup of any resources allocated during the test. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_ab11bf90c61096a785a4102a1766512eb}\label{class_test_ab11bf90c61096a785a4102a1766512eb} 
+\index{Test@{Test}!runTest@{runTest}}
+\index{runTest@{runTest}!Test@{Test}}
+\doxysubsubsection{\texorpdfstring{runTest()}{runTest()}}
+{\footnotesize\ttfamily template$<$typename Test\+Class , typename Test\+Func $>$ \\
+void Test\+::run\+Test (\begin{DoxyParamCaption}\item[{Test\+Func}]{test\+Func,  }\item[{const std\+::string \&}]{test\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Runs a Specific \doxylink{class_test}{Test} Function
+
+Executes a single test function within the context of a derived test class. This template method allows for flexible testing of various functionalities by calling specific test methods defined in derived classes. The method captures exceptions thrown during the test execution to differentiate between passed and failed tests, incrementing the corresponding counters and printing the test result to the console.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Test\+Class} & The derived class type from \doxylink{class_test}{Test} which contains the test function to be executed. \\
+\hline
+{\em Test\+Func} & The function pointer type to the test function to be executed. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em test\+Func} & The test function to be executed. \\
+\hline
+{\em test\+Name} & The name of the test, used for generating test output. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_test_a0635ae352d3542bfca678666ecd83df1}\label{class_test_a0635ae352d3542bfca678666ecd83df1} 
+\index{Test@{Test}!runTests@{runTests}}
+\index{runTests@{runTests}!Test@{Test}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Runs All Tests
+
+A pure virtual function that must be implemented by derived classes to execute their suite of test functions. It orchestrates the running of all tests defined within a derived class, leveraging the run\+Test template method. 
+
+Implemented in \mbox{\hyperlink{class_test_algorithm_aa279fd26e3139e8c44be3e572533baf0}{Test\+Algorithm}}, \mbox{\hyperlink{class_test_box2_d_filter_a0451c1f83caea801251f71aab727f317}{Test\+Box2\+DFilter}}, \mbox{\hyperlink{class_test_edge_filter_a5be27cf5bb94b2ebc235431f4abe28a3}{Test\+Edge\+Filter}}, \mbox{\hyperlink{class_test_gaussian2_d_filter_a96374571fa9a4b26ed3d2d07a13712d9}{Test\+Gaussian2\+DFilter}}, \mbox{\hyperlink{class_test_gaussian3_d_filter_aa705a86f85958f5079a20be0a94989f3}{Test\+Gaussian3\+DFilter}}, \mbox{\hyperlink{class_test_image_aa0f5e79d053483b78fd7a563f226e0a5}{Test\+Image}}, \mbox{\hyperlink{class_test_median2_d_filter_abad664cc3c0f80d7eb67faa7d7330a06}{Test\+Median2\+DFilter}}, \mbox{\hyperlink{class_test_median3_d_filter_a591813b1cc90b45d46a6c8001de0376f}{Test\+Median3\+DFilter}}, \mbox{\hyperlink{class_test_padding_a00dd0dcac4874b878b819001a92c74b2}{Test\+Padding}}, \mbox{\hyperlink{class_test_pixel_filter_a94de7596a202d16cf051e6bdf8ccef24}{Test\+Pixel\+Filter}}, \mbox{\hyperlink{class_test_projection_a41fa1a4a21526e1f64f7c5ac7a433e08}{Test\+Projection}}, \mbox{\hyperlink{class_test_slice_a65a9a9559bc66bd0b7132bc9b899d70f}{Test\+Slice}}, and \mbox{\hyperlink{class_test_volume_a013a02959c595d2e05c6395e15d4a16c}{Test\+Volume}}.
+
+\Hypertarget{class_test_af0336acae0a514911b211c5851e0c092}\label{class_test_af0336acae0a514911b211c5851e0c092} 
+\index{Test@{Test}!summarize@{summarize}}
+\index{summarize@{summarize}!Test@{Test}}
+\doxysubsubsection{\texorpdfstring{summarize()}{summarize()}}
+{\footnotesize\ttfamily static void Test\+::summarize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Summarizes \doxylink{class_test}{Test} Results
+
+Outputs a summary of the test results, including the total number of tests run, the number of tests that passed, and the number of tests that failed. This static method provides a global overview of the testing outcomes after all tests have been executed. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_test_af231f64318452d2f72e4f9945ffbee23}\label{class_test_af231f64318452d2f72e4f9945ffbee23} 
+\index{Test@{Test}!totalTestsFailed@{totalTestsFailed}}
+\index{totalTestsFailed@{totalTestsFailed}!Test@{Test}}
+\doxysubsubsection{\texorpdfstring{totalTestsFailed}{totalTestsFailed}}
+{\footnotesize\ttfamily int Test\+::total\+Tests\+Failed = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_test_a54601227aed0032431515ace35d0d6bc}\label{class_test_a54601227aed0032431515ace35d0d6bc} 
+\index{Test@{Test}!totalTestsPassed@{totalTestsPassed}}
+\index{totalTestsPassed@{totalTestsPassed}!Test@{Test}}
+\doxysubsubsection{\texorpdfstring{totalTestsPassed}{totalTestsPassed}}
+{\footnotesize\ttfamily int Test\+::total\+Tests\+Passed = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_test_abc27137b4b2726f1fb54760f2ab57808}\label{class_test_abc27137b4b2726f1fb54760f2ab57808} 
+\index{Test@{Test}!totalTestsRun@{totalTestsRun}}
+\index{totalTestsRun@{totalTestsRun}!Test@{Test}}
+\doxysubsubsection{\texorpdfstring{totalTestsRun}{totalTestsRun}}
+{\footnotesize\ttfamily int Test\+::total\+Tests\+Run = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_8h}{Test.\+h}}\end{DoxyCompactItemize}

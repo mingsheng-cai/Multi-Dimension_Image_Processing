@@ -1,0 +1,5 @@
+<map id="TestEdgeFilter" name="TestEdgeFilter">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,239,145,404"/>
+<area shape="rect" id="Node000002" href="$class_test.html" title=" " alt="" coords="13,5,137,191"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,206,78,239,73,239,73,206"/>
+</map>

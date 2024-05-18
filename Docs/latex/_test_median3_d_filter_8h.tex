@@ -1,0 +1,56 @@
+\doxysection{Tests/\+Test\+Median3\+DFilter.h File Reference}
+\hypertarget{_test_median3_d_filter_8h}{}\label{_test_median3_d_filter_8h}\index{Tests/TestMedian3DFilter.h@{Tests/TestMedian3DFilter.h}}
+
+
+Unit Tests for the \doxylink{class_median3_d_filter}{Median3\+DFilter} Class.  
+
+
+{\ttfamily \#include "{}Test.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Median3\+DFilter.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for Test\+Median3\+DFilter.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_test_median3_d_filter_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{_test_median3_d_filter_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_test_median3_d_filter}{Test\+Median3\+DFilter}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit Tests for the \doxylink{class_median3_d_filter}{Median3\+DFilter} Class. 
+
+This header file defines the \doxylink{class_test_median3_d_filter}{Test\+Median3\+DFilter} class, designed for executing unit tests on the \doxylink{class_median3_d_filter}{Median3\+DFilter} class within the image processing library. The tests focus on assessing the filter\textquotesingle{}s ability to effectively reduce noise in 3D volume data while preserving significant edges, a critical aspect for medical imaging and other applications requiring volume data processing. By employing a combination of statistical analysis and edge detection algorithms, the tests validate the filter\textquotesingle{}s performance in enhancing data quality. Special attention is given to evaluating the filter\textquotesingle{}s noise reduction efficacy and its capacity to maintain edge strength, ensuring the filter\textquotesingle{}s applicability across various scenarios.
+
+Usage\+: As an extension of the \doxylink{class_test}{Test} base class, the \doxylink{class_test_median3_d_filter}{Test\+Median3\+DFilter} class implements the run\+Tests method to systematically carry out all specified test cases, utilizing the \doxylink{class_test}{Test} class\textquotesingle{}s run\+Test template method for individual test function execution. This approach facilitates a comprehensive and rigorous evaluation of the \doxylink{class_median3_d_filter}{Median3\+DFilter}\textquotesingle{}s operational effectiveness in real-\/world volume data processing tasks.
+
+\begin{DoxyDate}{Date}
+Created on March 22, 2024.
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

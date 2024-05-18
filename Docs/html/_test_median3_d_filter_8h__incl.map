@@ -1,0 +1,36 @@
+<map id="Tests/TestMedian3DFilter.h" name="Tests/TestMedian3DFilter.h">
+<area shape="rect" id="Node000001" title="Unit Tests for the Median3DFilter Class." alt="" coords="319,5,499,31"/>
+<area shape="rect" id="Node000002" href="$_test_8h.html" title="Test Base Class for Unit Testing Framework." alt="" coords="118,79,175,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="365,34,191,81,190,76,364,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,77,178"/>
+<area shape="poly" id="edge17_Node000001_Node000003" title=" " alt="" coords="319,23,267,28,212,39,157,56,107,81,77,109,56,140,51,137,73,105,103,77,155,51,211,34,267,23,318,18"/>
+<area shape="rect" id="Node000006" href="$_median3_d_filter_8h.html" title="Implements a 3D Median filter for volume data processing." alt="" coords="212,79,371,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="390,34,326,73,323,68,388,29"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="360,300,418,326"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="411,31,393,285,388,285,406,31"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="446,79,511,105"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="422,29,458,66,454,70,419,33"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="534,79,601,105"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="437,29,528,70,526,75,435,34"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="625,79,700,105"/>
+<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="453,29,611,73,609,78,451,34"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="130,107,73,146,70,141,127,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="108,300,161,326"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="147,105,142,153,137,285,132,284,137,152,142,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="152,153,229,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="156,103,177,138,173,141,151,106"/>
+<area shape="rect" id="Node000007" href="$_filter_8h.html" title="Defines interfaces for 2D and 3D filtering operations on images and volume data." alt="" coords="254,153,314,178"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="293,105,289,138,284,137,288,105"/>
+<area shape="poly" id="edge14_Node000006_Node000010" title=" " alt="" coords="302,104,329,151,360,223,383,284,378,286,355,225,324,154,297,106"/>
+<area shape="rect" id="Node000008" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="152,226,221,252"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="269,181,216,219,213,215,266,177"/>
+<area shape="rect" id="Node000009" href="$_volume_8h.html" title="Manages 3D volumetric data for processing and analysis." alt="" coords="244,226,321,252"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="286,179,286,211,280,210,281,179"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="180,254,154,289,150,286,176,251"/>
+<area shape="poly" id="edge13_Node000009_Node000004" title=" " alt="" coords="258,255,175,295,172,290,256,250"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="302,250,360,289,357,293,299,255"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="185,300,252,326"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="274,254,241,290,237,287,270,250"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="276,300,337,326"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="289,251,300,284,295,286,284,253"/>
+</map>

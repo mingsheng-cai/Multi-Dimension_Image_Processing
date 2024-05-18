@@ -1,0 +1,198 @@
+\doxysection{Gaussian3\+DFilter Class Reference}
+\hypertarget{class_gaussian3_d_filter}{}\label{class_gaussian3_d_filter}\index{Gaussian3DFilter@{Gaussian3DFilter}}
+
+
+{\ttfamily \#include $<$Gaussian3\+DFilter.\+h$>$}
+
+
+
+Inheritance diagram for Gaussian3\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_gaussian3_d_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Gaussian3\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_gaussian3_d_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gaussian3_d_filter_af7f8f5a0fae5224685f01d0077786a5d}{Gaussian3\+DFilter}} (double \mbox{\hyperlink{class_gaussian3_d_filter_a7aabc939a17f4bed3b1f29d624abc2c3}{sigma}}, int \mbox{\hyperlink{class_gaussian3_d_filter_a1c6cea2bb7e6c095a83d42e7c70ce784}{kernel\+Size}})
+\item 
+void \mbox{\hyperlink{class_gaussian3_d_filter_ad63630e41c38ae71dbdbba2a5828bf22}{apply}} (\mbox{\hyperlink{class_volume}{Volume}} \&volume) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_filter3_d}{IFilter3D}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_filter3_d_a018200e389f131f3be2a74641dfd78fe}{\texorpdfstring{$\sim$}{\string~}\+IFilter3D}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_gaussian3_d_filter_a83c65ba49c7e6380a8542f298abaa33b}{compute\+Gaussian1\+DKernel}} () const
+\item 
+void \mbox{\hyperlink{class_gaussian3_d_filter_a3246e1771a8f6011c83d048c9f0c00e3}{apply\+Gaussian1\+DFilter\+\_\+X}} (std\+::vector$<$ unsigned char $>$ \&data, int width, int height, int depth)
+\item 
+void \mbox{\hyperlink{class_gaussian3_d_filter_af7e7841966cb44807b6bc5cad20afa50}{apply\+Gaussian1\+DFilter\+\_\+Y}} (std\+::vector$<$ unsigned char $>$ \&data, int width, int height, int depth)
+\item 
+void \mbox{\hyperlink{class_gaussian3_d_filter_a86b347de03ff023abf51b554f644ea01}{apply\+Gaussian1\+DFilter\+\_\+Z}} (std\+::vector$<$ unsigned char $>$ \&data, int width, int height, int depth)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_gaussian3_d_filter_a7aabc939a17f4bed3b1f29d624abc2c3}{sigma}}
+\item 
+int \mbox{\hyperlink{class_gaussian3_d_filter_a1c6cea2bb7e6c095a83d42e7c70ce784}{kernel\+Size}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gaussian3_d_filter_af7f8f5a0fae5224685f01d0077786a5d}\label{class_gaussian3_d_filter_af7f8f5a0fae5224685f01d0077786a5d} 
+\index{Gaussian3DFilter@{Gaussian3DFilter}!Gaussian3DFilter@{Gaussian3DFilter}}
+\index{Gaussian3DFilter@{Gaussian3DFilter}!Gaussian3DFilter@{Gaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{Gaussian3DFilter()}{Gaussian3DFilter()}}
+{\footnotesize\ttfamily Gaussian3\+DFilter\+::\+Gaussian3\+DFilter (\begin{DoxyParamCaption}\item[{double}]{sigma,  }\item[{int}]{kernel\+Size }\end{DoxyParamCaption})}
+
+Constructor for the \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter} class.
+
+Initializes a \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter} object with a specified standard deviation (sigma) and kernel size. The kernel size determines the extent of the neighborhood around each voxel to be considered for filtering, and it must be an odd number to ensure a central voxel. Sigma determines the spread of the Gaussian kernel and thereby the extent of smoothing. This constructor validates the kernel size and throws an exception if the kernel size is not odd.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sigma} & The standard deviation of the Gaussian distribution used for the kernel. \\
+\hline
+{\em kernel\+Size} & The size of the kernel. It must be an odd number. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if kernel\+Size is not an odd number. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gaussian3_d_filter_ad63630e41c38ae71dbdbba2a5828bf22}\label{class_gaussian3_d_filter_ad63630e41c38ae71dbdbba2a5828bf22} 
+\index{Gaussian3DFilter@{Gaussian3DFilter}!apply@{apply}}
+\index{apply@{apply}!Gaussian3DFilter@{Gaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Gaussian3\+DFilter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume}{Volume}} \&}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Applies the Gaussian filter to the entire volume.
+
+This method orchestrates the application of the Gaussian filter to a 3D volume, smoothing the volume along all three axes (X, Y, and Z) sequentially. It achieves this by calling the apply\+Gaussian1\+DFilter\+\_\+X, apply\+Gaussian1\+DFilter\+\_\+Y, and apply\+Gaussian1\+DFilter\+\_\+Z methods in succession, each applying the Gaussian kernel along one axis. The process results in a volume that is uniformly smoothed, reducing noise while preserving important structural information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & A reference to the \doxylink{class_volume}{Volume} object representing the 3D data to be filtered. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_filter3_d_a54bd55c35784d1911bb404cc8399d161}{IFilter3D}}.
+
+\Hypertarget{class_gaussian3_d_filter_a3246e1771a8f6011c83d048c9f0c00e3}\label{class_gaussian3_d_filter_a3246e1771a8f6011c83d048c9f0c00e3} 
+\index{Gaussian3DFilter@{Gaussian3DFilter}!applyGaussian1DFilter\_X@{applyGaussian1DFilter\_X}}
+\index{applyGaussian1DFilter\_X@{applyGaussian1DFilter\_X}!Gaussian3DFilter@{Gaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{applyGaussian1DFilter\_X()}{applyGaussian1DFilter\_X()}}
+{\footnotesize\ttfamily void Gaussian3\+DFilter\+::apply\+Gaussian1\+DFilter\+\_\+X (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ \&}]{data,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Applies the Gaussian filter along the X-\/axis of the volume.
+
+This method convolves the volume data with the Gaussian kernel along the X-\/axis, effectively smoothing the volume along this direction. It uses the precomputed 1D Gaussian kernel for convolution, applying the kernel to each voxel\textquotesingle{}s neighborhood along the X-\/axis and updating the voxel\textquotesingle{}s value based on the weighted sum of its neighbors. The process results in a volume that is blurred along the X-\/axis while retaining its structure along the Y and Z axes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A reference to a vector of unsigned char representing the volume data to be filtered. \\
+\hline
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gaussian3_d_filter_af7e7841966cb44807b6bc5cad20afa50}\label{class_gaussian3_d_filter_af7e7841966cb44807b6bc5cad20afa50} 
+\index{Gaussian3DFilter@{Gaussian3DFilter}!applyGaussian1DFilter\_Y@{applyGaussian1DFilter\_Y}}
+\index{applyGaussian1DFilter\_Y@{applyGaussian1DFilter\_Y}!Gaussian3DFilter@{Gaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{applyGaussian1DFilter\_Y()}{applyGaussian1DFilter\_Y()}}
+{\footnotesize\ttfamily void Gaussian3\+DFilter\+::apply\+Gaussian1\+DFilter\+\_\+Y (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ \&}]{data,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Applies the Gaussian filter along the Y-\/axis of the volume.
+
+Similar to apply\+Gaussian1\+DFilter\+\_\+X, but the convolution is performed along the Y-\/axis. This method smooths the volume data along the Y-\/axis, applying the Gaussian kernel to each voxel\textquotesingle{}s neighborhood in this direction. The resulting volume exhibits blurring along the Y-\/axis, with its characteristics along the X and Z axes preserved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A reference to a vector of unsigned char representing the volume data to be filtered. \\
+\hline
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gaussian3_d_filter_a86b347de03ff023abf51b554f644ea01}\label{class_gaussian3_d_filter_a86b347de03ff023abf51b554f644ea01} 
+\index{Gaussian3DFilter@{Gaussian3DFilter}!applyGaussian1DFilter\_Z@{applyGaussian1DFilter\_Z}}
+\index{applyGaussian1DFilter\_Z@{applyGaussian1DFilter\_Z}!Gaussian3DFilter@{Gaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{applyGaussian1DFilter\_Z()}{applyGaussian1DFilter\_Z()}}
+{\footnotesize\ttfamily void Gaussian3\+DFilter\+::apply\+Gaussian1\+DFilter\+\_\+Z (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ \&}]{data,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Applies the Gaussian filter along the Z-\/axis of the volume.
+
+This method extends the Gaussian smoothing process to the Z-\/axis, convolving the volume data with the Gaussian kernel along this direction. It smooths the volume along the Z-\/axis, applying the kernel to each voxel\textquotesingle{}s neighborhood and updating the voxel\textquotesingle{}s value accordingly. The operation blurs the volume along the Z-\/axis, maintaining its dimensions along the X and Y axes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A reference to a vector of unsigned char representing the volume data to be filtered. \\
+\hline
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gaussian3_d_filter_a83c65ba49c7e6380a8542f298abaa33b}\label{class_gaussian3_d_filter_a83c65ba49c7e6380a8542f298abaa33b} 
+\index{Gaussian3DFilter@{Gaussian3DFilter}!computeGaussian1DKernel@{computeGaussian1DKernel}}
+\index{computeGaussian1DKernel@{computeGaussian1DKernel}!Gaussian3DFilter@{Gaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{computeGaussian1DKernel()}{computeGaussian1DKernel()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Gaussian3\+DFilter\+::compute\+Gaussian1\+DKernel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Computes a 1D Gaussian kernel.
+
+This member function calculates the coefficients of a 1D Gaussian kernel based on the class\textquotesingle{}s sigma (standard deviation) and kernel size. The coefficients are computed using the Gaussian formula and are then normalized to ensure that the sum of the kernel coefficients is 1. This normalization is essential for maintaining the original amplitude of the signal after filtering. The computed kernel is symmetric and centered, suitable for convolution operations in one dimension.
+
+\begin{DoxyReturn}{Returns}
+\+: A vector of doubles containing the normalized coefficients of the 1D Gaussian kernel. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_gaussian3_d_filter_a1c6cea2bb7e6c095a83d42e7c70ce784}\label{class_gaussian3_d_filter_a1c6cea2bb7e6c095a83d42e7c70ce784} 
+\index{Gaussian3DFilter@{Gaussian3DFilter}!kernelSize@{kernelSize}}
+\index{kernelSize@{kernelSize}!Gaussian3DFilter@{Gaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{kernelSize}{kernelSize}}
+{\footnotesize\ttfamily int Gaussian3\+DFilter\+::kernel\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_gaussian3_d_filter_a7aabc939a17f4bed3b1f29d624abc2c3}\label{class_gaussian3_d_filter_a7aabc939a17f4bed3b1f29d624abc2c3} 
+\index{Gaussian3DFilter@{Gaussian3DFilter}!sigma@{sigma}}
+\index{sigma@{sigma}!Gaussian3DFilter@{Gaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{sigma}{sigma}}
+{\footnotesize\ttfamily double Gaussian3\+DFilter\+::sigma\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\+Filters/\mbox{\hyperlink{_gaussian3_d_filter_8h}{Gaussian3\+DFilter.\+h}}\item 
+Source/\+Filters/\mbox{\hyperlink{_gaussian3_d_filter_8cpp}{Gaussian3\+DFilter.\+cpp}}\end{DoxyCompactItemize}

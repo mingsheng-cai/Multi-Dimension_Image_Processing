@@ -1,0 +1,31 @@
+<map id="Include/Volume.h" name="Include/Volume.h">
+<area shape="rect" id="Node000001" title="Manages 3D volumetric data for processing and analysis." alt="" coords="298,5,420,31"/>
+<area shape="rect" id="Node000002" href="$_filter_8h.html" title="Defines interfaces for 2D and 3D filtering operations on images and volume data." alt="" coords="342,79,488,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="379,41,407,77,403,80,375,45"/>
+<area shape="rect" id="Node000003" href="$_gaussian3_d_filter_8h.html" title="Implements a 3D Gaussian filter for smoothing volume data." alt="" coords="89,153,258,193"/>
+<area shape="poly" id="edge11_Node000001_Node000003" title=" " alt="" coords="331,42,279,81,196,154,192,150,276,77,328,38"/>
+<area shape="rect" id="Node000004" href="$_gaussian3_d_filter_8cpp.html" title="Implements a 3D Gaussian filter for volumetric data smoothing." alt="" coords="5,241,174,282"/>
+<area shape="poly" id="edge15_Node000001_Node000004" title=" " alt="" coords="283,35,229,50,172,74,120,108,97,130,79,154,71,175,71,198,83,240,77,242,65,199,66,174,74,151,93,126,116,104,170,69,227,45,282,30"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title="Main entry point for the Data Processing Program." alt="" coords="210,249,329,275"/>
+<area shape="poly" id="edge17_Node000001_Node000005" title=" " alt="" coords="348,46,332,80,297,177,275,249,270,247,292,175,327,78,343,44"/>
+<area shape="rect" id="Node000010" href="$_slice_8h.html" title="Facilitates extraction of 2D slices from 3D volume data." alt="" coords="769,79,877,105"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="436,29,769,80,768,85,435,34"/>
+<area shape="rect" id="Node000012" href="$_volume_8cpp.html" title="Manages and manipulates 3D volumetric data." alt="" coords="907,160,1043,186"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="436,19,549,24,681,35,803,52,852,63,889,77,916,95,939,117,970,159,966,162,935,121,913,99,887,81,851,68,802,57,680,40,549,30,436,24"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="364,112,235,155,233,150,363,107"/>
+<area shape="rect" id="Node000006" href="$_median3_d_filter_8h.html" title="Implements a 3D Median filter for volume data processing." alt="" coords="534,160,739,186"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="464,108,603,157,601,162,462,113"/>
+<area shape="rect" id="Node000008" href="$_pixel_filter_8h.html" title="Defines the PixelFilter class for pixel&#45;level image processing operations." alt="" coords="334,160,509,186"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="420,120,423,159,418,160,414,120"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="146,207,110,243,107,239,142,203"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="208,202,258,247,255,251,205,206"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="566,192,341,244,314,251,313,246,340,239,565,187"/>
+<area shape="rect" id="Node000007" href="$_median3_d_filter_8cpp.html" title="Implements a 3D median filter for volumetric data noise reduction." alt="" coords="566,249,784,275"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="650,199,672,247,667,250,645,201"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="389,196,292,251,290,246,386,191"/>
+<area shape="rect" id="Node000009" href="$_pixel_filter_8cpp.html" title="Implementation of the PixelFilter class for various pixel&#45;level image filtering operations." alt="" coords="353,249,541,275"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="432,200,446,248,441,249,427,201"/>
+<area shape="rect" id="Node000011" href="$_slice_8cpp.html" title="Implements functionality to extract 2D slices from a 3D volume." alt="" coords="763,160,883,186"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="826,120,826,160,820,160,820,120"/>
+<area shape="poly" id="edge14_Node000010_Node000012" title=" " alt="" coords="861,110,953,157,950,162,858,114"/>
+</map>

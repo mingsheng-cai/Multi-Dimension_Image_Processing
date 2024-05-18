@@ -1,0 +1,54 @@
+\doxysection{Tests/\+Test\+Image.h File Reference}
+\hypertarget{_test_image_8h}{}\label{_test_image_8h}\index{Tests/TestImage.h@{Tests/TestImage.h}}
+
+
+Unit Tests for the \doxylink{class_image}{Image} Class.  
+
+
+{\ttfamily \#include "{}Test.\+h"{}}\newline
+{\ttfamily \#include "{}Image.\+h"{}}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+Include dependency graph for Test\+Image.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_test_image_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{_test_image_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_test_image}{Test\+Image}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit Tests for the \doxylink{class_image}{Image} Class. 
+
+This header file defines the \doxylink{class_test_image}{Test\+Image} class, aimed at performing unit tests on the \doxylink{class_image}{Image} class functionalities. The tests encompass loading and saving images, handling nonexistent images, manipulating image attributes such as width, height, and channels, as well as testing the data manipulation capabilities of the \doxylink{class_image}{Image} class. These tests ensure the reliability and correctness of the \doxylink{class_image}{Image} class in loading, saving, and manipulating image data, which is fundamental for any image processing application. Special attention is given to file operations, including verifying the creation and deletion of image files, to ensure the \doxylink{class_image}{Image} class interacts correctly with the filesystem.
+
+Usage\+: Derived from the \doxylink{class_test}{Test} base class, the \doxylink{class_test_image}{Test\+Image} class implements the run\+Tests method to systematically execute all specified test cases. Each test case targets specific functionality of the \doxylink{class_image}{Image} class, using assertions to validate expected outcomes. This comprehensive testing approach verifies the \doxylink{class_image}{Image} class\textquotesingle{}s capabilities in real-\/world image processing scenarios.
+
+\begin{DoxyDate}{Date}
+Created on March 21, 2024.
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

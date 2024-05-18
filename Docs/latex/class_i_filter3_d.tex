@@ -1,0 +1,69 @@
+\doxysection{IFilter3D Class Reference}
+\hypertarget{class_i_filter3_d}{}\label{class_i_filter3_d}\index{IFilter3D@{IFilter3D}}
+
+
+{\ttfamily \#include $<$Filter.\+h$>$}
+
+
+
+Inheritance diagram for IFilter3D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_filter3_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for IFilter3D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{class_i_filter3_d__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_filter3_d_a018200e389f131f3be2a74641dfd78fe}{\texorpdfstring{$\sim$}{\string~}\+IFilter3D}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_filter3_d_a54bd55c35784d1911bb404cc8399d161}{apply}} (\mbox{\hyperlink{class_volume}{Volume}} \&volume)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_filter3_d_a018200e389f131f3be2a74641dfd78fe}\label{class_i_filter3_d_a018200e389f131f3be2a74641dfd78fe} 
+\index{IFilter3D@{IFilter3D}!````~IFilter3D@{\texorpdfstring{$\sim$}{\string~}IFilter3D}}
+\index{````~IFilter3D@{\texorpdfstring{$\sim$}{\string~}IFilter3D}!IFilter3D@{IFilter3D}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IFilter3D()}{\string~IFilter3D()}}
+{\footnotesize\ttfamily virtual IFilter3\+D\+::\texorpdfstring{$\sim$}{\string~}\+IFilter3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Destructor for \doxylink{class_i_filter3_d}{IFilter3D}.
+
+The destructor is declared as virtual to ensure that the destructor of any derived class is called when an object of the derived class is deleted through a pointer to the base class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_filter3_d_a54bd55c35784d1911bb404cc8399d161}\label{class_i_filter3_d_a54bd55c35784d1911bb404cc8399d161} 
+\index{IFilter3D@{IFilter3D}!apply@{apply}}
+\index{apply@{apply}!IFilter3D@{IFilter3D}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily virtual void IFilter3\+D\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume}{Volume}} \&}]{volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Applies a filter to a 3D volume.
+
+This method applies a filter to a 3D volume, modifying the volume data in place.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The volume to which the filter will be applied. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_gaussian3_d_filter_ad63630e41c38ae71dbdbba2a5828bf22}{Gaussian3\+DFilter}}, and \mbox{\hyperlink{class_median3_d_filter_a510ca1859142d0f4f3e5c268abc1809c}{Median3\+DFilter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\+Filters/\mbox{\hyperlink{_filter_8h}{Filter.\+h}}\end{DoxyCompactItemize}

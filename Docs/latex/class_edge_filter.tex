@@ -1,0 +1,179 @@
+\doxysection{Edge\+Filter Class Reference}
+\hypertarget{class_edge_filter}{}\label{class_edge_filter}\index{EdgeFilter@{EdgeFilter}}
+
+
+{\ttfamily \#include $<$Edge\+Filter.\+h$>$}
+
+
+
+Collaboration diagram for Edge\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_edge_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_edge_filter_a4e2f7a0946af34aa6fd5a1e1d15102df}{Edge\+Filter}} (\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}} type, \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} \mbox{\hyperlink{class_edge_filter_a22a6eda354fb155b0cca8190d3a87163}{padding\+Type}}=\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{Padding\+Type\+::\+Zero\+Padding}})
+\item 
+void \mbox{\hyperlink{class_edge_filter_a7350005391816c05950c3d73b9946021}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&image)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_edge_filter_aa786ca8876149eb4789403ec9140c220}{apply\+Sobel}} (\mbox{\hyperlink{class_image}{Image}} \&image) const
+\item 
+void \mbox{\hyperlink{class_edge_filter_af9a753bc684533d0bee29838d646e020}{apply\+Prewitt}} (\mbox{\hyperlink{class_image}{Image}} \&image) const
+\item 
+void \mbox{\hyperlink{class_edge_filter_a56a17f624b387e02609bc4a053e1b752}{apply\+Scharr}} (\mbox{\hyperlink{class_image}{Image}} \&image) const
+\item 
+void \mbox{\hyperlink{class_edge_filter_ae1a36855cf1bab3121fa93daae463db5}{apply\+Roberts}} (\mbox{\hyperlink{class_image}{Image}} \&image) const
+\item 
+bool \mbox{\hyperlink{class_edge_filter_a13249ad0bbfab110eff94e2ba24aafd4}{is\+Grayscale}} (const \mbox{\hyperlink{class_image}{Image}} \&image) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}} \mbox{\hyperlink{class_edge_filter_af75999a00ab8acbbcb5bb307c2835e4c}{filter\+Type}}
+\item 
+\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} \mbox{\hyperlink{class_edge_filter_a22a6eda354fb155b0cca8190d3a87163}{padding\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_edge_filter_a4e2f7a0946af34aa6fd5a1e1d15102df}\label{class_edge_filter_a4e2f7a0946af34aa6fd5a1e1d15102df} 
+\index{EdgeFilter@{EdgeFilter}!EdgeFilter@{EdgeFilter}}
+\index{EdgeFilter@{EdgeFilter}!EdgeFilter@{EdgeFilter}}
+\doxysubsubsection{\texorpdfstring{EdgeFilter()}{EdgeFilter()}}
+{\footnotesize\ttfamily Edge\+Filter\+::\+Edge\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}}}]{type,  }\item[{\mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}}}]{padding\+Type = {\ttfamily \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{Padding\+Type\+::\+Zero\+Padding}}} }\end{DoxyParamCaption})}
+
+Constructs an \doxylink{class_edge_filter}{Edge\+Filter} object with the specified filter type and padding type.
+
+This constructor initializes an \doxylink{class_edge_filter}{Edge\+Filter} object with the specified edge detection filter type and padding type. The filter type determines the edge detection algorithm to be applied, while the padding type specifies the padding strategy to handle edge pixels during convolution. The constructed \doxylink{class_edge_filter}{Edge\+Filter} object can be used to apply edge detection to grayscale images.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of edge detection filter to be used (Sobel, Prewitt, Scharr, or Roberts). \\
+\hline
+{\em padding\+Type} & The padding strategy to be applied during convolution (Zero\+Padding, Replicate\+Padding, or Reflect\+Padding). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_edge_filter_a7350005391816c05950c3d73b9946021}\label{class_edge_filter_a7350005391816c05950c3d73b9946021} 
+\index{EdgeFilter@{EdgeFilter}!apply@{apply}}
+\index{apply@{apply}!EdgeFilter@{EdgeFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Edge\+Filter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})}
+
+Applies the configured edge detection filter to an image.
+
+This method applies the selected edge detection algorithm to the provided \doxylink{class_image}{Image} object if the image is in grayscale format. It first checks if the image is suitable for edge detection by calling is\+Grayscale. If the image is not in grayscale, an error message is printed, and the function returns without modifying the image. Otherwise, it proceeds to apply the chosen edge detection algorithm, updating the image with the detected edges.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to an \doxylink{class_image}{Image} object on which the edge detection filter will be applied. The \doxylink{class_image}{Image} object must be initialized and loaded with image data prior to calling this method. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_edge_filter_af9a753bc684533d0bee29838d646e020}\label{class_edge_filter_af9a753bc684533d0bee29838d646e020} 
+\index{EdgeFilter@{EdgeFilter}!applyPrewitt@{applyPrewitt}}
+\index{applyPrewitt@{applyPrewitt}!EdgeFilter@{EdgeFilter}}
+\doxysubsubsection{\texorpdfstring{applyPrewitt()}{applyPrewitt()}}
+{\footnotesize\ttfamily void Edge\+Filter\+::apply\+Prewitt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Applies the Prewitt edge detection algorithm to an image.
+
+This method utilizes the Prewitt operator to detect edges in the provided grayscale image. Similar to the Sobel filter, it employs horizontal and vertical kernels to compute the gradient magnitude at each pixel, effectively highlighting the edges. The Prewitt operator is known for its simplicity and effectiveness in edge detection, making it suitable for various image processing tasks where edge delineation is required.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A constant reference to an \doxylink{class_image}{Image} object to which the Prewitt filter will be applied. The image should be in grayscale format for the algorithm to function correctly. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_edge_filter_ae1a36855cf1bab3121fa93daae463db5}\label{class_edge_filter_ae1a36855cf1bab3121fa93daae463db5} 
+\index{EdgeFilter@{EdgeFilter}!applyRoberts@{applyRoberts}}
+\index{applyRoberts@{applyRoberts}!EdgeFilter@{EdgeFilter}}
+\doxysubsubsection{\texorpdfstring{applyRoberts()}{applyRoberts()}}
+{\footnotesize\ttfamily void Edge\+Filter\+::apply\+Roberts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Applies the Roberts Cross edge detection algorithm to an image.
+
+The Roberts Cross operator is one of the earliest yet effective methods for edge detection, focusing on highlighting high-\/frequency components in the image. It computes the gradient magnitude using a pair of 2x2 convolution kernels. This simplicity makes it particularly fast and suitable for detecting edges in images with minimal computational resources. Despite its age, it remains effective for applications where quick edge detection is more critical than precision.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A constant reference to an \doxylink{class_image}{Image} object to which the Roberts Cross filter will be applied. The algorithm expects the image to be in grayscale format for accurate edge detection. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_edge_filter_a56a17f624b387e02609bc4a053e1b752}\label{class_edge_filter_a56a17f624b387e02609bc4a053e1b752} 
+\index{EdgeFilter@{EdgeFilter}!applyScharr@{applyScharr}}
+\index{applyScharr@{applyScharr}!EdgeFilter@{EdgeFilter}}
+\doxysubsubsection{\texorpdfstring{applyScharr()}{applyScharr()}}
+{\footnotesize\ttfamily void Edge\+Filter\+::apply\+Scharr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Applies the Scharr edge detection algorithm to an image.
+
+The Scharr method is an enhancement over the Sobel operator, offering better rotation symmetry and a higher weight to pixels directly adjacent to the center pixel. This method applies Scharr\textquotesingle{}s specific kernels to calculate the gradient magnitude at each pixel of the provided grayscale image, aiming to accurately detect edges with a higher sensitivity to subtle changes in intensity, thereby producing a more defined edge map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A constant reference to an \doxylink{class_image}{Image} object to which the Scharr filter will be applied. It is essential that the image is in grayscale format to ensure the algorithm performs as expected. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_edge_filter_aa786ca8876149eb4789403ec9140c220}\label{class_edge_filter_aa786ca8876149eb4789403ec9140c220} 
+\index{EdgeFilter@{EdgeFilter}!applySobel@{applySobel}}
+\index{applySobel@{applySobel}!EdgeFilter@{EdgeFilter}}
+\doxysubsubsection{\texorpdfstring{applySobel()}{applySobel()}}
+{\footnotesize\ttfamily void Edge\+Filter\+::apply\+Sobel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Applies the Sobel edge detection algorithm to an image.
+
+This method implements the Sobel edge detection algorithm, which uses two 3x3 kernels to calculate the gradient magnitude at each pixel in the provided grayscale image. The gradient magnitude represents the edge strength. The resulting edge map replaces the original image data. This method is suitable for highlighting horizontal and vertical edges in the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A constant reference to an \doxylink{class_image}{Image} object to which the Sobel filter will be applied. The image must be in grayscale format. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_edge_filter_a13249ad0bbfab110eff94e2ba24aafd4}\label{class_edge_filter_a13249ad0bbfab110eff94e2ba24aafd4} 
+\index{EdgeFilter@{EdgeFilter}!isGrayscale@{isGrayscale}}
+\index{isGrayscale@{isGrayscale}!EdgeFilter@{EdgeFilter}}
+\doxysubsubsection{\texorpdfstring{isGrayscale()}{isGrayscale()}}
+{\footnotesize\ttfamily bool Edge\+Filter\+::is\+Grayscale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Checks if an image is in grayscale format.
+
+This method determines whether the provided \doxylink{class_image}{Image} object is a grayscale image by checking its number of color channels. An image is considered grayscale if it has only one channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A constant reference to an \doxylink{class_image}{Image} object to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the image has only one channel, indicating it is a grayscale image; false otherwise. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_edge_filter_af75999a00ab8acbbcb5bb307c2835e4c}\label{class_edge_filter_af75999a00ab8acbbcb5bb307c2835e4c} 
+\index{EdgeFilter@{EdgeFilter}!filterType@{filterType}}
+\index{filterType@{filterType}!EdgeFilter@{EdgeFilter}}
+\doxysubsubsection{\texorpdfstring{filterType}{filterType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}} Edge\+Filter\+::filter\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_edge_filter_a22a6eda354fb155b0cca8190d3a87163}\label{class_edge_filter_a22a6eda354fb155b0cca8190d3a87163} 
+\index{EdgeFilter@{EdgeFilter}!paddingType@{paddingType}}
+\index{paddingType@{paddingType}!EdgeFilter@{EdgeFilter}}
+\doxysubsubsection{\texorpdfstring{paddingType}{paddingType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{Padding\+Type}} Edge\+Filter\+::padding\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\+Filters/\mbox{\hyperlink{_edge_filter_8h}{Edge\+Filter.\+h}}\item 
+Source/\+Filters/\mbox{\hyperlink{_edge_filter_8cpp}{Edge\+Filter.\+cpp}}\end{DoxyCompactItemize}

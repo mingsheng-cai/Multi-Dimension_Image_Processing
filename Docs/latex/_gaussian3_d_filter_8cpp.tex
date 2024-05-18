@@ -1,0 +1,39 @@
+\doxysection{Source/\+Filters/\+Gaussian3\+DFilter.cpp File Reference}
+\hypertarget{_gaussian3_d_filter_8cpp}{}\label{_gaussian3_d_filter_8cpp}\index{Source/Filters/Gaussian3DFilter.cpp@{Source/Filters/Gaussian3DFilter.cpp}}
+
+
+Implements a 3D Gaussian filter for volumetric data smoothing.  
+
+
+{\ttfamily \#include "{}Filters/\+Gaussian3\+DFilter.\+h"{}}\newline
+{\ttfamily \#include "{}Volume.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Gaussian3\+DFilter.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_gaussian3_d_filter_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implements a 3D Gaussian filter for volumetric data smoothing. 
+
+The \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter} class applies a Gaussian smoothing operation to 3D volume data. Designed to reduce noise and smooth transitions without significantly blurring the edges, this filter replaces each voxel\textquotesingle{}s value with a weighted average of its neighbors\textquotesingle{} values, where the weights are determined by a Gaussian distribution. The class allows for customization of the standard deviation (sigma) and the kernel size, enabling fine control over the extent of smoothing. Efficient convolution operations along each axis (X, Y, and Z) ensure that the filter is applied thoroughly across the entire volume. This class is essential for preprocessing in applications such as medical imaging, where enhancing the clarity of features within volumetric data is crucial.
+
+\begin{DoxyDate}{Date}
+Created on March 18, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

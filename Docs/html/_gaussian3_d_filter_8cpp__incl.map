@@ -1,0 +1,27 @@
+<map id="Source/Filters/Gaussian3DFilter.cpp" name="Source/Filters/Gaussian3DFilter.cpp">
+<area shape="rect" id="Node000001" title="Implements a 3D Gaussian filter for volumetric data smoothing." alt="" coords="188,5,356,46"/>
+<area shape="rect" id="Node000002" href="$_gaussian3_d_filter_8h.html" title="Implements a 3D Gaussian filter for smoothing volume data." alt="" coords="116,94,289,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="257,48,225,84,221,80,253,45"/>
+<area shape="rect" id="Node000006" href="$_volume_8h.html" title="Manages 3D volumetric data for processing and analysis." alt="" coords="84,241,161,267"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="188,43,142,62,122,77,106,96,98,111,94,127,94,163,101,197,112,226,107,228,96,198,88,163,89,127,93,109,102,92,119,73,140,58,186,38"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="313,94,370,120"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="291,45,323,80,319,84,287,48"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="394,94,465,120"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="312,44,393,84,390,89,310,49"/>
+<area shape="rect" id="Node000003" href="$_filter_8h.html" title="Defines interfaces for 2D and 3D filtering operations on images and volume data." alt="" coords="160,168,261,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,120,210,152,205,153,201,120"/>
+<area shape="poly" id="edge10_Node000002_Node000006" title=" " alt="" coords="190,122,170,143,150,169,138,198,130,227,125,226,132,196,146,166,165,139,187,118"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="269,315,326,341"/>
+<area shape="poly" id="edge11_Node000002_Node000007" title=" " alt="" coords="225,118,252,138,275,166,290,200,298,236,301,299,296,300,292,237,285,202,271,169,248,142,222,122"/>
+<area shape="rect" id="Node000004" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="184,241,253,267"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,193,218,226,213,226,209,194"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="197,196,151,234,147,229,194,192"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="188,315,241,341"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="221,267,219,300,213,299,215,267"/>
+<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="140,265,189,303,186,308,136,270"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="153,265,255,306,253,311,151,270"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,315,72,341"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="110,270,66,307,63,303,107,266"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="96,315,157,341"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="126,267,128,299,122,300,120,267"/>
+</map>

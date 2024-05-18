@@ -1,0 +1,16 @@
+<map id="Include/Filters/Filter.h" name="Include/Filters/Filter.h">
+<area shape="rect" id="Node000001" title="Defines interfaces for 2D and 3D filtering operations on images and volume data." alt="" coords="14,5,161,31"/>
+<area shape="rect" id="Node000002" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="5,79,74,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,33,58,67,54,64,77,30"/>
+<area shape="rect" id="Node000004" href="$_volume_8h.html" title="Manages 3D volumetric data for processing and analysis." alt="" coords="97,79,174,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="98,30,121,64,117,67,93,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="13,153,66,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="42,105,42,137,37,137,37,105"/>
+<area shape="poly" id="edge7_Node000004_Node000003" title=" " alt="" coords="121,107,69,146,66,141,118,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="91,153,148,178"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="135,105,128,138,123,137,130,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="172,153,238,178"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="149,103,185,140,181,143,145,107"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="263,153,323,178"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="163,103,253,143,251,148,161,108"/>
+</map>

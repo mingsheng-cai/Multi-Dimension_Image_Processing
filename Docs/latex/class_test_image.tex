@@ -1,0 +1,123 @@
+\doxysection{Test\+Image Class Reference}
+\hypertarget{class_test_image}{}\label{class_test_image}\index{TestImage@{TestImage}}
+
+
+{\ttfamily \#include $<$Test\+Image.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Image\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_test_image__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Image\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_test_image__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_image_a0ad130d9d278c50489aabf6e308fee82}{test\+Load\+Image}} ()
+\item 
+void \mbox{\hyperlink{class_test_image_a13bf306f58f23ed06eae1580fcaaa842}{test\+Save\+Image}} ()
+\item 
+void \mbox{\hyperlink{class_test_image_a64c527b457e3b959b9f5c0c9fe0587a3}{test\+Load\+Nonexistent\+Image}} ()
+\item 
+void \mbox{\hyperlink{class_test_image_a60b08a31110dbd303248ede08113b8dd}{test\+Image\+Attributes}} ()
+\item 
+void \mbox{\hyperlink{class_test_image_a38c0c8edde543e75a07e59c5a59e9936}{test\+Image\+Data}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_image_aa0f5e79d053483b78fd7a563f226e0a5}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_image_aa0f5e79d053483b78fd7a563f226e0a5}\label{class_test_image_aa0f5e79d053483b78fd7a563f226e0a5} 
+\index{TestImage@{TestImage}!runTests@{runTests}}
+\index{runTests@{runTests}!TestImage@{TestImage}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Image\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes All Defined \doxylink{class_test}{Test} Cases for the \doxylink{class_image}{Image} Class
+
+Coordinates the execution of all unit tests related to the \doxylink{class_image}{Image} class functionalities, including file operations, attribute manipulation, and data handling. This comprehensive test suite verifies the reliability and correctness of the \doxylink{class_image}{Image} class as a fundamental component of the image processing application. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_image_a60b08a31110dbd303248ede08113b8dd}\label{class_test_image_a60b08a31110dbd303248ede08113b8dd} 
+\index{TestImage@{TestImage}!testImageAttributes@{testImageAttributes}}
+\index{testImageAttributes@{testImageAttributes}!TestImage@{TestImage}}
+\doxysubsubsection{\texorpdfstring{testImageAttributes()}{testImageAttributes()}}
+{\footnotesize\ttfamily void Test\+Image\+::test\+Image\+Attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Manipulating \doxylink{class_image}{Image} Attributes
+
+Verifies the functionality for setting and getting image attributes such as width, height, and number of channels. This test ensures that the \doxylink{class_image}{Image} class accurately reflects changes made to these attributes, which is critical for the correct handling and manipulation of image data within the application. \Hypertarget{class_test_image_a38c0c8edde543e75a07e59c5a59e9936}\label{class_test_image_a38c0c8edde543e75a07e59c5a59e9936} 
+\index{TestImage@{TestImage}!testImageData@{testImageData}}
+\index{testImageData@{testImageData}!TestImage@{TestImage}}
+\doxysubsubsection{\texorpdfstring{testImageData()}{testImageData()}}
+{\footnotesize\ttfamily void Test\+Image\+::test\+Image\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Manipulating \doxylink{class_image}{Image} Data
+
+Checks the capability to manipulate the underlying image data directly through the update\+Data method. This test involves loading an image, modifying its data buffer, and then validating that the changes are correctly reflected in the \doxylink{class_image}{Image} object. It ensures the flexibility and correctness of direct image data manipulation. \Hypertarget{class_test_image_a0ad130d9d278c50489aabf6e308fee82}\label{class_test_image_a0ad130d9d278c50489aabf6e308fee82} 
+\index{TestImage@{TestImage}!testLoadImage@{testLoadImage}}
+\index{testLoadImage@{testLoadImage}!TestImage@{TestImage}}
+\doxysubsubsection{\texorpdfstring{testLoadImage()}{testLoadImage()}}
+{\footnotesize\ttfamily void Test\+Image\+::test\+Load\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Loading an \doxylink{class_image}{Image} from a File
+
+Verifies that an image can be successfully loaded from a specified file path. This test ensures that the \doxylink{class_image}{Image} class can read image files correctly, setting the appropriate width, height, and channel attributes based on the loaded image. It also checks for the successful loading of an image, ensuring the method returns true for valid image paths and that the loaded image has valid dimensions. \Hypertarget{class_test_image_a64c527b457e3b959b9f5c0c9fe0587a3}\label{class_test_image_a64c527b457e3b959b9f5c0c9fe0587a3} 
+\index{TestImage@{TestImage}!testLoadNonexistentImage@{testLoadNonexistentImage}}
+\index{testLoadNonexistentImage@{testLoadNonexistentImage}!TestImage@{TestImage}}
+\doxysubsubsection{\texorpdfstring{testLoadNonexistentImage()}{testLoadNonexistentImage()}}
+{\footnotesize\ttfamily void Test\+Image\+::test\+Load\+Nonexistent\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Loading a Nonexistent \doxylink{class_image}{Image}
+
+Evaluates the \doxylink{class_image}{Image} class\textquotesingle{}s behavior when attempting to load an image from a nonexistent file path. This test ensures that the method correctly returns false and handles the situation gracefully without causing errors or exceptions, maintaining the robustness of the image processing application. \Hypertarget{class_test_image_a13bf306f58f23ed06eae1580fcaaa842}\label{class_test_image_a13bf306f58f23ed06eae1580fcaaa842} 
+\index{TestImage@{TestImage}!testSaveImage@{testSaveImage}}
+\index{testSaveImage@{testSaveImage}!TestImage@{TestImage}}
+\doxysubsubsection{\texorpdfstring{testSaveImage()}{testSaveImage()}}
+{\footnotesize\ttfamily void Test\+Image\+::test\+Save\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Saving an \doxylink{class_image}{Image} to a File
+
+Confirms that an image object can be saved to a file. This test checks the save\+To\+File method\textquotesingle{}s ability to write the current image data to a specified file path, ensuring that the file is created in the filesystem. It involves loading an existing image, saving it under a new name, and then verifying the existence of the newly saved file. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_image_8h}{Test\+Image.\+h}}\end{DoxyCompactItemize}

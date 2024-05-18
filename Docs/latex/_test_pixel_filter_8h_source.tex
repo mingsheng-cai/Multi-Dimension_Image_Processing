@@ -1,0 +1,211 @@
+\doxysection{Test\+Pixel\+Filter.\+h}
+\hypertarget{_test_pixel_filter_8h_source}{}\label{_test_pixel_filter_8h_source}\index{Tests/TestPixelFilter.h@{Tests/TestPixelFilter.h}}
+\mbox{\hyperlink{_test_pixel_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pixel_filter_8h}{Filters/PixelFilter.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_pixel_filter}{TestPixelFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_test_pixel_filter_ab548fe6d9ebee52a21735fca4b8c0002}{calculateHistogramStdDev}}(\textcolor{keyword}{const}\ std::vector<int>\ \&histogram)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sum\ =\ std::accumulate(histogram.begin(),\ histogram.end(),\ 0);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mean\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(sum)\ /\ histogram.size();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ variance\ =\ 0.0;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ value:\ histogram)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ variance\ +=\ (value\ -\/\ mean)\ *\ (value\ -\/\ mean);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ variance\ /=\ histogram.size();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::sqrt(variance);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_test_pixel_filter_a40ceaeb4b6d2ba4c94e81ccdbebd6b18}{buildHistogram}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_image}{Image}}\ \&image)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::vector<int>\ histogram(256,\ 0);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data\ =\ image.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalPixels\ =\ image.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ image.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ *\ image.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ totalPixels;\ i\ +=\ image.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}())\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 简化：只考虑第一个通道，适用于灰度图像或彩色图像的一个通道}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ ++histogram[data[i]];}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ histogram;}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_pixel_filter_a9e1e94a94429f15ae48bf2624db6bcff}{testGrayscaleConversion}}()\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/gracehopper.png"{}});\ \textcolor{comment}{//\ Load\ a\ test\ image}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ grayscaleFilter(\textcolor{stringliteral}{"{}Grayscale"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ grayscaleFilter.\mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}}(img);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ that\ each\ pixel\ has\ equal\ red,\ green,\ and\ blue\ values}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}();\ ++i)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data\ =\ img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ assert(data[i\ *\ 3]\ ==\ data[i\ *\ 3\ +\ 1]\ \&\&\ data[i\ *\ 3\ +\ 1]\ ==\ data[i\ *\ 3\ +\ 2]\ \&\&}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Grayscale\ conversion\ failed."{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_pixel_filter_a8a09eba9dca6ae1b024c6533ff1f0cd5}{testBrightnessAdjustment}}()\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/vh\_ct.png"{}});\ \textcolor{comment}{//\ Assume\ this\ is\ a\ grayscale\ image}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ adjustment\ =\ 20;\ \textcolor{comment}{//\ Increase\ brightness\ by\ 20}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ brightnessFilter(\textcolor{stringliteral}{"{}Brightness"{}},\ adjustment);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ brightnessFilter.\mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}}(img);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ brightness\ adjustment\ has\ occurred}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data\ =\ img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ brightnessAdjusted\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalPixels\ =\ img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ *\ img.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}();}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ totalPixels;\ ++i)\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ pixel\ value\ is\ within\ the\ expected\ range}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((data[i]\ >\ 0\ \&\&\ data[i]\ <\ 255)\ ||\ (data[i]\ ==\ 0\ \&\&\ adjustment\ >\ 0)\ ||}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (data[i]\ ==\ 255\ \&\&\ adjustment\ <\ 0))\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ brightnessAdjusted\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ assert(brightnessAdjusted\ \&\&\ \textcolor{stringliteral}{"{}Brightness\ adjustment\ did\ not\ occur\ as\ expected."{}});}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_pixel_filter_a635d11cdcb777f4501b42011764433e4}{testHistogramEqualizationEffect}}()\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/vh\_ct.png"{}});\ \textcolor{comment}{//\ Load\ a\ test\ image}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ standard\ deviation\ of\ the\ original\ image's\ histogram}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ originalHistogram\ =\ \mbox{\hyperlink{class_test_pixel_filter_a40ceaeb4b6d2ba4c94e81ccdbebd6b18}{buildHistogram}}(img);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ originalStdDev\ =\ \mbox{\hyperlink{class_test_pixel_filter_ab548fe6d9ebee52a21735fca4b8c0002}{calculateHistogramStdDev}}(originalHistogram);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ histogram\ equalization}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ histogramEqualizationFilter(\textcolor{stringliteral}{"{}Equalisation"{}},\ std::nullopt,\ \textcolor{stringliteral}{"{}GREY"{}});}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ histogramEqualizationFilter.\mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}}(img);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ standard\ deviation\ of\ the\ equalized\ image's\ histogram}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ equalizedHistogram\ =\ \mbox{\hyperlink{class_test_pixel_filter_a40ceaeb4b6d2ba4c94e81ccdbebd6b18}{buildHistogram}}(img);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ equalizedStdDev\ =\ \mbox{\hyperlink{class_test_pixel_filter_ab548fe6d9ebee52a21735fca4b8c0002}{calculateHistogramStdDev}}(equalizedHistogram);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ contrast\ has\ improved}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ assert(equalizedStdDev\ >\ originalStdDev\ \&\&\ \textcolor{stringliteral}{"{}Histogram\ equalization\ did\ not\ improve\ the\ contrast\ as\ expected."{}});}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_pixel_filter_a63786f87c913714280b6072ff2db0903}{testThresholdingGREY}}()\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/vh\_ct.png"{}});\ \textcolor{comment}{//\ Load\ a\ test\ image}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ threshold\ =\ 128;\ \textcolor{comment}{//\ 阈值}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ thresholdFilter(\textcolor{stringliteral}{"{}Thresholding"{}},\ std::nullopt,\ \textcolor{stringliteral}{"{}GREY"{}},\ threshold);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ thresholdFilter.\mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}}(img);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ the\ processed\ image}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data\ =\ img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}();\ ++i)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ assert((data[i]\ ==\ 0\ ||\ data[i]\ ==\ 255)\ \&\&\ \textcolor{stringliteral}{"{}Thresholding\ failed."{}});}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_pixel_filter_ad39c57790493ec3aeb49b678ea1f1270}{testThresholdingRGBHSL}}()\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/gracehopper.png"{}});\ \textcolor{comment}{//\ A\ color\ RGB\ image}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ threshold\ =\ 128;\ \textcolor{comment}{//\ 阈值}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Perform\ thresholding\ on\ the\ RGB\ image}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ thresholdFilter(\textcolor{stringliteral}{"{}Thresholding"{}},\ std::nullopt,\ \textcolor{stringliteral}{"{}HSL"{}},\ threshold);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ thresholdFilter.\mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}}(img);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ the\ processed\ image}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data\ =\ img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ *\ img.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}();\ ++i)\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ assert((data[i]\ ==\ 0\ ||\ data[i]\ ==\ 255)\ \&\&\ \textcolor{stringliteral}{"{}Thresholding\ on\ RGB\ image\ failed."{}});}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_pixel_filter_a78cc2a93ee7132cfab9a827c72ed3d63}{testThresholdingRGBHSV}}()\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/gracehopper.png"{}});\ \textcolor{comment}{//\ A\ color\ RGB\ image}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ threshold\ =\ 128;\ \textcolor{comment}{//\ 阈值}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ thresholding\ on\ the\ RGB\ image}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ thresholdFilter(\textcolor{stringliteral}{"{}Thresholding"{}},\ std::nullopt,\ \textcolor{stringliteral}{"{}HSV"{}},\ threshold);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ thresholdFilter.\mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}}(img);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ expect\ the\ thresholding\ to\ result\ in\ a\ binary\ image}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data\ =\ img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ *\ img.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}();\ ++i)\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ assert((data[i]\ ==\ 0\ ||\ data[i]\ ==\ 255)\ \&\&\ \textcolor{stringliteral}{"{}Thresholding\ on\ RGB\ image\ failed."{}});}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_pixel_filter_a743b68eb4fed811b2b2fde8b86866e0e}{testNoisePercentage}}()\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/vh\_ct.png"{}});\ \textcolor{comment}{//\ Load\ a\ test\ image}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ expectedNoisePercentage\ =\ 0.1;\ \textcolor{comment}{//\ Expected\ noise\ percentage}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ noiseFilter(\textcolor{stringliteral}{"{}SaltAndPepperNoise"{}},\ std::nullopt,\ \textcolor{stringliteral}{"{}"{}},\ 0,\ expectedNoisePercentage);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ noiseFilter.\mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}}(img);}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data\ =\ img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ noisePixels\ =\ 0;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalPixels\ =\ img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ *\ img.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}();}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ totalPixels;\ ++i)\ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data[i]\ ==\ 0\ ||\ data[i]\ ==\ 255)\ \{\ \textcolor{comment}{//\ Assume\ noise\ is\ black\ or\ white}}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++noisePixels;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ actualNoisePercentage\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(noisePixels)\ /\ totalPixels;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ assert(fabs(actualNoisePercentage\ -\/\ expectedNoisePercentage)\ <\ 0.01\ \&\&}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Noise\ percentage\ does\ not\ match\ expected."{}});}
+\DoxyCodeLine{00261\ \ \ \ \ \}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_pixel_filter_a8be9ce3ed278e9308655a77d9b8d95c8}{testNoiseAddition}}()\ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ originalImg;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ originalImg.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/vh\_ct.png"{}});\ \textcolor{comment}{//\ Load\ a\ test\ image}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ copy\ of\ the\ original\ image\ to\ add\ noise}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ imgWithNoise(originalImg.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}(),\ originalImg.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}(),\ originalImg.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}(),}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ originalImg.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}());}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ noiseFilter(\textcolor{stringliteral}{"{}SaltAndPepperNoise"{}},\ std::nullopt,\ \textcolor{stringliteral}{"{}"{}},\ 0,\ 0.05);\ \textcolor{comment}{//\ 添加5\%的噪声}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ noiseFilter.\mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}}(imgWithNoise);}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *originalData\ =\ originalImg.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *noiseData\ =\ imgWithNoise.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalPixels\ =\ originalImg.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ originalImg.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ *\ originalImg.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}();}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isDifferent\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ totalPixels;\ ++i)\ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (originalData[i]\ !=\ noiseData[i])\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isDifferent\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ assert(isDifferent\ \&\&\ \textcolor{stringliteral}{"{}Noise\ was\ not\ added\ to\ the\ image."{}});}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_pixel_filter_a94de7596a202d16cf051e6bdf8ccef24}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ runTest<TestPixelFilter>(\&\mbox{\hyperlink{class_test_pixel_filter_a9e1e94a94429f15ae48bf2624db6bcff}{TestPixelFilter::testGrayscaleConversion}},\ \textcolor{stringliteral}{"{}Grayscale\ Conversion"{}});}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ runTest<TestPixelFilter>(\&\mbox{\hyperlink{class_test_pixel_filter_a8a09eba9dca6ae1b024c6533ff1f0cd5}{TestPixelFilter::testBrightnessAdjustment}},\ \textcolor{stringliteral}{"{}Brightness\ Adjustment"{}});}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ runTest<TestPixelFilter>(\&\mbox{\hyperlink{class_test_pixel_filter_a635d11cdcb777f4501b42011764433e4}{TestPixelFilter::testHistogramEqualizationEffect}},\ \textcolor{stringliteral}{"{}Histogram\ Equalization\ Effect"{}});}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ runTest<TestPixelFilter>(\&\mbox{\hyperlink{class_test_pixel_filter_a63786f87c913714280b6072ff2db0903}{TestPixelFilter::testThresholdingGREY}},\ \textcolor{stringliteral}{"{}Thresholding\ Grey\ Image"{}});}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ runTest<TestPixelFilter>(\&\mbox{\hyperlink{class_test_pixel_filter_ad39c57790493ec3aeb49b678ea1f1270}{TestPixelFilter::testThresholdingRGBHSL}},\ \textcolor{stringliteral}{"{}Thresholding\ RGB-\/HSL\ Image"{}});}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ runTest<TestPixelFilter>(\&\mbox{\hyperlink{class_test_pixel_filter_a78cc2a93ee7132cfab9a827c72ed3d63}{TestPixelFilter::testThresholdingRGBHSV}},\ \textcolor{stringliteral}{"{}Thresholding\ RGB-\/HSV\ Image"{}});}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ runTest<TestPixelFilter>(\&\mbox{\hyperlink{class_test_pixel_filter_a743b68eb4fed811b2b2fde8b86866e0e}{TestPixelFilter::testNoisePercentage}},\ \textcolor{stringliteral}{"{}Noise\ Percentage"{}});}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ runTest<TestPixelFilter>(\&\mbox{\hyperlink{class_test_pixel_filter_a8be9ce3ed278e9308655a77d9b8d95c8}{TestPixelFilter::testNoiseAddition}},\ \textcolor{stringliteral}{"{}Noise\ Addition"{}});}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \};}
+
+\end{DoxyCode}

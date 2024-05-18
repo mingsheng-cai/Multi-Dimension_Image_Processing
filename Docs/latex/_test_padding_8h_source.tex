@@ -1,0 +1,52 @@
+\doxysection{Test\+Padding.\+h}
+\hypertarget{_test_padding_8h_source}{}\label{_test_padding_8h_source}\index{Tests/TestPadding.h@{Tests/TestPadding.h}}
+\mbox{\hyperlink{_test_padding_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_padding_8h}{Filters/Padding.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_padding}{TestPadding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_padding_ad810c2b62713574678613bc0ff689ae5}{testZeroPadding}}()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[25]\{\});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ window\ =\ \mbox{\hyperlink{class_padding_a70cfd2cda2f036c353c4d9f590727369}{Padding::getPixelWindow}}(img,\ 0,\ 0,\ 0,\ 3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Expect\ the\ first\ element\ in\ the\ window\ to\ be\ zero}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ assert(window[0]\ ==\ 0\ \&\&\ \textcolor{stringliteral}{"{}Zero\ padding\ at\ the\ corner\ failed."{}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Expect\ the\ window\ size\ to\ be\ 9}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ assert(window.size()\ ==\ 9\ \&\&\ \textcolor{stringliteral}{"{}Window\ size\ for\ zero\ padding\ incorrect."{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_padding_ada7c23eb746c158b948b455edfb0e315}{testEdgeReplication}}()\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[25]\{\});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ window\ =\ \mbox{\hyperlink{class_padding_a70cfd2cda2f036c353c4d9f590727369}{Padding::getPixelWindow}}(img,\ 0,\ 0,\ 0,\ 3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727a587e303adc0b98b42cfd25a8487d7e6f}{PaddingType::EdgeReplication}});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Expect\ the\ edge\ pixel\ values\ to\ be\ replicated}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Edge\ pixel\ value\ is\ img.getData()[0],\ which\ is\ the\ first\ pixel\ in\ the\ image}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ assert(window[0]\ ==\ img.getData()[0]\ \&\&\ \textcolor{stringliteral}{"{}Edge\ replication\ at\ the\ corner\ failed."{}});}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_padding_a39d66be399d21e3ba5939cab4752d49c}{testReflectPadding}}()\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[25]\{\});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ window\ =\ \mbox{\hyperlink{class_padding_a70cfd2cda2f036c353c4d9f590727369}{Padding::getPixelWindow}}(img,\ 0,\ 0,\ 0,\ 3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727aa2a37ff39ba0a8406fae10e369442020}{PaddingType::ReflectPadding}});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Expect\ the\ corner\ pixel\ value\ to\ be\ the\ same\ as\ the\ adjacent\ pixel\ value}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ The\ first\ pixel\ in\ the\ image\ is\ img.getData()[0]}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ assert(window[0]\ ==\ img.getData()[1\ +\ 5]\ \&\&\ \textcolor{stringliteral}{"{}Reflect\ padding\ at\ the\ corner\ failed."{}});}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_padding_a00dd0dcac4874b878b819001a92c74b2}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ runTest<TestPadding>(\&\mbox{\hyperlink{class_test_padding_ad810c2b62713574678613bc0ff689ae5}{TestPadding::testZeroPadding}},\ \textcolor{stringliteral}{"{}Zero\ Padding"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ runTest<TestPadding>(\&\mbox{\hyperlink{class_test_padding_ada7c23eb746c158b948b455edfb0e315}{TestPadding::testEdgeReplication}},\ \textcolor{stringliteral}{"{}Edge\ Replication"{}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ runTest<TestPadding>(\&\mbox{\hyperlink{class_test_padding_a39d66be399d21e3ba5939cab4752d49c}{TestPadding::testReflectPadding}},\ \textcolor{stringliteral}{"{}Reflect\ Padding"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \};}
+
+\end{DoxyCode}

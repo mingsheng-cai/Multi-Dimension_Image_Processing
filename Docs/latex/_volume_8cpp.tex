@@ -1,0 +1,68 @@
+\doxysection{Source/\+Volume.cpp File Reference}
+\hypertarget{_volume_8cpp}{}\label{_volume_8cpp}\index{Source/Volume.cpp@{Source/Volume.cpp}}
+
+
+Manages and manipulates 3D volumetric data.  
+
+
+{\ttfamily \#include "{}Volume.\+h"{}}\newline
+{\ttfamily \#include "{}Projection.\+h"{}}\newline
+{\ttfamily \#include "{}Slice.\+h"{}}\newline
+{\ttfamily \#include "{}Algorithm.\+h"{}}\newline
+{\ttfamily \#include "{}stb\+\_\+image.\+h"{}}\newline
+{\ttfamily \#include "{}stb\+\_\+image\+\_\+write.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$variant$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for Volume.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_volume_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_volume_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{_volume_8cpp_aefe397a94e8feddc652f92ef40ce9597}{STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages and manipulates 3D volumetric data. 
+
+The \doxylink{class_volume}{Volume} class encapsulates 3D volumetric data, providing functionalities to load data from multiple image files or a directory, update internal data, and save specific slices or projections to files. It supports extracting slices along \textquotesingle{}x-\/y\textquotesingle{}, \textquotesingle{}x-\/z\textquotesingle{}, or \textquotesingle{}y-\/z\textquotesingle{} planes and computing various intensity projections such as Maximum, Minimum, Average, and Median Intensity Projections. This functionality is essential for analyzing 3D data in medical imaging, scientific visualization, and other fields requiring volumetric data manipulation. The class ensures efficient handling of large datasets and integrates with external libraries like stb\+\_\+image for reading and writing image files, making it a versatile tool for 3D data processing.
+
+\begin{DoxyDate}{Date}
+Created on March 18, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_volume_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\label{_volume_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\index{Volume.cpp@{Volume.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!Volume.cpp@{Volume.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+
+\Hypertarget{_volume_8cpp_aefe397a94e8feddc652f92ef40ce9597}\label{_volume_8cpp_aefe397a94e8feddc652f92ef40ce9597} 
+\index{Volume.cpp@{Volume.cpp}!STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}!Volume.cpp@{Volume.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_WRITE\_IMPLEMENTATION}{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}
+

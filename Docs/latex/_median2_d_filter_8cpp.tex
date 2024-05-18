@@ -1,0 +1,40 @@
+\doxysection{Source/\+Filters/\+Median2\+DFilter.cpp File Reference}
+\hypertarget{_median2_d_filter_8cpp}{}\label{_median2_d_filter_8cpp}\index{Source/Filters/Median2DFilter.cpp@{Source/Filters/Median2DFilter.cpp}}
+
+
+Implementation of the \doxylink{class_median2_d_filter}{Median2\+DFilter} class for applying median filtering to images.  
+
+
+{\ttfamily \#include "{}Filters/\+Median2\+DFilter.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Padding.\+h"{}}\newline
+{\ttfamily \#include "{}Algorithm.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for Median2\+DFilter.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_median2_d_filter_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{class_median2_d_filter}{Median2\+DFilter} class for applying median filtering to images. 
+
+This file contains the implementation of the \doxylink{class_median2_d_filter}{Median2\+DFilter} class, which applies a median filter to images for noise reduction. Median filtering is a non-\/linear process useful in reducing salt-\/and-\/pepper noise while preserving edges in the image. This class supports custom kernel sizes and incorporates various padding strategies to handle image borders effectively. The median value is computed using a quick select algorithm to find the middle value in the intensity distribution of the pixels within the kernel window. This approach ensures that the filtering process is both efficient and effective, making it suitable for real-\/time image processing applications. Part of the tools developed by the Advanced Programming Group, this implementation aims to provide a robust solution for enhancing image quality.
+
+\begin{DoxyDate}{Date}
+Created on March 21, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

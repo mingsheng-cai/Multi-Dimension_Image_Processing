@@ -1,0 +1,143 @@
+\doxysection{Test\+Projection Class Reference}
+\hypertarget{class_test_projection}{}\label{class_test_projection}\index{TestProjection@{TestProjection}}
+
+
+{\ttfamily \#include $<$Test\+Projection.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Projection\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_test_projection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Projection\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_test_projection__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_projection_a8c82c91ba09f1ea0267672e9c99f8c8b}{test\+Maximum\+Intensity\+Projection}} ()
+\item 
+void \mbox{\hyperlink{class_test_projection_a3fc361c8763cd8cd1a4dcb2c35162afa}{test\+Minimum\+Intensity\+Projection}} ()
+\item 
+void \mbox{\hyperlink{class_test_projection_acbaf7d060cf1bb255473c3fbc0aad013}{test\+Average\+Intensity\+Projection}} ()
+\item 
+void \mbox{\hyperlink{class_test_projection_af3bf3266a6c2586a2927f316889525d0}{test\+Median\+Intensity\+Projection}} ()
+\item 
+void \mbox{\hyperlink{class_test_projection_aef2ac3900cf33edd0d60eb91a42039a9}{test\+Single\+Layer\+Volume\+Projection}} ()
+\item 
+void \mbox{\hyperlink{class_test_projection_a02117ab82998a7d378a9df7dcd3e4c4c}{test\+Null\+Data\+Projection}} ()
+\item 
+void \mbox{\hyperlink{class_test_projection_a50dd861bd9d6b3382185fd04c8f7c852}{test\+Zero\+Volume\+Data\+Projection}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_projection_a41fa1a4a21526e1f64f7c5ac7a433e08}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_projection_a41fa1a4a21526e1f64f7c5ac7a433e08}\label{class_test_projection_a41fa1a4a21526e1f64f7c5ac7a433e08} 
+\index{TestProjection@{TestProjection}!runTests@{runTests}}
+\index{runTests@{runTests}!TestProjection@{TestProjection}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Projection\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes All Defined \doxylink{class_test}{Test} Cases for the \doxylink{class_image}{Image} Class
+
+This method runs all the test cases defined within the \doxylink{class_test_projection}{Test\+Projection} class to verify the correctness and reliability of the \doxylink{class_projection}{Projection} class\textquotesingle{}s functionality. The tests cover various scenarios, including different projection techniques, handling of edge cases such as single-\/layer volumes, null data pointers, and volumes filled with zero intensity values. By executing all test cases, this method ensures that the \doxylink{class_projection}{Projection} class behaves as expected under a wide range of conditions, providing confidence in its accuracy and robustness. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_projection_acbaf7d060cf1bb255473c3fbc0aad013}\label{class_test_projection_acbaf7d060cf1bb255473c3fbc0aad013} 
+\index{TestProjection@{TestProjection}!testAverageIntensityProjection@{testAverageIntensityProjection}}
+\index{testAverageIntensityProjection@{testAverageIntensityProjection}!TestProjection@{TestProjection}}
+\doxysubsubsection{\texorpdfstring{testAverageIntensityProjection()}{testAverageIntensityProjection()}}
+{\footnotesize\ttfamily void Test\+Projection\+::test\+Average\+Intensity\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Average Intensity \doxylink{class_projection}{Projection}
+
+Verifies the behavior of the average intensity projection method in the \doxylink{class_projection}{Projection} class. This test ensures that the average intensity projection produces the correct result by comparing the output to the expected projection from a given 2x2x2 volume data. By testing the average intensity projection, the method confirms that the \doxylink{class_projection}{Projection} class correctly computes the average intensity values for each pixel in the projection, providing an accurate representation of the input volume data. \Hypertarget{class_test_projection_a8c82c91ba09f1ea0267672e9c99f8c8b}\label{class_test_projection_a8c82c91ba09f1ea0267672e9c99f8c8b} 
+\index{TestProjection@{TestProjection}!testMaximumIntensityProjection@{testMaximumIntensityProjection}}
+\index{testMaximumIntensityProjection@{testMaximumIntensityProjection}!TestProjection@{TestProjection}}
+\doxysubsubsection{\texorpdfstring{testMaximumIntensityProjection()}{testMaximumIntensityProjection()}}
+{\footnotesize\ttfamily void Test\+Projection\+::test\+Maximum\+Intensity\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Maximum Intensity \doxylink{class_projection}{Projection}
+
+Verifies the behavior of the maximum intensity projection method in the \doxylink{class_projection}{Projection} class. This test ensures that the maximum intensity projection produces the correct result by comparing the output to the expected projection from a given 2x2x2 volume data. By testing the maximum intensity projection, the method confirms that the \doxylink{class_projection}{Projection} class correctly computes the maximum intensity values for each pixel in the projection, providing an accurate representation of the input volume data. \Hypertarget{class_test_projection_af3bf3266a6c2586a2927f316889525d0}\label{class_test_projection_af3bf3266a6c2586a2927f316889525d0} 
+\index{TestProjection@{TestProjection}!testMedianIntensityProjection@{testMedianIntensityProjection}}
+\index{testMedianIntensityProjection@{testMedianIntensityProjection}!TestProjection@{TestProjection}}
+\doxysubsubsection{\texorpdfstring{testMedianIntensityProjection()}{testMedianIntensityProjection()}}
+{\footnotesize\ttfamily void Test\+Projection\+::test\+Median\+Intensity\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Median Intensity \doxylink{class_projection}{Projection}
+
+Verifies the behavior of the median intensity projection method in the \doxylink{class_projection}{Projection} class. This test ensures that the median intensity projection produces the correct result by comparing the output to the expected projection from a given 2x2x2 volume data. By testing the median intensity projection, the method confirms that the \doxylink{class_projection}{Projection} class correctly computes the median intensity values for each pixel in the projection, providing an accurate representation of the input volume data. \Hypertarget{class_test_projection_a3fc361c8763cd8cd1a4dcb2c35162afa}\label{class_test_projection_a3fc361c8763cd8cd1a4dcb2c35162afa} 
+\index{TestProjection@{TestProjection}!testMinimumIntensityProjection@{testMinimumIntensityProjection}}
+\index{testMinimumIntensityProjection@{testMinimumIntensityProjection}!TestProjection@{TestProjection}}
+\doxysubsubsection{\texorpdfstring{testMinimumIntensityProjection()}{testMinimumIntensityProjection()}}
+{\footnotesize\ttfamily void Test\+Projection\+::test\+Minimum\+Intensity\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Minimum Intensity \doxylink{class_projection}{Projection}
+
+Verifies the behavior of the minimum intensity projection method in the \doxylink{class_projection}{Projection} class. This test ensures that the minimum intensity projection produces the correct result by comparing the output to the expected projection from a given 2x2x2 volume data. By testing the minimum intensity projection, the method confirms that the \doxylink{class_projection}{Projection} class correctly computes the minimum intensity values for each pixel in the projection, providing an accurate representation of the input volume data. \Hypertarget{class_test_projection_a02117ab82998a7d378a9df7dcd3e4c4c}\label{class_test_projection_a02117ab82998a7d378a9df7dcd3e4c4c} 
+\index{TestProjection@{TestProjection}!testNullDataProjection@{testNullDataProjection}}
+\index{testNullDataProjection@{testNullDataProjection}!TestProjection@{TestProjection}}
+\doxysubsubsection{\texorpdfstring{testNullDataProjection()}{testNullDataProjection()}}
+{\footnotesize\ttfamily void Test\+Projection\+::test\+Null\+Data\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Handling Null Data Pointer
+
+Verifies the behavior of the projection methods when provided with a null data pointer. This test ensures that the projection methods correctly handle the null pointer scenario, returning an empty vector as the projection result. By testing this scenario, the method confirms that the \doxylink{class_projection}{Projection} class gracefully handles null data pointers, avoiding potential crashes or undefined behavior in the application. \Hypertarget{class_test_projection_aef2ac3900cf33edd0d60eb91a42039a9}\label{class_test_projection_aef2ac3900cf33edd0d60eb91a42039a9} 
+\index{TestProjection@{TestProjection}!testSingleLayerVolumeProjection@{testSingleLayerVolumeProjection}}
+\index{testSingleLayerVolumeProjection@{testSingleLayerVolumeProjection}!TestProjection@{TestProjection}}
+\doxysubsubsection{\texorpdfstring{testSingleLayerVolumeProjection()}{testSingleLayerVolumeProjection()}}
+{\footnotesize\ttfamily void Test\+Projection\+::test\+Single\+Layer\+Volume\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Single Layer \doxylink{class_volume}{Volume} \doxylink{class_projection}{Projection}
+
+Verifies the behavior of the projection methods when provided with a single-\/layer volume. This test ensures that the projection results for maximum, minimum, average, and median intensity projections are consistent when applied to a single-\/layer volume. By testing this scenario, the method confirms that the \doxylink{class_projection}{Projection} class correctly handles single-\/ layer volumes, producing accurate projections that reflect the input data\textquotesingle{}s characteristics. \Hypertarget{class_test_projection_a50dd861bd9d6b3382185fd04c8f7c852}\label{class_test_projection_a50dd861bd9d6b3382185fd04c8f7c852} 
+\index{TestProjection@{TestProjection}!testZeroVolumeDataProjection@{testZeroVolumeDataProjection}}
+\index{testZeroVolumeDataProjection@{testZeroVolumeDataProjection}!TestProjection@{TestProjection}}
+\doxysubsubsection{\texorpdfstring{testZeroVolumeDataProjection()}{testZeroVolumeDataProjection()}}
+{\footnotesize\ttfamily void Test\+Projection\+::test\+Zero\+Volume\+Data\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Handling Zero \doxylink{class_volume}{Volume} Data
+
+Verifies the behavior of the projection methods when provided with volume data containing zero intensity values. This test ensures that the projection results are correctly computed and reflect the zero intensity values in the input data. By testing this scenario, the method confirms that the \doxylink{class_projection}{Projection} class handles zero intensity values appropriately, producing accurate projections that align with the input data\textquotesingle{}s characteristics. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_projection_8h}{Test\+Projection.\+h}}\end{DoxyCompactItemize}

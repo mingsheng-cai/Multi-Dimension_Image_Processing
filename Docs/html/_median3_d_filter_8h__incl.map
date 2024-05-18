@@ -1,0 +1,19 @@
+<map id="Include/Filters/Median3DFilter.h" name="Include/Filters/Median3DFilter.h">
+<area shape="rect" id="Node000001" title="Implements a 3D Median filter for volume data processing." alt="" coords="119,5,324,31"/>
+<area shape="rect" id="Node000002" href="$_filter_8h.html" title="Defines interfaces for 2D and 3D filtering operations on images and volume data." alt="" coords="154,79,214,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,32,200,66,195,64,213,30"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="258,226,315,252"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="227,30,281,211,276,212,222,32"/>
+<area shape="rect" id="Node000003" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="35,153,104,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="166,107,103,146,100,142,163,103"/>
+<area shape="rect" id="Node000005" href="$_volume_8h.html" title="Manages 3D volumetric data for processing and analysis." alt="" coords="146,153,222,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="187,105,187,137,181,137,181,105"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,226,59,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="66,180,48,214,43,211,61,177"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="159,181,73,222,71,217,157,176"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="203,177,259,215,255,219,200,181"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="83,226,149,252"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="175,180,140,217,136,213,171,177"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="174,226,234,252"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="190,178,199,211,194,212,185,179"/>
+</map>

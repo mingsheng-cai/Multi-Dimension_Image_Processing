@@ -1,0 +1,7 @@
+<map id="Include/Filters/Gaussian3DFilter.h" name="Include/Filters/Gaussian3DFilter.h">
+<area shape="rect" id="Node000001" title="Implements a 3D Gaussian filter for smoothing volume data." alt="" coords="89,5,258,46"/>
+<area shape="rect" id="Node000002" href="$_gaussian3_d_filter_8cpp.html" title="Implements a 3D Gaussian filter for volumetric data smoothing." alt="" coords="5,94,174,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,59,110,95,107,92,142,56"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Main entry point for the Data Processing Program." alt="" coords="198,102,317,127"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,55,248,99,244,103,201,59"/>
+</map>

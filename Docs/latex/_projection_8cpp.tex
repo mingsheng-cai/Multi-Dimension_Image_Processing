@@ -1,0 +1,37 @@
+\doxysection{Source/\+Projection.cpp File Reference}
+\hypertarget{_projection_8cpp}{}\label{_projection_8cpp}\index{Source/Projection.cpp@{Source/Projection.cpp}}
+
+
+Implements projection techniques for visualizing 3D volumetric data.  
+
+
+{\ttfamily \#include "{}Projection.\+h"{}}\newline
+{\ttfamily \#include "{}Algorithm.\+h"{}}\newline
+Include dependency graph for Projection.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{_projection_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implements projection techniques for visualizing 3D volumetric data. 
+
+The \doxylink{class_projection}{Projection} class offers several methods to transform 3D volume data into 2D images through different types of intensity projections\+: Maximum Intensity \doxylink{class_projection}{Projection} (MIP), Minimum Intensity \doxylink{class_projection}{Projection} (Min\+IP), Average Intensity \doxylink{class_projection}{Projection} (AIP), and Median Intensity \doxylink{class_projection}{Projection} (Med\+IP). These methods facilitate the visualization of volumetric data by projecting certain statistical characteristics of the data along a chosen axis, typically the depth (z-\/axis), onto a 2D plane. Each projection technique highlights different aspects of the volume data, making them invaluable tools for analysis and interpretation in fields such as medical imaging, scientific visualization, and data analysis. The implementation is optimized to efficiently process large volumes of data, rendering meaningful 2D representations that encapsulate the essence of the 3D volume.
+
+\begin{DoxyDate}{Date}
+Created on March 18, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

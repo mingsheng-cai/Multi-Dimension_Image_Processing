@@ -1,0 +1,5 @@
+<map id="TestVolume" name="TestVolume">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,239,211,384"/>
+<area shape="rect" id="Node000002" href="$class_test.html" title=" " alt="" coords="46,5,170,191"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,206,111,239,105,239,105,206"/>
+</map>

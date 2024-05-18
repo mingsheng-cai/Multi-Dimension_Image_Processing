@@ -1,0 +1,133 @@
+\doxysection{Test\+Algorithm Class Reference}
+\hypertarget{class_test_algorithm}{}\label{class_test_algorithm}\index{TestAlgorithm@{TestAlgorithm}}
+
+
+{\ttfamily \#include $<$Test\+Algorithm.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Algorithm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_test_algorithm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Algorithm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_test_algorithm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_algorithm_a8f431cf13ea610508343fa131b9e64e8}{test\+Empty\+Array}} ()
+\item 
+void \mbox{\hyperlink{class_test_algorithm_a771f2f3a7fb44ebad1eed842206aa33a}{test\+Single\+Element\+Array}} ()
+\item 
+void \mbox{\hyperlink{class_test_algorithm_a3a54b961564e7f20f49fba07f2863a38}{test\+Array\+With\+Duplicates}} ()
+\item 
+void \mbox{\hyperlink{class_test_algorithm_a85344946f498c5d26ee7ec0b81705847}{test\+Invalid\+KValues}} ()
+\item 
+void \mbox{\hyperlink{class_test_algorithm_ad71cf822e7e0e463dfaa8cfb381b5b43}{test\+Quick\+Select}} ()
+\item 
+void \mbox{\hyperlink{class_test_algorithm_a2e161ac22c7ed55db29d4c3f2e94c3a9}{test\+Quick\+Sort}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_algorithm_aa279fd26e3139e8c44be3e572533baf0}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_algorithm_aa279fd26e3139e8c44be3e572533baf0}\label{class_test_algorithm_aa279fd26e3139e8c44be3e572533baf0} 
+\index{TestAlgorithm@{TestAlgorithm}!runTests@{runTests}}
+\index{runTests@{runTests}!TestAlgorithm@{TestAlgorithm}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Algorithm\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes all defined test cases for the \doxylink{class_algorithm}{Algorithm} class.
+
+This method runs all test cases defined within the \doxylink{class_test_algorithm}{Test\+Algorithm} class, using the run\+Test template method from the \doxylink{class_test}{Test} base class to execute each test function. The results of the tests are printed to the console to provide feedback on the success or failure of each test case. The method serves as a comprehensive test suite for the \doxylink{class_algorithm}{Algorithm} class, covering a range of scenarios to ensure the correctness and robustness of the implemented sorting and selection algorithms. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_algorithm_a3a54b961564e7f20f49fba07f2863a38}\label{class_test_algorithm_a3a54b961564e7f20f49fba07f2863a38} 
+\index{TestAlgorithm@{TestAlgorithm}!testArrayWithDuplicates@{testArrayWithDuplicates}}
+\index{testArrayWithDuplicates@{testArrayWithDuplicates}!TestAlgorithm@{TestAlgorithm}}
+\doxysubsubsection{\texorpdfstring{testArrayWithDuplicates()}{testArrayWithDuplicates()}}
+{\footnotesize\ttfamily void Test\+Algorithm\+::test\+Array\+With\+Duplicates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Handling of Arrays with Duplicates
+
+Checks Quick\+Select and Quick\+Sort algorithms\textquotesingle{} ability to handle arrays containing duplicate elements. For Quick\+Select, the test verifies that the correct \textquotesingle{}kth\textquotesingle{} element is selected from among duplicates. For Quick\+Sort, it ensures that the algorithm can sort arrays with duplicates into the correct order. \Hypertarget{class_test_algorithm_a8f431cf13ea610508343fa131b9e64e8}\label{class_test_algorithm_a8f431cf13ea610508343fa131b9e64e8} 
+\index{TestAlgorithm@{TestAlgorithm}!testEmptyArray@{testEmptyArray}}
+\index{testEmptyArray@{testEmptyArray}!TestAlgorithm@{TestAlgorithm}}
+\doxysubsubsection{\texorpdfstring{testEmptyArray()}{testEmptyArray()}}
+{\footnotesize\ttfamily void Test\+Algorithm\+::test\+Empty\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Quick\+Select on an Empty Array
+
+Verifies the behavior of the Quick\+Select algorithm when applied to an empty array. The test ensures that Quick\+Select appropriately handles the edge case by either throwing an exception or safely returning without altering the state. This test case is crucial for validating the algorithm\textquotesingle{}s robustness and error handling capabilities. \Hypertarget{class_test_algorithm_a85344946f498c5d26ee7ec0b81705847}\label{class_test_algorithm_a85344946f498c5d26ee7ec0b81705847} 
+\index{TestAlgorithm@{TestAlgorithm}!testInvalidKValues@{testInvalidKValues}}
+\index{testInvalidKValues@{testInvalidKValues}!TestAlgorithm@{TestAlgorithm}}
+\doxysubsubsection{\texorpdfstring{testInvalidKValues()}{testInvalidKValues()}}
+{\footnotesize\ttfamily void Test\+Algorithm\+::test\+Invalid\+KValues (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Quick\+Select with Invalid \textquotesingle{}k\textquotesingle{} Values
+
+Evaluates Quick\+Select\textquotesingle{}s error handling when provided with invalid \textquotesingle{}k\textquotesingle{} values, such as a negative index or an index exceeding the array bounds. The test ensures that Quick\+Select throws an exception or otherwise signals an error, demonstrating proper input validation. \Hypertarget{class_test_algorithm_ad71cf822e7e0e463dfaa8cfb381b5b43}\label{class_test_algorithm_ad71cf822e7e0e463dfaa8cfb381b5b43} 
+\index{TestAlgorithm@{TestAlgorithm}!testQuickSelect@{testQuickSelect}}
+\index{testQuickSelect@{testQuickSelect}!TestAlgorithm@{TestAlgorithm}}
+\doxysubsubsection{\texorpdfstring{testQuickSelect()}{testQuickSelect()}}
+{\footnotesize\ttfamily void Test\+Algorithm\+::test\+Quick\+Select (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Comprehensive Tests for Quick\+Select and Quick\+Sort
+
+These additional tests cover the core functionalities of Quick\+Select and Quick\+Sort, ensuring they perform as expected under typical usage scenarios. Quick\+Select\textquotesingle{}s test verifies it can accurately find the \textquotesingle{}kth\textquotesingle{} smallest element in a mixed array, while Quick\+Sort\textquotesingle{}s test confirms the algorithm successfully sorts a variety of strings. \Hypertarget{class_test_algorithm_a2e161ac22c7ed55db29d4c3f2e94c3a9}\label{class_test_algorithm_a2e161ac22c7ed55db29d4c3f2e94c3a9} 
+\index{TestAlgorithm@{TestAlgorithm}!testQuickSort@{testQuickSort}}
+\index{testQuickSort@{testQuickSort}!TestAlgorithm@{TestAlgorithm}}
+\doxysubsubsection{\texorpdfstring{testQuickSort()}{testQuickSort()}}
+{\footnotesize\ttfamily void Test\+Algorithm\+::test\+Quick\+Sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Quick\+Sort on a String Array
+
+Validates Quick\+Sort\textquotesingle{}s ability to sort an array of strings in lexicographical order. The test compares the sorted array produced by Quick\+Sort with the expected sorted array generated using the standard library\textquotesingle{}s sort function. If the two arrays match, the test considers Quick\+Sort to have passed successfully. \Hypertarget{class_test_algorithm_a771f2f3a7fb44ebad1eed842206aa33a}\label{class_test_algorithm_a771f2f3a7fb44ebad1eed842206aa33a} 
+\index{TestAlgorithm@{TestAlgorithm}!testSingleElementArray@{testSingleElementArray}}
+\index{testSingleElementArray@{testSingleElementArray}!TestAlgorithm@{TestAlgorithm}}
+\doxysubsubsection{\texorpdfstring{testSingleElementArray()}{testSingleElementArray()}}
+{\footnotesize\ttfamily void Test\+Algorithm\+::test\+Single\+Element\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Quick\+Select with a Single Element Array
+
+Evaluates Quick\+Select\textquotesingle{}s functionality on an array containing a single element. The test confirms that Quick\+Select correctly identifies the sole element as the \textquotesingle{}kth\textquotesingle{} element regardless of the \textquotesingle{}k\textquotesingle{} value provided. Similarly, Quick\+Sort is tested to verify it can sort an array of a single element without errors. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_algorithm_8h}{Test\+Algorithm.\+h}}\end{DoxyCompactItemize}

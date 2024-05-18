@@ -1,0 +1,124 @@
+\doxysection{Test\+Gaussian2\+DFilter Class Reference}
+\hypertarget{class_test_gaussian2_d_filter}{}\label{class_test_gaussian2_d_filter}\index{TestGaussian2DFilter@{TestGaussian2DFilter}}
+
+
+{\ttfamily \#include $<$Test\+Gaussian2\+DFilter.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Gaussian2\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_test_gaussian2_d_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Gaussian2\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_test_gaussian2_d_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_gaussian2_d_filter_a4d1305f6aa5c601213f0f339e4efd677}{test\+Kernel\+Generation}} ()
+\item 
+void \mbox{\hyperlink{class_test_gaussian2_d_filter_a76a4fa0cd671b02f3bbaa1e89329f8e6}{test\+Apply\+Gaussian\+Blur}} ()
+\item 
+void \mbox{\hyperlink{class_test_gaussian2_d_filter_acd3c91ab8406d5501d8ac4c7fc078218}{test\+Blurring\+Effect}} ()
+\item 
+void \mbox{\hyperlink{class_test_gaussian2_d_filter_adfceddcebebcead0cc765020d03e59ff}{test\+Sigma\+Impact}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_gaussian2_d_filter_a96374571fa9a4b26ed3d2d07a13712d9}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_test_gaussian2_d_filter_a8e4aeb06f6dc6cf3562a5184895af8c4}{calculate\+Variance}} (const \mbox{\hyperlink{class_image}{Image}} \&img)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_gaussian2_d_filter_a8e4aeb06f6dc6cf3562a5184895af8c4}\label{class_test_gaussian2_d_filter_a8e4aeb06f6dc6cf3562a5184895af8c4} 
+\index{TestGaussian2DFilter@{TestGaussian2DFilter}!calculateVariance@{calculateVariance}}
+\index{calculateVariance@{calculateVariance}!TestGaussian2DFilter@{TestGaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{calculateVariance()}{calculateVariance()}}
+{\footnotesize\ttfamily double Test\+Gaussian2\+DFilter\+::calculate\+Variance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_test_gaussian2_d_filter_a96374571fa9a4b26ed3d2d07a13712d9}\label{class_test_gaussian2_d_filter_a96374571fa9a4b26ed3d2d07a13712d9} 
+\index{TestGaussian2DFilter@{TestGaussian2DFilter}!runTests@{runTests}}
+\index{runTests@{runTests}!TestGaussian2DFilter@{TestGaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Gaussian2\+DFilter\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes All Defined \doxylink{class_test}{Test} Cases for the \doxylink{class_gaussian2_d_filter}{Gaussian2\+DFilter}
+
+Coordinates the execution of all test cases defined in the \doxylink{class_test_gaussian2_d_filter}{Test\+Gaussian2\+DFilter} class, focusing on the Gaussian filter\textquotesingle{}s kernel generation, application effectiveness, and the quantifiable impact of its use on images. This comprehensive testing suite ensures the \doxylink{class_gaussian2_d_filter}{Gaussian2\+DFilter}\textquotesingle{}s reliability and efficacy in image processing tasks. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_gaussian2_d_filter_a76a4fa0cd671b02f3bbaa1e89329f8e6}\label{class_test_gaussian2_d_filter_a76a4fa0cd671b02f3bbaa1e89329f8e6} 
+\index{TestGaussian2DFilter@{TestGaussian2DFilter}!testApplyGaussianBlur@{testApplyGaussianBlur}}
+\index{testApplyGaussianBlur@{testApplyGaussianBlur}!TestGaussian2DFilter@{TestGaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{testApplyGaussianBlur()}{testApplyGaussianBlur()}}
+{\footnotesize\ttfamily void Test\+Gaussian2\+DFilter\+::test\+Apply\+Gaussian\+Blur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Basic Application of Gaussian Blur
+
+Evaluates the \doxylink{class_gaussian2_d_filter}{Gaussian2\+DFilter}\textquotesingle{}s performance in applying a Gaussian blur to an image. This test uses a gradient image to assess how well the filter smooths transitions between different intensity levels. The goal is to verify the filter\textquotesingle{}s effectiveness in reducing image sharpness while preserving overall image integrity. \Hypertarget{class_test_gaussian2_d_filter_acd3c91ab8406d5501d8ac4c7fc078218}\label{class_test_gaussian2_d_filter_acd3c91ab8406d5501d8ac4c7fc078218} 
+\index{TestGaussian2DFilter@{TestGaussian2DFilter}!testBlurringEffect@{testBlurringEffect}}
+\index{testBlurringEffect@{testBlurringEffect}!TestGaussian2DFilter@{TestGaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{testBlurringEffect()}{testBlurringEffect()}}
+{\footnotesize\ttfamily void Test\+Gaussian2\+DFilter\+::test\+Blurring\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Quantifies the Blurring Effect of the Gaussian Filter
+
+Measures the impact of the Gaussian blur on an image\textquotesingle{}s variance. By comparing the variance of pixel values before and after applying the filter, this test quantifies the smoothing effect of the filter. A significant reduction in variance indicates effective blurring, which is essential for applications requiring image smoothing. \Hypertarget{class_test_gaussian2_d_filter_a4d1305f6aa5c601213f0f339e4efd677}\label{class_test_gaussian2_d_filter_a4d1305f6aa5c601213f0f339e4efd677} 
+\index{TestGaussian2DFilter@{TestGaussian2DFilter}!testKernelGeneration@{testKernelGeneration}}
+\index{testKernelGeneration@{testKernelGeneration}!TestGaussian2DFilter@{TestGaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{testKernelGeneration()}{testKernelGeneration()}}
+{\footnotesize\ttfamily void Test\+Gaussian2\+DFilter\+::test\+Kernel\+Generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Generation of the Gaussian Kernel
+
+Verifies the \doxylink{class_gaussian2_d_filter}{Gaussian2\+DFilter}\textquotesingle{}s ability to generate a Gaussian kernel with specified dimensions and sigma value. The kernel\textquotesingle{}s sum must equal 1 to maintain image brightness, and its center value should be the maximum, reflecting the characteristics of a Gaussian distribution. This test ensures the kernel is constructed correctly, which is crucial for achieving the desired blurring effect. \Hypertarget{class_test_gaussian2_d_filter_adfceddcebebcead0cc765020d03e59ff}\label{class_test_gaussian2_d_filter_adfceddcebebcead0cc765020d03e59ff} 
+\index{TestGaussian2DFilter@{TestGaussian2DFilter}!testSigmaImpact@{testSigmaImpact}}
+\index{testSigmaImpact@{testSigmaImpact}!TestGaussian2DFilter@{TestGaussian2DFilter}}
+\doxysubsubsection{\texorpdfstring{testSigmaImpact()}{testSigmaImpact()}}
+{\footnotesize\ttfamily void Test\+Gaussian2\+DFilter\+::test\+Sigma\+Impact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Evaluates the Impact of Sigma on Blurring Intensity
+
+Investigates how different sigma values influence the intensity of the Gaussian blur applied by the filter. The test compares the effects of small and large sigma values on image smoothing, expecting a larger sigma to produce a more pronounced blurring effect. This evaluation helps in understanding the filter\textquotesingle{}s behavior across various blurring strengths. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_gaussian2_d_filter_8h}{Test\+Gaussian2\+DFilter.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,195 @@
+\doxysection{Test\+Gaussian3\+DFilter Class Reference}
+\hypertarget{class_test_gaussian3_d_filter}{}\label{class_test_gaussian3_d_filter}\index{TestGaussian3DFilter@{TestGaussian3DFilter}}
+
+
+{\ttfamily \#include $<$Test\+Gaussian3\+DFilter.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Gaussian3\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_test_gaussian3_d_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Gaussian3\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_test_gaussian3_d_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_gaussian3_d_filter_a5bea478060dd9c6242652a373f1c364b}{test\+Gaussian\+Kernel\+Generation}} ()
+\item 
+void \mbox{\hyperlink{class_test_gaussian3_d_filter_ad55b5289ccc4fc6bc5471a57156897be}{test\+Apply\+Gaussian\+Filter}} ()
+\item 
+void \mbox{\hyperlink{class_test_gaussian3_d_filter_a28b4a00b9caa84ab1644aa2e5eb02955}{analyze\+Volume\+Smoothing}} (const \mbox{\hyperlink{class_volume}{Volume}} \&volume, const std\+::vector$<$ unsigned char $>$ \&original\+Data)
+\item 
+void \mbox{\hyperlink{class_test_gaussian3_d_filter_ac3bc25b5ccc0d815f30d079ed61aedbe}{test\+Gaussian\+Filter\+Smoothness}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_gaussian3_d_filter_aa705a86f85958f5079a20be0a94989f3}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_test_gaussian3_d_filter_a09dc573920af70b5f849d479fdb18900}{generate\+Gaussian\+Kernel}} (double sigma, int kernel\+Size) const
+\item 
+\mbox{\hyperlink{class_volume}{Volume}} \mbox{\hyperlink{class_test_gaussian3_d_filter_aed31540e27413eb2dbc5cf123c70a8a1}{generate\+Test\+Volume}} (int width, int height, int depth)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_volume}{Volume}} $>$ \mbox{\hyperlink{class_test_gaussian3_d_filter_ae81b91b0f956508ba9c4df21eab4b2c9}{initialize\+Simple\+Volume}} (int width, int height, int depth)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_gaussian3_d_filter_a28b4a00b9caa84ab1644aa2e5eb02955}\label{class_test_gaussian3_d_filter_a28b4a00b9caa84ab1644aa2e5eb02955} 
+\index{TestGaussian3DFilter@{TestGaussian3DFilter}!analyzeVolumeSmoothing@{analyzeVolumeSmoothing}}
+\index{analyzeVolumeSmoothing@{analyzeVolumeSmoothing}!TestGaussian3DFilter@{TestGaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{analyzeVolumeSmoothing()}{analyzeVolumeSmoothing()}}
+{\footnotesize\ttfamily void Test\+Gaussian3\+DFilter\+::analyze\+Volume\+Smoothing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_volume}{Volume}} \&}]{volume,  }\item[{const std\+::vector$<$ unsigned char $>$ \&}]{original\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Analyzes the Smoothing Effect of the Gaussian Filter on \doxylink{class_volume}{Volume} Data
+
+Conducts a quantitative analysis of the smoothing effect by comparing the variance of the volume data before and after applying the Gaussian filter. A reduction in variance indicates successful smoothing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The \doxylink{class_volume}{Volume} object to analyze. \\
+\hline
+{\em original\+Data} & The original data for comparison. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_test_gaussian3_d_filter_a09dc573920af70b5f849d479fdb18900}\label{class_test_gaussian3_d_filter_a09dc573920af70b5f849d479fdb18900} 
+\index{TestGaussian3DFilter@{TestGaussian3DFilter}!generateGaussianKernel@{generateGaussianKernel}}
+\index{generateGaussianKernel@{generateGaussianKernel}!TestGaussian3DFilter@{TestGaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{generateGaussianKernel()}{generateGaussianKernel()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Test\+Gaussian3\+DFilter\+::generate\+Gaussian\+Kernel (\begin{DoxyParamCaption}\item[{double}]{sigma,  }\item[{int}]{kernel\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Generates a Gaussian Kernel with Given Sigma and Kernel Size
+
+Creates a Gaussian kernel for the 3D filter, ensuring that the kernel values sum to 1 for brightness preservation. This method is crucial for the proper application of Gaussian blurring, as it directly influences the smoothing effect on volume data. The generated kernel reflects a standard Gaussian distribution centered at the kernel\textquotesingle{}s middle, with sigma determining the spread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sigma} & The standard deviation of the Gaussian distribution. \\
+\hline
+{\em kernel\+Size} & The size of the kernel (must be odd). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector representing the 1D Gaussian kernel. 
+\end{DoxyReturn}
+\Hypertarget{class_test_gaussian3_d_filter_aed31540e27413eb2dbc5cf123c70a8a1}\label{class_test_gaussian3_d_filter_aed31540e27413eb2dbc5cf123c70a8a1} 
+\index{TestGaussian3DFilter@{TestGaussian3DFilter}!generateTestVolume@{generateTestVolume}}
+\index{generateTestVolume@{generateTestVolume}!TestGaussian3DFilter@{TestGaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{generateTestVolume()}{generateTestVolume()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume}{Volume}} Test\+Gaussian3\+DFilter\+::generate\+Test\+Volume (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Generates \doxylink{class_test}{Test} \doxylink{class_volume}{Volume} Data with a Specific Pattern
+
+Constructs a volume of given dimensions filled with a predictable pattern based on the coordinates of each voxel. This test volume is used to assess the \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter}\textquotesingle{}s ability to smooth data without distorting the underlying pattern, providing a controlled environment for testing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_volume}{Volume} object filled with patterned data. 
+\end{DoxyReturn}
+\Hypertarget{class_test_gaussian3_d_filter_ae81b91b0f956508ba9c4df21eab4b2c9}\label{class_test_gaussian3_d_filter_ae81b91b0f956508ba9c4df21eab4b2c9} 
+\index{TestGaussian3DFilter@{TestGaussian3DFilter}!initializeSimpleVolume@{initializeSimpleVolume}}
+\index{initializeSimpleVolume@{initializeSimpleVolume}!TestGaussian3DFilter@{TestGaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{initializeSimpleVolume()}{initializeSimpleVolume()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_volume}{Volume}} $>$ Test\+Gaussian3\+DFilter\+::initialize\+Simple\+Volume (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Initializes a Simple \doxylink{class_volume}{Volume} with Graded Intensity
+
+Creates a volume where the intensity of voxels decreases with distance from the center. This setup is used to test the smoothing effects of the Gaussian filter, particularly its impact on gradients within the volume data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the \doxylink{class_volume}{Volume} object with initialized data. 
+\end{DoxyReturn}
+\Hypertarget{class_test_gaussian3_d_filter_aa705a86f85958f5079a20be0a94989f3}\label{class_test_gaussian3_d_filter_aa705a86f85958f5079a20be0a94989f3} 
+\index{TestGaussian3DFilter@{TestGaussian3DFilter}!runTests@{runTests}}
+\index{runTests@{runTests}!TestGaussian3DFilter@{TestGaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Gaussian3\+DFilter\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes All Defined \doxylink{class_test}{Test} Cases for the \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter}
+
+Orchestrates the execution of all unit tests for the \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter} class. This comprehensive suite verifies the filter\textquotesingle{}s ability to generate accurate kernels, apply Gaussian blurring effectively, and achieve the desired smoothing effects on volume data. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_gaussian3_d_filter_ad55b5289ccc4fc6bc5471a57156897be}\label{class_test_gaussian3_d_filter_ad55b5289ccc4fc6bc5471a57156897be} 
+\index{TestGaussian3DFilter@{TestGaussian3DFilter}!testApplyGaussianFilter@{testApplyGaussianFilter}}
+\index{testApplyGaussianFilter@{testApplyGaussianFilter}!TestGaussian3DFilter@{TestGaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{testApplyGaussianFilter()}{testApplyGaussianFilter()}}
+{\footnotesize\ttfamily void Test\+Gaussian3\+DFilter\+::test\+Apply\+Gaussian\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Basic Application of the Gaussian Filter
+
+Examines the filter\textquotesingle{}s ability to smoothly apply a Gaussian blur to a 3D volume. This test checks if the filter correctly modifies the volume data to produce a visually smoother result, indicating effective blurring. \Hypertarget{class_test_gaussian3_d_filter_ac3bc25b5ccc0d815f30d079ed61aedbe}\label{class_test_gaussian3_d_filter_ac3bc25b5ccc0d815f30d079ed61aedbe} 
+\index{TestGaussian3DFilter@{TestGaussian3DFilter}!testGaussianFilterSmoothness@{testGaussianFilterSmoothness}}
+\index{testGaussianFilterSmoothness@{testGaussianFilterSmoothness}!TestGaussian3DFilter@{TestGaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{testGaussianFilterSmoothness()}{testGaussianFilterSmoothness()}}
+{\footnotesize\ttfamily void Test\+Gaussian3\+DFilter\+::test\+Gaussian\+Filter\+Smoothness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Smoothness Effect of the Gaussian Filter on \doxylink{class_volume}{Volume} Data
+
+Assesses the filter\textquotesingle{}s performance in smoothing a test volume. This involves applying the filter to volume data with a known pattern and analyzing the effect on data variance to quantify the degree of smoothing achieved. \Hypertarget{class_test_gaussian3_d_filter_a5bea478060dd9c6242652a373f1c364b}\label{class_test_gaussian3_d_filter_a5bea478060dd9c6242652a373f1c364b} 
+\index{TestGaussian3DFilter@{TestGaussian3DFilter}!testGaussianKernelGeneration@{testGaussianKernelGeneration}}
+\index{testGaussianKernelGeneration@{testGaussianKernelGeneration}!TestGaussian3DFilter@{TestGaussian3DFilter}}
+\doxysubsubsection{\texorpdfstring{testGaussianKernelGeneration()}{testGaussianKernelGeneration()}}
+{\footnotesize\ttfamily void Test\+Gaussian3\+DFilter\+::test\+Gaussian\+Kernel\+Generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Correctness of Gaussian Kernel Generation
+
+Validates that the Gaussian kernel generated by the filter is normalized (sums to 1) and structured correctly according to Gaussian distribution properties. This test ensures that the filter will apply a consistent smoothing effect across the volume data. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_gaussian3_d_filter_8h}{Test\+Gaussian3\+DFilter.\+h}}\end{DoxyCompactItemize}

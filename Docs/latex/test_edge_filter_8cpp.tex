@@ -1,0 +1,93 @@
+\doxysection{Temp/test\+Edge\+Filter.cpp File Reference}
+\hypertarget{test_edge_filter_8cpp}{}\label{test_edge_filter_8cpp}\index{Temp/testEdgeFilter.cpp@{Temp/testEdgeFilter.cpp}}
+{\ttfamily \#include "{}stb\+\_\+image\+\_\+write.\+h"{}}\newline
+{\ttfamily \#include "{}stb\+\_\+image.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Edge\+Filter.\+h"{}}\newline
+{\ttfamily \#include "{}Image.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for test\+Edge\+Filter.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_edge_filter_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test_edge_filter_8cpp_aefe397a94e8feddc652f92ef40ce9597}{STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{test_edge_filter_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{test_edge_filter_8cpp_a625d971c4434c15c8b7886d6396ccded}{create\+Blank\+Image}} (int width, int height)
+\item 
+void \mbox{\hyperlink{test_edge_filter_8cpp_a32830a737dcd46fbf32f0aaab85a884d}{draw\+Bright\+Square}} (std\+::vector$<$ unsigned char $>$ \&image\+Data, int width, int height, int startX, int startY, int square\+Size)
+\item 
+double \mbox{\hyperlink{test_edge_filter_8cpp_aa0565bcea0a2fc7c95ffc7bebf0a8291}{calculate\+Variance}} (const unsigned char \texorpdfstring{$\ast$}{*}image\+Data, int data\+Size)
+\item 
+bool \mbox{\hyperlink{test_edge_filter_8cpp_a9121dc018584e8678055eee579d30c8e}{check\+Edge\+Detection}} (const unsigned char \texorpdfstring{$\ast$}{*}original\+Image\+Data, const unsigned char \texorpdfstring{$\ast$}{*}filtered\+Image\+Data, int width, int height, int channels)
+\item 
+std\+::string \mbox{\hyperlink{test_edge_filter_8cpp_a67004ddc06492d01fe689eb61d87722a}{filter\+Type\+To\+String}} (\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}} type)
+\item 
+int \mbox{\hyperlink{test_edge_filter_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test_edge_filter_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\label{test_edge_filter_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\index{testEdgeFilter.cpp@{testEdgeFilter.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!testEdgeFilter.cpp@{testEdgeFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+
+\Hypertarget{test_edge_filter_8cpp_aefe397a94e8feddc652f92ef40ce9597}\label{test_edge_filter_8cpp_aefe397a94e8feddc652f92ef40ce9597} 
+\index{testEdgeFilter.cpp@{testEdgeFilter.cpp}!STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}!testEdgeFilter.cpp@{testEdgeFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_WRITE\_IMPLEMENTATION}{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test_edge_filter_8cpp_aa0565bcea0a2fc7c95ffc7bebf0a8291}\label{test_edge_filter_8cpp_aa0565bcea0a2fc7c95ffc7bebf0a8291} 
+\index{testEdgeFilter.cpp@{testEdgeFilter.cpp}!calculateVariance@{calculateVariance}}
+\index{calculateVariance@{calculateVariance}!testEdgeFilter.cpp@{testEdgeFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{calculateVariance()}{calculateVariance()}}
+{\footnotesize\ttfamily double calculate\+Variance (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{image\+Data,  }\item[{int}]{data\+Size }\end{DoxyParamCaption})}
+
+\Hypertarget{test_edge_filter_8cpp_a9121dc018584e8678055eee579d30c8e}\label{test_edge_filter_8cpp_a9121dc018584e8678055eee579d30c8e} 
+\index{testEdgeFilter.cpp@{testEdgeFilter.cpp}!checkEdgeDetection@{checkEdgeDetection}}
+\index{checkEdgeDetection@{checkEdgeDetection}!testEdgeFilter.cpp@{testEdgeFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{checkEdgeDetection()}{checkEdgeDetection()}}
+{\footnotesize\ttfamily bool check\+Edge\+Detection (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{original\+Image\+Data,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{filtered\+Image\+Data,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{channels }\end{DoxyParamCaption})}
+
+\Hypertarget{test_edge_filter_8cpp_a625d971c4434c15c8b7886d6396ccded}\label{test_edge_filter_8cpp_a625d971c4434c15c8b7886d6396ccded} 
+\index{testEdgeFilter.cpp@{testEdgeFilter.cpp}!createBlankImage@{createBlankImage}}
+\index{createBlankImage@{createBlankImage}!testEdgeFilter.cpp@{testEdgeFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{createBlankImage()}{createBlankImage()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned char $>$ create\+Blank\+Image (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+\Hypertarget{test_edge_filter_8cpp_a32830a737dcd46fbf32f0aaab85a884d}\label{test_edge_filter_8cpp_a32830a737dcd46fbf32f0aaab85a884d} 
+\index{testEdgeFilter.cpp@{testEdgeFilter.cpp}!drawBrightSquare@{drawBrightSquare}}
+\index{drawBrightSquare@{drawBrightSquare}!testEdgeFilter.cpp@{testEdgeFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{drawBrightSquare()}{drawBrightSquare()}}
+{\footnotesize\ttfamily void draw\+Bright\+Square (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ \&}]{image\+Data,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{startX,  }\item[{int}]{startY,  }\item[{int}]{square\+Size }\end{DoxyParamCaption})}
+
+\Hypertarget{test_edge_filter_8cpp_a67004ddc06492d01fe689eb61d87722a}\label{test_edge_filter_8cpp_a67004ddc06492d01fe689eb61d87722a} 
+\index{testEdgeFilter.cpp@{testEdgeFilter.cpp}!filterTypeToString@{filterTypeToString}}
+\index{filterTypeToString@{filterTypeToString}!testEdgeFilter.cpp@{testEdgeFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{filterTypeToString()}{filterTypeToString()}}
+{\footnotesize\ttfamily std\+::string filter\+Type\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}}}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{test_edge_filter_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test_edge_filter_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{testEdgeFilter.cpp@{testEdgeFilter.cpp}!main@{main}}
+\index{main@{main}!testEdgeFilter.cpp@{testEdgeFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

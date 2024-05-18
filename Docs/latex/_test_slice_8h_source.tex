@@ -1,0 +1,137 @@
+\doxysection{Test\+Slice.\+h}
+\hypertarget{_test_slice_8h_source}{}\label{_test_slice_8h_source}\index{Tests/TestSlice.h@{Tests/TestSlice.h}}
+\mbox{\hyperlink{_test_slice_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_slice_8h}{Slice.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_slice}{TestSlice}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_slice_ad30e5e3fb3216b895b3a6cc261791321}{testValidSlice}}()\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ volumeData(100);\ \textcolor{comment}{//\ A\ 10x10x1\ volume}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 100;\ ++i)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ volumeData[i]\ =\ i;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ slice\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(10,\ 10,\ 1,\ volumeData.data(),\ \textcolor{stringliteral}{"{}x-\/y"{}},\ 1);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ assert(!slice.empty());\ \textcolor{comment}{//\ Ensure\ the\ slice\ is\ not\ empty}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ assert(slice.size()\ ==\ 100);\ \textcolor{comment}{//\ Ensure\ the\ slice\ has\ the\ correct\ size}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ slice.size();\ ++i)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ assert(slice[i]\ ==\ i);\ \textcolor{comment}{//\ Ensure\ the\ slice\ data\ matches\ the\ volume\ data}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_slice_af0a26ff8c6ec31a747ee86dd4011867b}{testInvalidSliceIndex}}()\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ volumeData(100);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ slice\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(10,\ 10,\ 1,\ volumeData.data(),\ \textcolor{stringliteral}{"{}x-\/y"{}},\ 2);\ \textcolor{comment}{//\ 无效的切片索引}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ assert(slice.empty());\ \textcolor{comment}{//\ Return\ an\ empty\ slice}}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_slice_a7c67111090e218cbe2d0e092bb4f8457}{testInvalidPlane}}()\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ volumeData(100);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ slice\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(10,\ 10,\ 1,\ volumeData.data(),\ \textcolor{stringliteral}{"{}invalid-\/plane"{}},\ 1);\ \textcolor{comment}{//\ 无效的平面}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ assert(slice.empty());\ \textcolor{comment}{//\ Return\ an\ empty\ slice}}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_slice_a60497f2be11bdad13fc1e89c1d5cc03f}{testXYPlaneSlice}}()\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ volumeData(27);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ volume\ data}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 27;\ ++i)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ volumeData[i]\ =\ i;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ second\ row\ slice\ (index\ 2),\ note\ that\ in\ the\ x-\/y\ plane,\ "{}row"{}\ corresponds\ to\ the\ y\ direction}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ slice\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(3,\ 3,\ 3,\ volumeData.data(),\ \textcolor{stringliteral}{"{}x-\/y"{}},\ 2);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ assert(slice.size()\ ==\ 9);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 9;\ ++i)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ assert(slice[i]\ ==\ 9\ +\ i);\ \ \textcolor{comment}{//\ Expected\ values\ to\ be\ calculated\ based\ on\ the\ arrangement}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_slice_a33e7c9a04382f55934e7a55c3c1682c8}{testXZPlaneSlice}}()\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ volumeData(27);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ volume\ data}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 27;\ ++i)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ volumeData[i]\ =\ i;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ third\ column\ slice\ (index\ 2),\ note\ that\ in\ the\ x-\/z\ plane,\ "{}column"{}\ corresponds\ to\ the\ z\ direction}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ slice\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(3,\ 3,\ 3,\ volumeData.data(),\ \textcolor{stringliteral}{"{}x-\/z"{}},\ 2);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ assert(slice.size()\ ==\ 9);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 3;\ ++j)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(slice[i\ *\ 3\ +\ j]\ ==\ 3\ *\ j\ +\ i\ +\ 3);\ \ \textcolor{comment}{//\ Slice\ data\ expected\ to\ be\ every\ three\ jumps}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_slice_a42853ee9f586eb1f78e8b981573b8df6}{testYZPlaneSlice}}()\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ volumeData(27);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ volume\ data}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 27;\ ++i)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ volumeData[i]\ =\ i;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ second\ column\ slice\ (index\ 1),\ note\ that\ in\ the\ y-\/z\ plane,\ "{}column"{}\ corresponds\ to\ the\ z\ direction}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ slice\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(3,\ 3,\ 3,\ volumeData.data(),\ \textcolor{stringliteral}{"{}y-\/z"{}},\ 1);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ assert(slice.size()\ ==\ 9);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 9;\ ++i)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ assert(slice[i]\ ==\ i\ *\ 3);\ \ \textcolor{comment}{//\ Expected\ values\ to\ be\ every\ three\ jumps}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_slice_aff0bccbc27b089d52cc62c2110750e2f}{testOutOfBoundsSliceIndex}}()\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ volumeData(27);\ \ \textcolor{comment}{//\ 3x3x3\ Volume}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 27;\ ++i)\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ volumeData[i]\ =\ i;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ to\ get\ an\ out-\/of-\/bounds\ XY\ plane\ slice}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sliceXY\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(3,\ 3,\ 3,\ volumeData.data(),\ \textcolor{stringliteral}{"{}x-\/y"{}},\ 4);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ assert(sliceXY.empty());\ \ \textcolor{comment}{//\ Expected\ to\ return\ an\ empty\ vector}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ to\ get\ an\ out-\/of-\/bounds\ XZ\ plane\ slice}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sliceXZ\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(3,\ 3,\ 3,\ volumeData.data(),\ \textcolor{stringliteral}{"{}x-\/z"{}},\ 4);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ assert(sliceXZ.empty());\ \ \textcolor{comment}{//\ Expected\ to\ return\ an\ empty\ vector}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ to\ get\ an\ out-\/of-\/bounds\ YZ\ plane\ slice}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sliceYZ\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(3,\ 3,\ 3,\ volumeData.data(),\ \textcolor{stringliteral}{"{}y-\/z"{}},\ 4);}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ assert(sliceYZ.empty());\ \ \textcolor{comment}{//\ Expected\ to\ return\ an\ empty\ vector}}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_slice_ac4b874f23aa22ba3db9a69e78a516435}{testNegativeSliceIndex}}()\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ volumeData(27);\ \ \textcolor{comment}{//\ 3x3x3\ Volume}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 27;\ ++i)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ volumeData[i]\ =\ i;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ to\ get\ a\ negative\ XY\ plane\ slice}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sliceXY\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(3,\ 3,\ 3,\ volumeData.data(),\ \textcolor{stringliteral}{"{}x-\/y"{}},\ -\/1);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ assert(sliceXY.empty());\ \ \textcolor{comment}{//\ Return\ an\ empty\ vector}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sliceXZ\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(3,\ 3,\ 3,\ volumeData.data(),\ \textcolor{stringliteral}{"{}x-\/z"{}},\ -\/1);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ assert(sliceXZ.empty());\ \ \textcolor{comment}{//\ Return\ an\ empty\ vector}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ sliceYZ\ =\ \mbox{\hyperlink{class_slice_ac23f28ad971283b2f607d2aaa0edbd40}{Slice::getPlaneSlice}}(3,\ 3,\ 3,\ volumeData.data(),\ \textcolor{stringliteral}{"{}y-\/z"{}},\ -\/1);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ assert(sliceYZ.empty());\ \ \textcolor{comment}{//\ Return\ an\ empty\ vector}}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_slice_a65a9a9559bc66bd0b7132bc9b899d70f}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ runTest<TestSlice>(\&\mbox{\hyperlink{class_test_slice_ad30e5e3fb3216b895b3a6cc261791321}{TestSlice::testValidSlice}},\ \textcolor{stringliteral}{"{}Valid\ Slice"{}});}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ runTest<TestSlice>(\&\mbox{\hyperlink{class_test_slice_af0a26ff8c6ec31a747ee86dd4011867b}{TestSlice::testInvalidSliceIndex}},\ \textcolor{stringliteral}{"{}Invalid\ Slice\ Index"{}});}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ runTest<TestSlice>(\&\mbox{\hyperlink{class_test_slice_a7c67111090e218cbe2d0e092bb4f8457}{TestSlice::testInvalidPlane}},\ \textcolor{stringliteral}{"{}Invalid\ Plane"{}});}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ runTest<TestSlice>(\&\mbox{\hyperlink{class_test_slice_a60497f2be11bdad13fc1e89c1d5cc03f}{TestSlice::testXYPlaneSlice}},\ \textcolor{stringliteral}{"{}XY\ Plane\ Slice"{}});}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ runTest<TestSlice>(\&\mbox{\hyperlink{class_test_slice_a33e7c9a04382f55934e7a55c3c1682c8}{TestSlice::testXZPlaneSlice}},\ \textcolor{stringliteral}{"{}XZ\ Plane\ Slice"{}});}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ runTest<TestSlice>(\&\mbox{\hyperlink{class_test_slice_a42853ee9f586eb1f78e8b981573b8df6}{TestSlice::testYZPlaneSlice}},\ \textcolor{stringliteral}{"{}YZ\ Plane\ Slice"{}});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ runTest<TestSlice>(\&\mbox{\hyperlink{class_test_slice_aff0bccbc27b089d52cc62c2110750e2f}{TestSlice::testOutOfBoundsSliceIndex}},\ \textcolor{stringliteral}{"{}Out\ of\ Bounds\ Slice\ Index"{}});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ runTest<TestSlice>(\&\mbox{\hyperlink{class_test_slice_ac4b874f23aa22ba3db9a69e78a516435}{TestSlice::testNegativeSliceIndex}},\ \textcolor{stringliteral}{"{}Negative\ Slice\ Index"{}});}
+\DoxyCodeLine{00214\ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,32 @@
+\doxysection{Median2\+DFilter.\+h}
+\hypertarget{_median2_d_filter_8h_source}{}\label{_median2_d_filter_8h_source}\index{Include/Filters/Median2DFilter.h@{Include/Filters/Median2DFilter.h}}
+\mbox{\hyperlink{_median2_d_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_MEDIAN2DFILTER\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_MEDIAN2DFILTER\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_padding_8h}{Padding.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_median2_d_filter}{Median2DFilter}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_median2_d_filter_ad76b3ac82c79aaa8de4f42b6f813e670}{kernelSize}};\ \textcolor{comment}{//\ Kernel\ size}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{PaddingType}}\ \mbox{\hyperlink{class_median2_d_filter_a81e9ab6a528462d90150a0b4b47bb56c}{paddingType}};\ \textcolor{comment}{//\ Padding\ type}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_median2_d_filter_ab2ee79ab139bc8f7ed49b842a1af5361}{median}}(std::vector<unsigned\ char>\ \&window);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_median2_d_filter_a37b01a13175a27008b279cf8e958da80}{Median2DFilter}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_median2_d_filter_ad76b3ac82c79aaa8de4f42b6f813e670}{kernelSize}},\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{PaddingType}}\ \mbox{\hyperlink{class_median2_d_filter_a81e9ab6a528462d90150a0b4b47bb56c}{paddingType}}\ =\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_median2_d_filter_a2d4771fa683ab5a53bca43d3ca25cae5}{apply}}(\mbox{\hyperlink{class_image}{Image}}\ \&image)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_MEDIAN2DFILTER\_H}}
+
+\end{DoxyCode}

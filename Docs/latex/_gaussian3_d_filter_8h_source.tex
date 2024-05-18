@@ -1,0 +1,37 @@
+\doxysection{Gaussian3\+DFilter.\+h}
+\hypertarget{_gaussian3_d_filter_8h_source}{}\label{_gaussian3_d_filter_8h_source}\index{Include/Filters/Gaussian3DFilter.h@{Include/Filters/Gaussian3DFilter.h}}
+\mbox{\hyperlink{_gaussian3_d_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_GAUSSIAN3DFILTER\_H}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_GAUSSIAN3DFILTER\_H}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_filter_8h}{Filters/Filter.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_volume_8h}{Volume.h}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gaussian3_d_filter}{Gaussian3DFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_filter3_d}{IFilter3D}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gaussian3_d_filter_a7aabc939a17f4bed3b1f29d624abc2c3}{sigma}};\ \textcolor{comment}{//\ Standard\ deviation\ of\ the\ Gaussian}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gaussian3_d_filter_a1c6cea2bb7e6c095a83d42e7c70ce784}{kernelSize}};\ \textcolor{comment}{//\ Size\ of\ the\ kernel}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00048\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_gaussian3_d_filter_a83c65ba49c7e6380a8542f298abaa33b}{computeGaussian1DKernel}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gaussian3_d_filter_a3246e1771a8f6011c83d048c9f0c00e3}{applyGaussian1DFilter\_X}}(std::vector<unsigned\ char>\ \&data,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gaussian3_d_filter_af7e7841966cb44807b6bc5cad20afa50}{applyGaussian1DFilter\_Y}}(std::vector<unsigned\ char>\ \&data,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gaussian3_d_filter_a86b347de03ff023abf51b554f644ea01}{applyGaussian1DFilter\_Z}}(std::vector<unsigned\ char>\ \&data,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_gaussian3_d_filter_af7f8f5a0fae5224685f01d0077786a5d}{Gaussian3DFilter}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gaussian3_d_filter_a7aabc939a17f4bed3b1f29d624abc2c3}{sigma}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gaussian3_d_filter_a1c6cea2bb7e6c095a83d42e7c70ce784}{kernelSize}});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gaussian3_d_filter_ad63630e41c38ae71dbdbba2a5828bf22}{apply}}(\mbox{\hyperlink{class_volume}{Volume}}\ \&volume)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_GAUSSIAN3DFILTER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,384 @@
+\doxysection{Pixel\+Filter Class Reference}
+\hypertarget{class_pixel_filter}{}\label{class_pixel_filter}\index{PixelFilter@{PixelFilter}}
+
+
+{\ttfamily \#include $<$Pixel\+Filter.\+h$>$}
+
+
+
+Inheritance diagram for Pixel\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_pixel_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pixel\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_pixel_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pixel_filter_ab206db8818869dd8c77017b79158ba4a}{Pixel\+Filter}} (const std\+::string \&type, const std\+::optional$<$ int $>$ \&\mbox{\hyperlink{class_pixel_filter_a2b50bd74e4306c304b9c558caf48cd99}{brightness}}=std\+::nullopt, const std\+::string \&\mbox{\hyperlink{class_pixel_filter_a5fd02e751fd91a4bcdd1879d4e068333}{space}}="{}"{}, int \mbox{\hyperlink{class_pixel_filter_a9568872709d9e92cfdad45d7e4c4641f}{threshold}}=0, double \mbox{\hyperlink{class_pixel_filter_ade00adaf8d440d1fc43afa5405d7a7bf}{percentage}}=0)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&image) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_filter2_d}{IFilter2D}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_filter2_d_a39c83d2c96c47ea71c759964e1c32ffe}{\texorpdfstring{$\sim$}{\string~}\+IFilter2D}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_pixel_filter_a8743f159b8015bc45089df80f4a7785b}{convert\+To\+Grayscale}} (\mbox{\hyperlink{class_image}{Image}} \&image)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_a131f0b64ba792d65b9b79bc7c5534489}{adjust\+Brightness}} (\mbox{\hyperlink{class_image}{Image}} \&image)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_a9a888de61e984d364ac38f264f2728d7}{equalize\+Histogram}} (\mbox{\hyperlink{class_image}{Image}} \&image)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_a2d4fa2c9199eb58e47213bdeacda14bc}{threshold\+Pixel}} (\mbox{\hyperlink{class_image}{Image}} \&image)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_ade7340f63e451a214329bb29aedabdf6}{add\+Noise}} (\mbox{\hyperlink{class_image}{Image}} \&image)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_a80ed72f4a8b64136375ae92cd092935a}{calculate\+Histogram\+And\+CDF}} (const std\+::vector$<$ float $>$ \&channel, std\+::vector$<$ int $>$ \&histogram, std\+::vector$<$ int $>$ \&cdf)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_a16bf4f3e81a73264a9136fb256dbac15}{apply\+CDF}} (std\+::vector$<$ float $>$ \&channel, const std\+::vector$<$ int $>$ \&cdf)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_a4e5091b941e75ec3c336c71fabd2149e}{RGBto\+HSV}} (float r, float g, float b, float \&h, float \&s, float \&v)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_a95101216c5637eb753e2ab41e457b151}{HSVto\+RGB}} (float h, float s, float v, float \&r, float \&g, float \&b)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_aa1a92f872649d6668b7ed6e92adebcd0}{RGBto\+HSL}} (float r, float g, float b, float \&h, float \&s, float \&l)
+\item 
+void \mbox{\hyperlink{class_pixel_filter_ab3511f9c7a64f8dde2778621db5f4028}{HSLto\+RGB}} (float h, float s, float l, float \&r, float \&g, float \&b)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_pixel_filter_a1efe5d470e6bc3ea6c15119af9036d46}{filter\+Type}}
+\item 
+int \mbox{\hyperlink{class_pixel_filter_a2b50bd74e4306c304b9c558caf48cd99}{brightness}} = 128
+\item 
+std\+::string \mbox{\hyperlink{class_pixel_filter_a5fd02e751fd91a4bcdd1879d4e068333}{space}}
+\item 
+int \mbox{\hyperlink{class_pixel_filter_a9568872709d9e92cfdad45d7e4c4641f}{threshold}} = 0
+\item 
+double \mbox{\hyperlink{class_pixel_filter_ade00adaf8d440d1fc43afa5405d7a7bf}{percentage}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pixel_filter_ab206db8818869dd8c77017b79158ba4a}\label{class_pixel_filter_ab206db8818869dd8c77017b79158ba4a} 
+\index{PixelFilter@{PixelFilter}!PixelFilter@{PixelFilter}}
+\index{PixelFilter@{PixelFilter}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{PixelFilter()}{PixelFilter()}}
+{\footnotesize\ttfamily Pixel\+Filter\+::\+Pixel\+Filter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type,  }\item[{const std\+::optional$<$ int $>$ \&}]{brightness = {\ttfamily std\+:\+:nullopt},  }\item[{const std\+::string \&}]{space = {\ttfamily "{}"{}},  }\item[{int}]{threshold = {\ttfamily 0},  }\item[{double}]{percentage = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Constructor for the \doxylink{class_pixel_filter}{Pixel\+Filter} class.
+
+Initializes a \doxylink{class_pixel_filter}{Pixel\+Filter} object with specified parameters for different filtering operations. The type parameter dictates the filter operation to be applied (e.\+g., grayscale conversion, brightness adjustment). Optional parameters like brightness adjustment value, color space for histogram equalization, threshold for thresholding, and noise percentage for adding salt-\/and-\/pepper noise can also be specified. The constructor validates input parameters to ensure they are within acceptable ranges for the specified filter type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of filter operation to be applied. \\
+\hline
+{\em brightness} & Optional parameter specifying the brightness adjustment value (applicable if type is "{}\+Brightness"{}). \\
+\hline
+{\em space} & Optional parameter specifying the color space for histogram equalization (applicable if type is "{}\+Equalisation"{}). \\
+\hline
+{\em threshold} & Optional parameter specifying the threshold value for thresholding operations (applicable if type is "{}\+Thresholding"{}). \\
+\hline
+{\em percentage} & Optional parameter specifying the percentage of pixels affected by salt-\/and-\/pepper noise (applicable if type is "{}\+Salt\+And\+Pepper\+Noise"{}). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if any parameter is outside its expected range based on the filter type. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pixel_filter_ade7340f63e451a214329bb29aedabdf6}\label{class_pixel_filter_ade7340f63e451a214329bb29aedabdf6} 
+\index{PixelFilter@{PixelFilter}!addNoise@{addNoise}}
+\index{addNoise@{addNoise}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{addNoise()}{addNoise()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::add\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Adds salt-\/and-\/pepper noise to an image.
+
+This method introduces salt-\/and-\/pepper noise to the provided \doxylink{class_image}{Image} object by randomly selecting a specified percentage of pixels and setting them to either the maximum value (255, salt) or the minimum value (0, pepper). This operation is designed to simulate common types of noise found in digital images.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to an \doxylink{class_image}{Image} object that will have noise added. The image is modified in place. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_a131f0b64ba792d65b9b79bc7c5534489}\label{class_pixel_filter_a131f0b64ba792d65b9b79bc7c5534489} 
+\index{PixelFilter@{PixelFilter}!adjustBrightness@{adjustBrightness}}
+\index{adjustBrightness@{adjustBrightness}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{adjustBrightness()}{adjustBrightness()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::adjust\+Brightness (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Adjusts the brightness of an image.
+
+This method modifies the brightness of each pixel in the provided \doxylink{class_image}{Image} object based on a specified brightness adjustment value. The brightness is adjusted by adding the brightness value to each pixel\textquotesingle{}s intensity, with the result clamped to the \mbox{[}0, 255\mbox{]} range. The operation affects all channels of the image equally.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to an \doxylink{class_image}{Image} object whose brightness will be adjusted. The image is modified in place. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}\label{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f} 
+\index{PixelFilter@{PixelFilter}!apply@{apply}}
+\index{apply@{apply}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Applies the specified filtering operation to an image.
+
+Based on the filter type specified during object construction, this method applies the corresponding image processing operation to the provided \doxylink{class_image}{Image} object. Operations include grayscale conversion, brightness adjustment, histogram equalization, thresholding, and adding salt-\/and-\/pepper noise. The method ensures that operations are applied correctly based on the provided parameters and the image\textquotesingle{}s properties. Unsupported filter types result in an exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to an \doxylink{class_image}{Image} object that will be modified by the filter operation. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the filter type is unsupported. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_i_filter2_d_a0cc3760ba47a692a5cd0cc645c1d6a91}{IFilter2D}}.
+
+\Hypertarget{class_pixel_filter_a16bf4f3e81a73264a9136fb256dbac15}\label{class_pixel_filter_a16bf4f3e81a73264a9136fb256dbac15} 
+\index{PixelFilter@{PixelFilter}!applyCDF@{applyCDF}}
+\index{applyCDF@{applyCDF}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{applyCDF()}{applyCDF()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::apply\+CDF (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$ \&}]{channel,  }\item[{const std\+::vector$<$ int $>$ \&}]{cdf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Applies the cumulative distribution function to a channel of image data.
+
+After calculating the cumulative distribution function (CDF) for an image channel, this method maps each pixel\textquotesingle{}s intensity in the channel to a new value based on the CDF. This mapping enhances the contrast of the channel according to the histogram equalization process. This method is crucial for the final step of applying histogram equalization to an image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & A reference to a vector of floats representing the normalized intensity values of a single channel of the image, to be modified in place. \\
+\hline
+{\em cdf} & A vector of ints representing the CDF, used to map the original intensities to their new values. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_a80ed72f4a8b64136375ae92cd092935a}\label{class_pixel_filter_a80ed72f4a8b64136375ae92cd092935a} 
+\index{PixelFilter@{PixelFilter}!calculateHistogramAndCDF@{calculateHistogramAndCDF}}
+\index{calculateHistogramAndCDF@{calculateHistogramAndCDF}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{calculateHistogramAndCDF()}{calculateHistogramAndCDF()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::calculate\+Histogram\+And\+CDF (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{channel,  }\item[{std\+::vector$<$ int $>$ \&}]{histogram,  }\item[{std\+::vector$<$ int $>$ \&}]{cdf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Calculates the histogram and cumulative distribution function (CDF) for a given image channel.
+
+This helper function computes the histogram of the provided channel data and then calculates the cumulative distribution function based on the histogram. These calculations are used in histogram equalization processes to adjust the contrast of an image. The CDF is later used to map the original pixel values to their new values for contrast enhancement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & A vector of floats representing the normalized intensity values of a single channel of the image. \\
+\hline
+{\em histogram} & A reference to a vector of ints where the histogram data will be stored. \\
+\hline
+{\em cdf} & A reference to a vector of ints where the CDF data will be stored. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_a8743f159b8015bc45089df80f4a7785b}\label{class_pixel_filter_a8743f159b8015bc45089df80f4a7785b} 
+\index{PixelFilter@{PixelFilter}!convertToGrayscale@{convertToGrayscale}}
+\index{convertToGrayscale@{convertToGrayscale}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{convertToGrayscale()}{convertToGrayscale()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::convert\+To\+Grayscale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Converts an image to grayscale.
+
+This method transforms a color image into grayscale by calculating the luminance of each pixel based on its red, green, and blue components. The grayscale image replaces the original image data. This operation is performed only if the image has more than one color channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to an \doxylink{class_image}{Image} object to be converted to grayscale. The image is modified in place. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_a9a888de61e984d364ac38f264f2728d7}\label{class_pixel_filter_a9a888de61e984d364ac38f264f2728d7} 
+\index{PixelFilter@{PixelFilter}!equalizeHistogram@{equalizeHistogram}}
+\index{equalizeHistogram@{equalizeHistogram}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{equalizeHistogram()}{equalizeHistogram()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::equalize\+Histogram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Equalizes the histogram of an image.
+
+This method applies histogram equalization to the provided \doxylink{class_image}{Image} object, enhancing the contrast of the image. It can operate on different color spaces, including RGB, HSL, and HSV. For color images, the equalization is applied to the luminance or value channel, preserving color integrity while improving contrast. This method is suitable for images that suffer from poor contrast due to lighting conditions or exposure settings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to an \doxylink{class_image}{Image} object whose histogram will be equalized. The image is modified in place. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_ab3511f9c7a64f8dde2778621db5f4028}\label{class_pixel_filter_ab3511f9c7a64f8dde2778621db5f4028} 
+\index{PixelFilter@{PixelFilter}!HSLtoRGB@{HSLtoRGB}}
+\index{HSLtoRGB@{HSLtoRGB}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{HSLtoRGB()}{HSLtoRGB()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::\+HSLto\+RGB (\begin{DoxyParamCaption}\item[{float}]{h,  }\item[{float}]{s,  }\item[{float}]{l,  }\item[{float \&}]{r,  }\item[{float \&}]{g,  }\item[{float \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Converts HSL color space to RGB color space.
+
+This function reverses the process of RGB to HSL conversion, translating colors from the HSL (Hue, Saturation, Lightness) space back to RGB. This is crucial for displaying processed images on devices that use RGB color space or for further processing in RGB. Adjustments made in HSL, which can be more intuitive for certain image manipulations, are accurately reflected in the RGB output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & The hue component in HSL space. \\
+\hline
+{\em s} & The saturation component in HSL space. \\
+\hline
+{\em l} & The lightness component in HSL space. \\
+\hline
+{\em r} & Reference to a float to store the calculated red component in RGB space. \\
+\hline
+{\em g} & Reference to a float to store the calculated green component in RGB space. \\
+\hline
+{\em b} & Reference to a float to store the calculated blue component in RGB space. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_a95101216c5637eb753e2ab41e457b151}\label{class_pixel_filter_a95101216c5637eb753e2ab41e457b151} 
+\index{PixelFilter@{PixelFilter}!HSVtoRGB@{HSVtoRGB}}
+\index{HSVtoRGB@{HSVtoRGB}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{HSVtoRGB()}{HSVtoRGB()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::\+HSVto\+RGB (\begin{DoxyParamCaption}\item[{float}]{h,  }\item[{float}]{s,  }\item[{float}]{v,  }\item[{float \&}]{r,  }\item[{float \&}]{g,  }\item[{float \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Converts HSV color space to RGB color space.
+
+This function converts the color of a pixel from the HSV color space back to the RGB color space. The conversion allows changes made in the HSV space, such as contrast adjustments or thresholding, to be represented in the conventional RGB color space for display or further processing. This method ensures that operations performed in HSV space can be accurately reflected in the final image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & The hue component of the color. \\
+\hline
+{\em s} & The saturation component of the color. \\
+\hline
+{\em v} & The value component of the color. \\
+\hline
+{\em r} & Reference to a float to store the red component. \\
+\hline
+{\em g} & Reference to a float to store the green component. \\
+\hline
+{\em b} & Reference to a float to store the blue component. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_aa1a92f872649d6668b7ed6e92adebcd0}\label{class_pixel_filter_aa1a92f872649d6668b7ed6e92adebcd0} 
+\index{PixelFilter@{PixelFilter}!RGBtoHSL@{RGBtoHSL}}
+\index{RGBtoHSL@{RGBtoHSL}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{RGBtoHSL()}{RGBtoHSL()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::\+RGBto\+HSL (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float \&}]{h,  }\item[{float \&}]{s,  }\item[{float \&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Converts RGB color space to HSL color space.
+
+This function transforms the RGB representation of a color into its HSL counterpart. HSL (Hue, Saturation, Lightness) offers a more intuitive way to describe color adjustments such as changing brightness or saturation. This conversion is particularly useful for image processing tasks that require manipulation of color properties distinct from their brightness, like adjusting colors or performing color-\/based thresholding.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red component of the color. \\
+\hline
+{\em g} & The green component of the color. \\
+\hline
+{\em b} & The blue component of the color. \\
+\hline
+{\em h} & Reference to a float to store the hue component. \\
+\hline
+{\em s} & Reference to a float to store the saturation component. \\
+\hline
+{\em l} & Reference to a float to store the light \\
+\hline
+{\em l} & Reference to a float to store the lightness component. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_a4e5091b941e75ec3c336c71fabd2149e}\label{class_pixel_filter_a4e5091b941e75ec3c336c71fabd2149e} 
+\index{PixelFilter@{PixelFilter}!RGBtoHSV@{RGBtoHSV}}
+\index{RGBtoHSV@{RGBtoHSV}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{RGBtoHSV()}{RGBtoHSV()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::\+RGBto\+HSV (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float \&}]{h,  }\item[{float \&}]{s,  }\item[{float \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Converts RGB color space to HSV color space.
+
+This function converts the color of a pixel from the RGB color space to the HSV color space. The conversion process takes into account the chroma and the lightness of the color to accurately represent it in HSV space. This conversion is useful for operations that are more effectively performed in HSV space, such as thresholding based on color saturation or value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red component of the color. \\
+\hline
+{\em g} & The green component of the color. \\
+\hline
+{\em b} & The blue component of the color. \\
+\hline
+{\em h} & Reference to a float to store the hue component. \\
+\hline
+{\em s} & Reference to a float to store the saturation component. \\
+\hline
+{\em v} & Reference to a float to store the value component. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pixel_filter_a2d4fa2c9199eb58e47213bdeacda14bc}\label{class_pixel_filter_a2d4fa2c9199eb58e47213bdeacda14bc} 
+\index{PixelFilter@{PixelFilter}!thresholdPixel@{thresholdPixel}}
+\index{thresholdPixel@{thresholdPixel}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{thresholdPixel()}{thresholdPixel()}}
+{\footnotesize\ttfamily void Pixel\+Filter\+::threshold\+Pixel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Applies thresholding to an image.
+
+This method applies a thresholding operation to the provided \doxylink{class_image}{Image} object. Pixels with intensity above the threshold are set to the maximum value (255), and those below are set to zero, effectively binarizing the image. The operation can be applied to images in different color spaces, including RGB, HSL, and HSV, based on the specified parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A reference to an \doxylink{class_image}{Image} object to be thresholded. The image is modified in place. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_pixel_filter_a2b50bd74e4306c304b9c558caf48cd99}\label{class_pixel_filter_a2b50bd74e4306c304b9c558caf48cd99} 
+\index{PixelFilter@{PixelFilter}!brightness@{brightness}}
+\index{brightness@{brightness}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{brightness}{brightness}}
+{\footnotesize\ttfamily int Pixel\+Filter\+::brightness = 128\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_pixel_filter_a1efe5d470e6bc3ea6c15119af9036d46}\label{class_pixel_filter_a1efe5d470e6bc3ea6c15119af9036d46} 
+\index{PixelFilter@{PixelFilter}!filterType@{filterType}}
+\index{filterType@{filterType}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{filterType}{filterType}}
+{\footnotesize\ttfamily std\+::string Pixel\+Filter\+::filter\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_pixel_filter_ade00adaf8d440d1fc43afa5405d7a7bf}\label{class_pixel_filter_ade00adaf8d440d1fc43afa5405d7a7bf} 
+\index{PixelFilter@{PixelFilter}!percentage@{percentage}}
+\index{percentage@{percentage}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{percentage}{percentage}}
+{\footnotesize\ttfamily double Pixel\+Filter\+::percentage = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_pixel_filter_a5fd02e751fd91a4bcdd1879d4e068333}\label{class_pixel_filter_a5fd02e751fd91a4bcdd1879d4e068333} 
+\index{PixelFilter@{PixelFilter}!space@{space}}
+\index{space@{space}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{space}{space}}
+{\footnotesize\ttfamily std\+::string Pixel\+Filter\+::space\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_pixel_filter_a9568872709d9e92cfdad45d7e4c4641f}\label{class_pixel_filter_a9568872709d9e92cfdad45d7e4c4641f} 
+\index{PixelFilter@{PixelFilter}!threshold@{threshold}}
+\index{threshold@{threshold}!PixelFilter@{PixelFilter}}
+\doxysubsubsection{\texorpdfstring{threshold}{threshold}}
+{\footnotesize\ttfamily int Pixel\+Filter\+::threshold = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\+Filters/\mbox{\hyperlink{_pixel_filter_8h}{Pixel\+Filter.\+h}}\item 
+Source/\+Filters/\mbox{\hyperlink{_pixel_filter_8cpp}{Pixel\+Filter.\+cpp}}\end{DoxyCompactItemize}

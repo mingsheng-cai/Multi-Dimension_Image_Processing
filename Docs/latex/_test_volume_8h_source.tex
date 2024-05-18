@@ -1,0 +1,99 @@
+\doxysection{Test\+Volume.\+h}
+\hypertarget{_test_volume_8h_source}{}\label{_test_volume_8h_source}\index{Tests/TestVolume.h@{Tests/TestVolume.h}}
+\mbox{\hyperlink{_test_volume_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_volume_8h}{Volume.h}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_volume}{TestVolume}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_volume_ac94cc9a6eda01ea022e651930b48a669}{testVolumeConstruction}}()\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_volume}{Volume}}\ vol(100,\ 100,\ 100);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ assert(vol.\mbox{\hyperlink{class_volume_a6421ea4fb9b499e51499531dbc6999d5}{getWidth}}()\ ==\ 100\ \&\&\ \textcolor{stringliteral}{"{}Constructor\ width\ set\ failed."{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ assert(vol.\mbox{\hyperlink{class_volume_a33c75b641d988efed2ce4d2568e7269e}{getHeight}}()\ ==\ 100\ \&\&\ \textcolor{stringliteral}{"{}Constructor\ height\ set\ failed."{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ assert(vol.\mbox{\hyperlink{class_volume_ab082670ea100c39d94fefc77ac83c4d8}{getDepth}}()\ ==\ 100\ \&\&\ \textcolor{stringliteral}{"{}Constructor\ depth\ set\ failed."{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_volume_ae9a12c2bd9f75abe0fcd163047bf9711}{testVolumeGettersAndSetters}}()\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_volume}{Volume}}\ vol;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a59449156869e5f9aa2c830c0cd7ce9b0}{setWidth}}(50);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a42e795397b795182b5121fb3368d935d}{setHeight}}(60);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a6759c08e159014a704f77acae9e5fe1c}{setDepth}}(70);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ assert(vol.\mbox{\hyperlink{class_volume_a6421ea4fb9b499e51499531dbc6999d5}{getWidth}}()\ ==\ 50\ \&\&\ \textcolor{stringliteral}{"{}setWidth\ failed."{}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ assert(vol.\mbox{\hyperlink{class_volume_a33c75b641d988efed2ce4d2568e7269e}{getHeight}}()\ ==\ 60\ \&\&\ \textcolor{stringliteral}{"{}setHeight\ failed."{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ assert(vol.\mbox{\hyperlink{class_volume_ab082670ea100c39d94fefc77ac83c4d8}{getDepth}}()\ ==\ 70\ \&\&\ \textcolor{stringliteral}{"{}setDepth\ failed."{}});}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_volume_af1433022a4128aef68b3c044fd065b57}{testUpdateData}}()\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_volume}{Volume}}\ vol(10,\ 10,\ 10);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ newData(1000,\ 42);\ \textcolor{comment}{//\ All\ values\ set\ to\ 42}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a4781f84d9787321462977dee2ed2c512}{updateData}}(newData);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data\ =\ vol.\mbox{\hyperlink{class_volume_a1651a671bbe729dc690093d2e399a07b}{getData}}();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 1000;\ i++)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ assert(data[i]\ ==\ 42\ \&\&\ \textcolor{stringliteral}{"{}updateData\ failed."{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_volume_a9503e361377e6a8768ca93b9f341a39b}{testLoadAndSave}}()\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Attention:\ This\ test\ requires\ filesystem\ operations,\ so\ it\ may\ not\ work\ on\ all\ systems.}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_volume}{Volume}}\ vol;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ loaded\ =\ vol.\mbox{\hyperlink{class_volume_a4fb4494e6be59b9e67e91b5b12df6898}{loadFromFiles}}(\{\textcolor{stringliteral}{"{}../Scans/fracture/granite1\_0325.png"{}}\});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ assert(loaded\ \&\&\ \textcolor{stringliteral}{"{}loadFromFiles\ failed."{}});}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ saving\ functionality,\ also\ requires\ filesystem\ operations}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{stringliteral}{"{}../Scans/fracture"{}},\ \textcolor{stringliteral}{"{}x-\/y"{}});\ \textcolor{comment}{//\ Example:\ Save\ operation}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ the\ filesystem\ results}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ assert(fs::exists(\textcolor{stringliteral}{"{}../Scans/fracture/slice\_1.png"{}}));}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Delete\ the\ saved\ file\ for\ the\ next\ test}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ fs::remove(\textcolor{stringliteral}{"{}../Scans/fracture/slice\_1.png"{}});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ saving\ functionality,\ also\ requires\ filesystem\ operations}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{stringliteral}{"{}../Scans/fracture"{}},\ \textcolor{stringliteral}{"{}x-\/y"{}},\ 1);\ \textcolor{comment}{//\ Example:\ Save\ operation}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Re-\/verify\ the\ filesystem\ results}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ assert(fs::exists(\textcolor{stringliteral}{"{}../Scans/fracture/slice\_1.png"{}}));}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Delete\ the\ saved\ file\ for\ the\ next\ test}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ fs::remove(\textcolor{stringliteral}{"{}../Scans/fracture/slice\_1.png"{}});}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ saving\ functionality,\ also\ requires\ filesystem\ operations}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{stringliteral}{"{}../Scans/fracture"{}},\ \textcolor{stringliteral}{"{}x-\/y"{}},\ \textcolor{stringliteral}{"{}MIP"{}});\ \textcolor{comment}{//\ Example:\ Save\ operation}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{stringliteral}{"{}../Scans/fracture"{}},\ \textcolor{stringliteral}{"{}x-\/y"{}},\ \textcolor{stringliteral}{"{}MinIP"{}},\ 1,\ 1);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{stringliteral}{"{}../Scans/fracture"{}},\ \textcolor{stringliteral}{"{}x-\/y"{}},\ \textcolor{stringliteral}{"{}AIP"{}});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ vol.\mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{stringliteral}{"{}../Scans/fracture"{}},\ \textcolor{stringliteral}{"{}x-\/y"{}},\ \textcolor{stringliteral}{"{}MedIP"{}},\ 1,\ 1);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Re-\/verify\ the\ filesystem\ results}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ assert(fs::exists(\textcolor{stringliteral}{"{}../Scans/fracture/MIP.png"{}}));}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ assert(fs::exists(\textcolor{stringliteral}{"{}../Scans/fracture/MinIP.png"{}}));}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ assert(fs::exists(\textcolor{stringliteral}{"{}../Scans/fracture/AIP.png"{}}));}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ assert(fs::exists(\textcolor{stringliteral}{"{}../Scans/fracture/MedIP.png"{}}));}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Delete\ the\ saved\ files\ for\ the\ next\ test}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ fs::remove(\textcolor{stringliteral}{"{}../Scans/fracture/MIP.png"{}});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ fs::remove(\textcolor{stringliteral}{"{}../Scans/fracture/MinIP\_range\_1\_1.png"{}});}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ fs::remove(\textcolor{stringliteral}{"{}../Scans/fracture/AIP.png"{}});}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ fs::remove(\textcolor{stringliteral}{"{}../Scans/fracture/MedIP\_range\_1\_1.png"{}});}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_volume_a013a02959c595d2e05c6395e15d4a16c}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ runTest<TestVolume>(\&\mbox{\hyperlink{class_test_volume_ac94cc9a6eda01ea022e651930b48a669}{TestVolume::testVolumeConstruction}},\ \textcolor{stringliteral}{"{}Volume\ Construction"{}});}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ runTest<TestVolume>(\&\mbox{\hyperlink{class_test_volume_ae9a12c2bd9f75abe0fcd163047bf9711}{TestVolume::testVolumeGettersAndSetters}},\ \textcolor{stringliteral}{"{}Volume\ Getters\ and\ Setters"{}});}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ runTest<TestVolume>(\&\mbox{\hyperlink{class_test_volume_af1433022a4128aef68b3c044fd065b57}{TestVolume::testUpdateData}},\ \textcolor{stringliteral}{"{}Update\ Data"{}});}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ runTest<TestVolume>(\&\mbox{\hyperlink{class_test_volume_a9503e361377e6a8768ca93b9f341a39b}{TestVolume::testLoadAndSave}},\ \textcolor{stringliteral}{"{}Load\ and\ Save"{}});}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \};}
+
+\end{DoxyCode}

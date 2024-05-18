@@ -1,0 +1,5 @@
+<map id="TestImage" name="TestImage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,239,193,404"/>
+<area shape="rect" id="Node000002" href="$class_test.html" title=" " alt="" coords="37,5,161,191"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,206,102,239,97,239,97,206"/>
+</map>

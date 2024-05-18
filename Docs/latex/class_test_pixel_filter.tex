@@ -1,0 +1,196 @@
+\doxysection{Test\+Pixel\+Filter Class Reference}
+\hypertarget{class_test_pixel_filter}{}\label{class_test_pixel_filter}\index{TestPixelFilter@{TestPixelFilter}}
+
+
+{\ttfamily \#include $<$Test\+Pixel\+Filter.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Pixel\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_test_pixel_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Pixel\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_test_pixel_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_pixel_filter_a9e1e94a94429f15ae48bf2624db6bcff}{test\+Grayscale\+Conversion}} ()
+\item 
+void \mbox{\hyperlink{class_test_pixel_filter_a8a09eba9dca6ae1b024c6533ff1f0cd5}{test\+Brightness\+Adjustment}} ()
+\item 
+void \mbox{\hyperlink{class_test_pixel_filter_a635d11cdcb777f4501b42011764433e4}{test\+Histogram\+Equalization\+Effect}} ()
+\item 
+void \mbox{\hyperlink{class_test_pixel_filter_a63786f87c913714280b6072ff2db0903}{test\+Thresholding\+GREY}} ()
+\item 
+void \mbox{\hyperlink{class_test_pixel_filter_ad39c57790493ec3aeb49b678ea1f1270}{test\+Thresholding\+RGBHSL}} ()
+\item 
+void \mbox{\hyperlink{class_test_pixel_filter_a78cc2a93ee7132cfab9a827c72ed3d63}{test\+Thresholding\+RGBHSV}} ()
+\item 
+void \mbox{\hyperlink{class_test_pixel_filter_a743b68eb4fed811b2b2fde8b86866e0e}{test\+Noise\+Percentage}} ()
+\item 
+void \mbox{\hyperlink{class_test_pixel_filter_a8be9ce3ed278e9308655a77d9b8d95c8}{test\+Noise\+Addition}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_pixel_filter_a94de7596a202d16cf051e6bdf8ccef24}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_test_pixel_filter_ab548fe6d9ebee52a21735fca4b8c0002}{calculate\+Histogram\+Std\+Dev}} (const std\+::vector$<$ int $>$ \&histogram)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_test_pixel_filter_a40ceaeb4b6d2ba4c94e81ccdbebd6b18}{build\+Histogram}} (const \mbox{\hyperlink{class_image}{Image}} \&image)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_pixel_filter_a40ceaeb4b6d2ba4c94e81ccdbebd6b18}\label{class_test_pixel_filter_a40ceaeb4b6d2ba4c94e81ccdbebd6b18} 
+\index{TestPixelFilter@{TestPixelFilter}!buildHistogram@{buildHistogram}}
+\index{buildHistogram@{buildHistogram}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{buildHistogram()}{buildHistogram()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Test\+Pixel\+Filter\+::build\+Histogram (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Builds a Histogram from an \doxylink{class_image}{Image}
+
+Generates a histogram of pixel values from the given image, providing insights into the distribution of pixel intensities. This histogram is crucial for understanding the image\textquotesingle{}s contrast, brightness, and overall quality, serving as a fundamental tool for image processing and analysis tasks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The image to build the histogram from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The histogram of pixel values 
+\end{DoxyReturn}
+\Hypertarget{class_test_pixel_filter_ab548fe6d9ebee52a21735fca4b8c0002}\label{class_test_pixel_filter_ab548fe6d9ebee52a21735fca4b8c0002} 
+\index{TestPixelFilter@{TestPixelFilter}!calculateHistogramStdDev@{calculateHistogramStdDev}}
+\index{calculateHistogramStdDev@{calculateHistogramStdDev}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{calculateHistogramStdDev()}{calculateHistogramStdDev()}}
+{\footnotesize\ttfamily double Test\+Pixel\+Filter\+::calculate\+Histogram\+Std\+Dev (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{histogram }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Calculates the Standard Deviation of a Histogram
+
+Computes the standard deviation of a given histogram, representing the spread of pixel values in an image. This metric is essential for evaluating the contrast and distribution of pixel intensities, aiding in the assessment of image quality and processing effects. The standard deviation is calculated as the square root of the variance, which is the average of the squared differences between each pixel value and the mean value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em histogram} & The histogram of pixel values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The standard deviation of the histogram 
+\end{DoxyReturn}
+\Hypertarget{class_test_pixel_filter_a94de7596a202d16cf051e6bdf8ccef24}\label{class_test_pixel_filter_a94de7596a202d16cf051e6bdf8ccef24} 
+\index{TestPixelFilter@{TestPixelFilter}!runTests@{runTests}}
+\index{runTests@{runTests}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Pixel\+Filter\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes All Defined Pixel Filtering Tests
+
+Orchestrates the execution of all unit tests for the \doxylink{class_pixel_filter}{Pixel\+Filter} class, ensuring its various functionalities work as expected. Through these tests, the class\textquotesingle{}s capability to perform critical image processing operations like grayscale conversion, brightness adjustment, histogram equalization, thresholding, and noise addition is validated, contributing to the robustness of image processing applications. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_pixel_filter_a8a09eba9dca6ae1b024c6533ff1f0cd5}\label{class_test_pixel_filter_a8a09eba9dca6ae1b024c6533ff1f0cd5} 
+\index{TestPixelFilter@{TestPixelFilter}!testBrightnessAdjustment@{testBrightnessAdjustment}}
+\index{testBrightnessAdjustment@{testBrightnessAdjustment}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{testBrightnessAdjustment()}{testBrightnessAdjustment()}}
+{\footnotesize\ttfamily void Test\+Pixel\+Filter\+::test\+Brightness\+Adjustment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Brightness Adjustment
+
+Examines the functionality of the \doxylink{class_pixel_filter}{Pixel\+Filter} class to adjust the brightness of an image. Brightness adjustment is critical for enhancing image visibility and preparing images for further processing. This test verifies that the filter correctly modifies the brightness of an image without exceeding the pixel value limits. \Hypertarget{class_test_pixel_filter_a9e1e94a94429f15ae48bf2624db6bcff}\label{class_test_pixel_filter_a9e1e94a94429f15ae48bf2624db6bcff} 
+\index{TestPixelFilter@{TestPixelFilter}!testGrayscaleConversion@{testGrayscaleConversion}}
+\index{testGrayscaleConversion@{testGrayscaleConversion}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{testGrayscaleConversion()}{testGrayscaleConversion()}}
+{\footnotesize\ttfamily void Test\+Pixel\+Filter\+::test\+Grayscale\+Conversion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Grayscale Conversion
+
+Verifies that the \doxylink{class_pixel_filter}{Pixel\+Filter} class can correctly convert a color image to grayscale. Grayscale conversion is a fundamental operation in image processing, essential for simplifying further analysis by reducing image complexity. This test checks if each pixel in the converted image has equal red, green, and blue values, indicating a successful conversion to grayscale. \Hypertarget{class_test_pixel_filter_a635d11cdcb777f4501b42011764433e4}\label{class_test_pixel_filter_a635d11cdcb777f4501b42011764433e4} 
+\index{TestPixelFilter@{TestPixelFilter}!testHistogramEqualizationEffect@{testHistogramEqualizationEffect}}
+\index{testHistogramEqualizationEffect@{testHistogramEqualizationEffect}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{testHistogramEqualizationEffect()}{testHistogramEqualizationEffect()}}
+{\footnotesize\ttfamily void Test\+Pixel\+Filter\+::test\+Histogram\+Equalization\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Histogram Equalization
+
+Tests the histogram equalization functionality of the \doxylink{class_pixel_filter}{Pixel\+Filter} class. Histogram equalization is an important technique for improving the contrast of an image, making it more suitable for analysis or display. This test evaluates the effectiveness of histogram equalization by comparing the standard deviation of pixel values before and after applying the filter, expecting a higher contrast in the processed image. \Hypertarget{class_test_pixel_filter_a8be9ce3ed278e9308655a77d9b8d95c8}\label{class_test_pixel_filter_a8be9ce3ed278e9308655a77d9b8d95c8} 
+\index{TestPixelFilter@{TestPixelFilter}!testNoiseAddition@{testNoiseAddition}}
+\index{testNoiseAddition@{testNoiseAddition}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{testNoiseAddition()}{testNoiseAddition()}}
+{\footnotesize\ttfamily void Test\+Pixel\+Filter\+::test\+Noise\+Addition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Noise Addition
+
+Verifies the functionality of adding salt-\/and-\/pepper noise to an image using the \doxylink{class_pixel_filter}{Pixel\+Filter} class. This test confirms that the filter accurately adds noise to an image, simulating common types of digital image corruption, and validates the effectiveness of subsequent noise reduction techniques. \Hypertarget{class_test_pixel_filter_a743b68eb4fed811b2b2fde8b86866e0e}\label{class_test_pixel_filter_a743b68eb4fed811b2b2fde8b86866e0e} 
+\index{TestPixelFilter@{TestPixelFilter}!testNoisePercentage@{testNoisePercentage}}
+\index{testNoisePercentage@{testNoisePercentage}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{testNoisePercentage()}{testNoisePercentage()}}
+{\footnotesize\ttfamily void Test\+Pixel\+Filter\+::test\+Noise\+Percentage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Noise Percentage Adjustment
+
+Checks the ability of the \doxylink{class_pixel_filter}{Pixel\+Filter} class to add noise to an image at a specified percentage. Adding noise is sometimes necessary for testing image processing algorithms under realistic conditions. This test ensures that the filter can introduce the correct percentage of noise into an image. \Hypertarget{class_test_pixel_filter_a63786f87c913714280b6072ff2db0903}\label{class_test_pixel_filter_a63786f87c913714280b6072ff2db0903} 
+\index{TestPixelFilter@{TestPixelFilter}!testThresholdingGREY@{testThresholdingGREY}}
+\index{testThresholdingGREY@{testThresholdingGREY}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{testThresholdingGREY()}{testThresholdingGREY()}}
+{\footnotesize\ttfamily void Test\+Pixel\+Filter\+::test\+Thresholding\+GREY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Thresholding in Grayscale
+
+Assesses the thresholding operation of the \doxylink{class_pixel_filter}{Pixel\+Filter} class on grayscale images. Thresholding is crucial for binarization, helping to segment images into foreground and background. This test ensures that the filter correctly applies a threshold, resulting in pixel values being set to either the minimum or maximum value. \Hypertarget{class_test_pixel_filter_ad39c57790493ec3aeb49b678ea1f1270}\label{class_test_pixel_filter_ad39c57790493ec3aeb49b678ea1f1270} 
+\index{TestPixelFilter@{TestPixelFilter}!testThresholdingRGBHSL@{testThresholdingRGBHSL}}
+\index{testThresholdingRGBHSL@{testThresholdingRGBHSL}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{testThresholdingRGBHSL()}{testThresholdingRGBHSL()}}
+{\footnotesize\ttfamily void Test\+Pixel\+Filter\+::test\+Thresholding\+RGBHSL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Thresholding in RGB with HSL
+
+Evaluates the thresholding operation in the HSL color space on RGB images by the \doxylink{class_pixel_filter}{Pixel\+Filter} class. This operation is significant for color segmentation and image binarization in color images. The test checks if the filter successfully applies a threshold within the HSL color space, affecting the output image as expected. \Hypertarget{class_test_pixel_filter_a78cc2a93ee7132cfab9a827c72ed3d63}\label{class_test_pixel_filter_a78cc2a93ee7132cfab9a827c72ed3d63} 
+\index{TestPixelFilter@{TestPixelFilter}!testThresholdingRGBHSV@{testThresholdingRGBHSV}}
+\index{testThresholdingRGBHSV@{testThresholdingRGBHSV}!TestPixelFilter@{TestPixelFilter}}
+\doxysubsubsection{\texorpdfstring{testThresholdingRGBHSV()}{testThresholdingRGBHSV()}}
+{\footnotesize\ttfamily void Test\+Pixel\+Filter\+::test\+Thresholding\+RGBHSV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Thresholding in RGB with HSV
+
+Verifies the effectiveness of thresholding in the HSV color space on RGB images. This functionality is vital for separating image features based on color and brightness. The test confirms that thresholding in the HSV space leads to the anticipated binary segmentation of the image. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_pixel_filter_8h}{Test\+Pixel\+Filter.\+h}}\end{DoxyCompactItemize}

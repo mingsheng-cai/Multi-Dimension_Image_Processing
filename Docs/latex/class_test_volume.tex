@@ -1,0 +1,113 @@
+\doxysection{Test\+Volume Class Reference}
+\hypertarget{class_test_volume}{}\label{class_test_volume}\index{TestVolume@{TestVolume}}
+
+
+{\ttfamily \#include $<$Test\+Volume.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Volume\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_test_volume__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Volume\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_test_volume__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_volume_ac94cc9a6eda01ea022e651930b48a669}{test\+Volume\+Construction}} ()
+\item 
+void \mbox{\hyperlink{class_test_volume_ae9a12c2bd9f75abe0fcd163047bf9711}{test\+Volume\+Getters\+And\+Setters}} ()
+\item 
+void \mbox{\hyperlink{class_test_volume_af1433022a4128aef68b3c044fd065b57}{test\+Update\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_test_volume_a9503e361377e6a8768ca93b9f341a39b}{test\+Load\+And\+Save}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_volume_a013a02959c595d2e05c6395e15d4a16c}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_volume_a013a02959c595d2e05c6395e15d4a16c}\label{class_test_volume_a013a02959c595d2e05c6395e15d4a16c} 
+\index{TestVolume@{TestVolume}!runTests@{runTests}}
+\index{runTests@{runTests}!TestVolume@{TestVolume}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Volume\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Runs the \doxylink{class_volume}{Volume} Unit Tests
+
+Executes all the unit tests for the \doxylink{class_volume}{Volume} class, including tests for volume construction, getters and setters, data update, and loading and saving volume data. This function runs each test method and reports the results to the console, indicating whether the tests passed or failed. It provides a comprehensive evaluation of the \doxylink{class_volume}{Volume} class\textquotesingle{}s functionality and reliability in handling 3D volume data processing tasks. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_volume_a9503e361377e6a8768ca93b9f341a39b}\label{class_test_volume_a9503e361377e6a8768ca93b9f341a39b} 
+\index{TestVolume@{TestVolume}!testLoadAndSave@{testLoadAndSave}}
+\index{testLoadAndSave@{testLoadAndSave}!TestVolume@{TestVolume}}
+\doxysubsubsection{\texorpdfstring{testLoadAndSave()}{testLoadAndSave()}}
+{\footnotesize\ttfamily void Test\+Volume\+::test\+Load\+And\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Loading and Saving \doxylink{class_volume}{Volume} Data
+
+Verifies the functionality of the \doxylink{class_volume}{Volume} class\textquotesingle{}s load\+From\+Files and save methods, which enable the loading of volume data from image files and the saving of volume data to image files, respectively. This test evaluates the ability of the \doxylink{class_volume}{Volume} class to load volume data from image files and save volume data to image files, ensuring that the filesystem operations are correctly performed and that the volume data is accurately read and written to files. \Hypertarget{class_test_volume_af1433022a4128aef68b3c044fd065b57}\label{class_test_volume_af1433022a4128aef68b3c044fd065b57} 
+\index{TestVolume@{TestVolume}!testUpdateData@{testUpdateData}}
+\index{testUpdateData@{testUpdateData}!TestVolume@{TestVolume}}
+\doxysubsubsection{\texorpdfstring{testUpdateData()}{testUpdateData()}}
+{\footnotesize\ttfamily void Test\+Volume\+::test\+Update\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Update of \doxylink{class_volume}{Volume} Data
+
+Validates the update\+Data method of the \doxylink{class_volume}{Volume} class, which allows for the direct manipulation of volume data by replacing the existing data with new values. This test ensures that the update\+Data method can successfully modify the volume data, setting all voxel values to a specific intensity level. It verifies that the volume data is correctly updated, enabling the manipulation and processing of 3D volume data in image processing applications. \Hypertarget{class_test_volume_ac94cc9a6eda01ea022e651930b48a669}\label{class_test_volume_ac94cc9a6eda01ea022e651930b48a669} 
+\index{TestVolume@{TestVolume}!testVolumeConstruction@{testVolumeConstruction}}
+\index{testVolumeConstruction@{testVolumeConstruction}!TestVolume@{TestVolume}}
+\doxysubsubsection{\texorpdfstring{testVolumeConstruction()}{testVolumeConstruction()}}
+{\footnotesize\ttfamily void Test\+Volume\+::test\+Volume\+Construction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Construction of \doxylink{class_volume}{Volume} Objects
+
+Verifies that \doxylink{class_volume}{Volume} objects can be constructed with specific dimensions, setting the width, height, and depth properties accordingly. This test ensures that the \doxylink{class_volume}{Volume} class can create volume objects with the desired dimensions, allowing for the manipulation and processing of 3D volume data in image processing applications. \Hypertarget{class_test_volume_ae9a12c2bd9f75abe0fcd163047bf9711}\label{class_test_volume_ae9a12c2bd9f75abe0fcd163047bf9711} 
+\index{TestVolume@{TestVolume}!testVolumeGettersAndSetters@{testVolumeGettersAndSetters}}
+\index{testVolumeGettersAndSetters@{testVolumeGettersAndSetters}!TestVolume@{TestVolume}}
+\doxysubsubsection{\texorpdfstring{testVolumeGettersAndSetters()}{testVolumeGettersAndSetters()}}
+{\footnotesize\ttfamily void Test\+Volume\+::test\+Volume\+Getters\+And\+Setters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Getters and Setters for \doxylink{class_volume}{Volume} Properties
+
+Evaluates the correctness of the \doxylink{class_volume}{Volume} class\textquotesingle{}s getter and setter methods for volume properties, including width, height, and depth. This test ensures that the \doxylink{class_volume}{Volume} class can accurately retrieve and modify the dimensions of volume objects, enabling the manipulation and processing of 3D volume data in image processing applications. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_volume_8h}{Test\+Volume.\+h}}\end{DoxyCompactItemize}

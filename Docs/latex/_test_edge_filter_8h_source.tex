@@ -1,0 +1,60 @@
+\doxysection{Test\+Edge\+Filter.\+h}
+\hypertarget{_test_edge_filter_8h_source}{}\label{_test_edge_filter_8h_source}\index{Tests/TestEdgeFilter.h@{Tests/TestEdgeFilter.h}}
+\mbox{\hyperlink{_test_edge_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_edge_filter_8h}{Filters/EdgeFilter.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_edge_filter}{TestEdgeFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_edge_filter_af24cc9ad1c5be9b9bbcaa59af1e8ed7a}{testEdgeDetection}}(\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{FilterType}}\ filterType)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ simple\ 5x5\ image\ with\ a\ white\ border\ and\ a\ black\ center}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ imageData[25]\ =\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 255,\ 255,\ 255,\ 255,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 0,\ \ \ 0,\ \ \ 0,\ \ \ 255,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 0,\ \ \ 255,\ 0,\ \ \ 255,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 0,\ \ \ 0,\ \ \ 0,\ \ \ 255,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 255,\ 255,\ 255,\ 255,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ imageData);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge_filter}{EdgeFilter}}\ edgeFilter(filterType,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ edgeFilter.\mbox{\hyperlink{class_edge_filter_a7350005391816c05950c3d73b9946021}{apply}}(img);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Simple\ verification:\ check\ if\ the\ center\ pixel\ has\ been\ modified}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ After\ applying\ edge\ detection,\ the\ center\ pixel\ should\ not\ be\ 255}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ assert(imageData[12]\ !=\ 255\ \&\&\ \textcolor{stringliteral}{"{}Edge\ detection\ failed\ to\ modify\ the\ image\ as\ expected."{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_edge_filter_a5a9bb974491d43cfadacd3089c52ab6e}{testApplySobel}}()\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_test_edge_filter_af24cc9ad1c5be9b9bbcaa59af1e8ed7a}{testEdgeDetection}}(\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa72e4f1a61efb42bee3f652fcf5db32b8}{FilterType::Sobel}});}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_edge_filter_aa2f96dcc1da3d21fbb31bab052d66680}{testApplyPrewitt}}()\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_test_edge_filter_af24cc9ad1c5be9b9bbcaa59af1e8ed7a}{testEdgeDetection}}(\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fab0668738b1f82bdb33252275c3ce2d2d}{FilterType::Prewitt}});}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_edge_filter_aaabf1124c5510c2b3f203db0035d533a}{testApplyScharr}}()\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_test_edge_filter_af24cc9ad1c5be9b9bbcaa59af1e8ed7a}{testEdgeDetection}}(\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa282e20fff4400a817ff7fd1661dbf16c}{FilterType::Scharr}});}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_edge_filter_ae01a6c5fa5c0847c3266fcadfbe6b4e6}{testApplyRoberts}}()\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_test_edge_filter_af24cc9ad1c5be9b9bbcaa59af1e8ed7a}{testEdgeDetection}}(\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa212631b80d2d1153eba86248e06d0ced}{FilterType::Roberts}});}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_edge_filter_a5be27cf5bb94b2ebc235431f4abe28a3}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ runTest<TestEdgeFilter>(\&\mbox{\hyperlink{class_test_edge_filter_a5a9bb974491d43cfadacd3089c52ab6e}{TestEdgeFilter::testApplySobel}},\ \textcolor{stringliteral}{"{}Apply\ Sobel\ Filter"{}});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ runTest<TestEdgeFilter>(\&\mbox{\hyperlink{class_test_edge_filter_aa2f96dcc1da3d21fbb31bab052d66680}{TestEdgeFilter::testApplyPrewitt}},\ \textcolor{stringliteral}{"{}Apply\ Prewitt\ Filter"{}});}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ runTest<TestEdgeFilter>(\&\mbox{\hyperlink{class_test_edge_filter_aaabf1124c5510c2b3f203db0035d533a}{TestEdgeFilter::testApplyScharr}},\ \textcolor{stringliteral}{"{}Apply\ Scharr\ Filter"{}});}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ runTest<TestEdgeFilter>(\&\mbox{\hyperlink{class_test_edge_filter_ae01a6c5fa5c0847c3266fcadfbe6b4e6}{TestEdgeFilter::testApplyRoberts}},\ \textcolor{stringliteral}{"{}Apply\ Roberts\ Filter"{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \};}
+
+\end{DoxyCode}

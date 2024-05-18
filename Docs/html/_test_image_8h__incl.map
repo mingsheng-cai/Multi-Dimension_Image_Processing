@@ -1,0 +1,20 @@
+<map id="Tests/TestImage.h" name="Tests/TestImage.h">
+<area shape="rect" id="Node000001" title="Unit Tests for the Image Class." alt="" coords="251,5,380,31"/>
+<area shape="rect" id="Node000002" href="$_test_8h.html" title="Test Base Class for Unit Testing Framework." alt="" coords="112,79,170,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="287,34,185,75,183,70,285,29"/>
+<area shape="rect" id="Node000006" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="194,79,262,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="302,34,256,71,253,67,299,29"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="286,79,346,105"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="318,31,318,63,313,63,313,31"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="370,79,451,105"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="333,29,384,67,381,72,330,34"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="476,79,540,105"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="349,29,462,71,460,76,347,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,77,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,107,72,145,69,141,122,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="202,153,256,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="158,103,204,141,201,145,154,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="101,153,178,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="143,105,143,137,138,137,138,105"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="231,105,231,137,226,137,225,105"/>
+</map>

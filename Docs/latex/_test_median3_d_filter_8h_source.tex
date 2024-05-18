@@ -1,0 +1,147 @@
+\doxysection{Test\+Median3\+DFilter.\+h}
+\hypertarget{_test_median3_d_filter_8h_source}{}\label{_test_median3_d_filter_8h_source}\index{Tests/TestMedian3DFilter.h@{Tests/TestMedian3DFilter.h}}
+\mbox{\hyperlink{_test_median3_d_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_median3_d_filter_8h}{Filters/Median3DFilter.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_median3_d_filter}{TestMedian3DFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_test_median3_d_filter_af31119538103aee53b9eae8b6ca34270}{calculateStandardDeviation}}(\textcolor{keyword}{const}\ std::vector<unsigned\ char>\ \&data)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mean\ =\ std::accumulate(data.begin(),\ data.end(),\ 0.0)\ /\ data.size();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sq\_sum\ =\ std::inner\_product(data.begin(),\ data.end(),\ data.begin(),\ 0.0,\ std::plus<double>(),}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [mean](\textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b)\ \{\ return\ (a\ -\/\ mean)\ *\ (b\ -\/\ mean);\ \});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::sqrt(sq\_sum\ /\ data.size());}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_test_median3_d_filter_ae7abeb1b72c4276dd396a23f8f69ec4e}{calculateEdgeStrength}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_volume}{Volume}}\&\ volume)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ edgeStrength\ =\ 0.0;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sobel\ kernels\ for\ X,\ Y,\ and\ Z\ directions}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sobelX[3][3][3]\ =\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{-\/1,\ 0,\ 1\},\ \{-\/3,\ 0,\ 3\},\ \{-\/1,\ 0,\ 1\}\},}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{-\/3,\ 0,\ 3\},\ \{-\/6,\ 0,\ 6\},\ \{-\/3,\ 0,\ 3\}\},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{-\/1,\ 0,\ 1\},\ \{-\/3,\ 0,\ 3\},\ \{-\/1,\ 0,\ 1\}\}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sobelY[3][3][3]\ =\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{-\/1,\ -\/3,\ -\/1\},\ \{0,\ 0,\ 0\},\ \{1,\ 3,\ 1\}\},}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{-\/3,\ -\/6,\ -\/3\},\ \{0,\ 0,\ 0\},\ \{3,\ 6,\ 3\}\},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{-\/1,\ -\/3,\ -\/1\},\ \{0,\ 0,\ 0\},\ \{1,\ 3,\ 1\}\}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sobelZ[3][3][3]\ =\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{-\/1,\ -\/3,\ -\/1\},\ \{-\/3,\ -\/6,\ -\/3\},\ \{-\/1,\ -\/3,\ -\/1\}\},}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{0,\ 0,\ 0\},\ \{0,\ 0,\ 0\},\ \{0,\ 0,\ 0\}\},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\{1,\ 3,\ 1\},\ \{3,\ 6,\ 3\},\ \{1,\ 3,\ 1\}\}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ z\ =\ 1;\ z\ <\ volume.\mbox{\hyperlink{class_volume_ab082670ea100c39d94fefc77ac83c4d8}{getDepth}}()\ -\/\ 1;\ ++z)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 1;\ y\ <\ volume.\mbox{\hyperlink{class_volume_a33c75b641d988efed2ce4d2568e7269e}{getHeight}}()\ -\/\ 1;\ ++y)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 1;\ x\ <\ volume.\mbox{\hyperlink{class_volume_a6421ea4fb9b499e51499531dbc6999d5}{getWidth}}()\ -\/\ 1;\ ++x)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ gx\ =\ 0,\ gy\ =\ 0,\ gz\ =\ 0;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ Sobel\ kernels\ to\ the\ neighborhood\ of\ the\ voxel}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ dz\ =\ -\/1;\ dz\ <=\ 1;\ ++dz)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ dy\ =\ -\/1;\ dy\ <=\ 1;\ ++dy)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ dx\ =\ -\/1;\ dx\ <=\ 1;\ ++dx)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ voxel\ =\ volume.\mbox{\hyperlink{class_volume_afaed2263d4a62376314d609b11783257}{getVoxel}}(x\ +\ dx,\ y\ +\ dy,\ z\ +\ dz);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gx\ +=\ voxel\ *\ sobelX[dz\ +\ 1][dy\ +\ 1][dx\ +\ 1];}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gy\ +=\ voxel\ *\ sobelY[dz\ +\ 1][dy\ +\ 1][dx\ +\ 1];}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gz\ +=\ voxel\ *\ sobelZ[dz\ +\ 1][dy\ +\ 1][dx\ +\ 1];}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ magnitude\ of\ the\ gradient}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ magnitude\ =\ sqrt(gx\ *\ gx\ +\ gy\ *\ gy\ +\ gz\ *\ gz);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ the\ magnitude\ to\ the\ total\ edge\ strength}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ edgeStrength\ +=\ magnitude;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ edgeStrength\ /\ (volume.\mbox{\hyperlink{class_volume_a6421ea4fb9b499e51499531dbc6999d5}{getWidth}}()\ *\ volume.\mbox{\hyperlink{class_volume_a33c75b641d988efed2ce4d2568e7269e}{getHeight}}()\ *\ volume.\mbox{\hyperlink{class_volume_ab082670ea100c39d94fefc77ac83c4d8}{getDepth}}());}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_median3_d_filter_a2c0d144fea53cd76b6650bcac1268f9a}{testApplyMedianFilter}}()\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ 5x5x5\ volume\ with\ random\ noise}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ 5,\ height\ =\ 5,\ depth\ =\ 5;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ data(width\ *\ height\ *\ depth);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ volume\ with\ random\ noise}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ 5x5x5\ volume\ with\ random\ noise}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ width\ *\ height\ *\ depth;\ ++i)\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ data[i]\ =\ rand()\ \%\ 256;\ \textcolor{comment}{//\ Random\ noise}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_volume}{Volume}}\ volume(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ the\ median\ filter}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_median3_d_filter}{Median3DFilter}}\ medianFilter(3);\ \textcolor{comment}{//\ Use\ a\ 3x3x3\ kernel}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ medianFilter.\mbox{\hyperlink{class_median3_d_filter_a510ca1859142d0f4f3e5c268abc1809c}{apply}}(volume);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ the\ values\ near\ the\ center\ to\ ensure\ noise\ has\ been\ reduced}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *filteredData\ =\ volume.\mbox{\hyperlink{class_volume_a1651a671bbe729dc690093d2e399a07b}{getData}}();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ that\ the\ center\ value\ is\ closer\ to\ the\ neighbor\ value}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ centerValue\ =\ filteredData[62];\ \textcolor{comment}{//\ Select\ a\ central\ point\ for\ comparison}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ neighborValue\ =\ filteredData[37];}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Simple\ verification:\ check\ if\ the\ center\ value\ is\ closer\ to\ the\ neighbor\ value}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ assert(abs(centerValue\ -\/\ neighborValue)\ <\ 20\ \&\&\ \textcolor{stringliteral}{"{}Median\ filter\ did\ not\ reduce\ noise\ as\ expected."{}});}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Median3DFilter\ application\ test\ passed."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_median3_d_filter_a260ce0d583a93f10a7169efc0cc924ea}{testMedianFilterEffectiveness}}()\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ a\ 10x10x10\ volume\ with\ random\ noise}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ 10,\ height\ =\ 10,\ depth\ =\ 10;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ noisyData(width\ *\ height\ *\ depth);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Random\ noise\ initialization}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ std::generate(noisyData.begin(),\ noisyData.end(),\ []()\ \{\ return\ rand()\ \%\ 256;\ \});}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_volume}{Volume}}\ noisyVolume(width,\ height,\ depth,\ noisyData.data());}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ standard\ deviation\ and\ edge\ strength\ before\ filtering}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ stdDevBefore\ =\ \mbox{\hyperlink{class_test_median3_d_filter_af31119538103aee53b9eae8b6ca34270}{calculateStandardDeviation}}(noisyData);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ edge\ strength\ before\ filtering}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ edgeStrengthBefore\ =\ \mbox{\hyperlink{class_test_median3_d_filter_ae7abeb1b72c4276dd396a23f8f69ec4e}{calculateEdgeStrength}}(noisyVolume);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ the\ median\ filter}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_median3_d_filter}{Median3DFilter}}\ filter(3);\ \textcolor{comment}{//\ 使用3x3x3的核心大小}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ filter.\mbox{\hyperlink{class_median3_d_filter_a510ca1859142d0f4f3e5c268abc1809c}{apply}}(noisyVolume);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Extract\ the\ filtered\ data}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *filteredData\ =\ noisyVolume.\mbox{\hyperlink{class_volume_a1651a671bbe729dc690093d2e399a07b}{getData}}();}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ standard\ deviation\ and\ edge\ strength\ after\ filtering}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ stdDevAfter\ =\ \mbox{\hyperlink{class_test_median3_d_filter_af31119538103aee53b9eae8b6ca34270}{calculateStandardDeviation}}(std::vector<unsigned\ char>(filteredData,\ filteredData\ +\ width\ *\ height\ *\ depth));}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ edgeStrengthAfter\ =\ \mbox{\hyperlink{class_test_median3_d_filter_ae7abeb1b72c4276dd396a23f8f69ec4e}{calculateEdgeStrength}}(noisyVolume);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ that\ the\ standard\ deviation\ has\ decreased\ after\ filtering}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ assert(stdDevBefore\ >\ stdDevAfter\ \&\&\ \textcolor{stringliteral}{"{}Median\ filter\ did\ not\ effectively\ reduce\ noise."{}});}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ that\ the\ edge\ strength\ has\ been\ preserved\ after\ filtering}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ After\ filtering,\ the\ edge\ strength\ should\ be\ greater\ or\ equal\ to\ the\ original\ value}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ assert(edgeStrengthAfter\ >=\ edgeStrengthBefore\ \&\&\ \textcolor{stringliteral}{"{}Median\ filter\ did\ not\ preserve\ edge\ strength."{}});}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Test\ passed:\ Median\ filter\ effectively\ reduces\ noise\ while\ preserving\ edges."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00194\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_median3_d_filter_a591813b1cc90b45d46a6c8001de0376f}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ runTest<TestMedian3DFilter>(\&\mbox{\hyperlink{class_test_median3_d_filter_a2c0d144fea53cd76b6650bcac1268f9a}{TestMedian3DFilter::testApplyMedianFilter}},\ \textcolor{stringliteral}{"{}Apply\ Median3DFilter"{}});}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ runTest<TestMedian3DFilter>(\&\mbox{\hyperlink{class_test_median3_d_filter_a260ce0d583a93f10a7169efc0cc924ea}{TestMedian3DFilter::testMedianFilterEffectiveness}},\ \textcolor{stringliteral}{"{}Test\ Median\ filter\ effectiveness"{}});}
+\DoxyCodeLine{00207\ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ }
+
+\end{DoxyCode}

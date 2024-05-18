@@ -1,0 +1,32 @@
+\doxysection{Filter.\+h}
+\hypertarget{_filter_8h_source}{}\label{_filter_8h_source}\index{Include/Filters/Filter.h@{Include/Filters/Filter.h}}
+\mbox{\hyperlink{_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_FILTER\_H}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_FILTER\_H}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_volume_8h}{Volume.h}}"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ Interface\ for\ 3D\ filters}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_filter3_d}{IFilter3D}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_filter3_d_a018200e389f131f3be2a74641dfd78fe}{\string~IFilter3D}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_filter3_d_a54bd55c35784d1911bb404cc8399d161}{apply}}(\mbox{\hyperlink{class_volume}{Volume}}\ \&volume)\ =\ 0;}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ Interface\ for\ 2D\ filters}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_filter2_d}{IFilter2D}}\ \{}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_filter2_d_a39c83d2c96c47ea71c759964e1c32ffe}{\string~IFilter2D}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_filter2_d_a0cc3760ba47a692a5cd0cc645c1d6a91}{apply}}(\mbox{\hyperlink{class_image}{Image}}\ \&image)\ =\ 0;}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_FILTER\_H}}
+
+\end{DoxyCode}

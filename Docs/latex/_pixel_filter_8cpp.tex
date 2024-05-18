@@ -1,0 +1,41 @@
+\doxysection{Source/\+Filters/\+Pixel\+Filter.cpp File Reference}
+\hypertarget{_pixel_filter_8cpp}{}\label{_pixel_filter_8cpp}\index{Source/Filters/PixelFilter.cpp@{Source/Filters/PixelFilter.cpp}}
+
+
+Implementation of the \doxylink{class_pixel_filter}{Pixel\+Filter} class for various pixel-\/level image filtering operations.  
+
+
+{\ttfamily \#include "{}Filters/\+Pixel\+Filter.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+Include dependency graph for Pixel\+Filter.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_pixel_filter_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{class_pixel_filter}{Pixel\+Filter} class for various pixel-\/level image filtering operations. 
+
+This file defines the implementation of the \doxylink{class_pixel_filter}{Pixel\+Filter} class, which supports a range of image processing operations including grayscale conversion, brightness adjustment, histogram equalization, thresholding, and the addition of salt-\/and-\/pepper noise. These operations can be applied to images in different color spaces such as RGB, HSL, and HSV, depending on the filter type. The class is designed to be flexible, allowing for optional parameters and ensuring that input values are within expected ranges for each filter type. Part of the Advanced Programming Group\textquotesingle{}s toolkit, this implementation aims to provide a comprehensive solution for image enhancement and manipulation, facilitating both basic and advanced image processing tasks.
+
+\begin{DoxyDate}{Date}
+Created on March 20, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

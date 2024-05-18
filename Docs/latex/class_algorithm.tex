@@ -1,0 +1,127 @@
+\doxysection{Algorithm Class Reference}
+\hypertarget{class_algorithm}{}\label{class_algorithm}\index{Algorithm@{Algorithm}}
+
+
+{\ttfamily \#include $<$Algorithm.\+h$>$}
+
+
+
+Collaboration diagram for Algorithm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_algorithm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned char \mbox{\hyperlink{class_algorithm_a944029b8928280930227d3317987acee}{quick\+Select}} (std\+::vector$<$ unsigned char $>$ \&arr, int left, int right, int k)
+\item 
+static void \mbox{\hyperlink{class_algorithm_ac5771ca0949e841dacac9d9c615de501}{quick\+Sort}} (std\+::vector$<$ std\+::string $>$ \&arr, int low, int high)
+\item 
+static int \mbox{\hyperlink{class_algorithm_a142d31fe23dbb0ea4fcbaa3e3f5e22ab}{partition}} (std\+::vector$<$ unsigned char $>$ \&arr, int left, int right, int pivot\+Index)
+\item 
+static int \mbox{\hyperlink{class_algorithm_aaa9fa627587d9ac96394bd693b0f2d52}{partition}} (std\+::vector$<$ std\+::string $>$ \&arr, int low, int high)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_algorithm_aaa9fa627587d9ac96394bd693b0f2d52}\label{class_algorithm_aaa9fa627587d9ac96394bd693b0f2d52} 
+\index{Algorithm@{Algorithm}!partition@{partition}}
+\index{partition@{partition}!Algorithm@{Algorithm}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Algorithm\+::partition (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{arr,  }\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Partitions the array of strings around the last element as pivot.
+
+Rearranges the elements in the string vector such that all elements less than the pivot come before it and all elements greater come after it, with the pivot itself moving to its correct sorted position. Primarily used in the quicksort algorithm.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & A reference to the vector of strings to be partitioned. \\
+\hline
+{\em low} & The start index of the subarray to be partitioned. \\
+\hline
+{\em high} & The end index of the subarray to be partitioned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The index where the pivot element is finally placed. 
+\end{DoxyReturn}
+\Hypertarget{class_algorithm_a142d31fe23dbb0ea4fcbaa3e3f5e22ab}\label{class_algorithm_a142d31fe23dbb0ea4fcbaa3e3f5e22ab} 
+\index{Algorithm@{Algorithm}!partition@{partition}}
+\index{partition@{partition}!Algorithm@{Algorithm}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Algorithm\+::partition (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ \&}]{arr,  }\item[{int}]{left,  }\item[{int}]{right,  }\item[{int}]{pivot\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Partitions the array around a pivot element.
+
+This method rearranges the elements in the array such that all elements less than the pivot value come before the pivot, while all elements greater than the pivot come after it. The pivot element itself is moved to its final position in the sorted array. This partitioning is a key process in both quicksort and quickselect algorithms.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & A reference to the vector of unsigned char to be partitioned. \\
+\hline
+{\em left} & The start index of the subarray to be partitioned. \\
+\hline
+{\em right} & The end index of the subarray to be partitioned. \\
+\hline
+{\em pivot\+Index} & The index of the pivot element.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The index where the pivot element is finally placed. 
+\end{DoxyReturn}
+\Hypertarget{class_algorithm_a944029b8928280930227d3317987acee}\label{class_algorithm_a944029b8928280930227d3317987acee} 
+\index{Algorithm@{Algorithm}!quickSelect@{quickSelect}}
+\index{quickSelect@{quickSelect}!Algorithm@{Algorithm}}
+\doxysubsubsection{\texorpdfstring{quickSelect()}{quickSelect()}}
+{\footnotesize\ttfamily unsigned char Algorithm\+::quick\+Select (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ \&}]{arr,  }\item[{int}]{left,  }\item[{int}]{right,  }\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Finds the k-\/th smallest element in an array using the Quickselect algorithm.
+
+Quickselect is a selection algorithm to find the k-\/th smallest element in an unsorted array. It is related to the quicksort sorting algorithm. Like quicksort, it is efficient in practice and has good average-\/case performance, but has poor worst-\/case performance. Quickselect uses a partition method to recursively divide the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & A reference to the vector of unsigned char to be processed. \\
+\hline
+{\em left} & The starting index of the array from which to find the k-\/th smallest element. \\
+\hline
+{\em right} & The ending index of the array. \\
+\hline
+{\em k} & The order of the smallest element to find.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: The k-\/th smallest element in the specified array segment. 
+\end{DoxyReturn}
+\Hypertarget{class_algorithm_ac5771ca0949e841dacac9d9c615de501}\label{class_algorithm_ac5771ca0949e841dacac9d9c615de501} 
+\index{Algorithm@{Algorithm}!quickSort@{quickSort}}
+\index{quickSort@{quickSort}!Algorithm@{Algorithm}}
+\doxysubsubsection{\texorpdfstring{quickSort()}{quickSort()}}
+{\footnotesize\ttfamily void Algorithm\+::quick\+Sort (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$ \&}]{arr,  }\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sorts a vector of strings using the Quicksort algorithm.
+
+Quicksort is a divide-\/and-\/conquer algorithm. It works by selecting a \textquotesingle{}pivot\textquotesingle{} element from the array and partitioning the other elements into two sub-\/arrays, according to whether they are less than or greater than the pivot. The sub-\/arrays are then recursively sorted. This implementation uses the last element as the pivot.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & A reference to the vector of strings to be sorted. \\
+\hline
+{\em low} & The starting index of the segment of the array to be sorted. \\
+\hline
+{\em high} & The ending index of the segment of the array to be sorted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{_algorithm_8h}{Algorithm.\+h}}\item 
+Source/\mbox{\hyperlink{_algorithm_8cpp}{Algorithm.\+cpp}}\end{DoxyCompactItemize}

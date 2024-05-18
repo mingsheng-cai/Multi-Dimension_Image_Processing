@@ -1,0 +1,113 @@
+\doxysection{Test\+Median2\+DFilter Class Reference}
+\hypertarget{class_test_median2_d_filter}{}\label{class_test_median2_d_filter}\index{TestMedian2DFilter@{TestMedian2DFilter}}
+
+
+{\ttfamily \#include $<$Test\+Median2\+DFilter.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Median2\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_test_median2_d_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Median2\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_test_median2_d_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_median2_d_filter_a8f8fad432d532ecd725460fe0f8133fb}{test\+Apply\+Median\+Filter}} ()
+\item 
+void \mbox{\hyperlink{class_test_median2_d_filter_afc660edd4a11e26aba3a0c141a28370f}{test\+Edge\+Handling}} ()
+\item 
+void \mbox{\hyperlink{class_test_median2_d_filter_a1f5b159d2ab5a9eaa2d3171db220eeb5}{test\+Noise\+Reduction}} ()
+\item 
+void \mbox{\hyperlink{class_test_median2_d_filter_a740891da6f43bb04bbe0974a5faa0582}{test\+Detail\+Preservation}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_median2_d_filter_abad664cc3c0f80d7eb67faa7d7330a06}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_median2_d_filter_abad664cc3c0f80d7eb67faa7d7330a06}\label{class_test_median2_d_filter_abad664cc3c0f80d7eb67faa7d7330a06} 
+\index{TestMedian2DFilter@{TestMedian2DFilter}!runTests@{runTests}}
+\index{runTests@{runTests}!TestMedian2DFilter@{TestMedian2DFilter}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Median2\+DFilter\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes all unit tests for the \doxylink{class_median2_d_filter}{Median2\+DFilter} class.
+
+Runs all defined test cases for the \doxylink{class_median2_d_filter}{Median2\+DFilter} class, including tests for applying the filter, handling image edges, reducing noise, and preserving fine details. This method ensures a comprehensive evaluation of the filter\textquotesingle{}s performance in various scenarios, verifying its reliability and effectiveness in enhancing image quality through noise reduction and detail preservation. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_median2_d_filter_a8f8fad432d532ecd725460fe0f8133fb}\label{class_test_median2_d_filter_a8f8fad432d532ecd725460fe0f8133fb} 
+\index{TestMedian2DFilter@{TestMedian2DFilter}!testApplyMedianFilter@{testApplyMedianFilter}}
+\index{testApplyMedianFilter@{testApplyMedianFilter}!TestMedian2DFilter@{TestMedian2DFilter}}
+\doxysubsubsection{\texorpdfstring{testApplyMedianFilter()}{testApplyMedianFilter()}}
+{\footnotesize\ttfamily void Test\+Median2\+DFilter\+::test\+Apply\+Median\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unit test for the application of the median filter on a grayscale image.
+
+Tests the application of the median filter on a grayscale image using a 3x3 kernel and zero padding. This test verifies the filter\textquotesingle{}s ability to correctly calculate the median value in a simple scenario and apply it to a small image. It checks whether the median filter maintains or enhances image quality by preserving significant details while reducing noise. \Hypertarget{class_test_median2_d_filter_a740891da6f43bb04bbe0974a5faa0582}\label{class_test_median2_d_filter_a740891da6f43bb04bbe0974a5faa0582} 
+\index{TestMedian2DFilter@{TestMedian2DFilter}!testDetailPreservation@{testDetailPreservation}}
+\index{testDetailPreservation@{testDetailPreservation}!TestMedian2DFilter@{TestMedian2DFilter}}
+\doxysubsubsection{\texorpdfstring{testDetailPreservation()}{testDetailPreservation()}}
+{\footnotesize\ttfamily void Test\+Median2\+DFilter\+::test\+Detail\+Preservation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unit test for evaluating the median filter\textquotesingle{}s detail preservation capability.
+
+Evaluates the median filter\textquotesingle{}s detail preservation capability by applying it to an image with a thin line. This test verifies if the filter maintains fine details in the image by checking if the filter retains the line\textquotesingle{}s presence after processing. The test ensures that the filter does not blur or distort the line, demonstrating its ability to preserve essential image features during noise reduction. \Hypertarget{class_test_median2_d_filter_afc660edd4a11e26aba3a0c141a28370f}\label{class_test_median2_d_filter_afc660edd4a11e26aba3a0c141a28370f} 
+\index{TestMedian2DFilter@{TestMedian2DFilter}!testEdgeHandling@{testEdgeHandling}}
+\index{testEdgeHandling@{testEdgeHandling}!TestMedian2DFilter@{TestMedian2DFilter}}
+\doxysubsubsection{\texorpdfstring{testEdgeHandling()}{testEdgeHandling()}}
+{\footnotesize\ttfamily void Test\+Median2\+DFilter\+::test\+Edge\+Handling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unit test for evaluating the median filter\textquotesingle{}s edge handling capability with reflective padding.
+
+Evaluates the median filter\textquotesingle{}s edge handling capability with reflective padding. This test examines if the filter correctly handles image edges by ensuring that reflective padding maintains the continuity and appearance of the image\textquotesingle{}s edges, thus avoiding the introduction of artifacts or distortions at the boundaries. \Hypertarget{class_test_median2_d_filter_a1f5b159d2ab5a9eaa2d3171db220eeb5}\label{class_test_median2_d_filter_a1f5b159d2ab5a9eaa2d3171db220eeb5} 
+\index{TestMedian2DFilter@{TestMedian2DFilter}!testNoiseReduction@{testNoiseReduction}}
+\index{testNoiseReduction@{testNoiseReduction}!TestMedian2DFilter@{TestMedian2DFilter}}
+\doxysubsubsection{\texorpdfstring{testNoiseReduction()}{testNoiseReduction()}}
+{\footnotesize\ttfamily void Test\+Median2\+DFilter\+::test\+Noise\+Reduction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unit test for evaluating the median filter\textquotesingle{}s noise reduction capability.
+
+Evaluates the median filter\textquotesingle{}s noise reduction capability by applying it to an image with salt-\/and-\/pepper noise. This test assesses the filter\textquotesingle{}s effectiveness in reducing noise by checking if the filter successfully replaces noisy pixels with the median value of the surrounding pixels, thereby enhancing image quality. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_median2_d_filter_8h}{Test\+Median2\+DFilter.\+h}}\end{DoxyCompactItemize}

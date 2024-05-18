@@ -1,0 +1,32 @@
+<map id="Temp/testBox2DFilter.cpp" name="Temp/testBox2DFilter.cpp">
+<area shape="rect" id="Node000001" title="A program to test the Box2DFilter class for Gaussian filtering on an image." alt="" coords="258,5,430,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,77,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="292,34,93,81,91,76,291,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,79,165,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="309,34,181,77,179,72,307,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="190,79,247,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="324,34,254,73,251,69,321,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="302,226,359,252"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="339,32,327,54,318,80,314,114,315,150,325,210,320,211,310,150,309,114,313,78,322,52,334,30"/>
+<area shape="rect" id="Node000006" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="451,226,519,252"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="409,29,449,47,468,61,483,78,498,111,503,147,501,182,495,212,490,211,495,181,497,147,493,112,479,80,464,64,447,52,407,34"/>
+<area shape="rect" id="Node000008" href="$_box2_d_filter_8h.html" title="Implements a 2D box filter for image processing." alt="" coords="328,79,469,105"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="355,30,382,65,378,68,351,33"/>
+<area shape="rect" id="Node000010" href="$stb__image__write_8h.html" title=" " alt="" coords="573,79,701,105"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="394,29,573,72,572,77,393,34"/>
+<area shape="rect" id="Node000012" href="$stb__image_8h.html" title=" " alt="" coords="724,79,817,105"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="425,29,710,76,709,81,424,34"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="458,300,512,326"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="488,252,488,284,482,284,482,252"/>
+<area shape="poly" id="edge12_Node000008_Node000005" title=" " alt="" coords="390,107,374,128,358,154,346,183,338,212,333,211,341,182,353,151,369,125,386,104"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="416,103,440,124,462,151,475,181,483,211,478,212,470,183,457,154,436,128,413,107"/>
+<area shape="rect" id="Node000009" href="$_padding_8h.html" title=" " alt="" coords="368,153,447,178"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="403,105,407,137,401,138,397,105"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="396,181,356,218,353,214,393,177"/>
+<area shape="poly" id="edge10_Node000009_Node000006" title=" " alt="" coords="423,177,463,214,459,218,419,181"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="629,153,693,178"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="643,104,655,137,650,139,638,106"/>
+<area shape="poly" id="edge17_Node000012_Node000011" title=" " alt="" coords="753,107,694,146,691,142,750,103"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="740,153,801,178"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="773,105,773,137,768,137,768,105"/>
+</map>

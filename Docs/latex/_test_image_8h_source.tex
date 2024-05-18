@@ -1,0 +1,95 @@
+\doxysection{Test\+Image.\+h}
+\hypertarget{_test_image_8h_source}{}\label{_test_image_8h_source}\index{Tests/TestImage.h@{Tests/TestImage.h}}
+\mbox{\hyperlink{_test_image_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <cstring>}\ \textcolor{comment}{//\ For\ memcmp}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <filesystem>}\ \textcolor{comment}{//\ C++17,\ for\ checking\ file\ existence}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_image}{TestImage}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_image_a0ad130d9d278c50489aabf6e308fee82}{testLoadImage}}()\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ loaded\ =\ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/vh\_ct.png"{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ assert(loaded);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ assert(img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ >\ 0\ \&\&\ img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ >\ 0);\ \textcolor{comment}{//\ Make\ sure\ the\ image\ has\ valid\ dimensions}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_image_a13bf306f58f23ed06eae1580fcaaa842}{testSaveImage}}()\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First,\ load\ an\ image\ to\ save}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/vh\_ct.png"{}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ saved\ =\ img.\mbox{\hyperlink{class_image_a1e5bba4e0dc67e2a93bd0d90e9c71e97}{saveToFile}}(\textcolor{stringliteral}{"{}../Images/test\_vh\_ct.png"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ assert(saved);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ that\ the\ file\ was\ created}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ assert(fs::exists(\textcolor{stringliteral}{"{}../Images/test\_vh\_ct.png"{}}));}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Delete\ the\ saved\ file\ after\ the\ test}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ fs::remove(\textcolor{stringliteral}{"{}../Images/test\_vh\_ct.png"{}});}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_image_a64c527b457e3b959b9f5c0c9fe0587a3}{testLoadNonexistentImage}}()\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ loaded\ =\ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/nonexistent.png"{}});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ assert(!loaded);\ \textcolor{comment}{//\ Make\ sure\ the\ image\ was\ not\ loaded}}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_image_a60b08a31110dbd303248ede08113b8dd}{testImageAttributes}}()\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ setting\ and\ getting\ width}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_a2087192970c1d0358e6d7d96d940ed18}{setWidth}}(100);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ assert(img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ ==\ 100);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ setting\ and\ getting\ height}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_a031c156741deddb462c0c3cc0b7c1251}{setHeight}}(200);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ assert(img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ ==\ 200);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ setting\ and\ getting\ channels}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_a01f677939486ec481465bf01809cee33}{setChannels}}(3);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ assert(img.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}()\ ==\ 3);}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_image_a38c0c8edde543e75a07e59c5a59e9936}{testImageData}}()\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}../Images/vh\_ct.png"{}});\ \textcolor{comment}{//\ Load\ an\ image\ for\ testing}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ originalData\ =\ img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert\ that\ the\ image\ has\ valid\ dimensions}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ expectedWidth\ =\ 512;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ expectedHeight\ =\ 512;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ expectedChannels\ =\ 1;\ \textcolor{comment}{//\ Grey\ scale\ image}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ assert(img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ ==\ expectedWidth);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ assert(img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}()\ ==\ expectedHeight);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ assert(img.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}()\ ==\ expectedChannels);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ updating\ the\ image\ data}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ newData\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[expectedWidth\ *\ expectedHeight\ *\ expectedChannels];}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ memset(newData,\ 0,\ expectedWidth\ *\ expectedHeight\ *\ expectedChannels);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{class_image_a18cef47cb25385842ab6611d91ad4214}{updateData}}(newData);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ that\ the\ data\ was\ updated}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ assert(img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}()\ ==\ newData);}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_image_aa0f5e79d053483b78fd7a563f226e0a5}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ runTest<TestImage>(\&\mbox{\hyperlink{class_test_image_a0ad130d9d278c50489aabf6e308fee82}{TestImage::testLoadImage}},\ \textcolor{stringliteral}{"{}Load\ Image"{}});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ runTest<TestImage>(\&\mbox{\hyperlink{class_test_image_a13bf306f58f23ed06eae1580fcaaa842}{TestImage::testSaveImage}},\ \textcolor{stringliteral}{"{}Save\ Image"{}});}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ runTest<TestImage>(\&\mbox{\hyperlink{class_test_image_a64c527b457e3b959b9f5c0c9fe0587a3}{TestImage::testLoadNonexistentImage}},\ \textcolor{stringliteral}{"{}Load\ Nonexistent\ Image"{}});}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ runTest<TestImage>(\&\mbox{\hyperlink{class_test_image_a60b08a31110dbd303248ede08113b8dd}{TestImage::testImageAttributes}},\ \textcolor{stringliteral}{"{}Image\ Attributes"{}});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ runTest<TestImage>(\&\mbox{\hyperlink{class_test_image_a38c0c8edde543e75a07e59c5a59e9936}{TestImage::testImageData}},\ \textcolor{stringliteral}{"{}Image\ Data"{}});}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \};}
+
+\end{DoxyCode}

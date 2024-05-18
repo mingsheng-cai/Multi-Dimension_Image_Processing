@@ -1,0 +1,146 @@
+\doxysection{Test\+Box2\+DFilter Class Reference}
+\hypertarget{class_test_box2_d_filter}{}\label{class_test_box2_d_filter}\index{TestBox2DFilter@{TestBox2DFilter}}
+
+
+{\ttfamily \#include $<$Test\+Box2\+DFilter.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Box2\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_test_box2_d_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Box2\+DFilter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_test_box2_d_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_box2_d_filter_ad7ecc59a96c36b2613d072798e2ff7c9}{test\+Uniform\+Image}} ()
+\item 
+void \mbox{\hyperlink{class_test_box2_d_filter_a6cd72a1365faf0ac9722c33560fd4486}{test\+Edge\+Padding}} ()
+\item 
+void \mbox{\hyperlink{class_test_box2_d_filter_ab517a27a5f8fa0e03c9fa605cc2d7c33}{test\+Gradient\+Image}} ()
+\item 
+void \mbox{\hyperlink{class_test_box2_d_filter_acf9e6419f45d88e6d6305f3c01607f55}{test\+Large\+Kernel\+Filtering}} ()
+\item 
+void \mbox{\hyperlink{class_test_box2_d_filter_a8b2fb9e2d56ea6fa3a0bff8fc26a136f}{test\+Reflect\+Padding\+Edge\+Handling}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_box2_d_filter_a0451c1f83caea801251f71aab727f317}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_test_box2_d_filter_a058382e3ffe5dd20729cd8ec6173eb14}{calculate\+Variance}} (const \mbox{\hyperlink{class_image}{Image}} \&image)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_box2_d_filter_a058382e3ffe5dd20729cd8ec6173eb14}\label{class_test_box2_d_filter_a058382e3ffe5dd20729cd8ec6173eb14} 
+\index{TestBox2DFilter@{TestBox2DFilter}!calculateVariance@{calculateVariance}}
+\index{calculateVariance@{calculateVariance}!TestBox2DFilter@{TestBox2DFilter}}
+\doxysubsubsection{\texorpdfstring{calculateVariance()}{calculateVariance()}}
+{\footnotesize\ttfamily double Test\+Box2\+DFilter\+::calculate\+Variance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Calculates the Variance of Pixel Values in an \doxylink{class_image}{Image}
+
+Computes the variance of pixel values in an image to assess the distribution of pixel intensities. The variance provides a measure of the spread of pixel values around the mean, indicating the level of contrast and detail present in the image. This function calculates the variance by first computing the mean pixel value and then summing the squared differences between each pixel value and the mean. The final variance is obtained by dividing this sum by the total number of pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The \doxylink{class_image}{Image} object for which to calculate the variance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The variance of pixel values in the image 
+\end{DoxyReturn}
+\Hypertarget{class_test_box2_d_filter_a0451c1f83caea801251f71aab727f317}\label{class_test_box2_d_filter_a0451c1f83caea801251f71aab727f317} 
+\index{TestBox2DFilter@{TestBox2DFilter}!runTests@{runTests}}
+\index{runTests@{runTests}!TestBox2DFilter@{TestBox2DFilter}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Box2\+DFilter\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes All Defined \doxylink{class_test}{Test} Cases for the \doxylink{class_box2_d_filter}{Box2\+DFilter}
+
+This function orchestrates the execution of all test cases defined in the \doxylink{class_test_box2_d_filter}{Test\+Box2\+DFilter} class. It leverages the run\+Test template method to execute each test case individually, providing a name for each test that is used in logging and reporting test outcomes. The tests conducted aim to thoroughly evaluate the \doxylink{class_box2_d_filter}{Box2\+DFilter} class\textquotesingle{}s functionality, focusing on its application to uniform images, handling of images with gradients, and effectiveness of different edge padding strategies. By running these tests, the framework ensures that the \doxylink{class_box2_d_filter}{Box2\+DFilter} behaves consistently and correctly under a variety of conditions. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_box2_d_filter_a6cd72a1365faf0ac9722c33560fd4486}\label{class_test_box2_d_filter_a6cd72a1365faf0ac9722c33560fd4486} 
+\index{TestBox2DFilter@{TestBox2DFilter}!testEdgePadding@{testEdgePadding}}
+\index{testEdgePadding@{testEdgePadding}!TestBox2DFilter@{TestBox2DFilter}}
+\doxysubsubsection{\texorpdfstring{testEdgePadding()}{testEdgePadding()}}
+{\footnotesize\ttfamily void Test\+Box2\+DFilter\+::test\+Edge\+Padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Edge \doxylink{class_padding}{Padding} Strategies with the \doxylink{class_box2_d_filter}{Box2\+DFilter}
+
+Examines how the \doxylink{class_box2_d_filter}{Box2\+DFilter} handles image edges using different padding strategies, such as zero padding and reflect padding. The test checks whether the filter\textquotesingle{}s edge handling preserves image content accurately or introduces distortions. This aspect is vital for ensuring that the filter performs well even at the boundaries of the image, where padding becomes necessary. \Hypertarget{class_test_box2_d_filter_ab517a27a5f8fa0e03c9fa605cc2d7c33}\label{class_test_box2_d_filter_ab517a27a5f8fa0e03c9fa605cc2d7c33} 
+\index{TestBox2DFilter@{TestBox2DFilter}!testGradientImage@{testGradientImage}}
+\index{testGradientImage@{testGradientImage}!TestBox2DFilter@{TestBox2DFilter}}
+\doxysubsubsection{\texorpdfstring{testGradientImage()}{testGradientImage()}}
+{\footnotesize\ttfamily void Test\+Box2\+DFilter\+::test\+Gradient\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Effectiveness of the \doxylink{class_box2_d_filter}{Box2\+DFilter} on an \doxylink{class_image}{Image} with a Gradient
+
+Assesses the \doxylink{class_box2_d_filter}{Box2\+DFilter}\textquotesingle{}s ability to smooth out gradients in an image. This test involves applying the filter to an image with a linear gradient and examining the smoothness of the result. The goal is to confirm that the filter effectively reduces the sharpness of gradients, indicative of its smoothing capabilities. \Hypertarget{class_test_box2_d_filter_acf9e6419f45d88e6d6305f3c01607f55}\label{class_test_box2_d_filter_acf9e6419f45d88e6d6305f3c01607f55} 
+\index{TestBox2DFilter@{TestBox2DFilter}!testLargeKernelFiltering@{testLargeKernelFiltering}}
+\index{testLargeKernelFiltering@{testLargeKernelFiltering}!TestBox2DFilter@{TestBox2DFilter}}
+\doxysubsubsection{\texorpdfstring{testLargeKernelFiltering()}{testLargeKernelFiltering()}}
+{\footnotesize\ttfamily void Test\+Box2\+DFilter\+::test\+Large\+Kernel\+Filtering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Evaluates the Impact of Large Kernel Sizes on \doxylink{class_image}{Image} Smoothing
+
+Investigates how increasing the kernel size of the \doxylink{class_box2_d_filter}{Box2\+DFilter} affects its smoothing effect on images. The test compares the variance of the image\textquotesingle{}s pixel values before and after applying the filter with a large kernel, with the expectation that a larger kernel will result in more significant smoothing and thus a lower variance. \Hypertarget{class_test_box2_d_filter_a8b2fb9e2d56ea6fa3a0bff8fc26a136f}\label{class_test_box2_d_filter_a8b2fb9e2d56ea6fa3a0bff8fc26a136f} 
+\index{TestBox2DFilter@{TestBox2DFilter}!testReflectPaddingEdgeHandling@{testReflectPaddingEdgeHandling}}
+\index{testReflectPaddingEdgeHandling@{testReflectPaddingEdgeHandling}!TestBox2DFilter@{TestBox2DFilter}}
+\doxysubsubsection{\texorpdfstring{testReflectPaddingEdgeHandling()}{testReflectPaddingEdgeHandling()}}
+{\footnotesize\ttfamily void Test\+Box2\+DFilter\+::test\+Reflect\+Padding\+Edge\+Handling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests Reflect \doxylink{class_padding}{Padding} Edge Handling with the \doxylink{class_box2_d_filter}{Box2\+DFilter}
+
+Focuses on the \doxylink{class_box2_d_filter}{Box2\+DFilter}\textquotesingle{}s ability to handle image edges using reflect padding. This padding strategy mirrors the image content around the edges to fill the kernel window. The test verifies that reflect padding maintains visual consistency at the edges, without introducing artifacts that could detract from image quality. \Hypertarget{class_test_box2_d_filter_ad7ecc59a96c36b2613d072798e2ff7c9}\label{class_test_box2_d_filter_ad7ecc59a96c36b2613d072798e2ff7c9} 
+\index{TestBox2DFilter@{TestBox2DFilter}!testUniformImage@{testUniformImage}}
+\index{testUniformImage@{testUniformImage}!TestBox2DFilter@{TestBox2DFilter}}
+\doxysubsubsection{\texorpdfstring{testUniformImage()}{testUniformImage()}}
+{\footnotesize\ttfamily void Test\+Box2\+DFilter\+::test\+Uniform\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Application of the \doxylink{class_box2_d_filter}{Box2\+DFilter} on a Uniform \doxylink{class_image}{Image}
+
+Evaluates the \doxylink{class_box2_d_filter}{Box2\+DFilter}\textquotesingle{}s ability to maintain the uniformity of an image when applied. The test involves applying the filter to an image filled entirely with a single pixel value (e.\+g., all white) and verifying that the output remains uniform. This test is crucial for ensuring that the filter does not inadvertently introduce gradients or artifacts into images that are expected to remain constant. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_box2_d_filter_8h}{Test\+Box2\+DFilter.\+h}}\end{DoxyCompactItemize}

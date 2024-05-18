@@ -1,0 +1,38 @@
+\doxysection{Source/\+Filters/\+Edge\+Filter.cpp File Reference}
+\hypertarget{_edge_filter_8cpp}{}\label{_edge_filter_8cpp}\index{Source/Filters/EdgeFilter.cpp@{Source/Filters/EdgeFilter.cpp}}
+
+
+Implementation of the \doxylink{class_edge_filter}{Edge\+Filter} class for edge detection in images.  
+
+
+{\ttfamily \#include "{}Filters/\+Edge\+Filter.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Edge\+Filter.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{_edge_filter_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{class_edge_filter}{Edge\+Filter} class for edge detection in images. 
+
+This file defines the methods of the \doxylink{class_edge_filter}{Edge\+Filter} class, including various edge detection algorithms such as Sobel, Prewitt, Scharr, and Roberts. Edge detection is performed on grayscale images, where the input image is checked for its color channels to ensure it\textquotesingle{}s suitable for edge detection. Each edge detection method applies a specific kernel to highlight edges in the image by calculating the gradient magnitude at each pixel. This implementation allows for flexible edge detection through the choice of algorithm and padding method, catering to diverse image processing needs. The \doxylink{class_edge_filter}{Edge\+Filter} class is part of the Advanced Programming Group\textquotesingle{}s efforts to provide robust tools for image analysis and manipulation.
+
+\begin{DoxyDate}{Date}
+Created on March 21, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

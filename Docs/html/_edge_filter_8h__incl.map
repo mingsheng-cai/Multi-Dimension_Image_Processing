@@ -1,0 +1,13 @@
+<map id="Include/Filters/EdgeFilter.h" name="Include/Filters/EdgeFilter.h">
+<area shape="rect" id="Node000001" title="Implements edge detection filters for image processing." alt="" coords="5,5,182,31"/>
+<area shape="rect" id="Node000002" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="15,153,84,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,33,60,54,44,80,40,109,44,137,38,138,34,109,39,78,56,50,76,29"/>
+<area shape="rect" id="Node000004" href="$_padding_8h.html" title=" " alt="" coords="54,79,133,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="96,31,96,63,91,63,91,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="125,153,182,178"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="110,30,130,51,148,78,156,108,158,137,152,137,151,109,143,80,126,54,106,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="23,226,76,252"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="52,179,52,211,47,211,47,179"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="89,106,67,141,63,138,84,103"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="105,103,136,139,132,142,101,107"/>
+</map>

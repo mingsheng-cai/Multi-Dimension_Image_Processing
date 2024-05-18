@@ -1,0 +1,46 @@
+\doxysection{Edge\+Filter.\+h}
+\hypertarget{_edge_filter_8h_source}{}\label{_edge_filter_8h_source}\index{Include/Filters/EdgeFilter.h@{Include/Filters/EdgeFilter.h}}
+\mbox{\hyperlink{_edge_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifndef\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_EDGEFILTER\_H}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_EDGEFILTER\_H}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_padding_8h}{Padding.h}}"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{FilterType}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa72e4f1a61efb42bee3f652fcf5db32b8}{Sobel}},}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fab0668738b1f82bdb33252275c3ce2d2d}{Prewitt}},}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa282e20fff4400a817ff7fd1661dbf16c}{Scharr}},}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa212631b80d2d1153eba86248e06d0ced}{Roberts}}}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edge_filter}{EdgeFilter}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{FilterType}}\ \mbox{\hyperlink{class_edge_filter_af75999a00ab8acbbcb5bb307c2835e4c}{filterType}};\ \textcolor{comment}{//\ Add\ filter\ type\ attribute}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{PaddingType}}\ \mbox{\hyperlink{class_edge_filter_a22a6eda354fb155b0cca8190d3a87163}{paddingType}};\ \textcolor{comment}{//\ Add\ padding\ type\ attribute}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edge_filter_aa786ca8876149eb4789403ec9140c220}{applySobel}}(\mbox{\hyperlink{class_image}{Image}}\ \&image)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edge_filter_af9a753bc684533d0bee29838d646e020}{applyPrewitt}}(\mbox{\hyperlink{class_image}{Image}}\ \&image)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edge_filter_a56a17f624b387e02609bc4a053e1b752}{applyScharr}}(\mbox{\hyperlink{class_image}{Image}}\ \&image)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edge_filter_ae1a36855cf1bab3121fa93daae463db5}{applyRoberts}}(\mbox{\hyperlink{class_image}{Image}}\ \&image)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_edge_filter_a13249ad0bbfab110eff94e2ba24aafd4}{isGrayscale}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_image}{Image}}\ \&image)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{class_edge_filter_a4e2f7a0946af34aa6fd5a1e1d15102df}{EdgeFilter}}(\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{FilterType}}\ type,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{PaddingType}}\ \mbox{\hyperlink{class_edge_filter_a22a6eda354fb155b0cca8190d3a87163}{paddingType}}\ =\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edge_filter_a7350005391816c05950c3d73b9946021}{apply}}(\mbox{\hyperlink{class_image}{Image}}\ \&image);}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_EDGEFILTER\_H}}
+
+\end{DoxyCode}

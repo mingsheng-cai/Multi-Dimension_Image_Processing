@@ -1,0 +1,319 @@
+\doxysection{Image Class Reference}
+\hypertarget{class_image}{}\label{class_image}\index{Image@{Image}}
+
+
+{\ttfamily \#include $<$Image.\+h$>$}
+
+
+
+Collaboration diagram for Image\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_image__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}} ()
+\item 
+\mbox{\hyperlink{class_image_a8216a31234bd5b3a6c6e90450d3c43ba}{Image}} (\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{width}}, \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_a51df43db420c9c0b57536cb2dd36de5c}{height}}, \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_a73572ed4b7f15054c5a598c6aabffd86}{channels}}, \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{unsigned}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_image_a22b726c8306f78b5022e0670ddb0937f}{data}})
+\item 
+\mbox{\hyperlink{class_image_a0294f63700543e11c0f0da85601c7ae5}{\texorpdfstring{$\sim$}{\string~}\+Image}} ()
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{get\+Width}} () \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}}
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{get\+Height}} () \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}}
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{get\+Channels}} () \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}}
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{unsigned}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{get\+Data}} () \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}}
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{void}} \mbox{\hyperlink{class_image_a18cef47cb25385842ab6611d91ad4214}{update\+Data}} (\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{unsigned}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_image_a22b726c8306f78b5022e0670ddb0937f}{data}})
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{void}} \mbox{\hyperlink{class_image_a2087192970c1d0358e6d7d96d940ed18}{set\+Width}} (\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{width}})
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{void}} \mbox{\hyperlink{class_image_a031c156741deddb462c0c3cc0b7c1251}{set\+Height}} (\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_a51df43db420c9c0b57536cb2dd36de5c}{height}})
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{void}} \mbox{\hyperlink{class_image_a01f677939486ec481465bf01809cee33}{set\+Channels}} (\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_a73572ed4b7f15054c5a598c6aabffd86}{channels}})
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{bool}} \mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{load\+From\+File}} (\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}} std\+::string \&\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{path}})
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{bool}} \mbox{\hyperlink{class_image_a1e5bba4e0dc67e2a93bd0d90e9c71e97}{save\+To\+File}} (\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}} std\+::string \&\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{path}}) \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_image_a20a5cb82bbecd48bdcea519bf53bc051}{Image}} (\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}} \mbox{\hyperlink{class_image}{Image}} \&)=\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{delete}}
+\item 
+\mbox{\hyperlink{class_image}{Image}} \& \mbox{\hyperlink{class_image_a4c4f631b85b6363dd713903d02dab693}{operator=}} (\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}} \mbox{\hyperlink{class_image}{Image}} \&)=\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{delete}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{width}}
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_a51df43db420c9c0b57536cb2dd36de5c}{height}}
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} \mbox{\hyperlink{class_image_a73572ed4b7f15054c5a598c6aabffd86}{channels}}
+\item 
+\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{unsigned}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_image_a22b726c8306f78b5022e0670ddb0937f}{data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_image_a20a5cb82bbecd48bdcea519bf53bc051}\label{class_image_a20a5cb82bbecd48bdcea519bf53bc051} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}} \mbox{\hyperlink{class_image}{Image}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+Private constructor to prevent copy construction.
+
+The copy constructor is declared private to prevent unintentional deep copies of image data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_image}{Image} object to copy \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a58edd1c45b4faeb5f789b0d036d02313}\label{class_image_a58edd1c45b4faeb5f789b0d036d02313} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor for the \doxylink{class_image}{Image} class.
+
+The default constructor initializes the image dimensions and data to zero. \Hypertarget{class_image_a8216a31234bd5b3a6c6e90450d3c43ba}\label{class_image_a8216a31234bd5b3a6c6e90450d3c43ba} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}}}]{width,  }\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}}}]{height,  }\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}}}]{channels,  }\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{unsigned}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{char}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+Constructor for the \doxylink{class_image}{Image} class with specified dimensions and data.
+
+This constructor initializes the image with the specified dimensions and data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the image \\
+\hline
+{\em height} & The height of the image \\
+\hline
+{\em channels} & The number of color channels in the image \\
+\hline
+{\em data} & The image data as an array of unsigned char \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a0294f63700543e11c0f0da85601c7ae5}\label{class_image_a0294f63700543e11c0f0da85601c7ae5} 
+\index{Image@{Image}!````~Image@{\texorpdfstring{$\sim$}{\string~}Image}}
+\index{````~Image@{\texorpdfstring{$\sim$}{\string~}Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Image()}{\string~Image()}}
+{\footnotesize\ttfamily Image\+::\texorpdfstring{$\sim$}{\string~}\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor for the \doxylink{class_image}{Image} class.
+
+The destructor frees the memory allocated for the image data. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_a821f52f44e80051e48b3f2689ba48611}\label{class_image_a821f52f44e80051e48b3f2689ba48611} 
+\index{Image@{Image}!getChannels@{getChannels}}
+\index{getChannels@{getChannels}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getChannels()}{getChannels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} Image\+::get\+Channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the number of color channels in the image.
+
+This member function returns the number of color channels in the image.
+
+\begin{DoxyReturn}{Returns}
+The number of color channels in the image 
+\end{DoxyReturn}
+\Hypertarget{class_image_af64a18013b10c55f92dc79822c6954d6}\label{class_image_af64a18013b10c55f92dc79822c6954d6} 
+\index{Image@{Image}!getData@{getData}}
+\index{getData@{getData}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{unsigned}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{char}} \texorpdfstring{$\ast$}{*} Image\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the image data.
+
+This member function returns a pointer to the image data.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the image data 
+\end{DoxyReturn}
+\Hypertarget{class_image_a1cd7587f88b6932b5269051d1ba08ff9}\label{class_image_a1cd7587f88b6932b5269051d1ba08ff9} 
+\index{Image@{Image}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} Image\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the height of the image.
+
+This member function returns the height of the image.
+
+\begin{DoxyReturn}{Returns}
+The height of the image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a36bcae4838228d574738249a87dc4464}\label{class_image_a36bcae4838228d574738249a87dc4464} 
+\index{Image@{Image}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} Image\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the width of the image.
+
+This member function returns the width of the image.
+
+\begin{DoxyReturn}{Returns}
+The width of the image 
+\end{DoxyReturn}
+\Hypertarget{class_image_aaf2ae83a1369ab29535ebfd06554e59f}\label{class_image_aaf2ae83a1369ab29535ebfd06554e59f} 
+\index{Image@{Image}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{bool}} Image\+::load\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}} std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+Loads an image from a file
+
+This member function of the \doxylink{class_image}{Image} class loads an image from the specified file path into the object\textquotesingle{}s data buffer using the stb\+\_\+image library. It sets the image\textquotesingle{}s width, height, and channels based on the loaded image\textquotesingle{}s properties. If the image cannot be loaded, it prints an error message to standard error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & A string representing the path to the image file to be loaded.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A boolean value indicating the success (true) or failure (false) of loading the image. 
+\end{DoxyReturn}
+\Hypertarget{class_image_a4c4f631b85b6363dd713903d02dab693}\label{class_image_a4c4f631b85b6363dd713903d02dab693} 
+\index{Image@{Image}!operator=@{operator=}}
+\index{operator=@{operator=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image}{Image}} \& \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{Image\+::operator}}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}} \mbox{\hyperlink{class_image}{Image}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+Private assignment operator to prevent assignment.
+
+The assignment operator is declared private to prevent unintentional deep copies of image data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_image}{Image} object to assign \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reference to the assigned \doxylink{class_image}{Image} object 
+\end{DoxyReturn}
+\Hypertarget{class_image_a1e5bba4e0dc67e2a93bd0d90e9c71e97}\label{class_image_a1e5bba4e0dc67e2a93bd0d90e9c71e97} 
+\index{Image@{Image}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{bool}} Image\+::save\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{const}} std\+::string \&}]{path }\end{DoxyParamCaption}) const}
+
+Saves the image to a file
+
+This const member function of the \doxylink{class_image}{Image} class attempts to save the current image data to a file at the specified path. It uses the stb\+\_\+image\+\_\+write library to write the image in PNG format. Before attempting to save, it checks if the image data buffer is not empty. If there is no data, or if the save operation fails, it prints an error message to standard error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & A string representing the file path where the image should be saved. The image will be saved in PNG format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A boolean value indicating the success (true) or failure (false) of the save operation. 
+\end{DoxyReturn}
+\Hypertarget{class_image_a01f677939486ec481465bf01809cee33}\label{class_image_a01f677939486ec481465bf01809cee33} 
+\index{Image@{Image}!setChannels@{setChannels}}
+\index{setChannels@{setChannels}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{setChannels()}{setChannels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{void}} Image\+::set\+Channels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}}}]{channels }\end{DoxyParamCaption})}
+
+Set the number of color channels in the image.
+
+This member function sets the number of color channels in the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em channels} & The new number of color channels in the image \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a031c156741deddb462c0c3cc0b7c1251}\label{class_image_a031c156741deddb462c0c3cc0b7c1251} 
+\index{Image@{Image}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{void}} Image\+::set\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}}}]{height }\end{DoxyParamCaption})}
+
+Set the height of the image.
+
+This member function sets the height of the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The new height of the image \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a2087192970c1d0358e6d7d96d940ed18}\label{class_image_a2087192970c1d0358e6d7d96d940ed18} 
+\index{Image@{Image}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{void}} Image\+::set\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}}}]{width }\end{DoxyParamCaption})}
+
+Set the width of the image.
+
+This member function sets the width of the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The new width of the image \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a18cef47cb25385842ab6611d91ad4214}\label{class_image_a18cef47cb25385842ab6611d91ad4214} 
+\index{Image@{Image}!updateData@{updateData}}
+\index{updateData@{updateData}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{void}} Image\+::update\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{unsigned}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{char}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+Update the image data.
+
+This member function updates the image data with the specified data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The new image data as an array of unsigned char \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_image_a73572ed4b7f15054c5a598c6aabffd86}\label{class_image_a73572ed4b7f15054c5a598c6aabffd86} 
+\index{Image@{Image}!channels@{channels}}
+\index{channels@{channels}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{channels}{channels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} Image\+::channels\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_image_a22b726c8306f78b5022e0670ddb0937f}\label{class_image_a22b726c8306f78b5022e0670ddb0937f} 
+\index{Image@{Image}!data@{data}}
+\index{data@{data}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{unsigned}} \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{char}}\texorpdfstring{$\ast$}{*} Image\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_image_a51df43db420c9c0b57536cb2dd36de5c}\label{class_image_a51df43db420c9c0b57536cb2dd36de5c} 
+\index{Image@{Image}!height@{height}}
+\index{height@{height}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image_ab8d12f635013c04159cd4d3d972bac88}{int}} Image\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_image_ab8d12f635013c04159cd4d3d972bac88}\label{class_image_ab8d12f635013c04159cd4d3d972bac88} 
+\index{Image@{Image}!width@{width}}
+\index{width@{width}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Image\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{_image_8h}{Image.\+h}}\item 
+Source/\mbox{\hyperlink{_image_8cpp}{Image.\+cpp}}\end{DoxyCompactItemize}

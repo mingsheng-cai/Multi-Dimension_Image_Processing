@@ -1,0 +1,13 @@
+<map id="Include/Filters/Box2DFilter.h" name="Include/Filters/Box2DFilter.h">
+<area shape="rect" id="Node000001" title="Implements a 2D box filter for image processing." alt="" coords="5,5,192,31"/>
+<area shape="rect" id="Node000002" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="20,153,89,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,33,65,54,49,80,45,109,49,137,43,138,39,109,44,78,61,50,81,29"/>
+<area shape="rect" id="Node000004" href="$_padding_8h.html" title=" " alt="" coords="59,79,138,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="101,31,101,63,96,63,96,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="130,153,187,178"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="115,30,135,51,153,78,161,108,163,137,157,137,156,109,148,80,131,54,111,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="28,226,81,252"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="57,179,57,211,52,211,52,179"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="94,106,72,141,68,138,89,103"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="110,103,141,139,137,142,106,107"/>
+</map>

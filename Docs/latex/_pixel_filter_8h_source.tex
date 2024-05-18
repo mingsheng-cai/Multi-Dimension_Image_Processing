@@ -1,0 +1,55 @@
+\doxysection{Pixel\+Filter.\+h}
+\hypertarget{_pixel_filter_8h_source}{}\label{_pixel_filter_8h_source}\index{Include/Filters/PixelFilter.h@{Include/Filters/PixelFilter.h}}
+\mbox{\hyperlink{_pixel_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_PIXELFILTER\_H}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_PIXELFILTER\_H}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_image_8h}{Image.h}}>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_filter_8h}{Filters/Filter.h}}>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_filter2_d}{IFilter2D}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ std::string\ \mbox{\hyperlink{class_pixel_filter_a1efe5d470e6bc3ea6c15119af9036d46}{filterType}};\ \textcolor{comment}{//\ "{}grayscale"{},\ "{}brightness"{},\ "{}histogram"{},\ "{}threshold"{},\ "{}noise"{}}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pixel_filter_a2b50bd74e4306c304b9c558caf48cd99}{brightness}}\ =\ 128;\ \textcolor{comment}{//\ Default\ brightness}}
+\DoxyCodeLine{00039\ \ \ \ \ std::string\ \mbox{\hyperlink{class_pixel_filter_a5fd02e751fd91a4bcdd1879d4e068333}{space}};\ \textcolor{comment}{//\ "{}HSL"{}\ or\ "{}HSV"{}}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pixel_filter_a9568872709d9e92cfdad45d7e4c4641f}{threshold}}\ =\ 0;\ \textcolor{comment}{//\ Threshold\ value}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_pixel_filter_ade00adaf8d440d1fc43afa5405d7a7bf}{percentage}}\ =\ 0;\ \textcolor{comment}{//\ Percentage\ of\ noise}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_a8743f159b8015bc45089df80f4a7785b}{convertToGrayscale}}(\mbox{\hyperlink{class_image}{Image}}\ \&image);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_a131f0b64ba792d65b9b79bc7c5534489}{adjustBrightness}}(\mbox{\hyperlink{class_image}{Image}}\ \&image);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_a9a888de61e984d364ac38f264f2728d7}{equalizeHistogram}}(\mbox{\hyperlink{class_image}{Image}}\ \&image);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_a2d4fa2c9199eb58e47213bdeacda14bc}{thresholdPixel}}(\mbox{\hyperlink{class_image}{Image}}\ \&image);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_ade7340f63e451a214329bb29aedabdf6}{addNoise}}(\mbox{\hyperlink{class_image}{Image}}\ \&image);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_a80ed72f4a8b64136375ae92cd092935a}{calculateHistogramAndCDF}}(\textcolor{keyword}{const}\ std::vector<float>\ \&channel,\ std::vector<int>\ \&histogram,\ std::vector<int>\ \&cdf);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_a16bf4f3e81a73264a9136fb256dbac15}{applyCDF}}(std::vector<float>\ \&channel,\ \textcolor{keyword}{const}\ std::vector<int>\ \&cdf);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_a4e5091b941e75ec3c336c71fabd2149e}{RGBtoHSV}}(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ \&h,\ \textcolor{keywordtype}{float}\ \&s,\ \textcolor{keywordtype}{float}\ \&v);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_a95101216c5637eb753e2ab41e457b151}{HSVtoRGB}}(\textcolor{keywordtype}{float}\ h,\ \textcolor{keywordtype}{float}\ s,\ \textcolor{keywordtype}{float}\ v,\ \textcolor{keywordtype}{float}\ \&r,\ \textcolor{keywordtype}{float}\ \&g,\ \textcolor{keywordtype}{float}\ \&b);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_aa1a92f872649d6668b7ed6e92adebcd0}{RGBtoHSL}}(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ \&h,\ \textcolor{keywordtype}{float}\ \&s,\ \textcolor{keywordtype}{float}\ \&l);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_ab3511f9c7a64f8dde2778621db5f4028}{HSLtoRGB}}(\textcolor{keywordtype}{float}\ h,\ \textcolor{keywordtype}{float}\ s,\ \textcolor{keywordtype}{float}\ l,\ \textcolor{keywordtype}{float}\ \&r,\ \textcolor{keywordtype}{float}\ \&g,\ \textcolor{keywordtype}{float}\ \&b);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{class_pixel_filter_ab206db8818869dd8c77017b79158ba4a}{PixelFilter}}(\textcolor{keyword}{const}\ std::string\ \&type,\ \textcolor{keyword}{const}\ std::optional<int>\ \&\mbox{\hyperlink{class_pixel_filter_a2b50bd74e4306c304b9c558caf48cd99}{brightness}}\ =\ std::nullopt,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_pixel_filter_a5fd02e751fd91a4bcdd1879d4e068333}{space}}\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pixel_filter_a9568872709d9e92cfdad45d7e4c4641f}{threshold}}\ =\ 0,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_pixel_filter_ade00adaf8d440d1fc43afa5405d7a7bf}{percentage}}\ =\ 0);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{apply}}(\mbox{\hyperlink{class_image}{Image}}\ \&image)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00227\ \};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_PIXELFILTER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,23 @@
+<map id="Source/Filters/Gaussian2DFilter.cpp" name="Source/Filters/Gaussian2DFilter.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the Gaussian2DFilter class for applying a Gaussian blur to images." alt="" coords="196,5,364,46"/>
+<area shape="rect" id="Node000002" href="$_gaussian2_d_filter_8h.html" title="Implements a Gaussian 2D filter for image blurring." alt="" coords="36,94,209,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,49,161,89,159,84,239,44"/>
+<area shape="rect" id="Node000005" href="$_padding_8h.html" title=" " alt="" coords="5,168,85,193"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="196,41,93,62,51,78,26,96,20,109,20,123,31,153,26,155,15,124,15,108,22,92,49,73,92,57,195,35"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="144,241,202,267"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="273,48,187,228,183,226,268,46"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="284,94,342,120"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="290,45,304,78,300,81,285,47"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="366,94,444,120"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="312,44,374,83,371,88,309,49"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="468,94,529,120"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="335,44,454,87,453,92,333,49"/>
+<area shape="rect" id="Node000003" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="32,241,101,267"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,121,99,194,83,229,78,227,95,192,117,119"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="111,122,71,159,67,155,107,118"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="129,119,166,225,161,227,124,121"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="40,315,93,341"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="69,267,69,299,64,299,64,267"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="51,193,61,226,56,227,46,194"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="68,192,139,231,137,236,65,196"/>
+</map>

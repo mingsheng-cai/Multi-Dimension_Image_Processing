@@ -1,0 +1,135 @@
+\doxysection{Test\+Projection.\+h}
+\hypertarget{_test_projection_8h_source}{}\label{_test_projection_8h_source}\index{Tests/TestProjection.h@{Tests/TestProjection.h}}
+\mbox{\hyperlink{_test_projection_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_projection_8h}{Projection.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <algorithm>}\ \ \textcolor{comment}{//\ For\ std::sort}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <numeric>}\ \ \ \ \textcolor{comment}{//\ For\ std::accumulate}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_projection}{TestProjection}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_projection_a8c82c91ba09f1ea0267672e9c99f8c8b}{testMaximumIntensityProjection}}()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width\ =\ 2,\ height\ =\ 2,\ depth\ =\ 2;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ data\ =\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 2,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3,\ 4,}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5,\ 6,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7,\ 8}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \};\ \ \textcolor{comment}{//\ 2x2x2\ Volume\ Data}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ mip\ =\ \mbox{\hyperlink{class_projection_a6916800ca91f16f57f804b643acd47e4}{Projection::maximumIntensityProjection}}(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ expectedMIP\ =\ \{5,\ 6,\ 7,\ 8\};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ assert(mip\ ==\ expectedMIP);}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_projection_a3fc361c8763cd8cd1a4dcb2c35162afa}{testMinimumIntensityProjection}}()\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width\ =\ 2,\ height\ =\ 2,\ depth\ =\ 2;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ data\ =\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 2,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3,\ 4,}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5,\ 6,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7,\ 8}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \};\ \ \textcolor{comment}{//\ 2x2x2\ Volume\ Data}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ minip\ =\ \mbox{\hyperlink{class_projection_a83d347abde84c9eb41a3ec95498ef792}{Projection::minimumIntensityProjection}}(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ expectedMinIP\ =\ \{1,\ 2,\ 3,\ 4\};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ assert(minip\ ==\ expectedMinIP);}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_projection_acbaf7d060cf1bb255473c3fbc0aad013}{testAverageIntensityProjection}}()\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width\ =\ 2,\ height\ =\ 2,\ depth\ =\ 2;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ data\ =\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 2,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3,\ 4,}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5,\ 6,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7,\ 8}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \};\ \ \textcolor{comment}{//\ 2x2x2\ Volume\ Data}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ aip\ =\ \mbox{\hyperlink{class_projection_ab67fe86542e567a58c6164698978ece0}{Projection::averageIntensityProjection}}(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ expectedAIP\ =\ \{3,\ 4,\ 5,\ 6\};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ assert(aip\ ==\ expectedAIP);}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_projection_af3bf3266a6c2586a2927f316889525d0}{testMedianIntensityProjection}}()\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width\ =\ 2,\ height\ =\ 2,\ depth\ =\ 2;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ data\ =\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ 6,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3,\ 8,}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5,\ 2,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7,\ 4}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \};\ \ \textcolor{comment}{//\ 2x2x2\ Volume\ Data}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ medip\ =\ \mbox{\hyperlink{class_projection_a30e2d3e02b13e74f6574f1d062465947}{Projection::medianIntensityProjection}}(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ expectedMedIP\ =\ \{3,\ 4,\ 5,\ 6\};\ \ \textcolor{comment}{//\ Sorted:\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ assert(medip\ ==\ expectedMedIP);}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_projection_aef2ac3900cf33edd0d60eb91a42039a9}{testSingleLayerVolumeProjection}}()\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width\ =\ 2,\ height\ =\ 2,\ depth\ =\ 1;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ data\ =\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10,\ 20,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 30,\ 40}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \};\ \ \textcolor{comment}{//\ 2x2x1\ Volume\ Data}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ All\ projections\ should\ be\ the\ same\ as\ the\ input\ data}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ mip\ =\ \mbox{\hyperlink{class_projection_a6916800ca91f16f57f804b643acd47e4}{Projection::maximumIntensityProjection}}(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ minip\ =\ \mbox{\hyperlink{class_projection_a83d347abde84c9eb41a3ec95498ef792}{Projection::minimumIntensityProjection}}(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ aip\ =\ \mbox{\hyperlink{class_projection_ab67fe86542e567a58c6164698978ece0}{Projection::averageIntensityProjection}}(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ medip\ =\ \mbox{\hyperlink{class_projection_a30e2d3e02b13e74f6574f1d062465947}{Projection::medianIntensityProjection}}(width,\ height,\ depth,\ data.data());}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ assert(mip\ ==\ data\ \&\&\ minip\ ==\ data\ \&\&\ aip\ ==\ data\ \&\&\ medip\ ==\ data);}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_projection_a02117ab82998a7d378a9df7dcd3e4c4c}{testNullDataProjection}}()\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width\ =\ 2,\ height\ =\ 2,\ depth\ =\ 2;}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ data\ pointer\ is\ null}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ mip\ =\ \mbox{\hyperlink{class_projection_a6916800ca91f16f57f804b643acd47e4}{Projection::maximumIntensityProjection}}(width,\ height,\ depth,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ minip\ =\ \mbox{\hyperlink{class_projection_a83d347abde84c9eb41a3ec95498ef792}{Projection::minimumIntensityProjection}}(width,\ height,\ depth,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ aip\ =\ \mbox{\hyperlink{class_projection_ab67fe86542e567a58c6164698978ece0}{Projection::averageIntensityProjection}}(width,\ height,\ depth,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ medip\ =\ \mbox{\hyperlink{class_projection_a30e2d3e02b13e74f6574f1d062465947}{Projection::medianIntensityProjection}}(width,\ height,\ depth,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 预期所有方法返回空向量}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ assert(mip.empty()\ \&\&\ minip.empty()\ \&\&\ aip.empty()\ \&\&\ medip.empty());}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_projection_a50dd861bd9d6b3382185fd04c8f7c852}{testZeroVolumeDataProjection}}()\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ width\ =\ 2,\ height\ =\ 2,\ depth\ =\ 2;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ zeroData(width\ *\ height\ *\ depth,\ 0);\ \textcolor{comment}{//\ All\ zeros}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ mip\ =\ \mbox{\hyperlink{class_projection_a6916800ca91f16f57f804b643acd47e4}{Projection::maximumIntensityProjection}}(width,\ height,\ depth,\ zeroData.data());}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ minip\ =\ \mbox{\hyperlink{class_projection_a83d347abde84c9eb41a3ec95498ef792}{Projection::minimumIntensityProjection}}(width,\ height,\ depth,\ zeroData.data());}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ aip\ =\ \mbox{\hyperlink{class_projection_ab67fe86542e567a58c6164698978ece0}{Projection::averageIntensityProjection}}(width,\ height,\ depth,\ zeroData.data());}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ medip\ =\ \mbox{\hyperlink{class_projection_a30e2d3e02b13e74f6574f1d062465947}{Projection::medianIntensityProjection}}(width,\ height,\ depth,\ zeroData.data());}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ all\ projection\ methods,\ the\ result\ should\ be\ a\ projection\ of\ zeros}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ expectedProjection(width\ *\ height,\ 0);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ assert(mip\ ==\ expectedProjection\ \&\&\ minip\ ==\ expectedProjection\ \&\&\ aip\ ==\ expectedProjection\ \&\&\ medip\ ==\ expectedProjection);}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_projection_a41fa1a4a21526e1f64f7c5ac7a433e08}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ runTest<TestProjection>(\&\mbox{\hyperlink{class_test_projection_a8c82c91ba09f1ea0267672e9c99f8c8b}{TestProjection::testMaximumIntensityProjection}},\ \textcolor{stringliteral}{"{}Maximum\ Intensity\ Projection"{}});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ runTest<TestProjection>(\&\mbox{\hyperlink{class_test_projection_a3fc361c8763cd8cd1a4dcb2c35162afa}{TestProjection::testMinimumIntensityProjection}},\ \textcolor{stringliteral}{"{}Minimum\ Intensity\ Projection"{}});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ runTest<TestProjection>(\&\mbox{\hyperlink{class_test_projection_acbaf7d060cf1bb255473c3fbc0aad013}{TestProjection::testAverageIntensityProjection}},\ \textcolor{stringliteral}{"{}Average\ Intensity\ Projection"{}});}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ runTest<TestProjection>(\&\mbox{\hyperlink{class_test_projection_af3bf3266a6c2586a2927f316889525d0}{TestProjection::testMedianIntensityProjection}},\ \textcolor{stringliteral}{"{}Median\ Intensity\ Projection"{}});}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ runTest<TestProjection>(\&\mbox{\hyperlink{class_test_projection_aef2ac3900cf33edd0d60eb91a42039a9}{TestProjection::testSingleLayerVolumeProjection}},\ \textcolor{stringliteral}{"{}Single\ Layer\ Volume\ Projection"{}});}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ runTest<TestProjection>(\&\mbox{\hyperlink{class_test_projection_a02117ab82998a7d378a9df7dcd3e4c4c}{TestProjection::testNullDataProjection}},\ \textcolor{stringliteral}{"{}Null\ Data\ Projection"{}});}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ runTest<TestProjection>(\&\mbox{\hyperlink{class_test_projection_a50dd861bd9d6b3382185fd04c8f7c852}{TestProjection::testZeroVolumeDataProjection}},\ \textcolor{stringliteral}{"{}Zero\ Volume\ Data\ Projection"{}});}
+\DoxyCodeLine{00218\ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \};}
+
+\end{DoxyCode}

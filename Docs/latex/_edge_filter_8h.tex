@@ -1,0 +1,100 @@
+\doxysection{Include/\+Filters/\+Edge\+Filter.h File Reference}
+\hypertarget{_edge_filter_8h}{}\label{_edge_filter_8h}\index{Include/Filters/EdgeFilter.h@{Include/Filters/EdgeFilter.h}}
+
+
+Implements edge detection filters for image processing.  
+
+
+{\ttfamily \#include "{}Image.\+h"{}}\newline
+{\ttfamily \#include "{}Padding.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Edge\+Filter.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{_edge_filter_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{_edge_filter_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_edge_filter}{Edge\+Filter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_edge_filter_8h_a7cfd6eeaed702134a1fe5cb83b9d70b2}{ADVANCED\+\_\+\+PROGRAMMING\+\_\+\+GROUP\+\_\+\+RADIX\+\_\+\+SORT\+\_\+\+EDGEFILTER\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}} \{ \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa72e4f1a61efb42bee3f652fcf5db32b8}{Sobel}}
+, \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fab0668738b1f82bdb33252275c3ce2d2d}{Prewitt}}
+, \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa282e20fff4400a817ff7fd1661dbf16c}{Scharr}}
+, \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa212631b80d2d1153eba86248e06d0ced}{Roberts}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements edge detection filters for image processing. 
+
+The \doxylink{class_edge_filter}{Edge\+Filter} class enables edge detection in images through the application of various edge detection algorithms, including Sobel, Prewitt, Scharr, and Roberts filters. It allows for customization of the filter type and padding strategy, accommodating different requirements for edge detection tasks. This class facilitates the extraction of edges, which is a crucial step in many image processing applications such as feature detection, image segmentation, and object recognition. Developed by the Advanced Programming Group, this tool enhances the capabilities for image analysis and processing.
+
+\begin{DoxyDate}{Date}
+Created on March 21, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_edge_filter_8h_a7cfd6eeaed702134a1fe5cb83b9d70b2}\label{_edge_filter_8h_a7cfd6eeaed702134a1fe5cb83b9d70b2} 
+\index{EdgeFilter.h@{EdgeFilter.h}!ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_EDGEFILTER\_H@{ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_EDGEFILTER\_H}}
+\index{ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_EDGEFILTER\_H@{ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_EDGEFILTER\_H}!EdgeFilter.h@{EdgeFilter.h}}
+\doxysubsubsection{\texorpdfstring{ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_EDGEFILTER\_H}{ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_EDGEFILTER\_H}}
+{\footnotesize\ttfamily \#define ADVANCED\+\_\+\+PROGRAMMING\+\_\+\+GROUP\+\_\+\+RADIX\+\_\+\+SORT\+\_\+\+EDGEFILTER\+\_\+H}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}\label{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f} 
+\index{EdgeFilter.h@{EdgeFilter.h}!FilterType@{FilterType}}
+\index{FilterType@{FilterType}!EdgeFilter.h@{EdgeFilter.h}}
+\doxysubsubsection{\texorpdfstring{FilterType}{FilterType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sobel@{Sobel}!EdgeFilter.h@{EdgeFilter.h}}\index{EdgeFilter.h@{EdgeFilter.h}!Sobel@{Sobel}}}\Hypertarget{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa72e4f1a61efb42bee3f652fcf5db32b8}\label{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa72e4f1a61efb42bee3f652fcf5db32b8} 
+Sobel&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Prewitt@{Prewitt}!EdgeFilter.h@{EdgeFilter.h}}\index{EdgeFilter.h@{EdgeFilter.h}!Prewitt@{Prewitt}}}\Hypertarget{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fab0668738b1f82bdb33252275c3ce2d2d}\label{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fab0668738b1f82bdb33252275c3ce2d2d} 
+Prewitt&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Scharr@{Scharr}!EdgeFilter.h@{EdgeFilter.h}}\index{EdgeFilter.h@{EdgeFilter.h}!Scharr@{Scharr}}}\Hypertarget{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa282e20fff4400a817ff7fd1661dbf16c}\label{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa282e20fff4400a817ff7fd1661dbf16c} 
+Scharr&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Roberts@{Roberts}!EdgeFilter.h@{EdgeFilter.h}}\index{EdgeFilter.h@{EdgeFilter.h}!Roberts@{Roberts}}}\Hypertarget{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa212631b80d2d1153eba86248e06d0ced}\label{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa212631b80d2d1153eba86248e06d0ced} 
+Roberts&\\
+\hline
+
+\end{DoxyEnumFields}

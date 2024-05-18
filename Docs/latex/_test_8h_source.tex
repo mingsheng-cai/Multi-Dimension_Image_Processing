@@ -1,0 +1,51 @@
+\doxysection{Test.\+h}
+\hypertarget{_test_8h_source}{}\label{_test_8h_source}\index{Tests/Test.h@{Tests/Test.h}}
+\mbox{\hyperlink{_test_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}}()\ \{\}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\string~Test}}()\ \{\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TestClass,\ \textcolor{keyword}{typename}\ TestFunc>}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{runTest}}(TestFunc\ testFunc,\ \textcolor{keyword}{const}\ std::string\ \&testName)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Starting\ test:\ "{}}\ <<\ testName\ <<\ std::endl;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{static\_cast<}TestClass\ *\textcolor{keyword}{>}(\textcolor{keyword}{this})-\/>*testFunc)();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Test\ passed:\ "{}}\ <<\ testName\ <<\ std::endl;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{totalTestsPassed}}++;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\ \&e)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Test\ failed:\ "{}}\ <<\ testName\ <<\ \textcolor{stringliteral}{"{}\ -\/\ Reason:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{totalTestsFailed}}++;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{totalTestsRun}}++;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{runTests}}()\ =\ 0;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}}()\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Tests\ completed.\ Total:\ "{}}\ <<\ \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{totalTestsRun}}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Passed:\ "{}}\ <<\ \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{totalTestsPassed}}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ Failed:\ "{}}\ <<\ \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{totalTestsFailed}}\ <<\ std::endl;}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{totalTestsRun}};\ \textcolor{comment}{//\ Total\ number\ of\ tests\ run}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{totalTestsPassed}};\ \textcolor{comment}{//\ Total\ number\ of\ tests\ passed}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{totalTestsFailed}};\ \textcolor{comment}{//\ Total\ number\ of\ tests\ failed}}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ Initialize\ static\ member\ variables}}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{Test::totalTestsRun}}\ =\ 0;}
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{Test::totalTestsPassed}}\ =\ 0;}
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{Test::totalTestsFailed}}\ =\ 0;}
+
+\end{DoxyCode}

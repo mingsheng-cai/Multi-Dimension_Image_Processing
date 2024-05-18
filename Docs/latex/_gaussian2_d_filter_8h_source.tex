@@ -1,0 +1,35 @@
+\doxysection{Gaussian2\+DFilter.\+h}
+\hypertarget{_gaussian2_d_filter_8h_source}{}\label{_gaussian2_d_filter_8h_source}\index{Include/Filters/Gaussian2DFilter.h@{Include/Filters/Gaussian2DFilter.h}}
+\mbox{\hyperlink{_gaussian2_d_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_GAUSSIAN2DFILTER\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_GAUSSIAN2DFILTER\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_padding_8h}{Padding.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gaussian2_d_filter}{Gaussian2DFilter}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ std::vector\ <std::vector<double>>\ \mbox{\hyperlink{class_gaussian2_d_filter_a404fd6b1492b45a27ef8bd95aa7d92c2}{kernel}};\ \textcolor{comment}{//\ Gaussian\ kernel}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gaussian2_d_filter_a50869eeb9aab50b1cb52d72ab1c1c75a}{sigma}};\ \textcolor{comment}{//\ standard\ deviation}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gaussian2_d_filter_ac0ccfd77cb39766a5c4cd6c0e12be2e1}{kernelSize}};\ \textcolor{comment}{//\ size\ of\ the\ kernel}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{PaddingType}}\ \mbox{\hyperlink{class_gaussian2_d_filter_ae8205d3d7edd450de77de60df99b2652}{paddingType}};\ \textcolor{comment}{//\ padding\ type}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gaussian2_d_filter_acf8f63c4d8f378258257fd7489016759}{generateKernel}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_gaussian2_d_filter_af338e4f4abf52033dd0c04edf973a67b}{Gaussian2DFilter}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gaussian2_d_filter_ac0ccfd77cb39766a5c4cd6c0e12be2e1}{kernelSize}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gaussian2_d_filter_a50869eeb9aab50b1cb52d72ab1c1c75a}{sigma}}\ =\ 1.0,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727}{PaddingType}}\ \mbox{\hyperlink{class_gaussian2_d_filter_ae8205d3d7edd450de77de60df99b2652}{paddingType}}\ =\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00079\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{class_gaussian2_d_filter_a0aba447a49c10fd291e893d2d6b87e52}{getKernel}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gaussian2_d_filter_a7d636ff0d4cb84c394847f259d4fcbda}{apply}}(\mbox{\hyperlink{class_image}{Image}}\ \&image)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_GAUSSIAN2DFILTER\_H}}
+
+\end{DoxyCode}

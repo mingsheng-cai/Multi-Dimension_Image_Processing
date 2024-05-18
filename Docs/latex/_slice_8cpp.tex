@@ -1,0 +1,39 @@
+\doxysection{Source/\+Slice.cpp File Reference}
+\hypertarget{_slice_8cpp}{}\label{_slice_8cpp}\index{Source/Slice.cpp@{Source/Slice.cpp}}
+
+
+Implements functionality to extract 2D slices from a 3D volume.  
+
+
+{\ttfamily \#include "{}Slice.\+h"{}}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Slice.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_slice_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implements functionality to extract 2D slices from a 3D volume. 
+
+The \doxylink{class_slice}{Slice} class provides a method for extracting specific 2D slices from a 3D volumetric dataset, based on given dimensions, raw data, and the desired orientation. The class supports extraction along the \textquotesingle{}x-\/y\textquotesingle{}, \textquotesingle{}x-\/z\textquotesingle{}, and \textquotesingle{}y-\/z\textquotesingle{} planes, accommodating a range of visualization and analysis needs. This flexibility allows users to examine the internal structure of the volume from different perspectives, facilitating a deeper understanding of the data. The method validates the requested slice index and plane orientation, ensuring the integrity of the returned slice. It serves as a crucial tool in domains where 3D volumetric data is prevalent, such as medical imaging, geospatial analysis, and scientific research, by simplifying the process of volumetric data exploration.
+
+\begin{DoxyDate}{Date}
+Created on March 18, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

@@ -1,0 +1,131 @@
+\doxysection{Projection Class Reference}
+\hypertarget{class_projection}{}\label{class_projection}\index{Projection@{Projection}}
+
+
+{\ttfamily \#include $<$Projection.\+h$>$}
+
+
+
+Collaboration diagram for Projection\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_projection__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{class_projection_a6916800ca91f16f57f804b643acd47e4}{maximum\+Intensity\+Projection}} (int width, int height, int depth, const unsigned char \texorpdfstring{$\ast$}{*}data)
+\item 
+static std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{class_projection_a83d347abde84c9eb41a3ec95498ef792}{minimum\+Intensity\+Projection}} (int width, int height, int depth, const unsigned char \texorpdfstring{$\ast$}{*}data)
+\item 
+static std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{class_projection_ab67fe86542e567a58c6164698978ece0}{average\+Intensity\+Projection}} (int width, int height, int depth, const unsigned char \texorpdfstring{$\ast$}{*}data)
+\item 
+static std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{class_projection_a30e2d3e02b13e74f6574f1d062465947}{median\+Intensity\+Projection}} (int width, int height, int depth, const unsigned char \texorpdfstring{$\ast$}{*}data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_projection_ab67fe86542e567a58c6164698978ece0}\label{class_projection_ab67fe86542e567a58c6164698978ece0} 
+\index{Projection@{Projection}!averageIntensityProjection@{averageIntensityProjection}}
+\index{averageIntensityProjection@{averageIntensityProjection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{averageIntensityProjection()}{averageIntensityProjection()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned char $>$ Projection\+::average\+Intensity\+Projection (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Computes the Average Intensity \doxylink{class_projection}{Projection} (AIP) of a 3D volume
+
+This static member function of the \doxylink{class_projection}{Projection} class calculates the Average Intensity \doxylink{class_projection}{Projection} of a given 3D volume. AIP is a volume rendering method that projects the average intensity value of voxels along a particular direction, in this case, the z-\/axis, onto a 2D plane. It iterates through each voxel in the volume, accumulates the intensity values for each (x, y) position on the projection plane, and divides the total by the depth of the volume. The result is a 2D image where each pixel represents the average intensity value found at that (x, y) position through the entire depth of the volume. AIP is useful for visualizing the general structure and distribution of densities within the volume.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+{\em data} & A pointer to the volume\textquotesingle{}s raw data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A vector of unsigned char representing the 2D AIP image. 
+\end{DoxyReturn}
+\Hypertarget{class_projection_a6916800ca91f16f57f804b643acd47e4}\label{class_projection_a6916800ca91f16f57f804b643acd47e4} 
+\index{Projection@{Projection}!maximumIntensityProjection@{maximumIntensityProjection}}
+\index{maximumIntensityProjection@{maximumIntensityProjection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{maximumIntensityProjection()}{maximumIntensityProjection()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned char $>$ Projection\+::maximum\+Intensity\+Projection (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Computes the Maximum Intensity \doxylink{class_projection}{Projection} (MIP) of a 3D volume
+
+This static member function of the \doxylink{class_projection}{Projection} class calculates the Maximum Intensity \doxylink{class_projection}{Projection} of a given 3D volume. MIP is a volume rendering method that projects the voxel with the highest intensity value along a particular direction, in this case, the z-\/axis (depth), onto a 2D plane. This function iterates through each voxel in the volume and, for each (x, y) position on the projection plane, it selects the maximum intensity value found along the z-\/axis. The result is a 2D image (represented as a vector of unsigned char) where each pixel corresponds to the maximum intensity value found at that (x, y) position through the entire depth of the volume. This technique is commonly used in medical imaging to highlight areas of highest density or intensity in volumetric data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+{\em data} & A pointer to the volume\textquotesingle{}s raw data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A vector of unsigned char representing the 2D MIP image. 
+\end{DoxyReturn}
+\Hypertarget{class_projection_a30e2d3e02b13e74f6574f1d062465947}\label{class_projection_a30e2d3e02b13e74f6574f1d062465947} 
+\index{Projection@{Projection}!medianIntensityProjection@{medianIntensityProjection}}
+\index{medianIntensityProjection@{medianIntensityProjection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{medianIntensityProjection()}{medianIntensityProjection()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned char $>$ Projection\+::median\+Intensity\+Projection (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Computes the Median Intensity \doxylink{class_projection}{Projection} (Med\+IP) of a 3D volume
+
+This static member function of the \doxylink{class_projection}{Projection} class calculates the Median Intensity \doxylink{class_projection}{Projection} of a given 3D volume. Med\+IP is a volume rendering technique that projects the median intensity value of voxels along a specific direction, in this case, the z-\/axis, onto a 2D plane. This function iterates through each voxel in the volume and, for each (x, y) position on the projection plane, it selects the median intensity value found along the z-\/axis from the depth of the volume. The median is determined using the quickselect algorithm for efficiency. The result is a 2D image where each pixel represents the median intensity value at that (x, y) position throughout the entire depth of the volume. Med\+IP can provide a balanced visualization that may reduce the impact of outliers in highly variable volumetric data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+{\em data} & A pointer to the volume\textquotesingle{}s raw data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A vector of unsigned char representing the 2D Med\+IP image. 
+\end{DoxyReturn}
+\Hypertarget{class_projection_a83d347abde84c9eb41a3ec95498ef792}\label{class_projection_a83d347abde84c9eb41a3ec95498ef792} 
+\index{Projection@{Projection}!minimumIntensityProjection@{minimumIntensityProjection}}
+\index{minimumIntensityProjection@{minimumIntensityProjection}!Projection@{Projection}}
+\doxysubsubsection{\texorpdfstring{minimumIntensityProjection()}{minimumIntensityProjection()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned char $>$ Projection\+::minimum\+Intensity\+Projection (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Computes the Minimum Intensity \doxylink{class_projection}{Projection} (Min\+IP) of a 3D volume
+
+This static member function of the \doxylink{class_projection}{Projection} class calculates the Minimum Intensity \doxylink{class_projection}{Projection} of a given 3D volume. Min\+IP is a volume rendering technique that projects the voxel with the lowest intensity value along a specific direction, in this case, the z-\/axis (depth), onto a 2D plane. This function iterates through each voxel in the volume and, for each (x, y) position on the projection plane, it selects the minimum intensity value found along the z-\/axis. The result is a 2D image (represented as a vector of unsigned char) where each pixel corresponds to the minimum intensity value found at that (x, y) position throughout the entire depth of the volume. This technique can be useful for visualizing low-\/density areas in volumetric data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+{\em data} & A pointer to the volume\textquotesingle{}s raw data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A vector of unsigned char representing the 2D Min\+IP image. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{_projection_8h}{Projection.\+h}}\item 
+Source/\mbox{\hyperlink{_projection_8cpp}{Projection.\+cpp}}\end{DoxyCompactItemize}

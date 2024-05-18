@@ -1,0 +1,110 @@
+\doxysection{Test\+Median2\+DFilter.\+h}
+\hypertarget{_test_median2_d_filter_8h_source}{}\label{_test_median2_d_filter_8h_source}\index{Tests/TestMedian2DFilter.h@{Tests/TestMedian2DFilter.h}}
+\mbox{\hyperlink{_test_median2_d_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_median2_d_filter_8h}{Filters/Median2DFilter.h}}"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_median2_d_filter}{TestMedian2DFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_median2_d_filter_a8f8fad432d532ecd725460fe0f8133fb}{testApplyMedianFilter}}()\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ simple\ 5x5\ image\ with\ a\ distinct\ pattern}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[25]\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10,\ 10,\ 80,\ 80,\ 10,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10,\ 80,\ 80,\ 80,\ 10,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 80,\ 80,\ 80,\ 80,\ 80,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10,\ 80,\ 80,\ 80,\ 10,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10,\ 10,\ 80,\ 10,\ 10}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ the\ median\ filter\ with\ a\ 3x3\ kernel\ and\ zero\ padding}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_median2_d_filter}{Median2DFilter}}\ medianFilter(3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ medianFilter.apply(img);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ the\ center\ pixel\ value\ after\ filtering}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data\ =\ img.getData();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Expected\ center\ value\ is\ 80,\ which\ is\ the\ median\ of\ the\ 3x3\ kernel}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ expectedCenterValue\ =\ 80;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ assert(data[12]\ ==\ expectedCenterValue\ \&\&\ \textcolor{stringliteral}{"{}Median\ filter\ application\ failed\ at\ center\ pixel."{}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Median2DFilter\ application\ test\ passed."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_median2_d_filter_afc660edd4a11e26aba3a0c141a28370f}{testEdgeHandling}}()\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Image\ with\ a\ distinct\ pattern\ for\ edge\ handling\ test}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[25]\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 255,\ 0,\ 255,\ 0,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 0,\ 255,\ 0,\ 255,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 255,\ 0,\ 255,\ 0,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 0,\ 255,\ 0,\ 255,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 255,\ 0,\ 255,\ 0}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_median2_d_filter}{Median2DFilter}}\ filter(3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727aa2a37ff39ba0a8406fae10e369442020}{PaddingType::ReflectPadding}});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ filter.apply(img);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ the\ corner\ pixel\ values\ after\ filtering}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data\ =\ img.getData();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ assert(data[0]\ !=\ 0\ \&\&\ data[0]\ !=\ 255\ \&\&\ \textcolor{stringliteral}{"{}Edge\ handling\ failed\ for\ top-\/left\ corner."{}});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ assert(data[24]\ !=\ 0\ \&\&\ data[24]\ !=\ 255\ \&\&\ \textcolor{stringliteral}{"{}Edge\ handling\ failed\ for\ bottom-\/right\ corner."{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_median2_d_filter_a1f5b159d2ab5a9eaa2d3171db220eeb5}{testNoiseReduction}}()\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[25]\{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 0,\ 255,\ 0,\ 255,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 255,\ 0,\ 255,\ 0,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 0,\ 255,\ 0,\ 255,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 255,\ 0,\ 255,\ 0,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 0,\ 255,\ 0,\ 255}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_median2_d_filter}{Median2DFilter}}\ filter(3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ filter.apply(img);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ the\ middle\ row\ pixel\ values\ after\ filtering}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data\ =\ img.getData();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 6;\ i\ <=\ 8;\ ++i)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ assert(data[i]\ ==\ 255\ \&\&\ \textcolor{stringliteral}{"{}Noise\ reduction\ failed\ in\ the\ middle\ row."{}});}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_median2_d_filter_a740891da6f43bb04bbe0974a5faa0582}{testDetailPreservation}}()\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ a\ 5x5\ image\ with\ a\ thin\ line\ in\ the\ center}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[25]\{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 255,\ 255,\ 255,\ 255,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 255,\ 255,\ 255,\ 255,}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 255,\ 255,\ 255,\ 255,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 255,\ 255,\ 255,\ 255,\ 255}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_median2_d_filter}{Median2DFilter}}\ filter(3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ filter.apply(img);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ line\ is\ preserved\ after\ filtering}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data\ =\ img.getData();}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ detailPreserved\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 10;\ i\ <\ 15;\ ++i)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data[i]\ !=\ 255)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ detailPreserved\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ assert(detailPreserved\ \&\&\ \textcolor{stringliteral}{"{}Detail\ preservation\ failed\ for\ the\ center\ line."{}});}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_median2_d_filter_abad664cc3c0f80d7eb67faa7d7330a06}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ runTest<TestMedian2DFilter>(\&\mbox{\hyperlink{class_test_median2_d_filter_a8f8fad432d532ecd725460fe0f8133fb}{TestMedian2DFilter::testApplyMedianFilter}},\ \textcolor{stringliteral}{"{}Apply\ Median2DFilter"{}});}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ runTest<TestMedian2DFilter>(\&\mbox{\hyperlink{class_test_median2_d_filter_afc660edd4a11e26aba3a0c141a28370f}{TestMedian2DFilter::testEdgeHandling}},\ \textcolor{stringliteral}{"{}Edge\ Handling"{}});}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ runTest<TestMedian2DFilter>(\&\mbox{\hyperlink{class_test_median2_d_filter_a1f5b159d2ab5a9eaa2d3171db220eeb5}{TestMedian2DFilter::testNoiseReduction}},\ \textcolor{stringliteral}{"{}Noise\ Reduction"{}});}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ runTest<TestMedian2DFilter>(\&\mbox{\hyperlink{class_test_median2_d_filter_a740891da6f43bb04bbe0974a5faa0582}{TestMedian2DFilter::testDetailPreservation}},\ \textcolor{stringliteral}{"{}Detail\ Preservation"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,125 @@
+\doxysection{Test\+Box2\+DFilter.\+h}
+\hypertarget{_test_box2_d_filter_8h_source}{}\label{_test_box2_d_filter_8h_source}\index{Tests/TestBox2DFilter.h@{Tests/TestBox2DFilter.h}}
+\mbox{\hyperlink{_test_box2_d_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_box2_d_filter_8h}{Filters/Box2DFilter.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <numeric>}\ \textcolor{comment}{//\ For\ std::accumulate}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <cmath>}\ \textcolor{comment}{//\ For\ std::pow\ and\ std::sqrt}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_box2_d_filter}{TestBox2DFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_test_box2_d_filter_a058382e3ffe5dd20729cd8ec6173eb14}{calculateVariance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_image}{Image}}\ \&image)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data\ =\ image.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalPixels\ =\ image.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ image.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ channels\ =\ image.\mbox{\hyperlink{class_image_a821f52f44e80051e48b3f2689ba48611}{getChannels}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ average\ pixel\ value}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0.0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ totalPixels;\ ++i)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Only\ consider\ the\ first\ channel\ for\ simplicity}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ data[i\ *\ channels];}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mean\ =\ sum\ /\ totalPixels;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ variance}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ variance\ =\ 0.0;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ totalPixels;\ ++i)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ variance\ +=\ std::pow(data[i\ *\ channels]\ -\/\ mean,\ 2);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ variance\ /=\ totalPixels;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ variance;}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_box2_d_filter_ad7ecc59a96c36b2613d072798e2ff7c9}{testUniformImage}}()\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[25]);\ \textcolor{comment}{//\ Create\ a\ 5x5\ image}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::fill\_n(img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}(),\ 25,\ 255);\ \textcolor{comment}{//\ Set\ all\ pixels\ to\ white}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_box2_d_filter}{Box2DFilter}}\ filter(3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ filter.\mbox{\hyperlink{class_box2_d_filter_a51383ee4ce8b8c3f75d955d936b871a6}{apply}}(img);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ input\ image\ is\ uniform,\ the\ output\ should\ also\ be\ uniform}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 25;\ ++i)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ assert(img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}()[i]\ ==\ 255\ \&\&\ \textcolor{stringliteral}{"{}Filtering\ a\ uniform\ image\ failed\ to\ produce\ uniform\ output."{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_box2_d_filter_a6cd72a1365faf0ac9722c33560fd4486}{testEdgePadding}}()\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ simple\ test\ image\ with\ a\ clear\ gradient\ from\ left\ to\ right}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(3,\ 3,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[9]\{255,\ 255,\ 255,\ 255,\ 0,\ 255,\ 255,\ 255,\ 255\});}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_box2_d_filter}{Box2DFilter}}\ filter(3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});\ \textcolor{comment}{//\ Use\ zero\ padding}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ filter.apply(img);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ the\ filter\ and\ check\ the\ edge\ pixels}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ assert(img.getData()[4]\ <=\ 0\ \&\&\ \textcolor{stringliteral}{"{}Edge\ padding\ with\ zero\ padding\ did\ not\ produce\ expected\ results."{}});}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_box2_d_filter_ab517a27a5f8fa0e03c9fa605cc2d7c33}{testGradientImage}}()\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ simple\ gradient\ image\ with\ 5\ pixels}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 1,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[5]\{0,\ 64,\ 128,\ 192,\ 255\});}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_box2_d_filter}{Box2DFilter}}\ filter(3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ filter.apply(img);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validate\ the\ output\ image\ by\ checking\ the\ smoothed\ gradient}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ assert(img.getData()[2]\ >=\ 120\ \&\&\ img.getData()[2]\ <=\ 136\ \&\&}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Filtering\ a\ gradient\ image\ did\ not\ produce\ smoothed\ output\ as\ expected."{}});}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_box2_d_filter_acf9e6419f45d88e6d6305f3c01607f55}{testLargeKernelFiltering}}()\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 初始化具有某种模式的图像数据，这里使用一个简单的5x5图像进行示例}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ imageData[25]\ =\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10,\ 20,\ 30,\ 40,\ 50,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 60,\ 70,\ 80,\ 90,\ 100,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 110,\ 120,\ 130,\ 140,\ 150,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 160,\ 170,\ 180,\ 190,\ 200,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 210,\ 220,\ 230,\ 240,\ 250}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ imageData);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 计算应用滤波器前的图像方差}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ originalVariance\ =\ \mbox{\hyperlink{class_test_box2_d_filter_a058382e3ffe5dd20729cd8ec6173eb14}{calculateVariance}}(img);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 使用5x5的核心尺寸进行滤波}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_box2_d_filter}{Box2DFilter}}\ filter(5,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});\ \textcolor{comment}{//\ 使用5x5的核心尺寸}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ filter.\mbox{\hyperlink{class_box2_d_filter_a51383ee4ce8b8c3f75d955d936b871a6}{apply}}(img);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 计算应用滤波器后的图像方差}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ filteredVariance\ =\ \mbox{\hyperlink{class_test_box2_d_filter_a058382e3ffe5dd20729cd8ec6173eb14}{calculateVariance}}(img);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 对结果进行某种形式的定量验证}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 预期方差较原始图像降低，这里假设阈值为原始方差的一定比例，例如0.5}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ expectedThreshold\ =\ originalVariance\ *\ 0.5;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ assert(filteredVariance\ <\ expectedThreshold\ \&\&\ \textcolor{stringliteral}{"{}Large\ kernel\ size\ did\ not\ smooth\ the\ image\ as\ expected."{}});}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}TestLargeKernelFiltering\ passed:\ Image\ smoothing\ with\ large\ kernel\ size\ verified."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_box2_d_filter_a8b2fb9e2d56ea6fa3a0bff8fc26a136f}{testReflectPaddingEdgeHandling}}()\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 创建一个简单的测试图像，边缘和中心有明显的差异}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(3,\ 3,\ 1,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[9]\{255,\ 255,\ 255,\ 255,\ 0,\ 255,\ 255,\ 255,\ 255\});}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_box2_d_filter}{Box2DFilter}}\ filter(3,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727aa2a37ff39ba0a8406fae10e369442020}{PaddingType::ReflectPadding}});\ \textcolor{comment}{//\ 使用反射填充策略}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ filter.apply(img);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 对反射填充处理后的边缘像素进行检查，预期与相邻中心像素相似}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ assert(img.getData()[0]\ ==\ img.getData()[4]\ \&\&\ \textcolor{stringliteral}{"{}Reflect\ padding\ did\ not\ handle\ edges\ as\ expected."{}});}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_box2_d_filter_a0451c1f83caea801251f71aab727f317}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ runTest<TestBox2DFilter>(\&\mbox{\hyperlink{class_test_box2_d_filter_ad7ecc59a96c36b2613d072798e2ff7c9}{TestBox2DFilter::testUniformImage}},\ \textcolor{stringliteral}{"{}Box\ Filter\ on\ a\ Uniform\ Image"{}});}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ runTest<TestBox2DFilter>(\&\mbox{\hyperlink{class_test_box2_d_filter_a6cd72a1365faf0ac9722c33560fd4486}{TestBox2DFilter::testEdgePadding}},\ \textcolor{stringliteral}{"{}Box\ Filter\ with\ Edge\ Padding"{}});}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ runTest<TestBox2DFilter>(\&\mbox{\hyperlink{class_test_box2_d_filter_ab517a27a5f8fa0e03c9fa605cc2d7c33}{TestBox2DFilter::testGradientImage}},\ \textcolor{stringliteral}{"{}Box\ Filter\ on\ a\ Gradient\ Image"{}});}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ runTest<TestBox2DFilter>(\&\mbox{\hyperlink{class_test_box2_d_filter_acf9e6419f45d88e6d6305f3c01607f55}{TestBox2DFilter::testLargeKernelFiltering}},\ \textcolor{stringliteral}{"{}Box\ Filter\ with\ Large\ Kernel\ Size"{}});}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ runTest<TestBox2DFilter>(\&\mbox{\hyperlink{class_test_box2_d_filter_a8b2fb9e2d56ea6fa3a0bff8fc26a136f}{TestBox2DFilter::testReflectPaddingEdgeHandling}},\ \textcolor{stringliteral}{"{}Box\ Filter\ with\ Reflect\ Padding"{}});}
+\DoxyCodeLine{00207\ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \};}
+
+\end{DoxyCode}

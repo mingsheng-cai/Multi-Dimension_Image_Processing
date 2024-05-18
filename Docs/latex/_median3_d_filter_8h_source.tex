@@ -1,0 +1,32 @@
+\doxysection{Median3\+DFilter.\+h}
+\hypertarget{_median3_d_filter_8h_source}{}\label{_median3_d_filter_8h_source}\index{Include/Filters/Median3DFilter.h@{Include/Filters/Median3DFilter.h}}
+\mbox{\hyperlink{_median3_d_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_MEDIAN3DFILTER\_H}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_MEDIAN3DFILTER\_H}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_filter_8h}{Filter.h}}"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_median3_d_filter}{Median3DFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_filter3_d}{IFilter3D}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_median3_d_filter_ac8ede136d079e07c7d5ed4769d9fee6a}{kernelSize}};\ \textcolor{comment}{//\ The\ size\ of\ the\ kernel.}}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<std::vector<int>>\ \mbox{\hyperlink{class_median3_d_filter_a0917efe52b1e3c6289e72becdf69ff9a}{neighborhoodOffsets}};\ \textcolor{comment}{//\ The\ offsets\ of\ the\ neighborhood.}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_median3_d_filter_afc32a887e33f77f8faaa38d661f97104}{calculateMedian}}(std::vector<unsigned\ char>\ \&neighborhood);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_median3_d_filter_a7f1c00a622a5f46f64bfb77c36eabd8a}{precomputeNeighborhoodOffsets}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_median3_d_filter_a351651057060a44094d05c2d63a63f96}{Median3DFilter}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_median3_d_filter_ac8ede136d079e07c7d5ed4769d9fee6a}{kernelSize}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_median3_d_filter_a510ca1859142d0f4f3e5c268abc1809c}{apply}}(\mbox{\hyperlink{class_volume}{Volume}}\ \&volume)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_MEDIAN3DFILTER\_H}}
+
+\end{DoxyCode}

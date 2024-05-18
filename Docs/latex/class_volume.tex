@@ -1,0 +1,493 @@
+\doxysection{Volume Class Reference}
+\hypertarget{class_volume}{}\label{class_volume}\index{Volume@{Volume}}
+
+
+{\ttfamily \#include $<$Volume.\+h$>$}
+
+
+
+Collaboration diagram for Volume\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_volume__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}{Volume}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_volume}{Volume} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_a9b3e21831a0ea4ca87f45446ed535e10}{Volume}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{width}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_ad79b108cff727245b41914f371e88efe}{height}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f}{depth}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_volume}{Volume} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_ad218fcf42d026fc34a466d49b231084f}{Volume}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{width}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_ad79b108cff727245b41914f371e88efe}{height}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f}{depth}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_volume_ac1a3a27bac4ceb37678e2bc62ae48771}{data}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_volume}{Volume} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_ad5d2015f5c0fea005f02be8f6d60b212}{\texorpdfstring{$\sim$}{\string~}\+Volume}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_volume}{Volume} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_a6421ea4fb9b499e51499531dbc6999d5}{get\+Width}} () \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}}
+\begin{DoxyCompactList}\small\item\em Get the width of the volume. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_a33c75b641d988efed2ce4d2568e7269e}{get\+Height}} () \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}}
+\begin{DoxyCompactList}\small\item\em Get the height of the volume. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_ab082670ea100c39d94fefc77ac83c4d8}{get\+Depth}} () \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}}
+\begin{DoxyCompactList}\small\item\em Get the depth of the volume. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_volume_a1651a671bbe729dc690093d2e399a07b}{get\+Data}} () \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}}
+\begin{DoxyCompactList}\small\item\em Get the volume data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}} \mbox{\hyperlink{class_volume_afaed2263d4a62376314d609b11783257}{get\+Voxel}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{x}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{y}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{z}}) \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}}
+\begin{DoxyCompactList}\small\item\em Get the voxel value at the specified coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} \mbox{\hyperlink{class_volume_a59449156869e5f9aa2c830c0cd7ce9b0}{set\+Width}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{width}})
+\begin{DoxyCompactList}\small\item\em Set the width of the volume. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} \mbox{\hyperlink{class_volume_a42e795397b795182b5121fb3368d935d}{set\+Height}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_ad79b108cff727245b41914f371e88efe}{height}})
+\begin{DoxyCompactList}\small\item\em Set the height of the volume. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} \mbox{\hyperlink{class_volume_a6759c08e159014a704f77acae9e5fe1c}{set\+Depth}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f}{depth}})
+\begin{DoxyCompactList}\small\item\em Set the depth of the volume. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} \mbox{\hyperlink{class_volume_a4781f84d9787321462977dee2ed2c512}{update\+Data}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::vector$<$ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}} $>$ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{new\+Data}})
+\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{bool}} \mbox{\hyperlink{class_volume_a4fb4494e6be59b9e67e91b5b12df6898}{load\+From\+Files}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{paths}})
+\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{bool}} \mbox{\hyperlink{class_volume_aec2d5b8d0f6a7e2ee8ce7403496dd82d}{load\+From\+Directory}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{directory\+Path}})
+\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} \mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{path}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{plane}}) \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}}
+\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} \mbox{\hyperlink{class_volume_ab6248f0ada2d82d108d66e3c4043a1a0}{save}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{path}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{plane}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{slice\+Index}}) \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}}
+\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} \mbox{\hyperlink{class_volume_ae56b9c3753212ac178c0c9f13555ba83}{save}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{path}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{plane}}, std\+::string \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{projector}}) \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}}
+\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} \mbox{\hyperlink{class_volume_a05b0eb7d56bb7ae51c12ea7e8e6b21ca}{save}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{path}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{plane}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{projector}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{begin}}, \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{end}}) \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_volume_a1a41e1bebc51ad44b069d30ed9a668b1}{Volume}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} \mbox{\hyperlink{class_volume}{Volume}} \&)=\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{delete}}
+\begin{DoxyCompactList}\small\item\em Load volume data from a single file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_volume}{Volume}} \& \mbox{\hyperlink{class_volume_afe74a4b38e8071b9a23798d018bdd9b5}{operator=}} (\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} \mbox{\hyperlink{class_volume}{Volume}} \&)=\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{delete}}
+\begin{DoxyCompactList}\small\item\em Prevents assignment of volume data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{width}}
+\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_ad79b108cff727245b41914f371e88efe}{height}}
+\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} \mbox{\hyperlink{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f}{depth}}
+\item 
+\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_volume_ac1a3a27bac4ceb37678e2bc62ae48771}{data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_volume_a1a41e1bebc51ad44b069d30ed9a668b1}\label{class_volume_a1a41e1bebc51ad44b069d30ed9a668b1} 
+\index{Volume@{Volume}!Volume@{Volume}}
+\index{Volume@{Volume}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{Volume()}{Volume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Volume\+::\+Volume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} \mbox{\hyperlink{class_volume}{Volume}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+Load volume data from a single file. 
+
+This function loads volume data from a single file and updates the volume\textquotesingle{}s data field.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the file containing the volume data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}\label{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f} 
+\index{Volume@{Volume}!Volume@{Volume}}
+\index{Volume@{Volume}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{Volume()}{Volume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Volume\+::\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_volume}{Volume} class. 
+
+This constructor initializes a \doxylink{class_volume}{Volume} object with default values. \Hypertarget{class_volume_a9b3e21831a0ea4ca87f45446ed535e10}\label{class_volume_a9b3e21831a0ea4ca87f45446ed535e10} 
+\index{Volume@{Volume}!Volume@{Volume}}
+\index{Volume@{Volume}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{Volume()}{Volume()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Volume\+::\+Volume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{width,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{height,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{depth }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_volume}{Volume} class. 
+
+This constructor initializes a \doxylink{class_volume}{Volume} object with the specified width, height, and depth.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_volume_ad218fcf42d026fc34a466d49b231084f}\label{class_volume_ad218fcf42d026fc34a466d49b231084f} 
+\index{Volume@{Volume}!Volume@{Volume}}
+\index{Volume@{Volume}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{Volume()}{Volume()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Volume\+::\+Volume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{width,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{height,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{depth,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_volume}{Volume} class. 
+
+This constructor initializes a \doxylink{class_volume}{Volume} object with the specified width, height, depth, and data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+{\em height} & The height of the volume. \\
+\hline
+{\em depth} & The depth of the volume. \\
+\hline
+{\em data} & The volume data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_volume_ad5d2015f5c0fea005f02be8f6d60b212}\label{class_volume_ad5d2015f5c0fea005f02be8f6d60b212} 
+\index{Volume@{Volume}!````~Volume@{\texorpdfstring{$\sim$}{\string~}Volume}}
+\index{````~Volume@{\texorpdfstring{$\sim$}{\string~}Volume}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Volume()}{\string~Volume()}}
+{\footnotesize\ttfamily Volume\+::\texorpdfstring{$\sim$}{\string~}\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{class_volume}{Volume} class. 
+
+This destructor deallocates the memory used by the volume data. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_volume_a1651a671bbe729dc690093d2e399a07b}\label{class_volume_a1651a671bbe729dc690093d2e399a07b} 
+\index{Volume@{Volume}!getData@{getData}}
+\index{getData@{getData}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}} \texorpdfstring{$\ast$}{*} Volume\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the volume data. 
+
+This function returns the volume data.
+
+\begin{DoxyReturn}{Returns}
+The volume data. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_ab082670ea100c39d94fefc77ac83c4d8}\label{class_volume_ab082670ea100c39d94fefc77ac83c4d8} 
+\index{Volume@{Volume}!getDepth@{getDepth}}
+\index{getDepth@{getDepth}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getDepth()}{getDepth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} Volume\+::get\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the depth of the volume. 
+
+This function returns the depth of the volume.
+
+\begin{DoxyReturn}{Returns}
+The depth of the volume. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a33c75b641d988efed2ce4d2568e7269e}\label{class_volume_a33c75b641d988efed2ce4d2568e7269e} 
+\index{Volume@{Volume}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} Volume\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the height of the volume. 
+
+This function returns the height of the volume.
+
+\begin{DoxyReturn}{Returns}
+The height of the volume. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_afaed2263d4a62376314d609b11783257}\label{class_volume_afaed2263d4a62376314d609b11783257} 
+\index{Volume@{Volume}!getVoxel@{getVoxel}}
+\index{getVoxel@{getVoxel}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getVoxel()}{getVoxel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}} Volume\+::get\+Voxel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{x,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{y,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{z }\end{DoxyParamCaption}) const}
+
+
+
+Get the voxel value at the specified coordinates. 
+
+This function returns the voxel value at the specified coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the voxel. \\
+\hline
+{\em y} & The y-\/coordinate of the voxel. \\
+\hline
+{\em z} & The z-\/coordinate of the voxel.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The voxel value at the specified coordinates. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a6421ea4fb9b499e51499531dbc6999d5}\label{class_volume_a6421ea4fb9b499e51499531dbc6999d5} 
+\index{Volume@{Volume}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} Volume\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the width of the volume. 
+
+This function returns the width of the volume.
+
+\begin{DoxyReturn}{Returns}
+The width of the volume. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_aec2d5b8d0f6a7e2ee8ce7403496dd82d}\label{class_volume_aec2d5b8d0f6a7e2ee8ce7403496dd82d} 
+\index{Volume@{Volume}!loadFromDirectory@{loadFromDirectory}}
+\index{loadFromDirectory@{loadFromDirectory}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{loadFromDirectory()}{loadFromDirectory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{bool}} Volume\+::load\+From\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{directory\+Path }\end{DoxyParamCaption})}
+
+Loads a 3D volume from image files located in a specified directory
+
+This member function of the \doxylink{class_volume}{Volume} class loads a series of image files from a given directory to construct a 3D volume. It iterates through the directory, collecting paths of all regular files. These paths are then sorted to ensure that the images are loaded in the correct order, which is crucial for correctly assembling the 3D volume. The function leverages the load\+From\+Files member function to load the images into the volume. If the directory cannot be read or contains no image files, the function prints an error message and returns false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory\+Path} & A string representing the path to the directory containing the image files to be loaded.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A boolean value indicating the success (true) or failure (false) of loading the volume from the directory. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a4fb4494e6be59b9e67e91b5b12df6898}\label{class_volume_a4fb4494e6be59b9e67e91b5b12df6898} 
+\index{Volume@{Volume}!loadFromFiles@{loadFromFiles}}
+\index{loadFromFiles@{loadFromFiles}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{loadFromFiles()}{loadFromFiles()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{bool}} Volume\+::load\+From\+Files (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::vector$<$ std\+::string $>$ \&}]{paths }\end{DoxyParamCaption})}
+
+Loads a 3D volume from multiple image files
+
+This member function of the \doxylink{class_volume}{Volume} class loads a series of images from the specified file paths to construct a 3D volume. The images are assumed to have the same dimensions and number of channels. The function initializes the volume\textquotesingle{}s depth based on the number of paths provided, checks if at least one path is provided, and then loads each image in sequence. The images are concatenated into a single data buffer representing the 3D volume. If any image fails to load, or if memory allocation for the entire volume data fails, it prints an error message to standard error and cleans up any allocated resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paths} & A vector of strings representing the paths to the image files that comprise the volume.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A boolean value indicating the success (true) or failure (false) of loading the volume. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_afe74a4b38e8071b9a23798d018bdd9b5}\label{class_volume_afe74a4b38e8071b9a23798d018bdd9b5} 
+\index{Volume@{Volume}!operator=@{operator=}}
+\index{operator=@{operator=}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume}{Volume}} \& \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{Volume\+::operator}}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} \mbox{\hyperlink{class_volume}{Volume}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+Prevents assignment of volume data. 
+
+This function prevents the assignment of volume data by deleting the assignment operator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & The volume to assign to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The assigned volume. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}\label{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9} 
+\index{Volume@{Volume}!save@{save}}
+\index{save@{save}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} Volume\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{plane }\end{DoxyParamCaption}) const}
+
+Saves all slices along a specified plane to files
+
+This member function of the \doxylink{class_volume}{Volume} class saves all slices along the specified plane to files in the specified directory. The function first checks if the plane is valid, if the output directory exists, and if the plane is valid. If any of these checks fail, it prints an error message and returns. If the output directory does not exist, the function attempts to create it. It then iterates through all slices along the specified plane, extracts each slice from the volume\textquotesingle{}s data, saves the result to a file in the specified directory, and uses the stb\+\_\+image\+\_\+write library to write the slice data to a PNG file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & A string representing the path to the directory where the slices will be saved. \\
+\hline
+{\em plane} & A string representing the plane along which the slices will be extracted. Valid planes are \textquotesingle{}x-\/y\textquotesingle{}, \textquotesingle{}x-\/z\textquotesingle{}, and \textquotesingle{}y-\/z\textquotesingle{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a05b0eb7d56bb7ae51c12ea7e8e6b21ca}\label{class_volume_a05b0eb7d56bb7ae51c12ea7e8e6b21ca} 
+\index{Volume@{Volume}!save@{save}}
+\index{save@{save}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} Volume\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{plane,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{projector,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{begin,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{end }\end{DoxyParamCaption}) const}
+
+Saves a range-\/based projection to a file
+
+This member function of the \doxylink{class_volume}{Volume} class computes a range-\/based projection along the specified plane and saves the result to a file. The function first checks if the plane and projector are valid, and if the specified range is within the bounds of the volume. If any of these checks fail, it prints an error message and returns. If the output directory does not exist, the function attempts to create it. It then extracts the specified range of slices from the volume\textquotesingle{}s data, computes the projection using the specified projector, and saves the result to a file in the specified directory. The function uses the stb\+\_\+image\+\_\+write library to write the projection data to a PNG file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & A string representing the path to the directory where the projection will be saved. \\
+\hline
+{\em plane} & A string representing the plane along which the projection will be computed. Valid planes are \textquotesingle{}x-\/y\textquotesingle{}, \textquotesingle{}x-\/z\textquotesingle{}, and \textquotesingle{}y-\/z\textquotesingle{}. \\
+\hline
+{\em projector} & A string representing the type of projection to be computed. Valid projectors are \textquotesingle{}MIP\textquotesingle{}, \textquotesingle{}Min\+IP\textquotesingle{}, \textquotesingle{}AIP\textquotesingle{}, and \textquotesingle{}Med\+IP\textquotesingle{}. \\
+\hline
+{\em begin} & An integer representing the starting index of the range of slices to be projected. \\
+\hline
+{\em end} & An integer representing the ending index of the range of slices to be projected.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None 
+\end{DoxyReturn}
+\Hypertarget{class_volume_ab6248f0ada2d82d108d66e3c4043a1a0}\label{class_volume_ab6248f0ada2d82d108d66e3c4043a1a0} 
+\index{Volume@{Volume}!save@{save}}
+\index{save@{save}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} Volume\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{plane,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{slice\+Index }\end{DoxyParamCaption}) const}
+
+Saves a specific slice to a file
+
+This member function of the \doxylink{class_volume}{Volume} class saves a specific slice along the specified plane to a file. The function first checks if the plane is valid, if the output directory exists, and if the slice index is within the bounds of the volume. If any of these checks fail, it prints an error message and returns. If the output directory does not exist, the function attempts to create it. It then extracts the specified slice from the volume\textquotesingle{}s data, saves the result to a file in the specified directory, and uses the stb\+\_\+image\+\_\+write library to write the slice data to a PNG file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & A string representing the path to the directory where the slice will be saved. \\
+\hline
+{\em plane} & A string representing the plane along which the slice will be extracted. Valid planes are \textquotesingle{}x-\/y\textquotesingle{}, \textquotesingle{}x-\/z\textquotesingle{}, and \textquotesingle{}y-\/z\textquotesingle{}. \\
+\hline
+{\em slice\+Index} & An integer representing the index of the slice to be saved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None 
+\end{DoxyReturn}
+\Hypertarget{class_volume_ae56b9c3753212ac178c0c9f13555ba83}\label{class_volume_ae56b9c3753212ac178c0c9f13555ba83} 
+\index{Volume@{Volume}!save@{save}}
+\index{save@{save}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} Volume\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::string \&}]{plane,  }\item[{std\+::string}]{projector }\end{DoxyParamCaption}) const}
+
+Saves a specific projection to a file
+
+This member function of the \doxylink{class_volume}{Volume} class computes a specific projection along the specified plane and saves the result to a file. The function first checks if the plane and projector are valid, and if the output directory exists. If any of these checks fail, it prints an error message and returns. If the output directory does not exist, the function attempts to create it. It then computes the specified projection using the \doxylink{class_projection}{Projection} class and saves the result to a file in the specified directory. The function uses the stb\+\_\+image\+\_\+write library to write the projection data to a PNG file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & A string representing the path to the directory where the projection will be saved. \\
+\hline
+{\em plane} & A string representing the plane along which the projection will be computed. Valid planes are \textquotesingle{}x-\/y\textquotesingle{}, \textquotesingle{}x-\/z\textquotesingle{}, and \textquotesingle{}y-\/z\textquotesingle{}. \\
+\hline
+{\em projector} & A string representing the type of projection to be computed. Valid projectors are \textquotesingle{}MIP\textquotesingle{}, \textquotesingle{}Min\+IP\textquotesingle{}, \textquotesingle{}AIP\textquotesingle{}, and \textquotesingle{}Med\+IP\textquotesingle{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None 
+\end{DoxyReturn}
+\Hypertarget{class_volume_a6759c08e159014a704f77acae9e5fe1c}\label{class_volume_a6759c08e159014a704f77acae9e5fe1c} 
+\index{Volume@{Volume}!setDepth@{setDepth}}
+\index{setDepth@{setDepth}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{setDepth()}{setDepth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} Volume\+::set\+Depth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{depth }\end{DoxyParamCaption})}
+
+
+
+Set the depth of the volume. 
+
+This function sets the depth of the volume.
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth} & The depth of the volume. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_volume_a42e795397b795182b5121fb3368d935d}\label{class_volume_a42e795397b795182b5121fb3368d935d} 
+\index{Volume@{Volume}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} Volume\+::set\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{height }\end{DoxyParamCaption})}
+
+
+
+Set the height of the volume. 
+
+This function sets the height of the volume.
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the volume. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_volume_a59449156869e5f9aa2c830c0cd7ce9b0}\label{class_volume_a59449156869e5f9aa2c830c0cd7ce9b0} 
+\index{Volume@{Volume}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} Volume\+::set\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}}}]{width }\end{DoxyParamCaption})}
+
+
+
+Set the width of the volume. 
+
+This function sets the width of the volume.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the volume. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_volume_a4781f84d9787321462977dee2ed2c512}\label{class_volume_a4781f84d9787321462977dee2ed2c512} 
+\index{Volume@{Volume}!updateData@{updateData}}
+\index{updateData@{updateData}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{void}} Volume\+::update\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{const}} std\+::vector$<$ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}} $>$ \&}]{new\+Data }\end{DoxyParamCaption})}
+
+Updates the volume data with new data
+
+This member function of the \doxylink{class_volume}{Volume} class updates the volume\textquotesingle{}s data array with new data provided via the new\+Data parameter. Before proceeding with the update, it checks if the size of the new data matches the expected size of the volume (calculated as width \texorpdfstring{$\ast$}{*} height \texorpdfstring{$\ast$}{*} depth). If the sizes do not match, it prints an error message and aborts the update. If the volume\textquotesingle{}s data pointer is null (indicating that the volume has not been initialized with data), it allocates new memory to store the new\+Data. Otherwise, it reuses the existing memory block and copies the new\+Data into the volume\textquotesingle{}s data array. This function ensures that the volume\textquotesingle{}s data is kept up-\/to-\/date with any changes or transformations applied externally.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Data} & A constant reference to a vector of unsigned char, representing the new data to be copied into the volume\textquotesingle{}s data array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_volume_ac1a3a27bac4ceb37678e2bc62ae48771}\label{class_volume_ac1a3a27bac4ceb37678e2bc62ae48771} 
+\index{Volume@{Volume}!data@{data}}
+\index{data@{data}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{unsigned}} \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{char}}\texorpdfstring{$\ast$}{*} Volume\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f}\label{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f} 
+\index{Volume@{Volume}!depth@{depth}}
+\index{depth@{depth}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} Volume\+::depth\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_volume_ad79b108cff727245b41914f371e88efe}\label{class_volume_ad79b108cff727245b41914f371e88efe} 
+\index{Volume@{Volume}!height@{height}}
+\index{height@{height}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{int}} Volume\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_volume_abbc396981317733b66c7e38d5ed0cea5}\label{class_volume_abbc396981317733b66c7e38d5ed0cea5} 
+\index{Volume@{Volume}!width@{width}}
+\index{width@{width}!Volume@{Volume}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Volume\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Include/\mbox{\hyperlink{_volume_8h}{Volume.\+h}}\item 
+Source/\mbox{\hyperlink{_volume_8cpp}{Volume.\+cpp}}\end{DoxyCompactItemize}

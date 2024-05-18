@@ -1,0 +1,176 @@
+\chapter{Multi-\/\+Dimension Image Processing Library}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Multi-\/Dimension Image Processing Library@{Multi-\/Dimension Image Processing Library}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+ This is an implementation for the {\bfseries{Advanced Programming Group Project}}.
+
+This project provides a comprehensive toolkit for 2D/3D image processing, including utilities for loading, manipulating, and saving both 2D and 3D image data. It is designed to facilitate advanced image processing tasks such as filtering, projection, slicing of volumetric data, and edge detection. This library is particularly suited for applications in medical imaging, scientific visualization, 3D data analysis, and real-\/time image enhancement.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Features}{Features}}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{class_image}{Image} Loading and Saving}}\+: Supports loading and saving images in various formats through the integration of the {\ttfamily stb\+\_\+image} and {\ttfamily stb\+\_\+image\+\_\+write} libraries.
+\item {\bfseries{\doxylink{class_volume}{Volume} Manipulation}}\+: Allows the construction of a 3D volume from a series of 2D slices, along with the capability to save slices or projections of the volume back to disk.
+\item {\bfseries{Filtering}}\+: Implements median, Gaussian, edge detection, and pixel-\/level filtering for noise reduction, smoothing, and edge enhancement of volumetric data.
+\item {\bfseries{Projections}}\+: Offers functions for maximum, minimum, average, and median intensity projections, which are essential for visualizing structural information in volumetric data.
+\item {\bfseries{Slicing}}\+: Provides functionality to extract arbitrary slices from a volume, facilitating the examination of cross-\/sectional data.
+\item {\bfseries{Edge Detection}}\+: Incorporates edge detection algorithms such as Sobel and Prewitt, enabling the identification of edges within images for analysis and processing.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Project Structure}{Project Structure}}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{plaintextCopy\ code}
+\DoxyCodeLine{<Multi-\/Dimension\ Image\ Processing\ Library>/}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ CMakeLists.txt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Project\ build\ script.}
+\DoxyCodeLine{├──\ README.md\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Project\ documentation.}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ Docs/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Documentation\ files.}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ Images/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Sample\ images\ for\ testing.}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ Include/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Header\ files.}
+\DoxyCodeLine{│\ \ \ ├──\ Algorithm.h}
+\DoxyCodeLine{│\ \ \ ├──\ Box2DFilter.h}
+\DoxyCodeLine{│\ \ \ ├──\ EdgeFilter.h}
+\DoxyCodeLine{│\ \ \ ├──\ Filters/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Filter\ headers.}
+\DoxyCodeLine{│\ \ \ ├──\ Gaussian2DFilter.h}
+\DoxyCodeLine{│\ \ \ ├──\ Gaussian3DFilter.h}
+\DoxyCodeLine{│\ \ \ ├──\ Image.h}
+\DoxyCodeLine{│\ \ \ ├──\ Median2DFilter.h}
+\DoxyCodeLine{│\ \ \ ├──\ Median3DFilter.h}
+\DoxyCodeLine{│\ \ \ ├──\ Padding.h}
+\DoxyCodeLine{│\ \ \ ├──\ PixelFilter.h}
+\DoxyCodeLine{│\ \ \ ├──\ Projection.h}
+\DoxyCodeLine{│\ \ \ ├──\ Slice.h}
+\DoxyCodeLine{│\ \ \ ├──\ Volume.h}
+\DoxyCodeLine{│\ \ \ ├──\ stb\_image.h}
+\DoxyCodeLine{│\ \ \ └──\ stb\_image\_write.h}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ Output/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Output\ directory\ for\ processed\ images.}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ Scans/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Input\ directory\ for\ volume\ scans.}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ Source/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Source\ files.}
+\DoxyCodeLine{│\ \ \ ├──\ Algorithm.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Box2DFilter.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ EdgeFilter.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Filters/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Filter\ source\ files.}
+\DoxyCodeLine{│\ \ \ ├──\ Gaussian2DFilter.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Gaussian3DFilter.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Image.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Median2DFilter.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Median3DFilter.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Padding.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ PixelFilter.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Projection.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Slice.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Volume.cpp}
+\DoxyCodeLine{│\ \ \ └──\ main.cpp}
+\DoxyCodeLine{│}
+\DoxyCodeLine{└──\ Tests/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ Unit\ tests.}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Getting Started}{Getting Started}}\label{md__r_e_a_d_m_e_autotoc_md3}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{3D Datasets}{3D Datasets}}\label{md__r_e_a_d_m_e_autotoc_md4}
+Download CT Scan datasets here\+:
+
+\href{https://imperiallondon-my.sharepoint.com/:u:/g/personal/tmd02_ic_ac_uk/EafXMuNsbcNGnRpa8K62FjkBvIKvCswl1riz7hPDHpHdSQ}{\texttt{ https\+://imperiallondon-\/my.\+sharepoint.\+com/\+:u\+:/g/personal/tmd02\+\_\+ic\+\_\+ac\+\_\+uk/\+Eaf\+XMu\+Nsbc\+NGn\+Rpa8\+K62\+Fjk\+Bv\+IKv\+Cswl1riz7h\+PDHp\+Hd\+SQ}}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{md__r_e_a_d_m_e_autotoc_md5}
+Ensure you have a modern C++ compiler that supports C++17 and the CMake build system installed on your system. This project also requires the {\ttfamily filesystem} library for directory operations.\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{\texorpdfstring{Building the Project}{Building the Project}}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item Clone the repository to your local machine.
+\item Navigate to the project directory and create a build directory\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build\ \&\&\ cd\ build}
+
+\end{DoxyCode}
+
+\item Run CMake to configure the project\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ ..}
+
+\end{DoxyCode}
+
+\item Compile the project\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ .}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{md__r_e_a_d_m_e_autotoc_md7}
+To use the library in your project, include the necessary header files from the {\ttfamily Include} directory and link against the compiled library.
+
+Here\textquotesingle{}s an example demonstrating how to load a image / volume from disk, apply various filters, and save a filtered file / maximum intensity projection\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_volume_8h}{Volume.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_gaussian3_d_filter_8h}{Filters/Gaussian3DFilter.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_gaussian2_d_filter_8h}{Filters/Gaussian2DFilter.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_projection_8h}{Projection.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_edge_filter_8h}{Filters/EdgeFilter.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pixel_filter_8h}{Filters/PixelFilter.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Demo\ for\ 2D\ images}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ image;}
+\DoxyCodeLine{\ \ \ \ image.\mbox{\hyperlink{class_image_aaf2ae83a1369ab29535ebfd06554e59f}{loadFromFile}}(\textcolor{stringliteral}{"{}/path/to/your/image"{}});}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Apply\ Greyscale\ filter\ to\ image}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_pixel_filter}{PixelFilter}}\ pixelFilter(\textcolor{stringliteral}{"{}Grayscale"{}});}
+\DoxyCodeLine{\ \ \ \ pixelFilter.apply(image);}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Apply\ a\ 2D\ Gaussian\ filter\ with\ sigma\ =\ 2.0\ and\ kernel\ size\ =\ 5}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gaussian2_d_filter}{Gaussian2DFilter}}\ gaussianFilter2D(5,\ 2.0);}
+\DoxyCodeLine{\ \ \ \ gaussianFilter2D.apply(image);}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Apply\ Sobel\ edge\ filter}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_edge_filter}{EdgeFilter}}\ edgeFilter(\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94fa72e4f1a61efb42bee3f652fcf5db32b8}{FilterType::Sobel}});}
+\DoxyCodeLine{\ \ \ \ edgeFilter.apply(image);}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Save\ filtered\ image}}
+\DoxyCodeLine{\ \ \ \ image.\mbox{\hyperlink{class_image_a1e5bba4e0dc67e2a93bd0d90e9c71e97}{saveToFile}}(\textcolor{stringliteral}{"{}/path/and/name/of/your/image.png"{}});}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Demo\ for\ 3D\ images}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_volume}{Volume}}\ volume;}
+\DoxyCodeLine{\ \ \ \ volume.\mbox{\hyperlink{class_volume_aec2d5b8d0f6a7e2ee8ce7403496dd82d}{loadFromDirectory}}(\textcolor{stringliteral}{"{}/path/to/your/images\_directory"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Apply\ a\ 3D\ Gaussian\ filter\ with\ sigma\ =\ 2.0\ and\ kernel\ size\ =\ 5}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_gaussian3_d_filter}{Gaussian3DFilter}}\ gaussianFilter3D(2.0,\ 5);}
+\DoxyCodeLine{\ \ \ \ gaussianFilter3D.apply(volume);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Save\ a\ maximum\ intensity\ projection\ to\ disk}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ volume.\mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{stringliteral}{"{}/path/to/your/directory"{}},\ \textcolor{stringliteral}{"{}x-\/y"{}},\ \textcolor{stringliteral}{"{}MIP"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysection{\texorpdfstring{Contributing}{Contributing}}\label{md__r_e_a_d_m_e_autotoc_md8}
+Contributions to enhance the functionality or performance of this library are welcome. Please follow the standard fork-\/branch-\/\+PR workflow.\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysection{\texorpdfstring{Developers}{Developers}}\label{md__r_e_a_d_m_e_autotoc_md9}
+This project is developed by\+:
+
+
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123)
+\end{DoxyItemize}
+
+The group name is {\bfseries{Advanced Programming Group Radix Sort}}.\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysection{\texorpdfstring{License}{License}}\label{md__r_e_a_d_m_e_autotoc_md10}
+This project is open source and available under the MIT License. See the LICENSE file for more details.\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysection{\texorpdfstring{Acknowledgments}{Acknowledgments}}\label{md__r_e_a_d_m_e_autotoc_md11}
+
+\begin{DoxyItemize}
+\item Special thanks to Sean Barrett for the {\ttfamily stb\+\_\+image} and {\ttfamily stb\+\_\+image\+\_\+write} libraries, which are used for image I/O operations in this project.
+\item Appreciation to all contributors and the Advanced Programming Group Radix Sort for their efforts and collaboration in building this comprehensive image processing toolkit.
+\item Thanks to generative AI tools like Chat\+GPT and Google Gemini for the help in coding. 
+\end{DoxyItemize}

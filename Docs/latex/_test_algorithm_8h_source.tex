@@ -1,0 +1,96 @@
+\doxysection{Test\+Algorithm.\+h}
+\hypertarget{_test_algorithm_8h_source}{}\label{_test_algorithm_8h_source}\index{Tests/TestAlgorithm.h@{Tests/TestAlgorithm.h}}
+\mbox{\hyperlink{_test_algorithm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_algorithm_8h}{../Include/Algorithm.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <algorithm>}\ \textcolor{comment}{//\ For\ std::sort}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <stdexcept>}\ \textcolor{comment}{//\ For\ std::exception}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <cassert>}\ \ \textcolor{comment}{//\ For\ assert}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_algorithm}{TestAlgorithm}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_algorithm_a8f431cf13ea610508343fa131b9e64e8}{testEmptyArray}}()\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ emptyArr;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{class_algorithm_a944029b8928280930227d3317987acee}{Algorithm::quickSelect}}(emptyArr,\ 0,\ emptyArr.size()\ -\/\ 1,\ 0);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}QuickSelect\ did\ not\ throw\ an\ error\ on\ empty\ array."{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ passed}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::vector<std::string>\ emptyArrStr;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_algorithm_ac5771ca0949e841dacac9d9c615de501}{Algorithm::quickSort}}(emptyArrStr,\ 0,\ emptyArr.size()\ -\/\ 1);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ it\ reaches\ here\ without\ throwing,\ it's\ considered\ passed\ for\ empty\ arrays.}}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_algorithm_a771f2f3a7fb44ebad1eed842206aa33a}{testSingleElementArray}}()\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ singleArr\ =\ \{42\};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{class_algorithm_a944029b8928280930227d3317987acee}{Algorithm::quickSelect}}(singleArr,\ 0,\ singleArr.size()\ -\/\ 1,\ 0);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ assert(result\ ==\ 42\ \&\&\ \textcolor{stringliteral}{"{}QuickSelect\ Test\ Failed\ on\ single\ element\ array."{}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::vector<std::string>\ singleStrArr\ =\ \{\textcolor{stringliteral}{"{}single"{}}\};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_algorithm_ac5771ca0949e841dacac9d9c615de501}{Algorithm::quickSort}}(singleStrArr,\ 0,\ singleStrArr.size()\ -\/\ 1);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ assert(singleStrArr[0]\ ==\ \textcolor{stringliteral}{"{}single"{}}\ \&\&\ \textcolor{stringliteral}{"{}QuickSort\ Test\ Failed\ on\ single\ element\ array."{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_algorithm_a3a54b961564e7f20f49fba07f2863a38}{testArrayWithDuplicates}}()\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ duplicateArr\ =\ \{5,\ 3,\ 5,\ 4,\ 5,\ 5,\ 6\};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ kthElement\ =\ \mbox{\hyperlink{class_algorithm_a944029b8928280930227d3317987acee}{Algorithm::quickSelect}}(duplicateArr,\ 0,\ duplicateArr.size()\ -\/\ 1,\ 4);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ assert(kthElement\ ==\ 5\ \&\&\ \textcolor{stringliteral}{"{}QuickSelect\ Test\ Failed\ with\ duplicates."{}});}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::vector<std::string>\ strArr\ =\ \{\textcolor{stringliteral}{"{}apple"{}},\ \textcolor{stringliteral}{"{}banana"{}},\ \textcolor{stringliteral}{"{}apple"{}},\ \textcolor{stringliteral}{"{}cherry"{}},\ \textcolor{stringliteral}{"{}banana"{}}\};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::vector<std::string>\ sortedStrArr\ =\ strArr;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ std::sort(sortedStrArr.begin(),\ sortedStrArr.end());}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_algorithm_ac5771ca0949e841dacac9d9c615de501}{Algorithm::quickSort}}(strArr,\ 0,\ strArr.size()\ -\/\ 1);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ assert(strArr\ ==\ sortedStrArr\ \&\&\ \textcolor{stringliteral}{"{}QuickSort\ Test\ Failed\ with\ duplicates."{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_algorithm_a85344946f498c5d26ee7ec0b81705847}{testInvalidKValues}}()\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ arr\ =\ \{9,\ 3,\ 2,\ 4,\ 8,\ 5,\ 6,\ 7\};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{class_algorithm_a944029b8928280930227d3317987acee}{Algorithm::quickSelect}}(arr,\ 0,\ arr.size()\ -\/\ 1,\ -\/1);\ \textcolor{comment}{//\ Invalid\ k}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}QuickSelect\ did\ not\ throw\ an\ error\ for\ invalid\ k\ value."{}});}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ passed}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{class_algorithm_a944029b8928280930227d3317987acee}{Algorithm::quickSelect}}(arr,\ 0,\ arr.size()\ -\/\ 1,\ arr.size());\ \textcolor{comment}{//\ k\ out\ of\ bounds}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}QuickSelect\ did\ not\ throw\ an\ error\ for\ k\ value\ out\ of\ bounds."{}});}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ passed}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_algorithm_ad71cf822e7e0e463dfaa8cfb381b5b43}{testQuickSelect}}()\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ arr\ =\ \{9,\ 3,\ 2,\ 4,\ 8,\ 5,\ 6,\ 7\};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ 4;\ \textcolor{comment}{//\ Looking\ for\ the\ 4th\ smallest\ element,\ which\ is\ 5}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ kthElement\ =\ \mbox{\hyperlink{class_algorithm_a944029b8928280930227d3317987acee}{Algorithm::quickSelect}}(arr,\ 0,\ arr.size()\ -\/\ 1,\ k\ -\/\ 1);\ \textcolor{comment}{//\ k\ -\/\ 1\ because\ indices\ are\ 0-\/based}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ assert(kthElement\ ==\ 5\ \&\&\ \textcolor{stringliteral}{"{}QuickSelect\ Test\ Failed."{}});}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_algorithm_a2e161ac22c7ed55db29d4c3f2e94c3a9}{testQuickSort}}()\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ std::vector<std::string>\ arr\ =\ \{\textcolor{stringliteral}{"{}banana"{}},\ \textcolor{stringliteral}{"{}apple"{}},\ \textcolor{stringliteral}{"{}mango"{}},\ \textcolor{stringliteral}{"{}cherry"{}},\ \textcolor{stringliteral}{"{}orange"{}}\};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ std::vector<std::string>\ sortedArr\ =\ arr;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ std::sort(sortedArr.begin(),\ sortedArr.end());}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_algorithm_ac5771ca0949e841dacac9d9c615de501}{Algorithm::quickSort}}(arr,\ 0,\ arr.size()\ -\/\ 1);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ assert(arr\ ==\ sortedArr\ \&\&\ \textcolor{stringliteral}{"{}QuickSort\ Test\ Failed."{}});}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_algorithm_aa279fd26e3139e8c44be3e572533baf0}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ runTest<TestAlgorithm>(\&\mbox{\hyperlink{class_test_algorithm_a8f431cf13ea610508343fa131b9e64e8}{TestAlgorithm::testEmptyArray}},\ \textcolor{stringliteral}{"{}EmptyArray"{}});}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ runTest<TestAlgorithm>(\&\mbox{\hyperlink{class_test_algorithm_a771f2f3a7fb44ebad1eed842206aa33a}{TestAlgorithm::testSingleElementArray}},\ \textcolor{stringliteral}{"{}SingleElementArray"{}});}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ runTest<TestAlgorithm>(\&\mbox{\hyperlink{class_test_algorithm_a3a54b961564e7f20f49fba07f2863a38}{TestAlgorithm::testArrayWithDuplicates}},\ \textcolor{stringliteral}{"{}ArrayWithDuplicates"{}});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ runTest<TestAlgorithm>(\&\mbox{\hyperlink{class_test_algorithm_a85344946f498c5d26ee7ec0b81705847}{TestAlgorithm::testInvalidKValues}},\ \textcolor{stringliteral}{"{}InvalidKValues"{}});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ runTest<TestAlgorithm>(\&\mbox{\hyperlink{class_test_algorithm_ad71cf822e7e0e463dfaa8cfb381b5b43}{TestAlgorithm::testQuickSelect}},\ \textcolor{stringliteral}{"{}QuickSelect"{}});}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ runTest<TestAlgorithm>(\&\mbox{\hyperlink{class_test_algorithm_a2e161ac22c7ed55db29d4c3f2e94c3a9}{TestAlgorithm::testQuickSort}},\ \textcolor{stringliteral}{"{}QuickSort"{}});}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,15 @@
+<map id="Include/Slice.h" name="Include/Slice.h">
+<area shape="rect" id="Node000001" title="Facilitates extraction of 2D slices from 3D volume data." alt="" coords="88,5,196,31"/>
+<area shape="rect" id="Node000002" href="$_volume_8h.html" title="Manages 3D volumetric data for processing and analysis." alt="" coords="104,79,180,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,31,145,63,139,63,139,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,63,178"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="133,33,93,81,52,141,47,138,89,77,129,30"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="262,153,315,178"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="156,29,268,140,264,143,152,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="125,107,67,146,64,141,122,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="86,153,153,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="141,106,130,138,125,137,136,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="177,153,238,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="155,103,188,139,184,143,151,107"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="168,103,251,143,249,148,166,108"/>
+</map>

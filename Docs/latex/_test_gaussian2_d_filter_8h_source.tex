@@ -1,0 +1,161 @@
+\doxysection{Test\+Gaussian2\+DFilter.\+h}
+\hypertarget{_test_gaussian2_d_filter_8h_source}{}\label{_test_gaussian2_d_filter_8h_source}\index{Tests/TestGaussian2DFilter.h@{Tests/TestGaussian2DFilter.h}}
+\mbox{\hyperlink{_test_gaussian2_d_filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_test_8h}{Test.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_gaussian2_d_filter_8h}{Filters/Gaussian2DFilter.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_gaussian2_d_filter}{TestGaussian2DFilter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_test}{Test}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_test_gaussian2_d_filter_a8e4aeb06f6dc6cf3562a5184895af8c4}{calculateVariance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_image}{Image}}\ \&img)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0.0;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sumSquared\ =\ 0.0;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pixelCount\ =\ img.\mbox{\hyperlink{class_image_a36bcae4838228d574738249a87dc4464}{getWidth}}()\ *\ img.\mbox{\hyperlink{class_image_a1cd7587f88b6932b5269051d1ba08ff9}{getHeight}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ pixelCount;\ ++i)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ pixelValue\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}()[i]);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ pixelValue;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ sumSquared\ +=\ pixelValue\ *\ pixelValue;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mean\ =\ sum\ /\ pixelCount;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ variance\ =\ (sumSquared\ /\ pixelCount)\ -\/\ (mean\ *\ mean);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ variance;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian2_d_filter_a4d1305f6aa5c601213f0f339e4efd677}{testKernelGeneration}}()\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ a\ 5x5\ kernel\ with\ σ=1.0}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gaussian2_d_filter}{Gaussian2DFilter}}\ filter(5,\ 1.0,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ kernel\ =\ filter.\mbox{\hyperlink{class_gaussian2_d_filter_a0aba447a49c10fd291e893d2d6b87e52}{getKernel}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ the\ sum\ of\ kernel\ elements\ is\ 1\ to\ ensure\ it\ is\ a\ valid\ Gaussian\ kernel}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0.0;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&row:\ kernel)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ value:\ row)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ value;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ assert(std::fabs(sum\ -\/\ 1.0)\ <\ 1e-\/5\ \&\&\ \textcolor{stringliteral}{"{}The\ sum\ of\ Gaussian\ kernel\ elements\ is\ not\ 1."{}});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ the\ center\ value\ is\ the\ maximum\ value\ in\ the\ kernel}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ centerValue\ =\ kernel[kernel.size()\ /\ 2][kernel[0].size()\ /\ 2];}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&row:\ kernel)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ value:\ row)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(centerValue\ >=\ value\ \&\&\ \textcolor{stringliteral}{"{}Center\ value\ is\ not\ the\ maximum\ in\ the\ Gaussian\ kernel."{}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Gaussian\ kernel\ generation\ test\ passed."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian2_d_filter_a76a4fa0cd671b02f3bbaa1e89329f8e6}{testApplyGaussianBlur}}()\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ a\ simple\ 10x10\ image\ with\ a\ gradient\ pattern}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ std::unique\_ptr<unsigned\ char[]>\ imgData(\textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[100]);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ 10;\ ++y)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ 10;\ ++x)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imgData[y\ *\ 10\ +\ x]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(255\ -\/\ (std::abs(x\ -\/\ 5)\ +\ std::abs(y\ -\/\ 5))\ *\ 10);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(10,\ 10,\ 1,\ imgData.get());}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ Gaussian\ blur\ with\ σ=1.0}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gaussian2_d_filter}{Gaussian2DFilter}}\ gaussianFilter(3,\ 1.0,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ gaussianFilter.\mbox{\hyperlink{class_gaussian2_d_filter_a7d636ff0d4cb84c394847f259d4fcbda}{apply}}(img);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ blurring\ effect\ is\ as\ expected}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ data\ =\ img.\mbox{\hyperlink{class_image_af64a18013b10c55f92dc79822c6954d6}{getData}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ the\ blurring\ effect\ by\ comparing\ the\ central\ pixels\ with\ their\ neighbors}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ blurEffectValid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 11;\ i\ <\ 89;\ ++i)\ \{\ \textcolor{comment}{//\ 避免边缘像素}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ \%\ 10\ ==\ 0\ ||\ i\ \%\ 10\ ==\ 9)\ \textcolor{keywordflow}{continue};\ \textcolor{comment}{//\ 避免边缘像素}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ centerPixel\ =\ data[i];}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ sum\ =\ 0;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ average\ of\ the\ 3x3\ neighborhood}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ -\/1;\ j\ <=\ 1;\ ++j)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ -\/1;\ k\ <=\ 1;\ ++k)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idx\ =\ i\ +\ j\ *\ 10\ +\ k;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ data[idx];}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ average\ =\ sum\ /\ count;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(centerPixel\ -\/\ average)\ >=\ 10)\ \{\ \textcolor{comment}{//\ Simple\ check\ for\ blurring\ effect}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ blurEffectValid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ assert(blurEffectValid\ \&\&\ \textcolor{stringliteral}{"{}Blurring\ effect\ not\ as\ expected."{}});}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Gaussian\ blur\ application\ test\ passed."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian2_d_filter_acd3c91ab8406d5501d8ac4c7fc078218}{testBlurringEffect}}()\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ a\ simple\ 5x5\ image\ with\ a\ gradient\ pattern}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ testData[25];}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 25;\ ++i)\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ testData[i]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}((i\ *\ 10)\ \%\ 256);\ \textcolor{comment}{//\ Use\ 0-\/240\ range}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img(5,\ 5,\ 1,\ testData);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ original\ variance\ of\ the\ image}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ originalVariance\ =\ \mbox{\hyperlink{class_test_gaussian2_d_filter_a8e4aeb06f6dc6cf3562a5184895af8c4}{calculateVariance}}(img);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ Gaussian\ blur\ with\ σ=1.0}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gaussian2_d_filter}{Gaussian2DFilter}}\ filter(5,\ 1.0,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ filter.\mbox{\hyperlink{class_gaussian2_d_filter_a7d636ff0d4cb84c394847f259d4fcbda}{apply}}(img);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ variance\ of\ the\ blurred\ image}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ blurredVariance\ =\ \mbox{\hyperlink{class_test_gaussian2_d_filter_a8e4aeb06f6dc6cf3562a5184895af8c4}{calculateVariance}}(img);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ blurring\ effect\ is\ as\ expected}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ assert(blurredVariance\ <\ originalVariance\ \&\&\ \textcolor{stringliteral}{"{}Blurring\ did\ not\ reduce\ the\ image\ variance\ as\ expected."{}});}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Gaussian\ blurring\ effect\ test\ passed.\ Original\ Variance:\ "{}}\ <<\ originalVariance\ <<\ \textcolor{stringliteral}{"{},\ Blurred\ Variance:\ "{}}\ <<\ blurredVariance\ <<\ std::endl;}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian2_d_filter_adfceddcebebcead0cc765020d03e59ff}{testSigmaImpact}}()\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width\ =\ 5,\ height\ =\ 5,\ channels\ =\ 1;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ originalData[25];}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ a\ simple\ gradient\ pattern\ for\ the\ test\ image}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 25;\ ++i)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ originalData[i]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(i\ *\ 10);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ First\ instantiate\ an\ image\ and\ apply\ a\ small\ σ\ value\ Gaussian\ filter}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img1(width,\ height,\ channels,\ originalData);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gaussian2_d_filter}{Gaussian2DFilter}}\ filterSmallSigma(5,\ 0.5,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ filterSmallSigma.\mbox{\hyperlink{class_gaussian2_d_filter_a7d636ff0d4cb84c394847f259d4fcbda}{apply}}(img1);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ smallSigmaVariance\ =\ \mbox{\hyperlink{class_test_gaussian2_d_filter_a8e4aeb06f6dc6cf3562a5184895af8c4}{calculateVariance}}(img1);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Second,\ apply\ a\ larger\ σ\ value\ Gaussian\ filter\ to\ the\ same\ image}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_image}{Image}}\ img2(width,\ height,\ channels,\ originalData);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gaussian2_d_filter}{Gaussian2DFilter}}\ filterLargeSigma(5,\ 2.0,\ \mbox{\hyperlink{_padding_8h_a0277d10fdc0f1bb28dbec03e10941727ad68e21f3d235d84a9e95e87b65ce8fe8}{PaddingType::ZeroPadding}});}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ filterLargeSigma.\mbox{\hyperlink{class_gaussian2_d_filter_a7d636ff0d4cb84c394847f259d4fcbda}{apply}}(img2);}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ largeSigmaVariance\ =\ \mbox{\hyperlink{class_test_gaussian2_d_filter_a8e4aeb06f6dc6cf3562a5184895af8c4}{calculateVariance}}(img2);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verify\ that\ the\ larger\ sigma\ results\ in\ more\ blurring}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ assert(largeSigmaVariance\ <\ smallSigmaVariance\ \&\&\ \textcolor{stringliteral}{"{}A\ larger\ sigma\ did\ not\ result\ in\ more\ blurring."{}});}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Sigma\ impact\ on\ blurring\ effect\ test\ passed."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_gaussian2_d_filter_a96374571fa9a4b26ed3d2d07a13712d9}{runTests}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ runTest<TestGaussian2DFilter>(\&\mbox{\hyperlink{class_test_gaussian2_d_filter_a4d1305f6aa5c601213f0f339e4efd677}{TestGaussian2DFilter::testKernelGeneration}},\ \textcolor{stringliteral}{"{}Kernel\ Generation"{}});}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ runTest<TestGaussian2DFilter>(\&\mbox{\hyperlink{class_test_gaussian2_d_filter_a76a4fa0cd671b02f3bbaa1e89329f8e6}{TestGaussian2DFilter::testApplyGaussianBlur}},\ \textcolor{stringliteral}{"{}Apply\ Gaussian\ Blur"{}});}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ runTest<TestGaussian2DFilter>(\&\mbox{\hyperlink{class_test_gaussian2_d_filter_acd3c91ab8406d5501d8ac4c7fc078218}{TestGaussian2DFilter::testBlurringEffect}},\ \textcolor{stringliteral}{"{}Blurring\ Effect"{}});}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ runTest<TestGaussian2DFilter>(\&\mbox{\hyperlink{class_test_gaussian2_d_filter_adfceddcebebcead0cc765020d03e59ff}{TestGaussian2DFilter::testSigmaImpact}},\ \textcolor{stringliteral}{"{}Sigma\ Impact"{}});}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\doxysection{Tests/\+Test\+Gaussian3\+DFilter.h File Reference}
+\hypertarget{_test_gaussian3_d_filter_8h}{}\label{_test_gaussian3_d_filter_8h}\index{Tests/TestGaussian3DFilter.h@{Tests/TestGaussian3DFilter.h}}
+
+
+Unit Tests for the \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter} Class.  
+
+
+{\ttfamily \#include "{}Test.\+h"{}}\newline
+{\ttfamily \#include "{}Filters/\+Gaussian3\+DFilter.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+Include dependency graph for Test\+Gaussian3\+DFilter.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_test_gaussian3_d_filter_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{_test_gaussian3_d_filter_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_test_gaussian3_d_filter}{Test\+Gaussian3\+DFilter}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit Tests for the \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter} Class. 
+
+This header file presents the declaration of the \doxylink{class_test_gaussian3_d_filter}{Test\+Gaussian3\+DFilter} class, aimed at executing unit tests on the \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter} class. This class is crucial for applying 3D Gaussian blurring effects on volume data, facilitating image smoothing while maintaining the integrity of significant features. The tests validate the filter\textquotesingle{}s functionality by ensuring accurate kernel generation, proper application of the filter to volume data, and assessing the smoothing effect through quantitative analysis of variance reduction. Through these tests, the behavior of the \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter} under various conditions is thoroughly examined, confirming its effectiveness in enhancing volume data for further processing or analysis.
+
+Usage\+: As a derivative of the \doxylink{class_test}{Test} base class, the \doxylink{class_test_gaussian3_d_filter}{Test\+Gaussian3\+DFilter} class implements the run\+Tests method to execute all predefined test cases, leveraging the run\+Test template method of the \doxylink{class_test}{Test} class for individual test function execution. This structured testing approach ensures a comprehensive evaluation of the \doxylink{class_gaussian3_d_filter}{Gaussian3\+DFilter}\textquotesingle{}s operational capabilities within the broader context of volume data processing.
+
+\begin{DoxyDate}{Date}
+Created on March 22, 2024.
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}

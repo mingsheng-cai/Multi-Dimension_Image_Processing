@@ -1,0 +1,69 @@
+\doxysection{IFilter2D Class Reference}
+\hypertarget{class_i_filter2_d}{}\label{class_i_filter2_d}\index{IFilter2D@{IFilter2D}}
+
+
+{\ttfamily \#include $<$Filter.\+h$>$}
+
+
+
+Inheritance diagram for IFilter2D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_i_filter2_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for IFilter2D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{class_i_filter2_d__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_filter2_d_a39c83d2c96c47ea71c759964e1c32ffe}{\texorpdfstring{$\sim$}{\string~}\+IFilter2D}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_filter2_d_a0cc3760ba47a692a5cd0cc645c1d6a91}{apply}} (\mbox{\hyperlink{class_image}{Image}} \&image)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_filter2_d_a39c83d2c96c47ea71c759964e1c32ffe}\label{class_i_filter2_d_a39c83d2c96c47ea71c759964e1c32ffe} 
+\index{IFilter2D@{IFilter2D}!````~IFilter2D@{\texorpdfstring{$\sim$}{\string~}IFilter2D}}
+\index{````~IFilter2D@{\texorpdfstring{$\sim$}{\string~}IFilter2D}!IFilter2D@{IFilter2D}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IFilter2D()}{\string~IFilter2D()}}
+{\footnotesize\ttfamily virtual IFilter2\+D\+::\texorpdfstring{$\sim$}{\string~}\+IFilter2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Destructor for \doxylink{class_i_filter2_d}{IFilter2D}.
+
+The destructor is declared as virtual to ensure that the destructor of any derived class is called when an object of the derived class is deleted through a pointer to the base class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_filter2_d_a0cc3760ba47a692a5cd0cc645c1d6a91}\label{class_i_filter2_d_a0cc3760ba47a692a5cd0cc645c1d6a91} 
+\index{IFilter2D@{IFilter2D}!apply@{apply}}
+\index{apply@{apply}!IFilter2D@{IFilter2D}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily virtual void IFilter2\+D\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Applies a filter to a 2D image.
+
+This method applies a filter to a 2D image, modifying the image data in place.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The image to which the filter will be applied. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_pixel_filter_a3909f818be0d637b6d9f62ff92e4cd9f}{Pixel\+Filter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Include/\+Filters/\mbox{\hyperlink{_filter_8h}{Filter.\+h}}\end{DoxyCompactItemize}

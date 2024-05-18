@@ -1,0 +1,130 @@
+\doxysection{Test\+Edge\+Filter Class Reference}
+\hypertarget{class_test_edge_filter}{}\label{class_test_edge_filter}\index{TestEdgeFilter@{TestEdgeFilter}}
+
+
+{\ttfamily \#include $<$Test\+Edge\+Filter.\+h$>$}
+
+
+
+Inheritance diagram for Test\+Edge\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{class_test_edge_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Test\+Edge\+Filter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{class_test_edge_filter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_edge_filter_af24cc9ad1c5be9b9bbcaa59af1e8ed7a}{test\+Edge\+Detection}} (\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}} filter\+Type)
+\item 
+void \mbox{\hyperlink{class_test_edge_filter_a5a9bb974491d43cfadacd3089c52ab6e}{test\+Apply\+Sobel}} ()
+\item 
+void \mbox{\hyperlink{class_test_edge_filter_aa2f96dcc1da3d21fbb31bab052d66680}{test\+Apply\+Prewitt}} ()
+\item 
+void \mbox{\hyperlink{class_test_edge_filter_aaabf1124c5510c2b3f203db0035d533a}{test\+Apply\+Scharr}} ()
+\item 
+void \mbox{\hyperlink{class_test_edge_filter_ae01a6c5fa5c0847c3266fcadfbe6b4e6}{test\+Apply\+Roberts}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_edge_filter_a5be27cf5bb94b2ebc235431f4abe28a3}{run\+Tests}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_a99f2bbfac6c95612322b0f10e607ebe5}{Test}} ()
+\item 
+virtual \mbox{\hyperlink{class_test_ac9dcc51f46141d9ed1e8206ca0011b8c}{\texorpdfstring{$\sim$}{\string~}\+Test}} ()
+\item 
+{\footnotesize template$<$typename Test\+Class , typename Test\+Func $>$ }\\void \mbox{\hyperlink{class_test_ab11bf90c61096a785a4102a1766512eb}{run\+Test}} (Test\+Func test\+Func, const std\+::string \&test\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_test_af0336acae0a514911b211c5851e0c092}{summarize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_test}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_test_abc27137b4b2726f1fb54760f2ab57808}{total\+Tests\+Run}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_a54601227aed0032431515ace35d0d6bc}{total\+Tests\+Passed}} = 0
+\item 
+static int \mbox{\hyperlink{class_test_af231f64318452d2f72e4f9945ffbee23}{total\+Tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_edge_filter_a5be27cf5bb94b2ebc235431f4abe28a3}\label{class_test_edge_filter_a5be27cf5bb94b2ebc235431f4abe28a3} 
+\index{TestEdgeFilter@{TestEdgeFilter}!runTests@{runTests}}
+\index{runTests@{runTests}!TestEdgeFilter@{TestEdgeFilter}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily virtual void Test\+Edge\+Filter\+::run\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes All Defined \doxylink{class_test}{Test} Cases for the \doxylink{class_edge_filter}{Edge\+Filter}
+
+This function orchestrates the execution of all test cases defined in the \doxylink{class_test_edge_filter}{Test\+Edge\+Filter} class. It utilizes the run\+Test template method to execute each test case individually, focusing on the application of different edge detection algorithms and their effectiveness in identifying edges within an image. 
+
+Implements \mbox{\hyperlink{class_test_a0635ae352d3542bfca678666ecd83df1}{Test}}.
+
+\Hypertarget{class_test_edge_filter_aa2f96dcc1da3d21fbb31bab052d66680}\label{class_test_edge_filter_aa2f96dcc1da3d21fbb31bab052d66680} 
+\index{TestEdgeFilter@{TestEdgeFilter}!testApplyPrewitt@{testApplyPrewitt}}
+\index{testApplyPrewitt@{testApplyPrewitt}!TestEdgeFilter@{TestEdgeFilter}}
+\doxysubsubsection{\texorpdfstring{testApplyPrewitt()}{testApplyPrewitt()}}
+{\footnotesize\ttfamily void Test\+Edge\+Filter\+::test\+Apply\+Prewitt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Prewitt Edge Detection \doxylink{class_algorithm}{Algorithm}
+
+Initiates the edge detection test using the Prewitt filter. This function assesses the Prewitt algorithm\textquotesingle{}s performance in highlighting image edges, employing a straightforward test image to evaluate effectiveness. \Hypertarget{class_test_edge_filter_ae01a6c5fa5c0847c3266fcadfbe6b4e6}\label{class_test_edge_filter_ae01a6c5fa5c0847c3266fcadfbe6b4e6} 
+\index{TestEdgeFilter@{TestEdgeFilter}!testApplyRoberts@{testApplyRoberts}}
+\index{testApplyRoberts@{testApplyRoberts}!TestEdgeFilter@{TestEdgeFilter}}
+\doxysubsubsection{\texorpdfstring{testApplyRoberts()}{testApplyRoberts()}}
+{\footnotesize\ttfamily void Test\+Edge\+Filter\+::test\+Apply\+Roberts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Roberts Edge Detection \doxylink{class_algorithm}{Algorithm}
+
+Initiates the edge detection test using the Roberts filter. This test examines the Roberts algorithm\textquotesingle{}s effectiveness in edge detection, employing a basic grayscale image with distinct edges for assessment. \Hypertarget{class_test_edge_filter_aaabf1124c5510c2b3f203db0035d533a}\label{class_test_edge_filter_aaabf1124c5510c2b3f203db0035d533a} 
+\index{TestEdgeFilter@{TestEdgeFilter}!testApplyScharr@{testApplyScharr}}
+\index{testApplyScharr@{testApplyScharr}!TestEdgeFilter@{TestEdgeFilter}}
+\doxysubsubsection{\texorpdfstring{testApplyScharr()}{testApplyScharr()}}
+{\footnotesize\ttfamily void Test\+Edge\+Filter\+::test\+Apply\+Scharr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Scharr Edge Detection \doxylink{class_algorithm}{Algorithm}
+
+Initiates the edge detection test using the Scharr filter. This function evaluates the Scharr algorithm\textquotesingle{}s edge detection capabilities, using a simple test image to gauge how well it accentuates edges. \Hypertarget{class_test_edge_filter_a5a9bb974491d43cfadacd3089c52ab6e}\label{class_test_edge_filter_a5a9bb974491d43cfadacd3089c52ab6e} 
+\index{TestEdgeFilter@{TestEdgeFilter}!testApplySobel@{testApplySobel}}
+\index{testApplySobel@{testApplySobel}!TestEdgeFilter@{TestEdgeFilter}}
+\doxysubsubsection{\texorpdfstring{testApplySobel()}{testApplySobel()}}
+{\footnotesize\ttfamily void Test\+Edge\+Filter\+::test\+Apply\+Sobel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Sobel Edge Detection \doxylink{class_algorithm}{Algorithm}
+
+Initiates the edge detection test using the Sobel filter. This function specifically targets the Sobel algorithm\textquotesingle{}s capability in detecting edges within an image, using a predefined grayscale image with a clear edge pattern. \Hypertarget{class_test_edge_filter_af24cc9ad1c5be9b9bbcaa59af1e8ed7a}\label{class_test_edge_filter_af24cc9ad1c5be9b9bbcaa59af1e8ed7a} 
+\index{TestEdgeFilter@{TestEdgeFilter}!testEdgeDetection@{testEdgeDetection}}
+\index{testEdgeDetection@{testEdgeDetection}!TestEdgeFilter@{TestEdgeFilter}}
+\doxysubsubsection{\texorpdfstring{testEdgeDetection()}{testEdgeDetection()}}
+{\footnotesize\ttfamily void Test\+Edge\+Filter\+::test\+Edge\+Detection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_edge_filter_8h_a7ef0ab496f57e183b484e62e2053c94f}{Filter\+Type}}}]{filter\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests the Application of Edge Detection Algorithms
+
+Evaluates the \doxylink{class_edge_filter}{Edge\+Filter} class\textquotesingle{}s functionality by applying various edge detection algorithms to a simple grayscale image with a clear edge pattern. This test verifies the algorithm\textquotesingle{}s ability to highlight or identify edges within the image. It focuses on the change in the image\textquotesingle{}s central region as a simplified metric of effectiveness.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter\+Type} & The type of edge detection filter to apply (e.\+g., Sobel, Prewitt, Scharr, Roberts). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tests/\mbox{\hyperlink{_test_edge_filter_8h}{Test\+Edge\+Filter.\+h}}\end{DoxyCompactItemize}

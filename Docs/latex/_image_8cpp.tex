@@ -1,0 +1,63 @@
+\doxysection{Source/\+Image.cpp File Reference}
+\hypertarget{_image_8cpp}{}\label{_image_8cpp}\index{Source/Image.cpp@{Source/Image.cpp}}
+
+
+Implements basic image processing functionalities.  
+
+
+{\ttfamily \#include "{}Image.\+h"{}}\newline
+{\ttfamily \#include "{}stb\+\_\+image.\+h"{}}\newline
+{\ttfamily \#include "{}stb\+\_\+image\+\_\+write.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+Include dependency graph for Image.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_image_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_image_8cpp_aefe397a94e8feddc652f92ef40ce9597}{STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{_image_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements basic image processing functionalities. 
+
+The \doxylink{class_image}{Image} class provides fundamental functionalities for image processing, including loading, saving, and converting images to grayscale. Leveraging the stb\+\_\+image and stb\+\_\+image\+\_\+write libraries, this class supports a wide range of image formats for both input and output operations. The convert\+To\+Grayscale method utilizes the luminance method to transform color images into grayscale, reflecting human perception of color brightness. This class is designed to serve as a foundation for more complex image processing tasks, offering efficient and straightforward manipulation of image data.
+
+\begin{DoxyDate}{Date}
+Created on March 18, 2024
+\end{DoxyDate}
+\begin{DoxyAuthor}{Authors}
+Advanced Programming Group Radix Sort\+:
+\begin{DoxyItemize}
+\item Benjamin Duncan (edsml-\/bd1023)
+\item Boyang Hu (edsml-\/bh223)
+\item Chawk Chamoun (edsml-\/cc8915)
+\item Mingsheng Cai (acse-\/sc4623)
+\item Moyu Zhang (acse-\/mz223)
+\item Ryan Benney (acse-\/rgb123) 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_image_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\label{_image_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\index{Image.cpp@{Image.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!Image.cpp@{Image.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+
+\Hypertarget{_image_8cpp_aefe397a94e8feddc652f92ef40ce9597}\label{_image_8cpp_aefe397a94e8feddc652f92ef40ce9597} 
+\index{Image.cpp@{Image.cpp}!STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}!Image.cpp@{Image.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_WRITE\_IMPLEMENTATION}{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}
+

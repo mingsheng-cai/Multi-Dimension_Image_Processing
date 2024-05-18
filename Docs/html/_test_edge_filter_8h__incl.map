@@ -1,0 +1,26 @@
+<map id="Tests/TestEdgeFilter.h" name="Tests/TestEdgeFilter.h">
+<area shape="rect" id="Node000001" title="Unit Tests for the EdgeFilter Class." alt="" coords="268,5,419,31"/>
+<area shape="rect" id="Node000002" href="$_test_8h.html" title="Test Base Class for Unit Testing Framework." alt="" coords="142,79,199,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="315,34,214,75,212,70,313,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,77,178"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="268,34,199,52,164,65,130,81,92,111,61,143,57,139,88,107,128,77,162,60,197,47,267,28"/>
+<area shape="rect" id="Node000006" href="$_edge_filter_8h.html" title="Implements edge detection filters for image processing." alt="" coords="279,79,409,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="346,31,346,63,341,63,341,31"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="392,226,450,252"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="371,29,400,49,413,62,423,78,434,112,438,149,431,211,425,211,432,148,429,113,419,80,409,66,396,53,368,34"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="509,79,573,105"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="378,29,496,71,494,76,376,34"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,108,78,147,75,142,147,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="164,300,217,326"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="164,107,152,128,142,153,141,165,142,178,159,236,180,285,175,287,154,238,137,179,135,165,137,152,147,126,160,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="152,153,229,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="176,104,185,137,180,138,171,106"/>
+<area shape="rect" id="Node000007" href="$_image_8h.html" title="Provides an Image class for basic image processing operations." alt="" coords="232,226,301,252"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="332,107,312,128,294,154,282,183,274,212,269,211,277,182,289,151,308,124,328,103"/>
+<area shape="rect" id="Node000008" href="$_padding_8h.html" title=" " alt="" coords="304,153,383,178"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="346,105,346,137,341,137,341,105"/>
+<area shape="poly" id="edge11_Node000006_Node000009" title=" " alt="" coords="359,103,379,124,398,151,411,182,419,211,414,212,406,183,393,154,375,128,355,107"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="255,254,216,291,212,287,252,251"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="332,181,292,218,289,214,329,177"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="359,177,399,214,395,218,355,181"/>
+</map>

@@ -1,0 +1,70 @@
+\doxysection{Temp/test\+Gaussian3\+DFilter.cpp File Reference}
+\hypertarget{test_gaussian3_d_filter_8cpp}{}\label{test_gaussian3_d_filter_8cpp}\index{Temp/testGaussian3DFilter.cpp@{Temp/testGaussian3DFilter.cpp}}
+{\ttfamily \#include "{}Filters/\+Gaussian3\+DFilter.\+h"{}}\newline
+{\ttfamily \#include "{}Volume.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}stb\+\_\+image\+\_\+write.\+h"{}}\newline
+{\ttfamily \#include "{}stb\+\_\+image.\+h"{}}\newline
+Include dependency graph for test\+Gaussian3\+DFilter.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_gaussian3_d_filter_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test_gaussian3_d_filter_8cpp_aefe397a94e8feddc652f92ef40ce9597}{STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{test_gaussian3_d_filter_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{test_gaussian3_d_filter_8cpp_ac8193f8680bcea6120eccb95d55e2a59}{create\+Test\+Volume}} (int width, int height, int depth)
+\item 
+bool \mbox{\hyperlink{test_gaussian3_d_filter_8cpp_a53a0d9bdff97aa360e5b1b2cf4658587}{check\+Filter\+Application}} (const std\+::vector$<$ unsigned char $>$ \&original\+Volume, const std\+::vector$<$ unsigned char $>$ \&filtered\+Volume, int width, int height, int depth)
+\item 
+int \mbox{\hyperlink{test_gaussian3_d_filter_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test_gaussian3_d_filter_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\label{test_gaussian3_d_filter_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\index{testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+
+\Hypertarget{test_gaussian3_d_filter_8cpp_aefe397a94e8feddc652f92ef40ce9597}\label{test_gaussian3_d_filter_8cpp_aefe397a94e8feddc652f92ef40ce9597} 
+\index{testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}!STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_WRITE\_IMPLEMENTATION@{STB\_IMAGE\_WRITE\_IMPLEMENTATION}!testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_WRITE\_IMPLEMENTATION}{STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \#define STB\+\_\+\+IMAGE\+\_\+\+WRITE\+\_\+\+IMPLEMENTATION}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test_gaussian3_d_filter_8cpp_a53a0d9bdff97aa360e5b1b2cf4658587}\label{test_gaussian3_d_filter_8cpp_a53a0d9bdff97aa360e5b1b2cf4658587} 
+\index{testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}!checkFilterApplication@{checkFilterApplication}}
+\index{checkFilterApplication@{checkFilterApplication}!testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{checkFilterApplication()}{checkFilterApplication()}}
+{\footnotesize\ttfamily bool check\+Filter\+Application (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned char $>$ \&}]{original\+Volume,  }\item[{const std\+::vector$<$ unsigned char $>$ \&}]{filtered\+Volume,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+\Hypertarget{test_gaussian3_d_filter_8cpp_ac8193f8680bcea6120eccb95d55e2a59}\label{test_gaussian3_d_filter_8cpp_ac8193f8680bcea6120eccb95d55e2a59} 
+\index{testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}!createTestVolume@{createTestVolume}}
+\index{createTestVolume@{createTestVolume}!testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{createTestVolume()}{createTestVolume()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned char $>$ create\+Test\+Volume (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+\Hypertarget{test_gaussian3_d_filter_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test_gaussian3_d_filter_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}!main@{main}}
+\index{main@{main}!testGaussian3DFilter.cpp@{testGaussian3DFilter.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

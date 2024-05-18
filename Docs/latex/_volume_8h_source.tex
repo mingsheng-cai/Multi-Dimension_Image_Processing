@@ -1,0 +1,70 @@
+\doxysection{Volume.\+h}
+\hypertarget{_volume_8h_source}{}\label{_volume_8h_source}\index{Include/Volume.h@{Include/Volume.h}}
+\mbox{\hyperlink{_volume_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_VOLUME\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_VOLUME\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_volume}{Volume}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{width}},\ \mbox{\hyperlink{class_volume_ad79b108cff727245b41914f371e88efe}{height}},\ \mbox{\hyperlink{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f}{depth}};\ \textcolor{comment}{//\ Size\ of\ the\ volume}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{class_volume_ac1a3a27bac4ceb37678e2bc62ae48771}{data}};\ \textcolor{comment}{//\ Volume\ data}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_volume_a1a41e1bebc51ad44b069d30ed9a668b1}{Volume}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_volume}{Volume}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_volume}{Volume}}\ \&\mbox{\hyperlink{class_volume_afe74a4b38e8071b9a23798d018bdd9b5}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_volume}{Volume}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}{Volume}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}{Volume}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_ad79b108cff727245b41914f371e88efe}{height}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f}{depth}});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_volume_a7d3bb81da95df85009b9f3ddd985cd9f}{Volume}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_ad79b108cff727245b41914f371e88efe}{height}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f}{depth}},\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{class_volume_ac1a3a27bac4ceb37678e2bc62ae48771}{data}});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_volume_ad5d2015f5c0fea005f02be8f6d60b212}{\string~Volume}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_a6421ea4fb9b499e51499531dbc6999d5}{getWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_a33c75b641d988efed2ce4d2568e7269e}{getHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_ab082670ea100c39d94fefc77ac83c4d8}{getDepth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{class_volume_a1651a671bbe729dc690093d2e399a07b}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_volume_afaed2263d4a62376314d609b11783257}{getVoxel}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{y}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{z}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_volume_a59449156869e5f9aa2c830c0cd7ce9b0}{setWidth}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{width}});}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_volume_a42e795397b795182b5121fb3368d935d}{setHeight}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_ad79b108cff727245b41914f371e88efe}{height}});}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_volume_a6759c08e159014a704f77acae9e5fe1c}{setDepth}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_a6bc3c77db5cb8bd6daa7b2e75934f92f}{depth}});}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_volume_a4781f84d9787321462977dee2ed2c512}{updateData}}(\textcolor{keyword}{const}\ std::vector<unsigned\ char>\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{newData}});}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_volume_a4fb4494e6be59b9e67e91b5b12df6898}{loadFromFiles}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{paths}});}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_volume_aec2d5b8d0f6a7e2ee8ce7403496dd82d}{loadFromDirectory}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{directoryPath}});}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{path}},\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{plane}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{path}},\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{plane}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{sliceIndex}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{path}},\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{plane}},\ std::string\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{projector}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00291\ \ \ \ \ \mbox{\hyperlink{class_volume_a7cefc977aa07f53dd0ead4b1f6a285a9}{save}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{path}},\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{plane}},\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{projector}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{begin}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_volume_abbc396981317733b66c7e38d5ed0cea5}{end}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \};}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ADVANCED\_PROGRAMMING\_GROUP\_RADIX\_SORT\_VOLUME\_H}}
+
+\end{DoxyCode}
